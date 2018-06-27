@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" type="image/png" href="<?php echo BASE_URL()?>/assets/Back/img/favicon.ico">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	<title>Newzeno : Administration</title>
+
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+	<meta name="viewport" content="width=device-width" />
+
+
+	<!-- Bootstrap core CSS     -->
+	<link href="<?php echo BASE_URL()?>/assets/Back/css/bootstrap.min.css" rel="stylesheet" />
+
+	<!--  Light Bootstrap Table core CSS    -->
+	<link href="<?php echo BASE_URL()?>/assets/Back/css/light-bootstrap-dashboard.css?v=1.4.0" rel="stylesheet"/>
+
+	<!-- Animation library for notifications   -->
+	<link href="<?php echo BASE_URL()?>/assets/Back/css/animate.min.css" rel="stylesheet"/>
+
+	<!--     Fonts and icons     -->
+	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
+	<link href="<?php echo BASE_URL()?>/assets/Back/css/pe-icon-7-stroke.css" rel="stylesheet" />
+
+	<!-- Bootstrap Datatable -->
+	<link href="<?php echo BASE_URL()?>/assets/Back/datatable-bootstrap/dataTables.bootstrap.min.css" rel="stylesheet"/>
+
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="<?php echo BASE_URL()?>/assets/Back/css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="<?php echo BASE_URL()?>/assets/Back/css/icomoon.css">
+
+	<!-- <link rel="stylesheet" href="assets/css/style.css"> -->
+
+	<style>
+	.js .animate-box {
+		opacity: 0;
+	}
+	</style>
+
+</head>
+<body>
+
+	<div class="wrapper">
+		<div class="sidebar" data-color="blue" data-image="<?php echo BASE_URL()?>/assets/Back/img/sidebar-4.jpg">
+
+			<!--
+
+			Tip 1: you can change the color of the sidebar using: data-color="blue | azure | green | orange | red | purple"
+			Tip 2: you can also add an image using data-image tag
+
+		-->
+
+		<div class="sidebar-wrapper">
+			<div class="logo">
+				<a href="<?php echo SITE_URL('home');?>" class="simple-text">
+					<img src="<?php echo BASE_URL()?>/uploads/logo/logonewzeno2.png" height="50px"/>
+				</a>
+			</div>
+
+			<ul class="nav">
+				<!-- <li <?php //if($this->uri->segment(1)=="home"){ echo "class='active'"; } ?>>
+				<a href="<?php //echo SITE_URL('home');?>">
+				<i class="pe-7s-graph2"></i>
+				<p>ภาพรวม</p>
+			</a>
+		</li> -->
+		<li <?php if($this->uri->segment(2)=="Dashboard"){ echo "class='active'"; } ?>>
+			<a href="<?php echo SITE_URL('Admin/Dashboard');?>">
+				<i class="pe-7s-graph"></i>
+				<p style="color:red;">ภาพรวม </p><span>(ทำที่หลังสุด)</span>
+			</a>
+		</li>
+		<li <?php if($this->uri->segment(2)=="Product"){ echo "class='active'"; } ?>>
+			<a href="<?php echo SITE_URL('Admin/Product')?>">
+				<i class="pe-7s-box2"></i>
+				<p style="color:red;">การจัดการสินค้า</p><span>(ทำที่หลังสุด)</span>
+			</a>
+		</li>
+		<li <?php if($this->uri->segment(2)=="Category"){ echo "class='active'"; } ?>>
+			<a href="<?php echo SITE_URL('Admin/Category')?>">
+				<i class="pe-7s-keypad"></i>
+				<p style="color:red;">การจัดการประเภทสินค้า</p>
+			</a>
+		</li>
+		<li <?php if($this->uri->segment(2)=="Brand"){ echo "class='active'"; } ?>>
+			<a href="<?php echo SITE_URL('Admin/Brand')?>">
+				<i class="pe-7s-gleam"></i>
+				<p>การจัดการแบรนด์สินค้า</p>
+			</a>
+		</li>
+		<li <?php if($this->uri->segment(2)=="Employee"){ echo "class='active'"; } ?>>
+			<a href="<?php echo SITE_URL('Admin/Employee')?>">
+				<i class="pe-7s-users"></i>
+				<p style="color:red;">การจัดการพนักงาน</p>
+			</a>
+		</li>
+		<li <?php if($this->uri->segment(2)=="Admin/Position"){ echo "class='active'"; } ?>>
+			<a href="<?php echo SITE_URL('Admin/Position')?>">
+				<i class="pe-7s-id"></i>
+				<p style="color:red;">การจัดการตำแหน่ง</p>
+			</a>
+		</li>
+		<!-- <li <?php //if($this->uri->segment(2)=="config"){ echo "class='active'"; } ?>>
+			<a href="<?php //echo SITE_URL('config')?>">
+				<i class="pe-7s-config"></i>
+				<p>ตั้งค่า</p>
+			</a>
+		</li> -->
+	</ul>
+</div>
+</div>
+
+<div class="main-panel">
+	<nav class="navbar navbar-default navbar-fixed">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">
+					<?php if ($this->uri->segment(1)=="home"): ?>
+						ภาพรวม
+					<?php elseif ($this->uri->segment(1)=="history"):?>
+						บันทึกรายการ
+					<?php elseif ($this->uri->segment(1)=="product"):?>
+						การจัดการสินค้า
+					<?php elseif ($this->uri->segment(1)=="customer"):?>
+						การจัดการลูกค้า
+					<?php elseif ($this->uri->segment(1)=="employee"):?>
+						การจัดการพนักงาน
+					<?php elseif ($this->uri->segment(1)=="config"):?>
+						ตั้งค่า
+					<?php endif; ?>
+				</a>
+			</div>
+			<div class="collapse navbar-collapse">
+				<ul class="nav navbar-nav">
+					<li>
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							<i class="fa fa-user"></i>
+							ชื่อบัญชี : <?php echo $_SESSION['adminUsername']?>
+							ตำแหน่งงาน : <span style="color:blue;"><?php echo $_SESSION['positionName']?></span>
+						</a>
+					</li>
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right">
+					<li>
+						<a href="<?php echo SITE_URL('Admin/Logout')?>">
+							<i class="pe-7s-power"></i>
+							ออกจากระบบ
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
