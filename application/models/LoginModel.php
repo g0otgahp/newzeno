@@ -8,7 +8,7 @@ class LoginModel extends CI_Model
   {
     $data = $this->db
     ->where('adminUsername', $input['userName'])
-    ->where('adminPassword', $input['userPassword'])
+    ->where('adminPassword', MD5($input['userPassword']))
     ->where('adminStatus', 1)
     ->join('position','admin.adminPosition = position.positionId')
     ->where('positionStatus', 1)

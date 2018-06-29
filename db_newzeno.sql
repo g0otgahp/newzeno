@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 27, 2018 at 04:56 AM
+-- Generation Time: Jun 29, 2018 at 04:45 AM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -31,15 +31,16 @@ CREATE TABLE `admin` (
   `adminUsername` varchar(50) NOT NULL,
   `adminPassword` varchar(50) NOT NULL,
   `adminPosition` int(11) NOT NULL,
-  `adminStatus` int(11) NOT NULL DEFAULT '1'
+  `adminStatus` int(11) NOT NULL DEFAULT '1',
+  `profileId` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 --
 -- Dumping data for table `admin`
 --
 
-INSERT INTO `admin` (`adminId`, `adminUsername`, `adminPassword`, `adminPosition`, `adminStatus`) VALUES
-(1, 'admin', '1234', 1, 1);
+INSERT INTO `admin` (`adminId`, `adminUsername`, `adminPassword`, `adminPosition`, `adminStatus`, `profileId`) VALUES
+(1, 'admin', '81dc9bdb52d04dc20036dbd8313ed055', 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -67,6 +68,18 @@ INSERT INTO `brand` (`brandId`, `brandName`, `brandImg`, `brandStatus`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `category`
+--
+
+CREATE TABLE `category` (
+  `cateId` int(11) NOT NULL,
+  `cateName` varchar(50) NOT NULL,
+  `cateStatus` int(11) NOT NULL DEFAULT '1'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `position`
 --
 
@@ -82,6 +95,31 @@ CREATE TABLE `position` (
 
 INSERT INTO `position` (`positionId`, `positionName`, `positionStatus`) VALUES
 (1, 'Developer', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `profile`
+--
+
+CREATE TABLE `profile` (
+  `profileId` int(11) NOT NULL,
+  `profileFname` varchar(50) NOT NULL,
+  `profileLname` varchar(50) NOT NULL,
+  `profileCitizenid` varchar(13) NOT NULL,
+  `profileGender` varchar(50) NOT NULL,
+  `profilePhone` varchar(10) NOT NULL,
+  `profileEmail` varchar(50) NOT NULL,
+  `profileImg` varchar(50) NOT NULL DEFAULT 'no-img.png',
+  `profileStatus` int(11) NOT NULL DEFAULT '1'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `profile`
+--
+
+INSERT INTO `profile` (`profileId`, `profileFname`, `profileLname`, `profileCitizenid`, `profileGender`, `profilePhone`, `profileEmail`, `profileImg`, `profileStatus`) VALUES
+(1, 'สมชาย', 'แสงสกุล', '1409909909009', 'M', '0899998989', 'jay.bunapa@gmail.com', 'no-img.png', 1);
 
 --
 -- Indexes for dumped tables
@@ -100,10 +138,22 @@ ALTER TABLE `brand`
   ADD PRIMARY KEY (`brandId`);
 
 --
+-- Indexes for table `category`
+--
+ALTER TABLE `category`
+  ADD PRIMARY KEY (`cateId`);
+
+--
 -- Indexes for table `position`
 --
 ALTER TABLE `position`
   ADD PRIMARY KEY (`positionId`);
+
+--
+-- Indexes for table `profile`
+--
+ALTER TABLE `profile`
+  ADD PRIMARY KEY (`profileId`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -118,12 +168,22 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `brand`
 --
 ALTER TABLE `brand`
-  MODIFY `brandId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `brandId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT for table `category`
+--
+ALTER TABLE `category`
+  MODIFY `cateId` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `position`
 --
 ALTER TABLE `position`
   MODIFY `positionId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `profile`
+--
+ALTER TABLE `profile`
+  MODIFY `profileId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

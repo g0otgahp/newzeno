@@ -12,7 +12,7 @@ class Login extends CI_Controller
       echo "<script>document.location='" . SITE_URL('Admin/Dashboard') . "'</script>";
     }
   }
-  
+
   public function index()
   {
     $this->load->view('Back/Login');
