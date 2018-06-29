@@ -144,16 +144,16 @@
 				<ul class="nav navbar-nav">
 					<li>
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-							<i class="fa fa-user"></i>
-							ชื่อบัญชี : <?php echo $_SESSION['adminUsername']?>
-							ตำแหน่งงาน : <span style="color:blue;"><?php echo $_SESSION['positionName']?></span>
+							<i class="fa fa-user" style="color:red;"></i>
+							เจ้าหน้าที่ : <span style="color:black;"><?php echo $_SESSION['adminFullname']?></span> /
+							ตำแหน่ง : <span style="color:blue;"><?php echo $_SESSION['positionName']?></span>
 						</a>
 					</li>
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">
 					<li>
-						<a href="<?php echo SITE_URL('Admin/Logout')?>">
+						<a href="<?php echo SITE_URL('Logout')?>">
 							<i class="pe-7s-power"></i>
 							ออกจากระบบ
 						</a>
