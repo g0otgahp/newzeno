@@ -74,7 +74,12 @@ class Position extends CI_Controller
 
     $positionId = $this->uri->segment(4);
 
-    $this->PositionModel->DeletePosition($positionId);
+    $positionData = array(
+      'positionId' => $positionId,
+      'positionStatus' => 2,
+    );
+
+    $this->PositionModel->UpdatePosition($positionData);
 
     echo "<script>alert('ลบตำแหน่งเรียบร้อย')</script>";
     echo "<script>document.location=('".SITE_URL('Admin/Position')."')</script>";

@@ -23,7 +23,9 @@ class PositionModel extends CI_Model
   public function Select()
   {
 
-    $data = $this->db->get('position')->result_array();
+    $data = $this->db
+    ->where('positionStatus',1)
+    ->get('position')->result_array();
     // echo "<pre>";
     // print_r($data);
     // exit();
@@ -49,17 +51,6 @@ class PositionModel extends CI_Model
 
     // echo "<pre>";
     // print_r($positionData);
-    // exit();
-
-  }
-
-  public function DeletePosition($positionId)
-  {
-
-    $this->db->where('positionId',$positionId)->delete('position');
-
-    // echo "<pre>";
-    // print_r($positionName);
     // exit();
 
   }
