@@ -14,33 +14,22 @@ class Employee extends CI_Controller
     }
   }
 
-  public function LoadPage($value)
-  {
-    $data = $value['Result'];
-    $this->load->view('Back/themes/header', $data);
-    $this->load->view($value['View']);
-    $this->load->view('Back/themes/footer');
-  }
+public function LoadPage($value)
+{
+  $data = $value['Result'];
+  $this->load->view('Back/themes/header', $data);
+  $this->load->view($value['View']);
+  $this->load->view('Back/themes/footer');
+}
 
-  public function index()
-  {
-    $value = array(
-      'Result' => array(
-        // 'Config' => $Config,
-      ),
-      'View' => 'Back/EmployeeList',
-    );
-    $this->LoadPage($value);
-  }
-
-  public function EmployeeForm()
-  {
-    $value = array(
-      'Result' => array(
-        // 'Config' => $Config,
-      ),
-      'View' => 'Back/EmployeeForm',
-    );
-    $this->LoadPage($value);
-  }
+public function index()
+{
+  $value = array(
+    'Result' => array(
+      // 'Config' => $Config,
+    ),
+    'View' => 'Back/EmployeeList',
+  );
+  $this->LoadPage($value);
+}
 }
