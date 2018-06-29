@@ -19,16 +19,65 @@ class Position extends CI_Controller
     $this->load->view('Back/themes/header', $data);
     $this->load->view($value['View']);
     $this->load->view('Back/themes/footer');
+    $this->load->view('Back/PositionForm');
+    $this->load->view('Back/PositionUpdate');
   }
 
   public function index()
   {
+
+    $data = $this->PositionModel->Select();
     $value = array(
       'Result' => array(
-        // 'Config' => $Config,
+        'data' => $data,
       ),
       'View' => 'Back/PositionList',
     );
     $this->LoadPage($value);
   }
+
+  public function SavePosition()
+  {
+
+    $positionData = $this->input->post();
+
+    // echo "<pre>";
+    // print_r($positionName);
+    // exit();
+
+    if(!empty($positionData['positionId'])){
+
+      // echo "UpdatePosition";
+
+      $this->PositionModel->UpdatePosition($positionData);
+      echo "<script>alert('แก้ไขตำแหน่งเรียบร้อย')</script>";
+      echo "<script>document.location=('".SITE_URL('Admin/Position')."')</script>";
+
+
+    }else{
+
+      // echo "SavePosition";
+
+      $this->PositionModel->SavePosition($positionData);
+      echo "<script>alert('บันทึกตำแหน่งเรียบร้อย')</script>";
+      echo "<script>document.location=('".SITE_URL('Admin/Position')."')</script>";
+
+    }
+
+
+
+  }
+
+
+  public function DeletePosition()
+  {
+
+    $positionId = $this->uri->segment(4);
+
+    $this->PositionModel->DeletePosition($positionId);
+
+    echo "<script>alert('ลบตำแหน่งเรียบร้อย')</script>";
+    echo "<script>document.location=('".SITE_URL('Admin/Position')."')</script>";
+  }
+
 }

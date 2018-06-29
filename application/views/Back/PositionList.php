@@ -3,30 +3,37 @@
     <div class="row">
       <div class="col-md-12 animate-box">
         <div class="card" style="padding:20px;">
+          <button type="button" class="btn btn-success"
+          style="margin-bottom:20px;"
+          data-toggle="modal"
+          data-target="#RegisterPosition">เพิ่มตำแหน่ง</button>
+
           <table class="table table-hover dataTable">
             <thead>
               <tr>
-                <th>ชื่อสินค้า</th>
-                <th>จำนวนคงเหลือ</th>
+                <th>ลำดับ</th>
+                <th>ตำแหน่ง</th>
                 <th>ตัวเลือก</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Monitor Sharp</td>
-                <td style="color:red">9</td>
-                <td><button class="btn btn-info"><i class="pe-7s-paper-plane"></i>รายการทั้งหมด</button></td>
+              <?php $i=1; foreach ($data as $data): ?>
+                <tr>
+                  <td><?php echo $i ?></td>
+                  <td style="color:red"><?php echo $data['positionName'] ?></td>
+                  <td>
+
+                    <button class="btn btn-info btn-warning"
+                    data-toggle="modal"
+                    data-target="#UpdatePosition<?php echo $data['positionId']; ?>">แก้ไข</button>
+
+                    <a href="<?php echo SITE_URL('Admin/Position/DeletePosition/'.$data['positionId']) ?>" class="btn btn-info btn-danger"
+                    onClick="javascript: return confirm('ต้องการลบตำแหน่งนี้ใช่หรือไม่')">ลบ
+                  </a>
+
+                </td>
               </tr>
-              <tr>
-                <td>Video Mount</td>
-                <td style="color:black">33</td>
-                <td><button class="btn btn-info"><i class="pe-7s-paper-plane"></i>รายการทั้งหมด</button></td>
-              </tr>
-              <tr>
-                <td>Projector Screen</td>
-                <td style="color:black">120</td>
-                <td><button class="btn btn-info"><i class="pe-7s-paper-plane"></i>รายการทั้งหมด</button></td>
-              </tr>
+              <?php $i++; endforeach; ?>
             </tbody>
           </table>
         </div>

@@ -23,5 +23,46 @@ class PositionModel extends CI_Model
   public function Select()
   {
 
+    $data = $this->db->get('position')->result_array();
+    // echo "<pre>";
+    // print_r($data);
+    // exit();
+    return $data;
+
   }
+
+  public function SavePosition($positionData)
+  {
+
+    $this->db->insert('position',$positionData);
+
+    // echo "<pre>";
+    // print_r($positionName);
+    // exit();
+
+  }
+
+  public function UpdatePosition($positionData)
+  {
+
+    $this->db->where('positionId',$positionData['positionId'])->update('position',$positionData);
+
+    // echo "<pre>";
+    // print_r($positionData);
+    // exit();
+
+  }
+
+  public function DeletePosition($positionId)
+  {
+
+    $this->db->where('positionId',$positionId)->delete('position');
+
+    // echo "<pre>";
+    // print_r($positionName);
+    // exit();
+
+  }
+
+
 }

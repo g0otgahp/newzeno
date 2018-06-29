@@ -101,7 +101,7 @@
 		<li <?php if($this->uri->segment(2)=="Admin/Position"){ echo "class='active'"; } ?>>
 			<a href="<?php echo SITE_URL('Admin/Position')?>">
 				<i class="pe-7s-id"></i>
-				<p style="color:red;">การจัดการตำแหน่ง</p>
+				<p>การจัดการตำแหน่ง</p>
 			</a>
 		</li>
 		<!-- <li <?php //if($this->uri->segment(2)=="config"){ echo "class='active'"; } ?>>
