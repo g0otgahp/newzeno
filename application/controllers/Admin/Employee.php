@@ -32,4 +32,15 @@ public function index()
   );
   $this->LoadPage($value);
 }
+
+public function EmployeeForm()
+{
+  $value = array(
+    'Result' => array(
+      // 'Config' => $Config,
+    ),
+    'View' => 'Back/EmployeeForm',
+  );
+  $this->LoadPage($value);
+}
 }
