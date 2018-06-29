@@ -3,6 +3,7 @@
     <div class="row">
       <div class="col-md-12 animate-box">
         <div class="card" style="padding:20px;">
+          <button type="button" class="btn btn-success" style="margin-bottom:20px;" data-toggle="modal" data-target="#RegisterBrand">เพิ่มสมาชิกแอดมิน</button>
           <table class="table table-hover dataTable">
             <thead>
               <tr>
