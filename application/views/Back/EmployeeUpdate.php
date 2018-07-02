@@ -157,7 +157,7 @@
                 <img class="avatar border-gray" src="<?php echo BASE_URL('uploads/Employees/'.$dataDetail[0]['profileImg'])?>"/>
 
                 <h4 class="title"><?php echo $dataDetail[0]['profileFname'] ." ". $dataDetail[0]['profileLname'] ?><br />
-                  <small><?php echo $dataDetail[0]['profileNickname'] ?></small>
+                  <label><?php echo $dataDetail[0]['profileNickname'] ?></label>
                 </h4>
               </a>
             </div>
@@ -167,7 +167,6 @@
             <button href="#" class="btn btn-simple"><i class="fa fa-facebook-square"></i></button>
             <button href="#" class="btn btn-simple"><i class="fa fa-twitter"></i></button>
             <button href="#" class="btn btn-simple"><i class="fa fa-google-plus-square"></i></button>
-
           </div>
         </div>
       </div>

@@ -2407,7 +2407,7 @@ fieldset[disabled] .btn-neutral.active {
 }
 
 .card-user .content {
-    min-height: 240px;
+    min-height: auto;
 }
 
 .card-user .footer,
