@@ -40,7 +40,15 @@
 		opacity: 0;
 	}
 	</style>
+	<link href="https://fonts.googleapis.com/css?family=Prompt" rel="stylesheet">
+  <style>
 
+  * , span , td , p , a , label , h1 , h2 , h3 , h4 {
+    font-family: 'Prompt', sans-serif;
+		font-size: 14px;
+  }
+
+</style>
 </head>
 <body>
 
@@ -69,37 +77,37 @@
 		<li <?php if($this->uri->segment(2)=="Dashboard"){ echo "class='active'"; } ?>>
 			<a href="<?php echo SITE_URL('Admin/Dashboard');?>">
 				<i class="pe-7s-graph" style="color:black;"></i>
-				<p style="color:red;">ภาพรวม </p><span style="color:black;">(ทำที่หลังสุด)</span>
+				<span style="color:red;">ภาพรวม </span><span style="color:black;">(ทำที่หลังสุด)</span>
 			</a>
 		</li>
 		<li <?php if($this->uri->segment(2)=="Product"){ echo "class='active'"; } ?>>
 			<a href="<?php echo SITE_URL('Admin/Product')?>">
 				<i class="pe-7s-box2" style="color:black;"></i>
-				<p style="color:red;">การจัดการสินค้า</p><span style="color:black;">(ทำที่หลังสุด)</span>
+				<span style="color:red;">การจัดการสินค้า</span><span style="color:black;">(ทำที่หลังสุด)</span>
 			</a>
 		</li>
 		<li <?php if($this->uri->segment(2)=="Category"){ echo "class='active'"; } ?>>
 			<a href="<?php echo SITE_URL('Admin/Category')?>">
 				<i class="pe-7s-keypad" style="color:black;"></i>
-				<p style="color:red;">การจัดการประเภทสินค้า</p>
+				<span style="color:red;">การจัดการประเภทสินค้า</span>
 			</a>
 		</li>
 		<li <?php if($this->uri->segment(2)=="Brand"){ echo "class='active'"; } ?>>
 			<a href="<?php echo SITE_URL('Admin/Brand')?>">
 				<i class="pe-7s-gleam" style="color:black;"></i>
-				<p style="color:black;">การจัดการแบรนด์สินค้า</p>
+				<span style="color:black;">การจัดการแบรนด์สินค้า</span>
 			</a>
 		</li>
 		<li <?php if($this->uri->segment(2)=="Employee"){ echo "class='active'"; } ?>>
 			<a href="<?php echo SITE_URL('Admin/Employee')?>">
 				<i class="pe-7s-users" style="color:black;"></i>
-				<p style="color:black;">การจัดการพนักงาน</p>
+				<span style="color:black;">การจัดการพนักงาน</span>
 			</a>
 		</li>
 		<li <?php if($this->uri->segment(2)=="Admin/Position"){ echo "class='active'"; } ?>>
 			<a href="<?php echo SITE_URL('Admin/Position')?>">
 				<i class="pe-7s-id" style="color:black;"></i>
-				<p style="color:black;">การจัดการตำแหน่ง</p>
+				<span style="color:black;">การจัดการตำแหน่ง</span>
 			</a>
 		</li>
 		<!-- <li <?php //if($this->uri->segment(2)=="config"){ echo "class='active'"; } ?>>
