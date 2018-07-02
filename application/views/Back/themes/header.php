@@ -15,7 +15,7 @@
 	<link href="<?php echo BASE_URL()?>/assets/Back/css/bootstrap.min.css" rel="stylesheet" />
 
 	<!--  Light Bootstrap Table core CSS    -->
-	<link href="<?php echo BASE_URL()?>/assets/Back/css/light-bootstrap-dashboard.css?v=1.4.0" rel="stylesheet"/>
+	<link href="<?php echo BASE_URL()?>/assets/Back/css/light-bootstrap-dashboard.css" rel="stylesheet"/>
 
 	<!-- Animation library for notifications   -->
 	<link href="<?php echo BASE_URL()?>/assets/Back/css/animate.min.css" rel="stylesheet"/>
@@ -45,13 +45,11 @@
 <body>
 
 	<div class="wrapper">
-		<div class="sidebar" data-color="blue" data-image="<?php echo BASE_URL()?>/assets/Back/img/sidebar-4.jpg">
+		<div class="sidebar" data-color="" data-image="<?php echo BASE_URL()?>/assets/Back/img/sidebar-4.jpg">
 
 			<!--
-
 			Tip 1: you can change the color of the sidebar using: data-color="blue | azure | green | orange | red | purple"
 			Tip 2: you can also add an image using data-image tag
-
 		-->
 
 		<div class="sidebar-wrapper">
@@ -62,7 +60,7 @@
 			</div>
 
 			<ul class="nav">
-				<!-- <li <?php //if($this->uri->segment(1)=="home"){ echo "class='active'"; } ?>>
+		<!-- <li <?php //if($this->uri->segment(1)=="home"){ echo "class='active'"; } ?>>
 				<a href="<?php //echo SITE_URL('home');?>">
 				<i class="pe-7s-graph2"></i>
 				<p>ภาพรวม</p>
@@ -70,38 +68,38 @@
 		</li> -->
 		<li <?php if($this->uri->segment(2)=="Dashboard"){ echo "class='active'"; } ?>>
 			<a href="<?php echo SITE_URL('Admin/Dashboard');?>">
-				<i class="pe-7s-graph"></i>
-				<p style="color:red;">ภาพรวม </p><span>(ทำที่หลังสุด)</span>
+				<i class="pe-7s-graph" style="color:black;"></i>
+				<p style="color:red;">ภาพรวม </p><span style="color:black;">(ทำที่หลังสุด)</span>
 			</a>
 		</li>
 		<li <?php if($this->uri->segment(2)=="Product"){ echo "class='active'"; } ?>>
 			<a href="<?php echo SITE_URL('Admin/Product')?>">
-				<i class="pe-7s-box2"></i>
-				<p style="color:red;">การจัดการสินค้า</p><span>(ทำที่หลังสุด)</span>
+				<i class="pe-7s-box2" style="color:black;"></i>
+				<p style="color:red;">การจัดการสินค้า</p><span style="color:black;">(ทำที่หลังสุด)</span>
 			</a>
 		</li>
 		<li <?php if($this->uri->segment(2)=="Category"){ echo "class='active'"; } ?>>
 			<a href="<?php echo SITE_URL('Admin/Category')?>">
-				<i class="pe-7s-keypad"></i>
+				<i class="pe-7s-keypad" style="color:black;"></i>
 				<p style="color:red;">การจัดการประเภทสินค้า</p>
 			</a>
 		</li>
 		<li <?php if($this->uri->segment(2)=="Brand"){ echo "class='active'"; } ?>>
 			<a href="<?php echo SITE_URL('Admin/Brand')?>">
-				<i class="pe-7s-gleam"></i>
-				<p>การจัดการแบรนด์สินค้า</p>
+				<i class="pe-7s-gleam" style="color:black;"></i>
+				<p style="color:black;">การจัดการแบรนด์สินค้า</p>
 			</a>
 		</li>
 		<li <?php if($this->uri->segment(2)=="Employee"){ echo "class='active'"; } ?>>
 			<a href="<?php echo SITE_URL('Admin/Employee')?>">
-				<i class="pe-7s-users"></i>
+				<i class="pe-7s-users" style="color:black;"></i>
 				<p style="color:red;">การจัดการพนักงาน</p>
 			</a>
 		</li>
 		<li <?php if($this->uri->segment(2)=="Admin/Position"){ echo "class='active'"; } ?>>
 			<a href="<?php echo SITE_URL('Admin/Position')?>">
-				<i class="pe-7s-id"></i>
-				<p>การจัดการตำแหน่ง</p>
+				<i class="pe-7s-id" style="color:black;"></i>
+				<p style="color:black;">การจัดการตำแหน่ง</p>
 			</a>
 		</li>
 		<!-- <li <?php //if($this->uri->segment(2)=="config"){ echo "class='active'"; } ?>>

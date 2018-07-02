@@ -68,10 +68,12 @@ class Brand extends CI_Controller
   public function DeleteBrand()
   {
     $id = $this->uri->segment(4);
+
     $input = array(
       'brandId' => $id,
       'brandStatus' => 2,
      );
+
      $this->BrandModel->UpdateBrand($input);
 
      //Alert

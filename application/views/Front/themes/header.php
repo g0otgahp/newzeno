@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Bootshop online Shopping cart</title>
+  <title>Newzeno : ตัวแทนจำหน่ายวิดีโอวอล โปรเจคเตอร์ อันดับ 1 ของประเทศไทย</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
   <meta name="author" content="">
@@ -51,7 +51,7 @@
     </form>
   </div>
   <!-- Navbar ================================================== -->
-  <div class="">
+  <div>
     <div style="background-color:#3a3f44;">
       <div id="logoArea" class="navbar">
         <a data-target="#topMenu" data-toggle="collapse" class="btn btn-navbar" style="margin-top:8px; padding:5px;">
