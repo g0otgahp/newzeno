@@ -7,50 +7,33 @@
           <table class="table table-hover dataTable">
             <thead>
               <tr>
-                <th width="20%">เลขที่</th>
-                <th>ชื่อลูกค้า</th>
+                <th width="10%">เลขที่</th>
+                <th>รูปพนักงาน</th>
+                <th>ชื่อพนักงาน</th>
+                <th>ชื่อเล่น</th>
                 <th>เบอร์โทรศัพท์</th>
-                <th>E-Mail</th>
+                <th>ตำแหน่ง</th>
                 <th>ตัวเลือก</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>NO-E001</td>
-                <td>บอร์ม</td>
-                <td>0892838594</td>
-                <td>bomb@gmail.com</td>
-                <td>
-                <button class="btn btn-primary">รายละเอียด</button>
-                </td>
-              </tr>
-              <tr>
-                <td>NO-C002</td>
-                <td>ทาย</td>
-                <td>0892838594</td>
-                <td>tine@gmail.com</td>
-                <td>
-                <button class="btn btn-primary">รายละเอียด</button>
-                </td>
-              </tr>
-              <tr>
-                <td>NO-C003</td>
-                <td>เจ</td>
-                <td>0892838594</td>
-                <td>jay@gmail.com</td>
-                <td>
-                <button class="btn btn-primary">รายละเอียด</button>
-                </td>
-              </tr>
-              <tr>
-                <td>NO-C004</td>
-                <td>โต้ง</td>
-                <td>0892838594</td>
-                <td>Tong@gmail.com</td>
-                <td>
-                <button class="btn btn-primary">รายละเอียด</button>
-                </td>
-              </tr>
+
+              <?php $i = 1; foreach ($select as $select): ?>
+
+                <tr>
+                  <td><?php echo $i ?></td>
+                  <td><img class="avatar border-gray" src="<?php echo BASE_URL('uploads/Employees/'.$select['profileImg']) ?>" ></td>
+                  <td><?php echo $select['profileFname']." ".$select['profileLname'] ?></td>
+                  <td><?php echo $select['profileNickname']?></td>
+                  <td><?php echo $select['profilePhone'] ?></td>
+                  <td><?php echo $select['positionName'] ?></td>
+                  <td>
+                  <a href="<?php echo SITE_URL('Admin/Employee/ShowDetail/'.$select['profileId']) ?>" class="btn btn-primary">รายละเอียด</a>
+                  </td>
+                </tr>
+
+              <?php $i++; endforeach; ?>
+
             </tbody>
           </table>
         </div>
