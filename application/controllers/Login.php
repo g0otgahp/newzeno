@@ -32,12 +32,22 @@ class Login extends CI_Controller
         $_SESSION['positionId'] = $CheckLogin[0]['positionId'];
         $_SESSION['positionName'] = $CheckLogin[0]['positionName'];
         $_SESSION['Status'] = 'NZN';
-        echo "<script>document.location='" . SITE_URL('Admin/Dashboard') . "'</script>";
+        $msg = "เข้าสู่ระบบ";
+        $this->alert($msg);
+      } else {
+        $msg = "บัญชีหรือรหัสผ่านไม่ถูกต้อง";
+        $this->alert($msg);
       }
     } else {
-      echo "<script>alert('บัญชีหรือรหัสผ่านไม่ถูกต้อง')</script>";
-      echo "<script>document.location='" . SITE_URL('Login') . "'</script>";
+      $msg = "บัญชีหรือรหัสผ่านไม่ถูกต้อง";
+      $this->alert($msg);
     }
+  }
+
+  public function alert($msg)
+  {
+    echo "<script>alert('".$msg."')</script>";
+    echo "<script>document.location='" . $_SERVER['HTTP_REFERER'] . "'</script>";
   }
 
   public function Logout()
