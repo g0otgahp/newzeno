@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
-	<link rel="icon" type="image/png" href="<?php echo BASE_URL()?>/assets/Back/img/favicon.ico">
+	<link rel="icon" type="image/png" href="<?php echo BASE_URL()?>/assets/Back/img/newicon_ZV1_icon.ico">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
 	<title>Newzeno : Administration</title>

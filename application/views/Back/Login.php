@@ -4,7 +4,7 @@
 	<meta http-equiv=Content-Type content="text/html; charset=utf-8">
 	<title>Newzeno : Administrator</title>
 </head>
-<link rel="icon" type="image/png" href="<?php echo BASE_URL()?>/assets/Back/img/favicon.ico">
+<link rel="icon" type="image/png" href="<?php echo BASE_URL()?>/assets/Back/img/newicon_ZV1_icon.ico">
 <link href="<?php echo BASE_URL()?>/assets/Back/css/bootstrap.min.css" rel="stylesheet" />
 
 

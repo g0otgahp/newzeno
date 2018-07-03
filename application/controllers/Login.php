@@ -47,7 +47,7 @@ class Login extends CI_Controller
   public function alert($msg)
   {
     echo "<script>alert('".$msg."')</script>";
-    echo "<script>document.location='" . $_SERVER['HTTP_REFERER'] . "'</script>";
+    echo "<script>window.location='" . $_SERVER['HTTP_REFERER'] . "'</script>";
   }
 
   public function Logout()
