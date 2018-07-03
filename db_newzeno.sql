@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 02, 2018 at 09:42 AM
+-- Generation Time: Jul 03, 2018 at 07:45 AM
 -- Server version: 10.1.32-MariaDB
 -- PHP Version: 5.6.36
 
@@ -43,7 +43,7 @@ CREATE TABLE `admin` (
 
 INSERT INTO `admin` (`adminId`, `adminUsername`, `adminPassword`, `adminPosition`, `adminStatus`, `profileId`) VALUES
 (1, 'admin', '81dc9bdb52d04dc20036dbd8313ed055', 1, 1, 1),
-(2, 'kaiixtongz', '8011288101322ade03fc48c44fd10403', 1, 1, 2),
+(2, 'kaiixtongz', '6ce5ffdd9b901df6732b6f1494233a63', 1, 1, 2),
 (3, 'test', '098f6bcd4621d373cade4e832627b4f6', 4, 1, 3);
 
 -- --------------------------------------------------------
@@ -78,8 +78,20 @@ INSERT INTO `brand` (`brandId`, `brandName`, `brandImg`, `brandStatus`) VALUES
 CREATE TABLE `category` (
   `cateId` int(11) NOT NULL,
   `cateName` varchar(50) NOT NULL,
+  `cateImg` varchar(50) NOT NULL DEFAULT 'noImg.png',
   `cateStatus` int(11) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `category`
+--
+
+INSERT INTO `category` (`cateId`, `cateName`, `cateImg`, `cateStatus`) VALUES
+(1, 'Video Wall', '20180703065255.jpg', 1),
+(2, 'Digital Signage', '20180703052928.jpg', 1),
+(4, 'Projector', '20180703061311.jpg', 2),
+(6, 'Test', 'noImg.png', 2),
+(7, 'Kaiixtongz', 'noImg.png', 2);
 
 -- --------------------------------------------------------
 
@@ -187,7 +199,7 @@ ALTER TABLE `brand`
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `cateId` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `cateId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `position`
@@ -199,7 +211,7 @@ ALTER TABLE `position`
 -- AUTO_INCREMENT for table `profile`
 --
 ALTER TABLE `profile`
-  MODIFY `profileId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `profileId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

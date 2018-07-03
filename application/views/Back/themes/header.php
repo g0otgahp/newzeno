@@ -89,7 +89,7 @@
 		<li <?php if($this->uri->segment(2)=="Category"){ echo "class='active'"; } ?>>
 			<a href="<?php echo SITE_URL('Admin/Category')?>">
 				<i class="pe-7s-keypad" style="color:black;"></i>
-				<span style="color:red;">การจัดการประเภทสินค้า</span>
+				<span style="color:black;">การจัดการประเภทสินค้า</span>
 			</a>
 		</li>
 		<li <?php if($this->uri->segment(2)=="Brand"){ echo "class='active'"; } ?>>

@@ -23,5 +23,42 @@ class CategoryModel extends CI_Model
   public function Select()
   {
 
+    $dataShow = $this->db->where('cateStatus',1)->get('category')->result_array();
+
+    // echo "<pre>";
+    // print_r($dataShow);
+    // exit();
+    return $dataShow;
+
   }
+
+  public function SaveCategory($dataInsert)
+  {
+
+    // echo "<pre>";
+    // print_r($dataInsert);
+    // exit();
+
+    $this->db->insert('category',$dataInsert);
+
+  }
+
+  public function UpdateCategory($dataUpdate)
+  {
+
+    $this->db
+    ->where('cateId',$dataUpdate['cateId'])
+    ->update('category',$dataUpdate);
+
+  }
+
+  public function DeleteCategory($dataDelete)
+  {
+
+    $this->db
+    ->where('cateId',$dataDelete['cateId'])
+    ->update('category',$dataDelete);
+
+  }
+
 }
