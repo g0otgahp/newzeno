@@ -28,6 +28,9 @@
 	<!-- Bootstrap Datatable -->
 	<link href="<?php echo BASE_URL()?>/assets/Back/datatable-bootstrap/dataTables.bootstrap.min.css" rel="stylesheet"/>
 
+	<!-- Select2.css -->
+	<link rel="stylesheet" href="<?php echo BASE_URL()?>assets/Back/select2-4.0.6-rc.1/dist/css/select2.min.css">
+
 	<!-- Animate.css -->
 	<link rel="stylesheet" href="<?php echo BASE_URL()?>/assets/Back/css/animate.css">
 	<!-- Icomoon Icon Fonts-->

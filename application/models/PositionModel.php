@@ -22,15 +22,10 @@ class PositionModel extends CI_Model
 
   public function Select()
   {
-
     $data = $this->db
     ->where('positionStatus',1)
     ->get('position')->result_array();
-    // echo "<pre>";
-    // print_r($data);
-    // exit();
     return $data;
-
   }
 
   public function SavePosition($positionData)

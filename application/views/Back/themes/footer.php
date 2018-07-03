@@ -34,6 +34,10 @@
   <script src="<?php echo BASE_URL()?>/assets/Back/datatable-bootstrap/jquery.dataTables.min.js" type="text/javascript"></script>
   <script src="<?php echo BASE_URL()?>/assets/Back/datatable-bootstrap/dataTables.bootstrap.min.js" type="text/javascript"></script>
 
+
+  <!-- Select2 -->
+  <script src="<?php echo BASE_URL()?>assets/Back/select2-4.0.6-rc.1/dist/js/select2.min.js" type="text/javascript"></script>
+
     <!--  Notifications Plugin    -->
     <!-- <script src="assets/js/bootstrap-notify.js"></script> -->
 
@@ -49,6 +53,13 @@
 
 
   <script>
+
+  //Select
+  $(document).ready(function() {
+      $('.select2-single').select2();
+  });
+
+  //dataTable
   $(document).ready(function() {
       $('.dataTable').DataTable();
   } );
