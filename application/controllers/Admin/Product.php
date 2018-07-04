@@ -48,7 +48,7 @@ class Product extends CI_Controller
       'Result' => array(
         'brand' => $brand,
         'category' => $category,
-        'product' => $product,
+        'data' => $product,
       ),
       'View' => 'Back/ProductDetail',
     );
