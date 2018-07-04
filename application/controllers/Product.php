@@ -23,7 +23,6 @@ class Product extends CI_Controller
     {
 
         $this->load->view('Front/themes/header');
-        $this->load->view('Front/themes/slide');
         $this->load->view('Front/themes/menu');
         $this->load->view('Front/ProductList');
         $this->load->view('Front/themes/footer');
