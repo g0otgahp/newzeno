@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Home extends CI_Controller
+class Product extends CI_Controller
 {
 
     /**
@@ -25,7 +25,7 @@ class Home extends CI_Controller
         $this->load->view('Front/themes/header');
         $this->load->view('Front/themes/slide');
         $this->load->view('Front/themes/menu');
-        $this->load->view('Front/Home');
+        $this->load->view('Front/ProductList');
         $this->load->view('Front/themes/footer');
     }
 }
