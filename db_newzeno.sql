@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.0.1
+-- version 4.6.5.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 03, 2018 at 07:45 AM
--- Server version: 10.1.32-MariaDB
--- PHP Version: 5.6.36
+-- Generation Time: Jul 04, 2018 at 06:13 AM
+-- Server version: 10.1.21-MariaDB
+-- PHP Version: 5.6.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -89,9 +87,10 @@ CREATE TABLE `category` (
 INSERT INTO `category` (`cateId`, `cateName`, `cateImg`, `cateStatus`) VALUES
 (1, 'Video Wall', '20180703065255.jpg', 1),
 (2, 'Digital Signage', '20180703052928.jpg', 1),
-(4, 'Projector', '20180703061311.jpg', 2),
-(6, 'Test', 'noImg.png', 2),
-(7, 'Kaiixtongz', 'noImg.png', 2);
+(4, 'Projector', '20180703061311.jpg', 1),
+(6, 'Test', 'noImg.png', 1),
+(7, 'Kaiixtongz', 'noImg.png', 1),
+(8, 'แว่นตา่่่่่asdsd', '20180703075134.png', 2);
 
 -- --------------------------------------------------------
 
@@ -116,6 +115,51 @@ INSERT INTO `position` (`positionId`, `positionName`, `positionStatus`) VALUES
 (4, 'IT Support - ผู้ดูแลระบบ', 1),
 (7, 'Admin - แอดมิน', 1),
 (8, 'Manager - ผู้จัดการ', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `product`
+--
+
+CREATE TABLE `product` (
+  `productId` int(11) NOT NULL,
+  `productName` varchar(255) NOT NULL,
+  `productSubdetail` varchar(255) NOT NULL,
+  `productDetail` varchar(5000) NOT NULL,
+  `productImg` varchar(50) NOT NULL DEFAULT 'noImg.png',
+  `productCateid` int(11) NOT NULL,
+  `productBrandid` int(11) NOT NULL,
+  `productStatus` int(11) NOT NULL DEFAULT '1'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `product`
+--
+
+INSERT INTO `product` (`productId`, `productName`, `productSubdetail`, `productDetail`, `productImg`, `productCateid`, `productBrandid`, `productStatus`) VALUES
+(1, 'GTX 1080ti 8GB ', 'การ์ดจอ', 'การ์ดจอสำหรับใช้งาน Video Wall', 'noImg.png', 1, 1, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `productimage`
+--
+
+CREATE TABLE `productimage` (
+  `proimageId` int(11) NOT NULL,
+  `proimageName` varchar(50) NOT NULL,
+  `proimageProductid` int(11) NOT NULL,
+  `proimageStatus` int(11) NOT NULL DEFAULT '1'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+
+--
+-- Dumping data for table `productimage`
+--
+
+INSERT INTO `productimage` (`proimageId`, `proimageName`, `proimageProductid`, `proimageStatus`) VALUES
+(1, 'noImg.png', 1, 1),
+(2, 'noImg.png', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -174,6 +218,18 @@ ALTER TABLE `position`
   ADD PRIMARY KEY (`positionId`);
 
 --
+-- Indexes for table `product`
+--
+ALTER TABLE `product`
+  ADD PRIMARY KEY (`productId`);
+
+--
+-- Indexes for table `productimage`
+--
+ALTER TABLE `productimage`
+  ADD PRIMARY KEY (`proimageId`);
+
+--
 -- Indexes for table `profile`
 --
 ALTER TABLE `profile`
@@ -188,32 +244,36 @@ ALTER TABLE `profile`
 --
 ALTER TABLE `admin`
   MODIFY `adminId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
 --
 -- AUTO_INCREMENT for table `brand`
 --
 ALTER TABLE `brand`
   MODIFY `brandId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
 --
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `cateId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
+  MODIFY `cateId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `position`
 --
 ALTER TABLE `position`
   MODIFY `positionId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
+--
+-- AUTO_INCREMENT for table `product`
+--
+ALTER TABLE `product`
+  MODIFY `productId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `productimage`
+--
+ALTER TABLE `productimage`
+  MODIFY `proimageId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `profile`
 --
 ALTER TABLE `profile`
   MODIFY `profileId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-COMMIT;
-
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
