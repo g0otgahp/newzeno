@@ -20,8 +20,38 @@ class ProductModel extends CI_Model
   * @see https://codeigniter.com/user_guide/general/urls.html
   */
 
-  public function Select()
+  public function SelectProduct()
   {
+    $data = $this->db
+    ->where('productStatus',1)
+    ->where('cateStatus',1)
+    ->where('brandStatus',1)
+    ->join('brand','brand.brandId = product.productBrandid')
+    ->join('category','category.CateId = product.productCateid')
+    ->get('product')
+    ->result_array();
+    return $data;
+  }
+
+  public function SelectProductByID($id)
+  {
+    $data['product'] = $this->db
+    ->where('productId',$id)
+    ->join('brand','brand.brandId = product.productBrandid')
+    ->join('category','category.CateId = product.productCateid')
+    ->get('product')
+    ->result_array();
+
+    $data['productImage'] = $this->db
+    ->where('proimageStatus',1)
+    ->where('proimageProductid',$data['product'][0]['productId'])
+    ->get('productimage')
+    ->result_array();
+
+    // echo "<pre>";
+    // print_r($data);
+    // exit();
+    return $data;
 
   }
 }

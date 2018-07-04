@@ -37,14 +37,12 @@
 	<link rel="stylesheet" href="<?php echo BASE_URL()?>/assets/Back/css/icomoon.css">
 
 	<!-- <link rel="stylesheet" href="assets/css/style.css"> -->
+	<link href="https://fonts.googleapis.com/css?family=Prompt" rel="stylesheet">
 
 	<style>
 	.js .animate-box {
 		opacity: 0;
 	}
-	</style>
-	<link href="https://fonts.googleapis.com/css?family=Prompt" rel="stylesheet">
-  <style>
 
   * , span , td , p , a , label , h1 , h2 , h3 , h4 {
     font-family: 'Prompt', sans-serif;

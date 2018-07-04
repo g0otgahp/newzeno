@@ -22,21 +22,31 @@
   <link rel="apple-touch-icon-precomposed" href="<?php echo BASE_URL()?>/assets/Front/themes/images/ico/apple-touch-icon-57-precomposed.png">
   <style type="text/css" id="enject"></style>
   <link href="https://fonts.googleapis.com/css?family=Prompt" rel="stylesheet">
+
+  <!-- Bootstrap Datatable -->
+	<link href="<?php echo BASE_URL()?>/assets/Back/datatable-bootstrap/dataTables.bootstrap.min.css" rel="stylesheet"/>
+
+	<!-- Select2.css -->
+	<link rel="stylesheet" href="<?php echo BASE_URL()?>assets/Back/select2-4.0.6-rc.1/dist/css/select2.min.css">
+
+
   <style>
-  * {
+  * , span , td , p , a , label , h1 , h2 , h3 , h4 {
     font-family: 'Prompt', sans-serif;
+		font-size: 14px;
   }
 </style>
+
 </head>
 <body>
   <div style="background-color:#3a3f44;">
     <div class="container" >
       <div class="row" style="padding:5px;">
         <div class="pull-right">
-          <a href="#" style="color:white;"><span class="">Menu 1</span></a>
-          <a href="#" style="color:white;"><span class=""> / Menu 2</span></a>
-          <a href="#" style="color:white;"><span class=""> / Menu 3</span></a>
-          <a href="<?php echo SITE_URL('Login');?>" style="color:white;"><span class=""> / Administrator</span></a>
+          <!-- <a href="#" style="color:white;"><span class="">Menu 1</span></a> /
+          <a href="#" style="color:white;"><span class="">Menu 2</span></a> /
+          <a href="#" style="color:white;"><span class="">Menu 3</span></a> / -->
+          <a href="<?php echo SITE_URL('Login');?>" style="color:white;"><span class="">Administrator</span></a>
         </div>
       </div>
     </div>
@@ -45,8 +55,16 @@
     <a href="<?php echo SITE_URL('Home');?>"><img src="<?php echo BASE_URL()?>/uploads/logo/logonewzeno.png" height="100px"/></a>
     <form class="pull-right" style="margin-top:10px;">
       <input style="margin-top:10px;" class="form-control" type="text" placeholder="Products Search"/>
-      <select class="form-control" style="margin-top:10px;">
-        <option>All</option>
+      <select class="form-control select2-single" style="margin-top:10px;">
+        <option>-เลือกประเภท-</option>
+        <option>CLOTHES </option>
+        <option>FOOD AND BEVERAGES </option>
+        <option>HEALTH & BEAUTY </option>
+        <option>SPORTS & LEISURE </option>
+        <option>BOOKS & ENTERTAINMENTS </option>
+      </select>
+      <select class="form-control select2-single" style="margin-top:10px;">
+        <option>-เลือกยี่ห้อ-</option>
         <option>CLOTHES </option>
         <option>FOOD AND BEVERAGES </option>
         <option>HEALTH & BEAUTY </option>

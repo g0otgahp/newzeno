@@ -24,6 +24,39 @@ class Product extends CI_Controller
 
   public function index()
   {
+    $product = $this->ProductModel->SelectProduct();
+    $brand = $this->BrandModel->SelectBrand();
+    $category = $this->CategoryModel->Select();
+    $value = array(
+      'Result' => array(
+        'brand' => $brand,
+        'category' => $category,
+        'product' => $product,
+      ),
+      'View' => 'Back/ProductList',
+    );
+    $this->LoadPage($value);
+  }
+
+  public function ProductDetail()
+  {
+    $id = $this->uri->segment(4);
+    $product = $this->ProductModel->SelectProductByID($id);
+    $brand = $this->BrandModel->SelectBrand();
+    $category = $this->CategoryModel->Select();
+    $value = array(
+      'Result' => array(
+        'brand' => $brand,
+        'category' => $category,
+        'product' => $product,
+      ),
+      'View' => 'Back/ProductDetail',
+    );
+    $this->LoadPage($value);
+  }
+
+  public function ProductForm()
+  {
     $brand = $this->BrandModel->SelectBrand();
     $category = $this->CategoryModel->Select();
     $value = array(
@@ -31,9 +64,24 @@ class Product extends CI_Controller
         'brand' => $brand,
         'category' => $category,
       ),
-      'View' => 'Back/ProductList',
+      'View' => 'Back/ProductForm',
     );
     $this->LoadPage($value);
+  }
+
+  public function saveProduct()
+  {
+    $input = $this->input->post();
+    echo "<pre>";
+    print_r($input);
+    exit();
+    // $value = array(
+    //   'Result' => array(
+    //     //
+    //   ),
+    //   'View' => 'Back/ProductList',
+    // );
+    // $this->LoadPage($value);
   }
 
   public function ProductSearch()

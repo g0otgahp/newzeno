@@ -37,27 +37,31 @@
 
       <div class="col-md-12 animate-box">
         <div class="card" style="padding:20px;" >
-          <a href="<?php echo SITE_URL('')?>" class="btn btn-success" style="margin-bottom:20px;" >เพิ่มข้อมูลสินค้า</a>
+          <a href="<?php echo SITE_URL('Admin/Product/ProductForm')?>" class="btn btn-success" style="margin-bottom:20px;" >เพิ่มข้อมูลสินค้า</a>
           <table class="table table-hover dataTable">
             <thead>
               <tr>
                 <th width="7%">ลำดับ</th>
                 <th>รูปภาพ</th>
-                <th>ชื่อสินค้า</th>
-                <th>จำนวนคงเหลือ</th>
+                <th width="40%">ชื่อสินค้า</th>
+                <th>แบรนด์</th>
+                <th>ประเภทสินค้า</th>
                 <th>ตัวเลือก</th>
               </tr>
             </thead>
             <tbody>
-              <?php for ($i=1; $i < 4; $i++) {?>
+              <?php $i=1; foreach ($product as $row): ?>
                 <tr>
                   <td><?php echo $i; ?></td>
-                  <td><img src="<?php echo BASE_URL('assets/back/img/26012561.jpeg');?>" class="img-thumbnail" width="150"></td>
-                  <td>Monitor Sharp</td>
-                  <td style="color:red">9</td>
-                  <td><button class="btn btn-info"><i class="pe-7s-paper-plane"></i>รายการทั้งหมด</button></td>
+                  <td><img src="<?php echo BASE_URL('uploads/products/'.$row['productImg']);?>" class="img-thumbnail" width="100"></td>
+                  <td><?php echo $row['productName'] ?></td>
+                  <td><?php echo $row['brandName'] ?></td>
+                  <td><?php echo $row['cateName'] ?></td>
+                  <td>
+                    <a href="<?php echo SITE_URL('Admin/Product/ProductDetail/'.$row['productId']); ?>" class="btn btn-info"><i class="pe-7s-paper-plane"></i>รายการทั้งหมด</a>
+                  </td>
                 </tr>
-              <?php } ?>
+              <?php $i++; endforeach; ?>
             </tbody>
           </table>
         </div>
