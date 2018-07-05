@@ -27,4 +27,13 @@ class Product extends CI_Controller
         $this->load->view('Front/ProductList');
         $this->load->view('Front/themes/footer');
     }
+
+    public function ProductDetail()
+    {
+
+        $this->load->view('Front/themes/header');
+        $this->load->view('Front/themes/menu');
+        $this->load->view('Front/ProductDetail');
+        $this->load->view('Front/themes/footer');
+    }
 }
