@@ -2,8 +2,8 @@
 
   <div class="span9">
     <ul class="breadcrumb">
-      <li><a href="<?php echo SITE_URL('Home'); ?>">Home</a> <span class="divider">/</span></li>
-      <li class="active">Products Name</li>
+      <li><a href="<?php echo SITE_URL('Home'); ?>">หน้าแรก</a> <span class="divider">/</span></li>
+      <li class="active">รายการสินค้า</li>
     </ul>
 
     <h3> Products Name <small class="pull-right"> 40 products are available </small></h3>

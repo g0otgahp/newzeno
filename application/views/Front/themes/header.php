@@ -24,18 +24,24 @@
   <link href="https://fonts.googleapis.com/css?family=Prompt" rel="stylesheet">
 
   <!-- Bootstrap Datatable -->
-	<link href="<?php echo BASE_URL()?>/assets/Back/datatable-bootstrap/dataTables.bootstrap.min.css" rel="stylesheet"/>
+  <link href="<?php echo BASE_URL()?>/assets/Back/datatable-bootstrap/dataTables.bootstrap.min.css" rel="stylesheet"/>
 
-	<!-- Select2.css -->
-	<link rel="stylesheet" href="<?php echo BASE_URL()?>assets/Back/select2-4.0.6-rc.1/dist/css/select2.min.css">
+  <!-- Select2.css -->
+  <link rel="stylesheet" href="<?php echo BASE_URL()?>assets/Back/select2-4.0.6-rc.1/dist/css/select2.min.css">
 
 
   <style>
-  * , span , td , p , a , label , h1 , h2 , h3 , h4 {
+  * , span , td , p , a , label , button {
     font-family: 'Prompt', sans-serif;
-		font-size: 14px;
+    font-size: 14px;
   }
 </style>
+
+  <style>
+  h1 , h2 , h3 , h4  {
+    font-family: 'Prompt', sans-serif;
+  }
+  </style>
 
 </head>
 <body>
@@ -71,7 +77,7 @@
         <option>SPORTS & LEISURE </option>
         <option>BOOKS & ENTERTAINMENTS </option>
       </select>
-      <button type="submit" class="btn btn-primary">Go</button>
+      <button type="submit" class="btn btn-primary">ค้นหา</button>
     </form>
   </div>
   <!-- Navbar ================================================== -->
@@ -84,22 +90,83 @@
           <span class="icon-bar"></span>
         </a>
         <div class="navbar-inner">
+
           <ul id="topMenu" class="nav">
-            <li class=""><a href="#">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</a></li>
-            <li class=""><a href="#">Menu 1</a></li>
-            <li class=""><a href="#">Menu 2</a></li>
-            <li class=""><a href="#">Menu 3</a></li>
-            <li class=""><a href="#">Menu 4</a></li>
-            <li class=""><a href="#">Menu 5</a></li>
-            <li class=""><a href="#">Menu 6</a></li>
-            <li class=""><a href="#">Menu 7</a></li>
-            <li class=""><a href="#">Menu 8</a></li>
-            <li class=""><a href="#">Menu 9</a></li>
-            <li class="">
+            <li class=""><a href="#">&nbsp;</a></li>
+
+
+            <ul class="nav nav-pills">
+
+              <li class=""><a href="<?php echo SITE_URL('Home'); ?>">หน้าแรก</a></li>
+
+              <li class="dropdown">
+                <a class="dropdown-toggle"
+                data-toggle="dropdown"
+                href="#">
+                สินค้า
+                <!-- <b class="caret"></b> -->
+              </a>
+              <ul class="dropdown-menu">
+                <?php $dataShow = $this->CategoryModel->Select(); ?>
+
+                <!-- links -->
+
+                <!-- <li class=""><a href="<?php echo SITE_URL('Product'); ?>"><?php echo $CategoryShow['cateName'] ?></a></li> -->
+
+                <li class="dropdown-submenu">
+                  <a tabindex="-1" href="#">Digital Signage</a>
+                  <ul class="dropdown-menu">
+                    <?php foreach ($dataShow as $CategoryShow): ?>
+                      <li class=""><a href="<?php echo SITE_URL('Product'); ?>"><?php echo $CategoryShow['cateName'] ?></a></li>
+                    <?php endforeach; ?>
+                  </ul>
+                </li>
+
+                <li class="dropdown-submenu">
+                  <a tabindex="-1" href="#">Commercial Tv</a>
+                  <ul class="dropdown-menu">
+                    <?php foreach ($dataShow as $CategoryShow): ?>
+                      <li class=""><a href="<?php echo SITE_URL('Product'); ?>"><?php echo $CategoryShow['cateName'] ?></a></li>
+                    <?php endforeach; ?>
+                  </ul>
+                </li>
+
+                <li class="dropdown-submenu">
+                  <a tabindex="-1" href="#">OLED Signage</a>
+                  <ul class="dropdown-menu">
+                    <?php foreach ($dataShow as $CategoryShow): ?>
+                      <li class=""><a href="<?php echo SITE_URL('Product'); ?>"><?php echo $CategoryShow['cateName'] ?></a></li>
+                    <?php endforeach; ?>
+                  </ul>
+                </li>
+
+                <li class="dropdown-submenu">
+                  <a tabindex="-1" href="#">LED Signage</a>
+                  <ul class="dropdown-menu">
+                    <?php foreach ($dataShow as $CategoryShow): ?>
+                      <li class=""><a href="<?php echo SITE_URL('Product'); ?>"><?php echo $CategoryShow['cateName'] ?></a></li>
+                    <?php endforeach; ?>
+                  </ul>
+                </li>
+
+
+
+              </ul>
             </li>
+
+            <li class=""><a href="<?php echo SITE_URL('Home'); ?>">บริการ</a></li>
+            <li class=""><a href="<?php echo SITE_URL('Home'); ?>">สถานที่จำหน่าย</a></li>
+            <li class=""><a href="<?php echo SITE_URL('Home'); ?>">วิธีชำระเงิน</a></li>
+            <li class=""><a href="<?php echo SITE_URL('Home'); ?>">ข่าวสาร</a></li>
+            <li class=""><a href="<?php echo SITE_URL('Home'); ?>">ผลงาน</a></li>
+            <li class=""><a href="<?php echo SITE_URL('Contact'); ?>">ติดต่อเรา</a></li>
+
+
+
           </ul>
-        </div>
+        </ul>
       </div>
     </div>
   </div>
-  <!-- Header End====================================================================== -->
+</div>
+<!-- Header End====================================================================== -->

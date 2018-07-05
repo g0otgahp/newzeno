@@ -1,9 +1,9 @@
 
 <div class="span9">
   <ul class="breadcrumb">
-  <li><a href="<?php echo SITE_URL('Home'); ?>">Home</a> <span class="divider">/</span></li>
-  <li><a href="<?php echo SITE_URL('Product'); ?>">Products</a> <span class="divider">/</span></li>
-  <li class="active">Product Details</li>
+  <li><a href="<?php echo SITE_URL('Home'); ?>">หน้าแรก</a> <span class="divider">/</span></li>
+  <li><a href="<?php echo SITE_URL('Product'); ?>">รายการสินค้า</a> <span class="divider">/</span></li>
+  <li class="active">รายละเอียดสินค้า</li>
   </ul>
 <div class="row">
     <div id="gallery" class="span3">
