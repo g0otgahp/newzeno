@@ -4,32 +4,19 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class CategoryModel extends CI_Model
 {
 
-  /**
-  * Index Page for this controller.
-  *
-  * Maps to the following URL
-  *         http://example.com/index.php/welcome
-  *    - or -
-  *         http://example.com/index.php/welcome/index
-  *    - or -
-  * Since this controller is set as the default controller in
-  * config/routes.php, it's displayed at http://example.com/
-  *
-  * So any other public methods not prefixed with an underscore will
-  * map to /index.php/welcome/<method_name>
-  * @see https://codeigniter.com/user_guide/general/urls.html
-  */
-
-  public function Select()
+  public function SelectCategory()
   {
 
     $dataShow = $this->db->where('cateStatus',1)->get('category')->result_array();
-
-    // echo "<pre>";
-    // print_r($dataShow);
-    // exit();
+    $i=0;
+    foreach ($dataShow as $row) {
+    $dataShow[$i]['sortby'] = $this->db
+    ->where('sortbyCateid',$row['cateId'])
+    ->get('sortby')
+    ->result_array();
+    $i++;
+    }
     return $dataShow;
-
   }
 
   public function SaveCategory($dataInsert)
@@ -58,6 +45,20 @@ class CategoryModel extends CI_Model
     $this->db
     ->where('cateId',$dataDelete['cateId'])
     ->update('category',$dataDelete);
+
+  }
+
+  public function DeleteSortby($cateid)
+  {
+
+    $this->db->where('sortbyCateid',$cateid)->delete('sortby');
+
+  }
+
+  public function InsertSortby($ConnectBrand)
+  {
+
+    $this->db->insert_batch('sortby',$ConnectBrand);
 
   }
 

@@ -24,13 +24,18 @@
                   <td><?php echo $dataShow['cateName'] ?></td>
                   <td>
 
+                    <button class="btn btn-info"
+                    data-toggle="modal"
+                    data-target="#ConnectCategory<?php echo $dataShow['cateId'] ?>">เชื่อมสัมพัมธ์
+                    </button>
+
                     <button class="btn btn-warning"
                     data-toggle="modal"
                     data-target="#UpdateCategory<?php echo $dataShow['cateId'] ?>">แก้ไข
                     </button>
 
                     <a href="<?php echo SITE_URL('Admin/Category/DeleteCategory/'.$dataShow['cateId']); ?>"
-                      class="btn btn-danger" onClick="javascript: return confirm('ต้องการลบตำแหน่งนี้ใช่หรือไม่')"></i>ลบ</button>
+                      class="btn btn-danger" onClick="javascript: return confirm('ต้องการลบตำแหน่งนี้ใช่หรือไม่')"></i>ลบ</a>
                   </td>
                 </tr>
               <?php $i++; endforeach; ?>
