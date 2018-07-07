@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 04, 2018 at 06:13 AM
+-- Generation Time: Jul 07, 2018 at 04:00 AM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -77,6 +77,7 @@ CREATE TABLE `category` (
   `cateId` int(11) NOT NULL,
   `cateName` varchar(50) NOT NULL,
   `cateImg` varchar(50) NOT NULL DEFAULT 'noImg.png',
+  `categroupId` int(11) NOT NULL,
   `cateStatus` int(11) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -84,13 +85,32 @@ CREATE TABLE `category` (
 -- Dumping data for table `category`
 --
 
-INSERT INTO `category` (`cateId`, `cateName`, `cateImg`, `cateStatus`) VALUES
-(1, 'Video Wall', '20180703065255.jpg', 1),
-(2, 'Digital Signage', '20180703052928.jpg', 1),
-(4, 'Projector', '20180703061311.jpg', 1),
-(6, 'Test', 'noImg.png', 1),
-(7, 'Kaiixtongz', 'noImg.png', 1),
-(8, 'แว่นตา่่่่่asdsd', '20180703075134.png', 2);
+INSERT INTO `category` (`cateId`, `cateName`, `cateImg`, `categroupId`, `cateStatus`) VALUES
+(1, 'Video Wall', '20180703065255.jpg', 1, 1),
+(2, 'Digital Signage', '20180703052928.jpg', 1, 1),
+(4, 'Projector', '20180703061311.jpg', 1, 1),
+(6, 'Test', 'noImg.png', 1, 2),
+(7, 'Kaiixtongz', 'noImg.png', 1, 2),
+(8, 'แว่นตา่่่่่asdsd', '20180703075134.png', 1, 2);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `categroup`
+--
+
+CREATE TABLE `categroup` (
+  `categroupId` int(11) NOT NULL,
+  `categroupName` varchar(50) NOT NULL,
+  `categroupStatus` int(11) NOT NULL DEFAULT '1'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `categroup`
+--
+
+INSERT INTO `categroup` (`categroupId`, `categroupName`, `categroupStatus`) VALUES
+(1, 'Digital Signage', 1);
 
 -- --------------------------------------------------------
 
@@ -126,6 +146,7 @@ CREATE TABLE `product` (
   `productId` int(11) NOT NULL,
   `productName` varchar(255) NOT NULL,
   `productSubdetail` varchar(255) NOT NULL,
+  `productPrice` int(11) NOT NULL,
   `productDetail` varchar(5000) NOT NULL,
   `productImg` varchar(50) NOT NULL DEFAULT 'noImg.png',
   `productCateid` int(11) NOT NULL,
@@ -137,8 +158,8 @@ CREATE TABLE `product` (
 -- Dumping data for table `product`
 --
 
-INSERT INTO `product` (`productId`, `productName`, `productSubdetail`, `productDetail`, `productImg`, `productCateid`, `productBrandid`, `productStatus`) VALUES
-(1, 'GTX 1080ti 8GB ', 'การ์ดจอ', 'การ์ดจอสำหรับใช้งาน Video Wall', 'noImg.png', 1, 1, 1);
+INSERT INTO `product` (`productId`, `productName`, `productSubdetail`, `productPrice`, `productDetail`, `productImg`, `productCateid`, `productBrandid`, `productStatus`) VALUES
+(1, 'GTX 1080ti 8GB ', 'การ์ดจอ', 10800, 'การ์ดจอสำหรับใช้งาน Video Wall', 'noImg.png', 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -159,7 +180,8 @@ CREATE TABLE `productimage` (
 
 INSERT INTO `productimage` (`proimageId`, `proimageName`, `proimageProductid`, `proimageStatus`) VALUES
 (1, 'noImg.png', 1, 1),
-(2, 'noImg.png', 1, 1);
+(2, 'noImg.png', 1, 1),
+(3, 'noImg.png', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -189,6 +211,31 @@ INSERT INTO `profile` (`profileId`, `profileFname`, `profileLname`, `profileNick
 (1, 'สมชาย', 'แสงสกุล', 'เจ', '1409909909009', 'หญิง', '0899998989', 'jay.bunapa@gmail.com', '20180702092238.jpg', '', 1),
 (2, 'อดิพงษ์', 'ธรรมนวกุล', 'โต้ง', '1103701252880', 'ชาย', '0809073005', 'kaiixtongz@gmail.com', '20180702092152.jpg', 'สาย 3', 1);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sortby`
+--
+
+CREATE TABLE `sortby` (
+  `sortbyId` int(11) NOT NULL,
+  `sortbyCateid` int(11) NOT NULL,
+  `sortbyBrandid` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `sortby`
+--
+
+INSERT INTO `sortby` (`sortbyId`, `sortbyCateid`, `sortbyBrandid`) VALUES
+(12, 1, 4),
+(13, 1, 3),
+(14, 2, 2),
+(16, 4, 4),
+(17, 4, 3),
+(18, 4, 2),
+(19, 4, 1);
+
 --
 -- Indexes for dumped tables
 --
@@ -210,6 +257,12 @@ ALTER TABLE `brand`
 --
 ALTER TABLE `category`
   ADD PRIMARY KEY (`cateId`);
+
+--
+-- Indexes for table `categroup`
+--
+ALTER TABLE `categroup`
+  ADD PRIMARY KEY (`categroupId`);
 
 --
 -- Indexes for table `position`
@@ -236,6 +289,12 @@ ALTER TABLE `profile`
   ADD PRIMARY KEY (`profileId`);
 
 --
+-- Indexes for table `sortby`
+--
+ALTER TABLE `sortby`
+  ADD PRIMARY KEY (`sortbyId`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -255,6 +314,11 @@ ALTER TABLE `brand`
 ALTER TABLE `category`
   MODIFY `cateId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
+-- AUTO_INCREMENT for table `categroup`
+--
+ALTER TABLE `categroup`
+  MODIFY `categroupId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
 -- AUTO_INCREMENT for table `position`
 --
 ALTER TABLE `position`
@@ -268,12 +332,17 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT for table `productimage`
 --
 ALTER TABLE `productimage`
-  MODIFY `proimageId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `proimageId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `profile`
 --
 ALTER TABLE `profile`
   MODIFY `profileId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `sortby`
+--
+ALTER TABLE `sortby`
+  MODIFY `sortbyId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
