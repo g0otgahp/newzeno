@@ -15,7 +15,17 @@
         <table>
           <tr>
             <td>ประเภทสินค้า : &nbsp;</td>
-            <td><input autocomplete="off" name="cateName" type="text" required class="form-control" style="margin-top:20px;" placeholder="กรอกชื่อตำแหน่ง" required></td>
+            <td><input autocomplete="off" name="cateName" type="text" required class="form-control" style="margin-top:20px;" placeholder="กรอกชื่อสินค้า" required></td>
+          </tr>
+          <tr>
+            <td>กลุ่มประเภทสินค้า : &nbsp;</td>
+            <td style="padding-top:10px">
+              <select class="form-control" name="categroupId" >
+                <?php foreach ($group as $group): ?>
+                  <option value="<?php echo $group['categroupId'] ?>"><?php echo $group['categroupName'] ?></option>
+                <?php endforeach; ?>
+              </select>
+            </td>
           </tr>
           <tr>
             <td>รูปประเภทสินค้า : &nbsp;</td>

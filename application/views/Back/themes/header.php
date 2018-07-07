@@ -96,9 +96,9 @@
 			</a>
 		</li>
 		<li <?php if($this->uri->segment(2)=="ProductGroup"){ echo "class='active'"; } ?>>
-			<a href="<?php echo SITE_URL('Admin/ProductGroup')?>">
+			<a href="<?php echo SITE_URL('Admin/Group')?>">
 				<i class="pe-7s-albums" style="color:black;"></i>
-				<span style="color:red;">การจัดการกลุ่มสินค้า</span>
+				<span style="color:black	;">การจัดการกลุ่มประเภทสินค้า</span>
 			</a>
 		</li>
 		<li <?php if($this->uri->segment(2)=="Category"){ echo "class='active'"; } ?>>

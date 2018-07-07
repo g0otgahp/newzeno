@@ -140,4 +140,5 @@ $autoload['model'] = array(
     'EmployeeModel',
     'PositionModel',
     'ProductModel',
+    'GroupModel',
 );

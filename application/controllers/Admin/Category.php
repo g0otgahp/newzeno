@@ -29,10 +29,13 @@ class Category extends CI_Controller
   {
     $brand = $this->BrandModel->SelectBrand();
     $dataShow = $this->CategoryModel->SelectCategory();
+    $group = $this->GroupModel->SelectGroup();
+
     $value = array(
       'Result' => array(
         'dataShow' => $dataShow,
         'brand' => $brand,
+        'group' => $group,
       ),
       'View' => 'Back/CategoryList',
     );
@@ -102,7 +105,7 @@ class Category extends CI_Controller
     $this->CategoryModel->UpdateCategory($dataUpdate);
 
     echo "<script>alert('แก้ไขประเภทสินค้าสำเร็จ')</script>";
-    echo "<script>history.go(-1)</script>";
+    echo "<script>window.location='".SITE_URL('Admin/Category')."'</script>";
 
 
   }

@@ -7,7 +7,13 @@ class CategoryModel extends CI_Model
   public function SelectCategory()
   {
 
-    $dataShow = $this->db->where('cateStatus',1)->get('category')->result_array();
+    $dataShow = $this->db
+    ->order_by('cateId','DESC')
+    ->where('cateStatus',1)
+    ->join('categroup','categroup.categroupId = category.categroupId')
+    ->get('category')
+    ->result_array();
+
     $i=0;
     foreach ($dataShow as $row) {
     $dataShow[$i]['sortby'] = $this->db
@@ -16,6 +22,10 @@ class CategoryModel extends CI_Model
     ->result_array();
     $i++;
     }
+
+    // echo "<pre>";
+    // print_r($dataShow);
+    // exit();
     return $dataShow;
   }
 
@@ -32,6 +42,10 @@ class CategoryModel extends CI_Model
 
   public function UpdateCategory($dataUpdate)
   {
+
+    // echo "<pre>";
+    // print_r($dataUpdate);
+    // exit();
 
     $this->db
     ->where('cateId',$dataUpdate['cateId'])

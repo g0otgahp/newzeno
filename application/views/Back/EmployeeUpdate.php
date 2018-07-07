@@ -107,9 +107,14 @@
                 <div class="form-group">
                   <label>ตำแหน่ง</label>
                   <select class="form-control" name="adminPosition">
-                    <option value="<?php echo $dataDetail[0]['adminPosition'] ?>"><?php echo $dataDetail[0]['positionName'] ?></option>
                     <?php foreach ($position as $position): ?>
-                      <option value="<?php echo $position['positionId'] ?>"><?php echo $position['positionName'] ?></option>
+                      <option value="<?php echo $position['positionId'] ?>"
+                        <?php
+                          if($dataDetail[0]['adminPosition'] == $position['positionId']){
+                            echo "selected";
+                          }
+                         ?>
+                        ><?php echo $position['positionName'] ?></option>
                     <?php endforeach; ?>
                   </select>
                 </div>
