@@ -17,7 +17,7 @@
                       <li class="span3">
                         <div class="thumbnail">
                           <i class="tag"></i>
-                          <a href="product_details.html"><img src="<?php echo BASE_URL()?>/uploads/logo/LG-Logo.png" alt=""></a>
+                          <a href="product_details.html"><img src="<?php echo BASE_URL()?>/uploads/Logo/LG-Logo.png" alt=""></a>
                           <div class="caption">
                             <h5>Product name</h5>
                             <h4><a class="btn" href="product_details.html">VIEW</a> <span class="pull-right">$222.00</span></h4>
@@ -52,7 +52,7 @@
                         <li class="span3">
                           <div class="thumbnail">
                             <i class="tag"></i>
-                            <a href="product_details.html"><img src="<?php echo BASE_URL()?>/uploads/logo/Hitachi-Logo.png" alt=""></a>
+                            <a href="product_details.html"><img src="<?php echo BASE_URL()?>/uploads/Logo/Hitachi-Logo.png" alt=""></a>
                             <div class="caption">
                               <h5>Product name</h5>
                               <h4><a class="btn" href="product_details.html">VIEW</a> <span class="pull-right">$222.00</span></h4>
@@ -88,7 +88,7 @@
                           <li class="span3">
                             <div class="thumbnail">
                               <i class="tag"></i>
-                              <a href="product_details.html"><img src="<?php echo BASE_URL()?>/uploads/logo/Sharp-logo.jpg" alt=""></a>
+                              <a href="product_details.html"><img src="<?php echo BASE_URL()?>/uploads/Logo/Sharp-logo.jpg" alt=""></a>
                               <div class="caption">
                                 <h5>Product name</h5>
                                 <h4><a class="btn" href="product_details.html">VIEW</a> <span class="pull-right">$222.00</span></h4>
@@ -124,7 +124,7 @@
                             <li class="span3">
                               <div class="thumbnail">
                                 <i class="tag"></i>
-                                <a href="product_details.html"><img src="<?php echo BASE_URL()?>/uploads/logo/sony-logo.png" alt=""></a>
+                                <a href="product_details.html"><img src="<?php echo BASE_URL()?>/uploads/Logo/sony-logo.png" alt=""></a>
                                 <div class="caption">
                                   <h5>Product name</h5>
                                   <h4><a class="btn" href="product_details.html">VIEW</a> <span class="pull-right">$222.00</span></h4>

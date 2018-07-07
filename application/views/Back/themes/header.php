@@ -64,7 +64,7 @@
 		<div class="sidebar-wrapper">
 			<div class="logo">
 				<a href="<?php echo SITE_URL('home');?>" class="simple-text">
-					<img src="<?php echo BASE_URL()?>/uploads/logo/logonewzeno2.png" height="50px"/>
+					<img src="<?php echo BASE_URL()?>/uploads/Logo/logonewzeno2.png" height="50px"/>
 				</a>
 			</div>
 

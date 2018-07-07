@@ -24,6 +24,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 |
  */
 $config['base_url'] = 'http://localhost/newzeno';
+// $config['base_url'] = 'http://www.azza.co.th';
 
 /*
 |--------------------------------------------------------------------------

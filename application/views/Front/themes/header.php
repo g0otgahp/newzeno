@@ -58,7 +58,8 @@
     </div>
   </div>
   <div class="container" style="background-color:white; margin-top:10px; padding:10px;">
-    <a href="<?php echo SITE_URL('Home');?>"><img src="<?php echo BASE_URL()?>/uploads/logo/logonewzeno.png" height="100px"/></a>
+    <!-- <a href="<?php echo SITE_URL('Home');?>"><img src="<?php echo BASE_URL()?>/uploads/Logo/azza_logo.png" height="80px" width="150"/></a> -->
+    <a href="<?php echo SITE_URL('Home');?>"><img src="<?php echo BASE_URL()?>/uploads/Logo/logonewzeno.png" height="100px"/></a>
     <form class="pull-right" style="margin-top:10px;">
       <input style="margin-top:10px;" class="form-control" type="text" placeholder="Products Search"/>
       <select class="form-control select2-single" style="margin-top:10px;">
