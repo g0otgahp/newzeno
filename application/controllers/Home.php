@@ -21,8 +21,9 @@ class Home extends CI_Controller
      */
     public function index()
     {
-
-        $this->load->view('Front/themes/header');
+        $Category = $this->CategoryModel->SelectCategory();
+        $data = array('dataShow' => $Category);
+        $this->load->view('Front/themes/header',$data);
         $this->load->view('Front/themes/slide');
         $this->load->view('Front/themes/menu');
         $this->load->view('Front/Home');

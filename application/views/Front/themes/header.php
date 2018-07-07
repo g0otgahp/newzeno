@@ -107,7 +107,6 @@
                 <!-- <b class="caret"></b> -->
               </a>
               <ul class="dropdown-menu">
-                <?php $dataShow = $this->CategoryModel->Select(); ?>
 
                 <!-- links -->
 
