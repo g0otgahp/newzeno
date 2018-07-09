@@ -20,7 +20,7 @@
               <?php  $i = 1; foreach ($dataShow as $dataShow): ?>
                 <tr>
                   <td><?php echo $i ?></td>
-                  <td><img src="<?php echo BASE_URL('uploads/categorys/'.$dataShow['cateImg']); ?>" height="100px" width="150px"></td>
+                  <td><img src="<?php echo BASE_URL('uploads/Categorys/'.$dataShow['cateImg']); ?>" height="100px" width="150px"></td>
                   <td><?php echo $dataShow['cateName'] ?></td>
                   <td>
 

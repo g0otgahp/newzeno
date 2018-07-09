@@ -15,7 +15,7 @@
             <tbody>
               <?php foreach ($BrandList as $row):?>
                 <tr>
-                  <td><img src="<?php echo BASE_URL('uploads/logo/'.$row['brandImg']);?>" class="img-thumbnail" width="100"></td>
+                  <td><img src="<?php echo BASE_URL('uploads/Logo/'.$row['brandImg']);?>" class="img-thumbnail" width="100"></td>
                   <td><?php echo $row['brandName']?></td>
                   <td>
                     <button class="btn btn-warning" data-toggle="modal" data-target="#updateBrand<?php echo $row['brandId']?>">แก้ไข</button>
