@@ -39,6 +39,8 @@
 	<!-- <link rel="stylesheet" href="assets/css/style.css"> -->
 	<link href="https://fonts.googleapis.com/css?family=Prompt" rel="stylesheet">
 
+	<link href="<?php echo BASE_URL()?>/assets/Back/summernote/summernote.css" rel="stylesheet">
+
 	<style>
 	.js .animate-box {
 		opacity: 0;
