@@ -56,7 +56,9 @@
       <?php if (count($product) == 0): ?>
         <div class="col-md-12 animate-box">
           <div class="card" style="padding:20px;" >
-            ไม่พบสินค้า
+            <center>
+            <p>ไม่พบสินค้า</p> <a href="<?php echo SITE_URL('Admin/Product/ProductForm')?>" class="btn btn-success" style="margin-bottom:20px;" >เพิ่มข้อมูลสินค้า</a>
+          </center>
           </div>
         </div>
         <?php else: ?>
