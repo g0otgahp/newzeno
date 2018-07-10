@@ -98,13 +98,13 @@
 		<li <?php if($this->uri->segment(2)=="Product"){ echo "class='active'"; } ?>>
 			<a href="<?php echo SITE_URL('Admin/Product')?>">
 				<i class="pe-7s-box2" style="color:black;"></i>
-				<span style="color:red;">การจัดการสินค้า</span><span style="color:black;"></span>
+				<span style="color:black;">การจัดการสินค้า</span><span style="color:black;"></span>
 			</a>
 		</li>
 		<li <?php if($this->uri->segment(2)=="ProductGroup"){ echo "class='active'"; } ?>>
 			<a href="<?php echo SITE_URL('Admin/Group')?>">
 				<i class="pe-7s-albums" style="color:black;"></i>
-				<span style="color:black	;">การจัดการกลุ่มประเภทสินค้า</span>
+				<span style="color:black	;">การจัดการกลุ่มสินค้า</span>
 			</a>
 		</li>
 		<li <?php if($this->uri->segment(2)=="Category"){ echo "class='active'"; } ?>>
@@ -140,7 +140,7 @@
 		<li <?php if($this->uri->segment(2)=="config"){ echo "class='active'"; } ?>>
 				<a href="<?php echo SITE_URL('Admin/Config')?>">
 					<i class="pe-7s-config" style="color:black;"></i>
-					<span style="color:red;">ตั้งค่า</span>
+					<span style="color:black;">ตั้งค่า</span>
 				</a>
 		</li>
 	</ul>
@@ -158,17 +158,25 @@
 					<span class="icon-bar"></span>
 				</button>
 				<a class="navbar-brand" href="#">
-					<?php if ($this->uri->segment(1)=="home"): ?>
+					<?php if ($this->uri->segment(2)=="Admin"): ?>
 						ภาพรวม
-					<?php elseif ($this->uri->segment(1)=="history"):?>
-						บันทึกรายการ
-					<?php elseif ($this->uri->segment(1)=="product"):?>
+					<?php elseif ($this->uri->segment(2)=="AA"):?>
+						ข่าวสารโปรโมชั่น
+					<?php elseif ($this->uri->segment(2)=="Product"):?>
 						การจัดการสินค้า
-					<?php elseif ($this->uri->segment(1)=="customer"):?>
-						การจัดการลูกค้า
-					<?php elseif ($this->uri->segment(1)=="employee"):?>
+					<?php elseif ($this->uri->segment(2)=="Group"):?>
+						การจัดการกลุ่มประเภทสินค้า
+					<?php elseif ($this->uri->segment(2)=="Category"):?>
+						การจัดการประเภทสินค้า
+					<?php elseif ($this->uri->segment(2)=="Brand"):?>
+						การจัดการแบรนด์สินค้า
+					<?php elseif ($this->uri->segment(2)=="Employee"):?>
 						การจัดการพนักงาน
-					<?php elseif ($this->uri->segment(1)=="config"):?>
+					<?php elseif ($this->uri->segment(2)=="Position"):?>
+						การจัดการตำแหน่ง
+					<?php elseif ($this->uri->segment(2)=="AA"):?>
+						ตัวแทนจำหน่าย
+					<?php elseif ($this->uri->segment(2)=="Config"):?>
 						ตั้งค่า
 					<?php endif; ?>
 				</a>

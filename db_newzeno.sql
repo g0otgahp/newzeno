@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
+-- version 4.7.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jul 07, 2018 at 04:00 AM
--- Server version: 10.1.21-MariaDB
+-- Host: localhost:3306
+-- Generation Time: Jul 10, 2018 at 04:30 PM
+-- Server version: 5.6.37
 -- PHP Version: 5.6.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -86,12 +88,46 @@ CREATE TABLE `category` (
 --
 
 INSERT INTO `category` (`cateId`, `cateName`, `cateImg`, `categroupId`, `cateStatus`) VALUES
-(1, 'Video Wall', '20180703065255.jpg', 1, 1),
-(2, 'Digital Signage', '20180703052928.jpg', 1, 1),
-(4, 'Projector', '20180703061311.jpg', 1, 1),
+(1, 'Video Wall', '20180703065255.jpg', 1, 2),
+(2, 'Digital Signage', '20180703052928.jpg', 1, 2),
+(4, 'Projector', '20180703061311.jpg', 1, 2),
 (6, 'Test', 'noImg.png', 1, 2),
 (7, 'Kaiixtongz', 'noImg.png', 1, 2),
-(8, 'แว่นตา่่่่่asdsd', '20180703075134.png', 1, 2);
+(8, 'แว่นตา่่่่่asdsd', '20180703075134.png', 1, 2),
+(9, 'Standard', 'noImg.png', 1, 1),
+(10, 'Video Wall', 'noImg.png', 1, 1),
+(11, 'Video Wall', 'noImg.png', 1, 2),
+(12, 'Ultra Stretch', 'noImg.png', 1, 1),
+(13, 'High Brightness', 'noImg.png', 1, 1),
+(14, 'Interactive', 'noImg.png', 1, 1),
+(15, 'Interactive', 'noImg.png', 1, 2),
+(16, 'Mirror', 'noImg.png', 1, 1),
+(17, 'Hotel Tv', 'noImg.png', 2, 1),
+(18, 'Tv Signage', 'noImg.png', 2, 1),
+(19, 'Special', 'noImg.png', 2, 1),
+(20, 'In-Glass Wallpaper', 'noImg.png', 4, 1),
+(21, 'Wallpaper', 'noImg.png', 4, 1),
+(22, 'Open Frame', 'noImg.png', 4, 1),
+(23, 'InDoor', 'noImg.png', 5, 1),
+(24, 'OutDoor', 'noImg.png', 5, 1),
+(25, 'DLP Projector', 'noImg.png', 6, 1),
+(26, 'LCD Projector', 'noImg.png', 6, 1),
+(27, 'LED Projector', 'noImg.png', 6, 1),
+(28, 'Laser Projector', 'noImg.png', 6, 1),
+(29, 'Extender', 'noImg.png', 8, 1),
+(30, 'Spliter', 'noImg.png', 8, 1),
+(31, 'Switcher', 'noImg.png', 8, 1),
+(32, 'Switcher', 'noImg.png', 8, 2),
+(33, 'สายสัญญาณภาพ', 'noImg.png', 9, 1),
+(34, 'สายสัญญาณเสียง', 'noImg.png', 9, 1),
+(35, 'สายคอลโทล', 'noImg.png', 9, 1),
+(36, 'LAN', 'noImg.png', 9, 2),
+(37, 'Audio', 'noImg.png', 9, 2),
+(38, 'Control', 'noImg.png', 9, 2),
+(39, 'แขวนเพดาน', 'noImg.png', 11, 1),
+(40, 'แขวนผนัง', 'noImg.png', 11, 1),
+(41, 'ตั้งโต๊ะ', 'noImg.png', 11, 1),
+(42, 'ตั้งพื้น', 'noImg.png', 11, 1);
 
 -- --------------------------------------------------------
 
@@ -110,7 +146,39 @@ CREATE TABLE `categroup` (
 --
 
 INSERT INTO `categroup` (`categroupId`, `categroupName`, `categroupStatus`) VALUES
-(1, 'Digital Signage', 1);
+(1, 'Digital Signage', 1),
+(2, 'Commercial Tv', 1),
+(3, 'Commercial Tv', 2),
+(4, 'OLED Signage', 1),
+(5, 'LED Signage', 1),
+(6, 'Projector', 1),
+(7, 'Projector', 2),
+(8, 'Accessories', 1),
+(9, 'Cable', 1),
+(10, 'Cable', 2),
+(11, 'Wall Mount', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `config`
+--
+
+CREATE TABLE `config` (
+  `configId` int(11) NOT NULL,
+  `configName` varchar(50) NOT NULL,
+  `configTextarea` longtext NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `config`
+--
+
+INSERT INTO `config` (`configId`, `configName`, `configTextarea`) VALUES
+(1, 'ทั่วไป', '<p>ทั่วไปนะจ๊ะ&nbsp; &nbsp;&nbsp;</p>'),
+(2, 'บริการ', '<p>บริการนะจ๊ะ</p>'),
+(3, 'วิธีการชำระเงิน', '<p>การชำระเงินนะจ๊ะ</p>'),
+(4, 'ติดต่อเรา', '<p>ติดต่อเรานะจ๊ะ</p>');
 
 -- --------------------------------------------------------
 
@@ -147,8 +215,9 @@ CREATE TABLE `product` (
   `productName` varchar(255) NOT NULL,
   `productSubdetail` varchar(255) NOT NULL,
   `productPrice` int(11) NOT NULL,
-  `productDetail` varchar(5000) NOT NULL,
+  `productDetail` longtext NOT NULL,
   `productImg` varchar(50) NOT NULL DEFAULT 'noImg.png',
+  `productGroupid` int(11) NOT NULL,
   `productCateid` int(11) NOT NULL,
   `productBrandid` int(11) NOT NULL,
   `productStatus` int(11) NOT NULL DEFAULT '1'
@@ -158,8 +227,10 @@ CREATE TABLE `product` (
 -- Dumping data for table `product`
 --
 
-INSERT INTO `product` (`productId`, `productName`, `productSubdetail`, `productPrice`, `productDetail`, `productImg`, `productCateid`, `productBrandid`, `productStatus`) VALUES
-(1, 'GTX 1080ti 8GB ', 'การ์ดจอ', 10800, 'การ์ดจอสำหรับใช้งาน Video Wall', 'noImg.png', 1, 1, 1);
+INSERT INTO `product` (`productId`, `productName`, `productSubdetail`, `productPrice`, `productDetail`, `productImg`, `productGroupid`, `productCateid`, `productBrandid`, `productStatus`) VALUES
+(1, 'GTX 1080ti 8GB ', 'การ์ดจอ', 10800, 'การ์ดจอสำหรับใช้งาน Video Wall', 'noImg.png', 1, 1, 1, 1),
+(2, 'GTX 1070TI', 'การ์ดจอ 4GB แรงๆ', 0, '<p>การ์ดจอ 4GB แรงๆ PUBG สบาย<br><img src=\"https://images-na.ssl-images-amazon.com/images/I/61SNSWDgxwL._SX425_.jpg\" style=\"width: 425px;\"></p>', 'noImg.png', 1, 1, 2, 1),
+(6, 'Hitachi', 'Hitachi', 0, '<p>asdfaewcasceesf</p>', '20180710095255.jpg', 1, 4, 2, 1);
 
 -- --------------------------------------------------------
 
@@ -265,6 +336,12 @@ ALTER TABLE `categroup`
   ADD PRIMARY KEY (`categroupId`);
 
 --
+-- Indexes for table `config`
+--
+ALTER TABLE `config`
+  ADD PRIMARY KEY (`configId`);
+
+--
 -- Indexes for table `position`
 --
 ALTER TABLE `position`
@@ -312,12 +389,17 @@ ALTER TABLE `brand`
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `cateId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `cateId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 --
 -- AUTO_INCREMENT for table `categroup`
 --
 ALTER TABLE `categroup`
-  MODIFY `categroupId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `categroupId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+--
+-- AUTO_INCREMENT for table `config`
+--
+ALTER TABLE `config`
+  MODIFY `configId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `position`
 --
@@ -327,7 +409,7 @@ ALTER TABLE `position`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `productId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `productId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `productimage`
 --
@@ -342,7 +424,8 @@ ALTER TABLE `profile`
 -- AUTO_INCREMENT for table `sortby`
 --
 ALTER TABLE `sortby`
-  MODIFY `sortbyId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `sortbyId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

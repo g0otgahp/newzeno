@@ -7,20 +7,20 @@
   </ul>
 <div class="row">
     <div id="gallery" class="span3">
-          <a href="<?php echo BASE_URL('uploads/products/noImg.png'); ?>" title="Fujifilm FinePix S2950 Digital Camera">
-      <img src="<?php echo BASE_URL('uploads/products/noImg.png'); ?>" style="width:100%" alt="Fujifilm FinePix S2950 Digital Camera"/>
+          <a href="<?php echo BASE_URL('uploads/Products/noImg.png'); ?>" title="Fujifilm FinePix S2950 Digital Camera">
+      <img src="<?php echo BASE_URL('uploads/Products/noImg.png'); ?>" style="width:100%" alt="Fujifilm FinePix S2950 Digital Camera"/>
           </a>
     <div id="differentview" class="moreOptopm carousel slide">
               <div class="carousel-inner">
                 <div class="item active" align="center">
-                 <a href="<?php echo BASE_URL('uploads/products/noImg.png'); ?>"> <img style="width:29%" src="<?php echo BASE_URL('uploads/products/noImg.png'); ?>" alt=""/></a>
-                 <a href="<?php echo BASE_URL('uploads/products/noImg.png'); ?>"> <img style="width:29%" src="<?php echo BASE_URL('uploads/products/noImg.png'); ?>" alt=""/></a>
-                 <a href="<?php echo BASE_URL('uploads/products/noImg.png'); ?>" > <img style="width:29%" src="<?php echo BASE_URL('uploads/products/noImg.png'); ?>" alt=""/></a>
+                 <a href="<?php echo BASE_URL('uploads/Products/noImg.png'); ?>"> <img style="width:29%" src="<?php echo BASE_URL('uploads/Products/noImg.png'); ?>" alt=""/></a>
+                 <a href="<?php echo BASE_URL('uploads/Products/noImg.png'); ?>"> <img style="width:29%" src="<?php echo BASE_URL('uploads/Products/noImg.png'); ?>" alt=""/></a>
+                 <a href="<?php echo BASE_URL('uploads/Products/noImg.png'); ?>" > <img style="width:29%" src="<?php echo BASE_URL('uploads/Products/noImg.png'); ?>" alt=""/></a>
                 </div>
                 <div class="item">
-                 <a href="<?php echo BASE_URL('uploads/products/noImg.png'); ?>" > <img style="width:29%" src="<?php echo BASE_URL('uploads/products/noImg.png'); ?>" alt=""/></a>
-                 <a href="<?php echo BASE_URL('uploads/products/noImg.png'); ?>"> <img style="width:29%" src="<?php echo BASE_URL('uploads/products/noImg.png'); ?>" alt=""/></a>
-                 <a href="<?php echo BASE_URL('uploads/products/noImg.png'); ?>"> <img style="width:29%" src="<?php echo BASE_URL('uploads/products/noImg.png'); ?>" alt=""/></a>
+                 <a href="<?php echo BASE_URL('uploads/Products/noImg.png'); ?>" > <img style="width:29%" src="<?php echo BASE_URL('uploads/Products/noImg.png'); ?>" alt=""/></a>
+                 <a href="<?php echo BASE_URL('uploads/Products/noImg.png'); ?>"> <img style="width:29%" src="<?php echo BASE_URL('uploads/Products/noImg.png'); ?>" alt=""/></a>
+                 <a href="<?php echo BASE_URL('uploads/Products/noImg.png'); ?>"> <img style="width:29%" src="<?php echo BASE_URL('uploads/Products/noImg.png'); ?>" alt=""/></a>
                 </div>
               </div>
             <!--
@@ -139,7 +139,7 @@
     <div class="tab-pane" id="listView">
       <div class="row">
         <div class="span2">
-          <img src="themes/images/products/4.jpg" alt=""/>
+          <img src="themes/images/Products/4.jpg" alt=""/>
         </div>
         <div class="span4">
           <h3>New | Available</h3>
@@ -168,7 +168,7 @@
     <hr class="soft"/>
     <div class="row">
         <div class="span2">
-          <img src="themes/images/products/5.jpg" alt=""/>
+          <img src="themes/images/Products/5.jpg" alt=""/>
         </div>
         <div class="span4">
           <h3>New | Available</h3>
@@ -197,7 +197,7 @@
     <hr class="soft"/>
     <div class="row">
         <div class="span2">
-        <img src="themes/images/products/6.jpg" alt=""/>
+        <img src="themes/images/Products/6.jpg" alt=""/>
         </div>
         <div class="span4">
           <h3>New | Available</h3>
@@ -226,7 +226,7 @@
     <hr class="soft"/>
     <div class="row">
         <div class="span2">
-        <img src="themes/images/products/7.jpg" alt=""/>
+        <img src="themes/images/Products/7.jpg" alt=""/>
         </div>
         <div class="span4">
           <h3>New | Available</h3>
@@ -256,7 +256,7 @@
     <hr class="soft"/>
     <div class="row">
         <div class="span2">
-        <img src="themes/images/products/8.jpg" alt=""/>
+        <img src="themes/images/Products/8.jpg" alt=""/>
         </div>
         <div class="span4">
           <h3>New | Available</h3>
@@ -285,7 +285,7 @@
     <hr class="soft"/>
       <div class="row">
         <div class="span2">
-        <img src="themes/images/products/9.jpg" alt=""/>
+        <img src="themes/images/Products/9.jpg" alt=""/>
         </div>
         <div class="span4">
           <h3>New | Available</h3>
@@ -317,7 +317,7 @@
       <ul class="thumbnails">
         <li class="span3">
           <div class="thumbnail">
-          <a href="product_details.html"><img src="themes/images/products/10.jpg" alt=""/></a>
+          <a href="product_details.html"><img src="themes/images/Products/10.jpg" alt=""/></a>
           <div class="caption">
             <h5>Manicure &amp; Pedicure</h5>
             <p>
@@ -329,7 +329,7 @@
         </li>
         <li class="span3">
           <div class="thumbnail">
-          <a href="product_details.html"><img src="themes/images/products/11.jpg" alt=""/></a>
+          <a href="product_details.html"><img src="themes/images/Products/11.jpg" alt=""/></a>
           <div class="caption">
             <h5>Manicure &amp; Pedicure</h5>
             <p>
@@ -341,7 +341,7 @@
         </li>
         <li class="span3">
           <div class="thumbnail">
-          <a href="product_details.html"><img src="themes/images/products/12.jpg" alt=""/></a>
+          <a href="product_details.html"><img src="themes/images/Products/12.jpg" alt=""/></a>
           <div class="caption">
             <h5>Manicure &amp; Pedicure</h5>
             <p>
@@ -353,7 +353,7 @@
         </li>
         <li class="span3">
           <div class="thumbnail">
-          <a href="product_details.html"><img src="themes/images/products/13.jpg" alt=""/></a>
+          <a href="product_details.html"><img src="themes/images/Products/13.jpg" alt=""/></a>
           <div class="caption">
             <h5>Manicure &amp; Pedicure</h5>
             <p>
@@ -365,7 +365,7 @@
         </li>
         <li class="span3">
           <div class="thumbnail">
-          <a href="product_details.html"><img src="themes/images/products/1.jpg" alt=""/></a>
+          <a href="product_details.html"><img src="themes/images/Products/1.jpg" alt=""/></a>
           <div class="caption">
             <h5>Manicure &amp; Pedicure</h5>
             <p>
@@ -377,7 +377,7 @@
         </li>
         <li class="span3">
           <div class="thumbnail">
-          <a href="product_details.html"><img src="themes/images/products/2.jpg" alt=""/></a>
+          <a href="product_details.html"><img src="themes/images/Products/2.jpg" alt=""/></a>
           <div class="caption">
             <h5>Manicure &amp; Pedicure</h5>
             <p>

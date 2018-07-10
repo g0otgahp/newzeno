@@ -6,7 +6,7 @@
       <li class="active">รายการสินค้า</li>
     </ul>
 
-    <h3> Products Name <small class="pull-right"> 40 products are available </small></h3>
+    <h3> Products Name <small class="pull-right"> 40 Products are available </small></h3>
 
     <form class="form-horizontal span6">
       <div class="control-group">
@@ -31,7 +31,7 @@
 
         <div class="row">
           <div class="span2">
-            <img src="<?php echo BASE_URL('uploads/products/noImg.png'); ?>" alt=""/>
+            <img src="<?php echo BASE_URL('uploads/Products/noImg.png'); ?>" alt=""/>
           </div>
           <div class="span4">
             <h5>Product Name </h5>
@@ -60,7 +60,7 @@
 
         <div class="row">
           <div class="span2">
-            <img src="<?php echo BASE_URL('uploads/products/noImg.png'); ?>" alt=""/>
+            <img src="<?php echo BASE_URL('uploads/Products/noImg.png'); ?>" alt=""/>
           </div>
           <div class="span4">
             <h5>Product Name </h5>
@@ -89,7 +89,7 @@
 
         <div class="row">
           <div class="span2">
-            <img src="<?php echo BASE_URL('uploads/products/noImg.png'); ?>" alt=""/>
+            <img src="<?php echo BASE_URL('uploads/Products/noImg.png'); ?>" alt=""/>
           </div>
           <div class="span4">
             <h5>Product Name </h5>
@@ -125,7 +125,7 @@
 
           <li class="span3">
             <div class="thumbnail">
-              <a href="<?php echo SITE_URL('Product/ProductDetail'); ?>"><img src="<?php echo BASE_URL('uploads/products/noImg.png'); ?>" alt=""/></a>
+              <a href="<?php echo SITE_URL('Product/ProductDetail'); ?>"><img src="<?php echo BASE_URL('uploads/Products/noImg.png'); ?>" alt=""/></a>
               <div class="caption">
                 <h5>Manicure &amp; Pedicure</h5>
                 <p>
@@ -141,7 +141,7 @@
 
             <li class="span3">
               <div class="thumbnail">
-                <a href="<?php echo SITE_URL('Product/ProductDetail'); ?>"><img src="<?php echo BASE_URL('uploads/products/noImg.png'); ?>" alt=""/></a>
+                <a href="<?php echo SITE_URL('Product/ProductDetail'); ?>"><img src="<?php echo BASE_URL('uploads/Products/noImg.png'); ?>" alt=""/></a>
                 <div class="caption">
                   <h5>Manicure &amp; Pedicure</h5>
                   <p>
@@ -157,7 +157,7 @@
 
               <li class="span3">
                 <div class="thumbnail">
-                  <a href="<?php echo SITE_URL('Product/ProductDetail'); ?>"><img src="<?php echo BASE_URL('uploads/products/noImg.png'); ?>" alt=""/></a>
+                  <a href="<?php echo SITE_URL('Product/ProductDetail'); ?>"><img src="<?php echo BASE_URL('uploads/Products/noImg.png'); ?>" alt=""/></a>
                   <div class="caption">
                     <h5>Manicure &amp; Pedicure</h5>
                     <p>
@@ -173,7 +173,7 @@
 
                 <li class="span3">
                   <div class="thumbnail">
-                    <a href="<?php echo SITE_URL('Product/ProductDetail'); ?>"><img src="<?php echo BASE_URL('uploads/products/noImg.png'); ?>" alt=""/></a>
+                    <a href="<?php echo SITE_URL('Product/ProductDetail'); ?>"><img src="<?php echo BASE_URL('uploads/Products/noImg.png'); ?>" alt=""/></a>
                     <div class="caption">
                       <h5>Manicure &amp; Pedicure</h5>
                       <p>
@@ -189,7 +189,7 @@
 
                   <li class="span3">
                     <div class="thumbnail">
-                      <a href="<?php echo SITE_URL('Product/ProductDetail'); ?>"><img src="<?php echo BASE_URL('uploads/products/noImg.png'); ?>" alt=""/></a>
+                      <a href="<?php echo SITE_URL('Product/ProductDetail'); ?>"><img src="<?php echo BASE_URL('uploads/Products/noImg.png'); ?>" alt=""/></a>
                       <div class="caption">
                         <h5>Manicure &amp; Pedicure</h5>
                         <p>
@@ -205,7 +205,7 @@
 
                     <li class="span3">
                       <div class="thumbnail">
-                        <a href="<?php echo SITE_URL('Product/ProductDetail'); ?>"><img src="<?php echo BASE_URL('uploads/products/noImg.png'); ?>" alt=""/></a>
+                        <a href="<?php echo SITE_URL('Product/ProductDetail'); ?>"><img src="<?php echo BASE_URL('uploads/Products/noImg.png'); ?>" alt=""/></a>
                         <div class="caption">
                           <h5>Manicure &amp; Pedicure</h5>
                           <p>
