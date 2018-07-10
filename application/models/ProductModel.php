@@ -26,8 +26,10 @@ class ProductModel extends CI_Model
     ->where('productStatus',1)
     ->where('cateStatus',1)
     ->where('brandStatus',1)
+    ->where('categroupStatus',1)
     ->join('brand','brand.brandId = product.productBrandid')
     ->join('category','category.CateId = product.productCateid')
+    ->join('categroup','categroup.categroupId = product.productGroupid')
     ->get('product')
     ->result_array();
     return $data;
@@ -38,6 +40,7 @@ class ProductModel extends CI_Model
     $this->db->where('productStatus',1);
     $this->db->where('cateStatus',1);
     $this->db->where('brandStatus',1);
+    $this->db->where('categroupStatus',1);
 
     if (!empty($input['Category'])) {
       $this->db->where('productCateid',$input['Category']);
@@ -51,6 +54,7 @@ class ProductModel extends CI_Model
 
     $this->db->join('brand','brand.brandId = product.productBrandid');
     $this->db->join('category','category.CateId = product.productCateid');
+    $this->db->join('categroup','categroup.categroupId = product.productGroupid');
     $data = $this->db->get('product')->result_array();
     return $data;
   }
