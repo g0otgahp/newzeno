@@ -10,6 +10,7 @@
           <li class="subMenu">
             <a tabindex="-1" href="#sideMenu <?php echo $i ?>"><?php echo $ShowGroup['categroupName'] ?></a>
             <ul style="display:none">
+              <!-- <ul> -->
 
               <?php $data = $this->db
               ->order_by('cateId','ASC')

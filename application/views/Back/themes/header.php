@@ -46,9 +46,13 @@
 		opacity: 0;
 	}
 
-	* , span , td , p , a , label , h1 , h2 , h3 , h4 {
+	* , span , td , p , a , label {
 		font-family: 'Prompt', sans-serif;
 		font-size: 14px;
+	}
+
+	h1 , h2 , h3 , h4 {
+		font-family: 'Prompt', sans-serif;
 	}
 
 </style>

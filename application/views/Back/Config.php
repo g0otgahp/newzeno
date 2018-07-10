@@ -2,24 +2,16 @@
   <div class="container-fluid">
     <div class="row" >
       <div class="col-md-12 animate-box">
-        <div class="card" style="padding:20px;">
-          <div class="row">
 
-            <textarea class="summernote" name="editordata"></textarea>
-            
+        <?php foreach ($dataConfig as $data): ?>
 
-          </div>
-        </div>
+        <a href="<?php echo SITE_URL('Admin/Config/ConfigForm/'.$data['configId']); ?>" class="card col-md-5 col-md-offset-1" align="center" style="width:350px;height:110px">
+          <br>  <h3 style="color:black"><?php echo $data['configName'] ?></h3>
+        </a>
+
+        <?php endforeach; ?>
+
       </div>
     </div>
   </div>
-</div>
-
-
-
-
-
-
-
-</div>
 </div>

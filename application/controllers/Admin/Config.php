@@ -24,14 +24,48 @@ class Config extends CI_Controller
   public function index()
   {
 
-    $data = $this->PositionModel->Select();
+    $dataConfig = $this->ConfigModel->SelectConfig();
+
     $value = array(
       'Result' => array(
-        'data' => $data,
+        'dataConfig' => $dataConfig,
       ),
       'View' => 'Back/Config',
     );
     $this->LoadPage($value);
+  }
+
+  public function ConfigForm()
+  {
+    $id = $this->uri->segment(4);
+    $dataConfig = $this->ConfigModel->SelectConfigById($id);
+    $data = array(
+      'id' => $id,
+      'dataConfig' => $dataConfig,
+
+  );
+
+  // echo "<pre>";
+  // print_r($data);
+  // exit();
+
+    $this->load->view('Back/themes/header',$data);
+    $this->load->view('Back/ConfigForm');
+    $this->load->view('Back/themes/footer');
+
+
+
+  }
+
+  public function UpdateConfig()
+  {
+
+    $input = $this->input->post();
+    $this->ConfigModel->UpdateConfig($input);
+
+    echo "<script>alert('บันทึกการตั้งค่าเรียบร้อย')</script>";
+    echo "<script>window.location=('".SITE_URL('Admin/Config')."')</script>";
+
   }
 
 
