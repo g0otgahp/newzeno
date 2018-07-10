@@ -22,9 +22,7 @@ class GroupModel extends CI_Model
 
   public function SelectGroup()
   {
-    $dataSelect = $this->db
-    ->where('categroupStatus',1)
-    ->get('categroup')->result_array();
+    $dataSelect = $this->db->where('categroupStatus',1)->get('categroup')->result_array();
     return $dataSelect;
   }
 

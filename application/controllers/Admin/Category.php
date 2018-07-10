@@ -59,7 +59,7 @@ class Category extends CI_Controller
     $this->CategoryModel->SaveCategory($dataInsert);
 
     echo "<script>alert('เพิ่มประเภทสินค้าสำเร็จ')</script>";
-    echo "<script>history.go(-1)</script>";
+    echo "<script>window.location='".SITE_URL('Admin/Category')."'</script>";
   }
 
   public function ConnectBrand()

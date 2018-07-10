@@ -134,7 +134,7 @@
 			</a>
 		</li>
 		<li <?php if($this->uri->segment(2)=="config"){ echo "class='active'"; } ?>>
-				<a href="<?php echo SITE_URL('config')?>">
+				<a href="<?php echo SITE_URL('Admin/Config')?>">
 					<i class="pe-7s-config" style="color:black;"></i>
 					<span style="color:red;">ตั้งค่า</span>
 				</a>

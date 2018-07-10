@@ -22,7 +22,13 @@ class Product extends CI_Controller
   public function index()
   {
     $Category = $this->CategoryModel->SelectCategory();
-    $data = array('dataShow' => $Category);
+    $Group = $this->GroupModel->SelectGroup();
+
+    $data = array(
+      'dataShow' => $Category,
+      'Group' => $Group,
+    );
+
     $this->load->view('Front/themes/header',$data);
     $this->load->view('Front/themes/menu');
     $this->load->view('Front/ProductList');
@@ -32,7 +38,13 @@ class Product extends CI_Controller
   public function ProductDetail()
   {
     $Category = $this->CategoryModel->SelectCategory();
-    $data = array('dataShow' => $Category);
+    $Group = $this->GroupModel->SelectGroup();
+
+    $data = array(
+      'dataShow' => $Category,
+      'Group' => $Group,
+    );
+    
     $this->load->view('Front/themes/header',$data);
     $this->load->view('Front/themes/menu');
     $this->load->view('Front/ProductDetail');

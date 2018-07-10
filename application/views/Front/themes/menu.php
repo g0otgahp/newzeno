@@ -6,12 +6,33 @@
         <!-- <div class="well well-small"><a id="myCart" href="#"><img src="<?php echo BASE_URL()?>/assets/themes/images/ico-cart.png" alt="cart">3 Items in your cart  <span class="badge badge-warning pull-right">$155.00</span></a></div> -->
         <ul id="sideManu" class="nav nav-tabs nav-stacked">
 
-          <?php foreach ($dataShow as $CategoryShow): ?>
+          <?php $i = 1; foreach ($Group as $ShowGroup): ?>
+          <li class="subMenu">
+            <a tabindex="-1" href="#sideMenu <?php echo $i ?>"><?php echo $ShowGroup['categroupName'] ?></a>
+            <ul style="display:none">
+
+              <?php $data = $this->db
+              ->order_by('cateId','ASC')
+              ->where('cateStatus',1)
+              ->where('categroupId',$ShowGroup['categroupId'])
+              ->get('category')
+              ->result_array();
+              ?>
+
+              <?php foreach ($data as $CategoryShow): ?>
+                <li><a href="<?php echo SITE_URL('Product'); ?>"> &nbsp;&nbsp;-> &nbsp; <?php echo $CategoryShow['cateName'] ?></a></li>
+              <?php endforeach; ?>
+
+            </ul>
+          </li>
+          <?php $i++; endforeach; ?>
+
+          <!-- <?php foreach ($dataShow as $CategoryShow): ?>
             <li>
               <a href="<?php echo SITE_URL('Product'); ?>"><?php echo $CategoryShow['cateName'] ?></a>
             </li>
 
-          <?php endforeach; ?>
+          <?php endforeach; ?> -->
 
           <!-- <li class="subMenu"><a> CLOTHES [840] </a>
           <ul style="display:none">

@@ -22,7 +22,18 @@ class Home extends CI_Controller
     public function index()
     {
         $Category = $this->CategoryModel->SelectCategory();
-        $data = array('dataShow' => $Category);
+        $Group = $this->GroupModel->SelectGroup();
+
+        $data = array(
+          'dataShow' => $Category,
+          'Group' => $Group,
+        );
+
+        // echo "<pre>";
+        // print_r($data);
+        // exit();
+
+
         $this->load->view('Front/themes/header',$data);
         $this->load->view('Front/themes/slide');
         $this->load->view('Front/themes/menu');

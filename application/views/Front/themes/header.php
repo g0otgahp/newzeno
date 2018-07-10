@@ -113,43 +113,37 @@
 
                 <!-- <li class=""><a href="<?php echo SITE_URL('Product'); ?>"><?php echo $CategoryShow['cateName'] ?></a></li> -->
 
+                <?php foreach ($Group as $ShowGroup): ?>
                 <li class="dropdown-submenu">
-                  <a tabindex="-1" href="#">Digital Signage</a>
+                  <a tabindex="-1" href="#"><?php echo $ShowGroup['categroupName'] ?></a>
                   <ul class="dropdown-menu">
-                    <?php foreach ($dataShow as $CategoryShow): ?>
+
+                    <?php $data = $this->db
+                    ->order_by('cateId','ASC')
+                    ->where('cateStatus',1)
+                    ->where('categroupId',$ShowGroup['categroupId'])
+                    ->get('category')
+                    ->result_array();
+                    ?>
+
+                    <?php foreach ($data as $CategoryShow): ?>
                       <li class=""><a href="<?php echo SITE_URL('Product'); ?>"><?php echo $CategoryShow['cateName'] ?></a></li>
                     <?php endforeach; ?>
+
                   </ul>
                 </li>
+                <?php endforeach; ?>
 
-                <li class="dropdown-submenu">
-                  <a tabindex="-1" href="#">Commercial Tv</a>
-                  <ul class="dropdown-menu">
-                    <?php foreach ($dataShow as $CategoryShow): ?>
-                      <li class=""><a href="<?php echo SITE_URL('Product'); ?>"><?php echo $CategoryShow['cateName'] ?></a></li>
-                    <?php endforeach; ?>
-                  </ul>
-                </li>
 
-                <li class="dropdown-submenu">
-                  <a tabindex="-1" href="#">OLED Signage</a>
-                  <ul class="dropdown-menu">
-                    <?php foreach ($dataShow as $CategoryShow): ?>
-                      <li class=""><a href="<?php echo SITE_URL('Product'); ?>"><?php echo $CategoryShow['cateName'] ?></a></li>
-                    <?php endforeach; ?>
-                  </ul>
-                </li>
 
-                <li class="dropdown-submenu">
+                <!-- <li class="dropdown-submenu">
                   <a tabindex="-1" href="#">LED Signage</a>
                   <ul class="dropdown-menu">
                     <?php foreach ($dataShow as $CategoryShow): ?>
                       <li class=""><a href="<?php echo SITE_URL('Product'); ?>"><?php echo $CategoryShow['cateName'] ?></a></li>
                     <?php endforeach; ?>
                   </ul>
-                </li>
-
-
+                </li>  -->
 
               </ul>
             </li>
