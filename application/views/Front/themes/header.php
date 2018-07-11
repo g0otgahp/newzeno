@@ -148,9 +148,9 @@
               </ul>
             </li>
 
-            <li class=""><a href="<?php echo SITE_URL('Home'); ?>">บริการ</a></li>
+            <li class=""><a href="<?php echo SITE_URL('Service'); ?>">บริการ</a></li>
             <li class=""><a href="<?php echo SITE_URL('Home'); ?>">สถานที่จำหน่าย</a></li>
-            <li class=""><a href="<?php echo SITE_URL('Home'); ?>">วิธีชำระเงิน</a></li>
+            <li class=""><a href="<?php echo SITE_URL('Payment'); ?>">วิธีชำระเงิน</a></li>
             <li class=""><a href="<?php echo SITE_URL('Home'); ?>">ข่าวสาร</a></li>
             <li class=""><a href="<?php echo SITE_URL('Home'); ?>">ผลงาน</a></li>
             <li class=""><a href="<?php echo SITE_URL('Contact'); ?>">ติดต่อเรา</a></li>

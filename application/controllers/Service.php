@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Contact extends CI_Controller
+class Service extends CI_Controller
 {
 
     /**
@@ -24,18 +24,18 @@ class Contact extends CI_Controller
 
       $Category = $this->CategoryModel->SelectCategory();
       $Group = $this->GroupModel->SelectGroup();
-      $dataContact = $this->ConfigModel->SelectContact();
+      $dataService = $this->ConfigModel->SelectService();
 
       $data = array(
         'dataShow' => $Category,
         'Group' => $Group,
-        'dataContact' => $dataContact,
+        'dataService' => $dataService,
       );
 
         $this->load->view('Front/themes/header',$data);
         // $this->load->view('Front/themes/slide');
         $this->load->view('Front/themes/menu');
-        $this->load->view('Front/Contact');
+        $this->load->view('Front/Service');
         $this->load->view('Front/themes/footer');
     }
 }

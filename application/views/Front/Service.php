@@ -1,0 +1,15 @@
+<div class="span9">
+  <ul class="breadcrumb">
+    <li><a href="<?php echo SITE_URL('Home'); ?>">หน้าแรก</a> <span class="divider">/</span></li>
+    <li class="active">การบริการ</li>
+  </ul>
+
+  <div class="span9">
+    <div class="form-group">
+      <?php echo $dataService[0]['configTextarea'] ?>
+    </div>
+  </div>
+
+</div>
+</div>
+</div>

@@ -45,4 +45,48 @@ class ConfigModel extends CI_Model
 
   }
 
+  public function SelectContact()
+  {
+
+    $dataContact = $this->db
+    ->where('configId',4)
+    ->get('config')
+    ->result_array();
+    return $dataContact;
+
+  }
+
+  public function SelectPayment()
+  {
+
+    $dataPayment = $this->db
+    ->where('configId',3)
+    ->get('config')
+    ->result_array();
+    return $dataPayment;
+
+  }
+
+  public function SelectService()
+  {
+
+    $dataService = $this->db
+    ->where('configId',2)
+    ->get('config')
+    ->result_array();
+    return $dataService;
+
+  }
+
+  public function SelectGenaral()
+  {
+
+    $dataGenaral = $this->db
+    ->where('configId',1)
+    ->get('config')
+    ->result_array();
+    return $dataGenaral;
+
+  }
+
 }
