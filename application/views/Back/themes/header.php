@@ -88,8 +88,8 @@
 			</a>
 		</li>
 
-		<li <?php if($this->uri->segment(2)=="Admin/Position"){ echo "class='active'"; } ?>>
-			<a href="<?php echo SITE_URL('Admin/Position')?>">
+		<li <?php if($this->uri->segment(2)=="News"){ echo "class='active'"; } ?>>
+			<a href="#">
 				<i class="pe-7s-bell" style="color:black;"></i>
 				<span style="color:red;">ข่าวสารโปรโมชั่น</span>
 			</a>
@@ -101,7 +101,7 @@
 				<span style="color:black;">การจัดการสินค้า</span><span style="color:black;"></span>
 			</a>
 		</li>
-		<li <?php if($this->uri->segment(2)=="ProductGroup"){ echo "class='active'"; } ?>>
+		<li <?php if($this->uri->segment(2)=="Group"){ echo "class='active'"; } ?>>
 			<a href="<?php echo SITE_URL('Admin/Group')?>">
 				<i class="pe-7s-albums" style="color:black;"></i>
 				<span style="color:black	;">การจัดการกลุ่มสินค้า</span>
@@ -125,19 +125,19 @@
 				<span style="color:black;">การจัดการพนักงาน</span>
 			</a>
 		</li>
-		<li <?php if($this->uri->segment(2)=="Admin/Position"){ echo "class='active'"; } ?>>
+		<li <?php if($this->uri->segment(2)=="Position"){ echo "class='active'"; } ?>>
 			<a href="<?php echo SITE_URL('Admin/Position')?>">
 				<i class="pe-7s-id" style="color:black;"></i>
 				<span style="color:black;">การจัดการตำแหน่ง</span>
 			</a>
 		</li>
-		<li <?php if($this->uri->segment(2)=="Admin/Position"){ echo "class='active'"; } ?>>
-			<a href="<?php echo SITE_URL('Admin/Position')?>">
+		<li <?php if($this->uri->segment(2)==""){ echo "class='active'"; } ?>>
+			<a href="#">
 				<i class="pe-7s-network" style="color:black;"></i>
 				<span style="color:red;">ตัวแทนจำหน่าย</span>
 			</a>
 		</li>
-		<li <?php if($this->uri->segment(2)=="config"){ echo "class='active'"; } ?>>
+		<li <?php if($this->uri->segment(2)=="Config"){ echo "class='active'"; } ?>>
 				<a href="<?php echo SITE_URL('Admin/Config')?>">
 					<i class="pe-7s-config" style="color:black;"></i>
 					<span style="color:black;">ตั้งค่า</span>
