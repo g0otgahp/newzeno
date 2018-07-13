@@ -132,9 +132,9 @@
 			</a>
 		</li>
 		<li <?php if($this->uri->segment(2)==""){ echo "class='active'"; } ?>>
-			<a href="#">
+			<a href="<?php echo SITE_URL('Admin/Agent'); ?>">
 				<i class="pe-7s-network" style="color:black;"></i>
-				<span style="color:red;">ตัวแทนจำหน่าย</span>
+				<span style="color:black;">ตัวแทนจำหน่าย</span>
 			</a>
 		</li>
 		<li <?php if($this->uri->segment(2)=="Config"){ echo "class='active'"; } ?>>
