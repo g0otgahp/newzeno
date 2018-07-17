@@ -4,6 +4,19 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class CategoryModel extends CI_Model
 {
 
+  public function HomeCategory($cateId)
+  {
+
+    $Category = $this->db
+    ->where('categroupId',$cateId)
+    ->where('cateStatus',1)
+    ->get('category')
+    ->result_array();
+
+    return $Category;
+
+  }
+
   public function SelectCategory()
   {
 

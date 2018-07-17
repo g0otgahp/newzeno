@@ -6,9 +6,9 @@
       <li class="active">รายการสินค้า</li>
     </ul>
 
-    <h3> Products Name <small class="pull-right"> 40 Products are available </small></h3>
+    <!-- <h3> Products Name <small class="pull-right"> 40 Products are available </small></h3> -->
 
-    <form class="form-horizontal span6">
+    <!-- <form class="form-horizontal span6">
       <div class="control-group">
         <label class="control-label alignL">Sort By </label>
         <select>
@@ -18,7 +18,7 @@
           <option>Price Lowest first</option>
         </select>
       </div>
-    </form>
+    </form> -->
 
     <div id="myTab" class="pull-right">
       <a href="#blockView" data-toggle="tab"><span class="btn btn-large"><i class="icon-th-large"></i></span></a>

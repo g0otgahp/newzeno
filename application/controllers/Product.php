@@ -19,13 +19,40 @@ class Product extends CI_Controller
   * map to /index.php/welcome/<method_name>
   * @see https://codeigniter.com/user_guide/general/urls.html
   */
+
   public function index()
   {
-    $Category = $this->CategoryModel->SelectCategory();
+
+    $cateId = 1;
     $Group = $this->GroupModel->SelectGroup();
+    // $cateId = 1;
+    $Category = $this->CategoryModel->HomeCategory($cateId);
 
     $data = array(
-      'dataShow' => $Category,
+      'Category' => $Category,
+      'Group' => $Group,
+    );
+
+    $this->load->view('Front/themes/header',$data);
+    $this->load->view('Front/themes/menu');
+    $this->load->view('Front/ProductList');
+    $this->load->view('Front/themes/footer');
+  }
+
+  public function ShowProduct()
+  {
+
+    $cateId = $this->uri->segment(3);
+    // echo "<pre>";
+    // print_r($cateId);
+    // exit();
+
+    $Group = $this->GroupModel->SelectGroup();
+    // $cateId = 1;
+    $Category = $this->CategoryModel->HomeCategory($cateId);
+
+    $data = array(
+      'Category' => $Category,
       'Group' => $Group,
     );
 
@@ -37,14 +64,15 @@ class Product extends CI_Controller
 
   public function ProductDetail()
   {
-    $Category = $this->CategoryModel->SelectCategory();
     $Group = $this->GroupModel->SelectGroup();
+    $cateId = 1;
+    $Category = $this->CategoryModel->HomeCategory($cateId);
 
     $data = array(
-      'dataShow' => $Category,
+      'Category' => $Category,
       'Group' => $Group,
     );
-    
+
     $this->load->view('Front/themes/header',$data);
     $this->load->view('Front/themes/menu');
     $this->load->view('Front/ProductDetail');

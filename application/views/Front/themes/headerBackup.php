@@ -41,7 +41,6 @@
   h1 , h2 , h3 , h4  {
     font-family: 'Prompt', sans-serif;
   }
-
   </style>
 
 </head>
@@ -63,7 +62,7 @@
     <a href="<?php echo SITE_URL('Home');?>"><img src="<?php echo BASE_URL()?>/uploads/Logo/logonewzeno.png" height="100px"/></a>
     <form class="pull-right" style="margin-top:10px;">
       <input style="margin-top:10px;" class="form-control" type="text" placeholder="Products Search"/>
-      <!-- <select class="form-control select2-single" style="margin-top:10px;">
+      <select class="form-control select2-single" style="margin-top:10px;">
         <option>-เลือกประเภท-</option>
         <option>CLOTHES </option>
         <option>FOOD AND BEVERAGES </option>
@@ -78,32 +77,10 @@
         <option>HEALTH & BEAUTY </option>
         <option>SPORTS & LEISURE </option>
         <option>BOOKS & ENTERTAINMENTS </option>
-      </select> -->
+      </select>
       <button type="submit" class="btn btn-primary">ค้นหา</button>
     </form>
   </div>
-
-
-<!-- new nav -->
-
-  <ul id="topMenu" class="nav" style="height:15px">
-
-    <ul class="nav nav-pills">
-
-
-      <li class="" style="padding-right:40px;"><a href="<?php echo SITE_URL('Contact'); ?>">ติดต่อเรา</a></li>
-      <li class=""><a href="<?php echo SITE_URL('Payment'); ?>">วิธีชำระเงิน</a></li>
-      <li class=""><a href="<?php echo SITE_URL('Home'); ?>">ตัวแทนจำหน่าย</a></li>
-      <li class=""><a href="<?php echo SITE_URL('Home'); ?>">ผลงาน</a></li>
-      <li class=""><a href="<?php echo SITE_URL('Home'); ?>">ข่าวสาร</a></li>
-      <li class=""><a href="<?php echo SITE_URL('Service'); ?>">บริการ</a></li>
-      <li class=""><a href="<?php echo SITE_URL('Home'); ?>">หน้าแรก</a></li>
-
-  </ul>
-</ul>
-
-<!-- new nav -->
-
 
 
   <!-- Navbar ================================================== -->
@@ -115,44 +92,76 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </a>
-        <div class="navbar-inner" style="">
+        <div class="navbar-inner">
 
           <ul id="topMenu" class="nav">
             <li class=""><a href="#">&nbsp;</a></li>
 
+
             <ul class="nav nav-pills">
 
-              <?php foreach ($Group as $ShowGroup): ?>
+              <li class=""><a href="<?php echo SITE_URL('Home'); ?>">หน้าแรก</a></li>
 
-              <li class="" style="padding-right:20px;"><a href="<?php echo SITE_URL('Home/CategoryHome/'.$ShowGroup['categroupId']); ?>"><?php echo $ShowGroup['categroupName'] ?></a></li>
+              <li class="dropdown">
+                <a class="dropdown-toggle"
+                data-toggle="dropdown"
+                href="#">
+                สินค้า
+                <!-- <b class="caret"></b> -->
+              </a>
+              <ul class="dropdown-menu">
 
-              <?php endforeach; ?>
+                <!-- links -->
 
+                <!-- <li class=""><a href="<?php echo SITE_URL('Product'); ?>"><?php echo $CategoryShow['cateName'] ?></a></li> -->
+
+                <?php foreach ($Group as $ShowGroup): ?>
+                <li class="dropdown-submenu">
+                  <a tabindex="-1" href="#"><?php echo $ShowGroup['categroupName'] ?></a>
+                  <ul class="dropdown-menu">
+
+                    <?php $data = $this->db
+                    ->order_by('cateId','ASC')
+                    ->where('cateStatus',1)
+                    ->where('categroupId',$ShowGroup['categroupId'])
+                    ->get('category')
+                    ->result_array();
+                    ?>
+
+                    <?php foreach ($data as $CategoryShow): ?>
+                      <li class=""><a href="<?php echo SITE_URL('Product'); ?>"><?php echo $CategoryShow['cateName'] ?></a></li>
+                    <?php endforeach; ?>
+
+                  </ul>
+                </li>
+                <?php endforeach; ?>
+
+
+
+                <!-- <li class="dropdown-submenu">
+                  <a tabindex="-1" href="#">LED Signage</a>
+                  <ul class="dropdown-menu">
+                    <?php foreach ($dataShow as $CategoryShow): ?>
+                      <li class=""><a href="<?php echo SITE_URL('Product'); ?>"><?php echo $CategoryShow['cateName'] ?></a></li>
+                    <?php endforeach; ?>
+                  </ul>
+                </li>  -->
+
+              </ul>
+            </li>
+
+            <li class=""><a href="<?php echo SITE_URL('Service'); ?>">บริการ</a></li>
+            <li class=""><a href="<?php echo SITE_URL('Home'); ?>">สถานที่จำหน่าย</a></li>
+            <li class=""><a href="<?php echo SITE_URL('Payment'); ?>">วิธีชำระเงิน</a></li>
+            <li class=""><a href="<?php echo SITE_URL('Home'); ?>">ข่าวสาร</a></li>
+            <li class=""><a href="<?php echo SITE_URL('Home'); ?>">ผลงาน</a></li>
+            <li class=""><a href="<?php echo SITE_URL('Contact'); ?>">ติดต่อเรา</a></li>
+
+
+
+          </ul>
         </ul>
       </div>
-
-
-
-
-      <div class="container" style="background-color: #d9d9d9; height:60px; display: flex; justify-content: space-around;">
-
-        <ul id="topMenu" class="nav">
-          <li class=""><a href="#">&nbsp;</a></li>
-          <li class=""><a href="#">&nbsp;</a></li>
-
-
-          <ul class="nav nav-pills">
-
-            <?php foreach ($Category as $CategoryShow): ?>
-              <li class="" style="padding-top:10px; padding-right:15px;"><a href="<?php echo SITE_URL('Product/ShowProduct/'.$CategoryShow['categroupId']); ?>"><font color="black" style="font-weight: bold; font-size:16px;"><?php echo $CategoryShow['cateName'] ?></font></a></li>
-            <?php endforeach; ?>
-      </ul>
-    </div>
-
-
-
-
-
     </div>
   </div>
 </div>

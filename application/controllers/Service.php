@@ -22,12 +22,14 @@ class Service extends CI_Controller
     public function index()
     {
 
-      $Category = $this->CategoryModel->SelectCategory();
       $Group = $this->GroupModel->SelectGroup();
+      $cateId = 1;
+      $Category = $this->CategoryModel->HomeCategory($cateId);
+
       $dataService = $this->ConfigModel->SelectService();
 
       $data = array(
-        'dataShow' => $Category,
+        'Category' => $Category,
         'Group' => $Group,
         'dataService' => $dataService,
       );

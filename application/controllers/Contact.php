@@ -22,12 +22,13 @@ class Contact extends CI_Controller
     public function index()
     {
 
-      $Category = $this->CategoryModel->SelectCategory();
       $Group = $this->GroupModel->SelectGroup();
+      $cateId = 1;
+      $Category = $this->CategoryModel->HomeCategory($cateId);
       $dataContact = $this->ConfigModel->SelectContact();
 
       $data = array(
-        'dataShow' => $Category,
+        'Category' => $Category,
         'Group' => $Group,
         'dataContact' => $dataContact,
       );
