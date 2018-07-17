@@ -86,12 +86,14 @@
 
 <!-- new nav -->
 
+<div class="container">
+
   <ul id="topMenu" class="nav" style="height:15px">
 
     <ul class="nav nav-pills">
 
 
-      <li class="" style="padding-right:40px;"><a href="<?php echo SITE_URL('Contact'); ?>">ติดต่อเรา</a></li>
+      <li class=""><a href="<?php echo SITE_URL('Contact'); ?>">ติดต่อเรา</a></li>
       <li class=""><a href="<?php echo SITE_URL('Payment'); ?>">วิธีชำระเงิน</a></li>
       <li class=""><a href="<?php echo SITE_URL('Home'); ?>">ตัวแทนจำหน่าย</a></li>
       <li class=""><a href="<?php echo SITE_URL('Home'); ?>">ผลงาน</a></li>
@@ -101,6 +103,7 @@
 
   </ul>
 </ul>
+</div>
 
 <!-- new nav -->
 
@@ -134,7 +137,8 @@
 
 
 
-      <div class="container" style="background-color: #d9d9d9; height:60px; display: flex; justify-content: space-around;">
+      <!-- <div class="container" style="background-color: #d9d9d9; height:60px; display: flex; justify-content: space-around;"> -->
+      <div class="container" style="background-color: #d9d9d9; height:60px;">
 
         <ul id="topMenu" class="nav">
           <li class=""><a href="#">&nbsp;</a></li>
