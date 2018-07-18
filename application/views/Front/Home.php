@@ -1,5 +1,8 @@
 <span>
-  <div class="span9">
+  <div class="container" style="margin-top:20px;">
+    <div class="row">
+  <div class="span12">
+    
     <!-- 1 -->
     <div class="well well-small">
       <h4>LG <small class="pull-right"><a href="#">ดูทั้งหมด</a></small></h4>
@@ -34,8 +37,9 @@
           </div>
         </div>
       </div>
+
       <!-- 2 -->
-      <div class="well well-small">
+      <!-- <div class="well well-small">
         <h4>HITACHI <small class="pull-right"><a href="#">ดูทั้งหมด</a></small></h4>
         <div class="row-fluid">
           <div id="featured2" class="carousel slide">
@@ -68,10 +72,10 @@
               <a class="right carousel-control" href="#featured2" data-slide="next">›</a>
             </div>
           </div>
-        </div>
+        </div> -->
         <!-- 3 -->
 
-        <div class="well well-small">
+        <!-- <div class="well well-small">
           <h4>SHARP <small class="pull-right"><a href="#">ดูทั้งหมด</a></small></h4>
           <div class="row-fluid">
             <div id="featured3" class="carousel slide">
@@ -104,10 +108,10 @@
                 <a class="right carousel-control" href="#featured3" data-slide="next">›</a>
               </div>
             </div>
-          </div>
+          </div> -->
           <!-- 4 -->
 
-          <div class="well well-small">
+          <!-- <div class="well well-small">
             <h4>SONY <small class="pull-right"><a href="#">ดูทั้งหมด</a></small></h4>
             <div class="row-fluid">
               <div id="featured4" class="carousel slide">
@@ -141,7 +145,10 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
+
+
+          <!-- End tag -->
         </div>
       </div>
     </div>

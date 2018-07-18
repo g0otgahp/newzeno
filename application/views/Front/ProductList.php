@@ -1,248 +1,115 @@
 <span>
-
   <div class="span9">
     <ul class="breadcrumb">
       <li><a href="<?php echo SITE_URL('Home'); ?>">หน้าแรก</a> <span class="divider">/</span></li>
-      <li class="active">รายการสินค้า</li>
+      <?php if (!empty($CateSelect)): ?>
+        <li><a href="<?php echo SITE_URL('Home/CategoryHome/'.$GroupSelect[0]['categroupId']); ?>"><?php echo $GroupSelect[0]['categroupName'] ?> </a><span class="divider">/</span></li>
+        <li class="active"><?php echo $CateSelect[0]['cateName'] ?></li>
+      <?php else: ?>
+        <li class="active"><?php echo $GroupSelect[0]['categroupName'] ?></li>
+      <?php endif; ?>
+
     </ul>
 
     <!-- <h3> Products Name <small class="pull-right"> 40 Products are available </small></h3> -->
-
     <!-- <form class="form-horizontal span6">
-      <div class="control-group">
-        <label class="control-label alignL">Sort By </label>
-        <select>
-          <option>Priduct name A - Z</option>
-          <option>Priduct name Z - A</option>
-          <option>Priduct Stoke</option>
-          <option>Price Lowest first</option>
-        </select>
-      </div>
-    </form> -->
+    <div class="control-group">
+    <label class="control-label alignL">Sort By </label>
+    <select>
+    <option>Priduct name A - Z</option>
+    <option>Priduct name Z - A</option>
+    <option>Priduct Stoke</option>
+    <option>Price Lowest first</option>
+  </select>
+</div>
+</form> -->
+<?php if (count($Product) <= 0): ?>
+  <h3>ไม่พบสินค้า</h3>
+<?php else: ?>
 
-    <div id="myTab" class="pull-right">
-      <a href="#blockView" data-toggle="tab"><span class="btn btn-large"><i class="icon-th-large"></i></span></a>
-      <a href="#listView" data-toggle="tab"><span class="btn btn-large"><i class="icon-list"></i></span></a>
+  <div id="myTab" class="pull-right">
+    <a href="#blockView" data-toggle="tab"><span class="btn btn-large"><i class="icon-th-large"></i></span></a>
+    <a href="#listView" data-toggle="tab"><span class="btn btn-large"><i class="icon-list"></i></span></a>
+  </div>
+  <br class="clr"/>
+  <div class="tab-content" style="margin-top:20px;">
+
+
+    <!-- Table Style -->
+    <div class="tab-pane" id="listView">
+      <!-- Start Loop -->
+      <?php foreach ($Product as $list): ?>
+        <div class="row">
+          <div class="span2">
+            <img src="<?php echo BASE_URL('uploads/Products/'.$list['productImg']); ?>" alt=""/>
+          </div>
+          <div class="span4">
+            <h3><?php echo $list['cateName']." - ".$list['productName'] ?></h3>
+            <p>
+              <?php echo $list['productSubdetail'] ?>
+            </p>
+            <br class="clr"/>
+          </div>
+          <hr class="soft"/>
+          <div class="span3 alignR">
+            <form class="form-horizontal qtyFrm">
+              <h3>฿<?php echo number_format($list['productPrice']) ?></h3>
+              <a class="btn btn-small pull-right btn-primary" href="<?php echo SITE_URL('Product/ProductDetail/'.$list['categroupId']."/".$list['cateId']."/".$list['productId']); ?>">รายละเอียด</a>
+            </form>
+          </div>
+        </div>
+      <?php endforeach; ?>
+      <!-- End Loop -->
     </div>
-    <br class="clr"/>
-    <div class="tab-content">
-      <div class="tab-pane" id="listView">
+    <!-- End Table Style -->
 
 
-        <div class="row">
-          <div class="span2">
-            <img src="<?php echo BASE_URL('uploads/Products/noImg.png'); ?>" alt=""/>
-          </div>
-          <div class="span4">
-            <h5>Product Name </h5>
-            <p>
-              Nowadays the lingerie industry is one of the most successful business spheres.We always stay in touch with the latest fashion tendencies -
-              that is why our goods are so popular..
-            </p>
-            <a class="btn btn-small pull-right" href="<?php echo SITE_URL('Product/ProductDetail'); ?>">View Details</a>
-            <br class="clr"/>
-          </div>
-          <hr class="soft"/>
-
-
-          <div class="span3 alignR">
-            <form class="form-horizontal qtyFrm">
-              <h3> $140.00</h3>
-
-              <!-- <a href="product_details.html" class="btn btn-large btn-primary"> Add to <i class=" icon-shopping-cart"></i></a>
-              <a href="product_details.html" class="btn btn-large"><i class="icon-zoom-in"></i></a> -->
-
-            </form>
-          </div>
-        </div>
-        <hr class="soft"/>
-
-
-        <div class="row">
-          <div class="span2">
-            <img src="<?php echo BASE_URL('uploads/Products/noImg.png'); ?>" alt=""/>
-          </div>
-          <div class="span4">
-            <h5>Product Name </h5>
-            <p>
-              Nowadays the lingerie industry is one of the most successful business spheres.We always stay in touch with the latest fashion tendencies -
-              that is why our goods are so popular..
-            </p>
-            <a class="btn btn-small pull-right" href="<?php echo SITE_URL('Product/ProductDetail'); ?>">View Details</a>
-            <br class="clr"/>
-          </div>
-          <hr class="soft"/>
-
-
-          <div class="span3 alignR">
-            <form class="form-horizontal qtyFrm">
-              <h3> $140.00</h3>
-
-              <!-- <a href="product_details.html" class="btn btn-large btn-primary"> Add to <i class=" icon-shopping-cart"></i></a>
-              <a href="product_details.html" class="btn btn-large"><i class="icon-zoom-in"></i></a> -->
-
-            </form>
-          </div>
-        </div>
-        <hr class="soft"/>
-
-
-        <div class="row">
-          <div class="span2">
-            <img src="<?php echo BASE_URL('uploads/Products/noImg.png'); ?>" alt=""/>
-          </div>
-          <div class="span4">
-            <h5>Product Name </h5>
-            <p>
-              Nowadays the lingerie industry is one of the most successful business spheres.We always stay in touch with the latest fashion tendencies -
-              that is why our goods are so popular..
-            </p>
-            <a class="btn btn-small pull-right" href="<?php echo SITE_URL('Product/ProductDetail'); ?>">View Details</a>
-            <br class="clr"/>
-          </div>
-          <hr class="soft"/>
-
-
-          <div class="span3 alignR">
-            <form class="form-horizontal qtyFrm">
-              <h3> $140.00</h3>
-
-              <!-- <a href="product_details.html" class="btn btn-large btn-primary"> Add to <i class=" icon-shopping-cart"></i></a>
-              <a href="product_details.html" class="btn btn-large"><i class="icon-zoom-in"></i></a> -->
-
-            </form>
-          </div>
-        </div>
-        <hr class="soft"/>
-
-
-
-
-      </div>
-
-      <div class="tab-pane  active" id="blockView">
-        <ul class="thumbnails">
-
+    <!-- Block Style -->
+    <div class="tab-pane  active" id="blockView">
+      <ul class="thumbnails">
+        <?php foreach ($Product as $block): ?>
+          <!-- Start Loop -->
           <li class="span3">
             <div class="thumbnail">
-              <a href="<?php echo SITE_URL('Product/ProductDetail'); ?>"><img src="<?php echo BASE_URL('uploads/Products/noImg.png'); ?>" alt=""/></a>
+              <a href="<?php echo SITE_URL('Product/ProductDetail/'.$block['categroupId']."/".$block['cateId']."/".$block['productId']); ?>"><img src="<?php echo BASE_URL('uploads/Products/'.$block['productImg']); ?>" alt=""/></a>
               <div class="caption">
-                <h5>Manicure &amp; Pedicure</h5>
+                <h5><?php echo $block['cateName']." - ".$block['productName'] ?></h5>
                 <p>
-                  I'm a paragraph. Click here
+                  ฿<?php echo number_format($block['productPrice']) ?>
                 </p>
                 <h4 style="text-align:center">
                   <!-- <i class="icon-zoom-in"></i>
                   <a class="btn" href="#">Add to <i class="icon-shopping-cart"></i></a> -->
-                  <button class="btn btn-primary" href="#">&euro;222.00</button></h4>
+                  <a class="btn btn-primary" href="<?php echo SITE_URL('Product/ProductDetail/'.$block['categroupId']."/".$block['cateId']."/".$block['productId']); ?>">รายละเอียด</a></h4>
                 </div>
               </div>
             </li>
-
-            <li class="span3">
-              <div class="thumbnail">
-                <a href="<?php echo SITE_URL('Product/ProductDetail'); ?>"><img src="<?php echo BASE_URL('uploads/Products/noImg.png'); ?>" alt=""/></a>
-                <div class="caption">
-                  <h5>Manicure &amp; Pedicure</h5>
-                  <p>
-                    I'm a paragraph. Click here
-                  </p>
-                  <h4 style="text-align:center">
-                    <!-- <i class="icon-zoom-in"></i>
-                    <a class="btn" href="#">Add to <i class="icon-shopping-cart"></i></a> -->
-                    <button class="btn btn-primary" href="#">&euro;222.00</button></h4>
-                  </div>
-                </div>
-              </li>
-
-              <li class="span3">
-                <div class="thumbnail">
-                  <a href="<?php echo SITE_URL('Product/ProductDetail'); ?>"><img src="<?php echo BASE_URL('uploads/Products/noImg.png'); ?>" alt=""/></a>
-                  <div class="caption">
-                    <h5>Manicure &amp; Pedicure</h5>
-                    <p>
-                      I'm a paragraph. Click here
-                    </p>
-                    <h4 style="text-align:center">
-                      <!-- <i class="icon-zoom-in"></i>
-                      <a class="btn" href="#">Add to <i class="icon-shopping-cart"></i></a> -->
-                      <button class="btn btn-primary" href="#">&euro;222.00</button></h4>
-                    </div>
-                  </div>
-                </li>
-
-                <li class="span3">
-                  <div class="thumbnail">
-                    <a href="<?php echo SITE_URL('Product/ProductDetail'); ?>"><img src="<?php echo BASE_URL('uploads/Products/noImg.png'); ?>" alt=""/></a>
-                    <div class="caption">
-                      <h5>Manicure &amp; Pedicure</h5>
-                      <p>
-                        I'm a paragraph. Click here
-                      </p>
-                      <h4 style="text-align:center">
-                        <!-- <i class="icon-zoom-in"></i>
-                        <a class="btn" href="#">Add to <i class="icon-shopping-cart"></i></a> -->
-                        <button class="btn btn-primary" href="#">&euro;222.00</button></h4>
-                      </div>
-                    </div>
-                  </li>
-
-                  <li class="span3">
-                    <div class="thumbnail">
-                      <a href="<?php echo SITE_URL('Product/ProductDetail'); ?>"><img src="<?php echo BASE_URL('uploads/Products/noImg.png'); ?>" alt=""/></a>
-                      <div class="caption">
-                        <h5>Manicure &amp; Pedicure</h5>
-                        <p>
-                          I'm a paragraph. Click here
-                        </p>
-                        <h4 style="text-align:center">
-                          <!-- <i class="icon-zoom-in"></i>
-                          <a class="btn" href="#">Add to <i class="icon-shopping-cart"></i></a> -->
-                          <button class="btn btn-primary" href="#">&euro;222.00</button></h4>
-                        </div>
-                      </div>
-                    </li>
-
-                    <li class="span3">
-                      <div class="thumbnail">
-                        <a href="<?php echo SITE_URL('Product/ProductDetail'); ?>"><img src="<?php echo BASE_URL('uploads/Products/noImg.png'); ?>" alt=""/></a>
-                        <div class="caption">
-                          <h5>Manicure &amp; Pedicure</h5>
-                          <p>
-                            I'm a paragraph. Click here
-                          </p>
-                          <h4 style="text-align:center">
-                            <!-- <i class="icon-zoom-in"></i>
-                            <a class="btn" href="#">Add to <i class="icon-shopping-cart"></i></a> -->
-                            <button class="btn btn-primary" href="#">&euro;222.00</button></h4>
-                          </div>
-                        </div>
-                      </li>
-
-
-
-
-                    </ul>
-                    <hr class="soft"/>
-                  </div>
-                </div>
-
-                <!-- <a href="compair.html" class="btn btn-large pull-right">Compair Product</a>
-                <div class="pagination">
-                <ul>
-                <li><a href="#">&lsaquo;</a></li>
-                <li><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">...</a></li>
-                <li><a href="#">&rsaquo;</a></li>
-              </ul>
-            </div>
-            <br class="clr"/>
-          </div> -->
-
-        </div>
+          <?php endforeach; ?>
+          <!-- End Loop -->
+        </ul>
+        <!-- End Block Style -->
+        <hr class="soft"/>
       </div>
     </div>
-  </span>
+
+    <!-- <a href="compair.html" class="btn btn-large pull-right">Compair Product</a>
+    <div class="pagination">
+    <ul>
+    <li><a href="#">&lsaquo;</a></li>
+    <li><a href="#">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">...</a></li>
+    <li><a href="#">&rsaquo;</a></li>
+  </ul>
+</div>
+<br class="clr"/>
+</div> -->
+<?php endif; ?>
+
+</div>
+</div>
+
+</div>
+</span>

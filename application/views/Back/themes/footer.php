@@ -97,6 +97,11 @@ function validate(evt) {
 }
 </script>
 
+<script>
+  $('#myButton').on('click', function () {
+    var $btn = $(this).button('loading')
+  })
+</script>
 <!-- <script type="text/javascript">
 $(document).ready(function(){
 $.notify({

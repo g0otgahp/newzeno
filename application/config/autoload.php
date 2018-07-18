@@ -143,4 +143,5 @@ $autoload['model'] = array(
     'GroupModel',
     'ConfigModel',
     'AgentModel',
+    'HomepageModel',
 );

@@ -59,7 +59,6 @@ class Config extends CI_Controller
 
   public function UpdateConfig()
   {
-
     $input = $this->input->post();
     $this->ConfigModel->UpdateConfig($input);
 
@@ -67,7 +66,6 @@ class Config extends CI_Controller
     echo "<script>window.location=('".SITE_URL('Admin/Config')."')</script>";
 
   }
-
 
 
 }

@@ -25,9 +25,10 @@ class Home extends CI_Controller
 
         $cateId = 1;
         $Category = $this->CategoryModel->HomeCategory($cateId);
-
+        $Product = $this->HomepageModel->SelectHomeProduct();
 
         $data = array(
+          'Product' => $Product,
           'Category' => $Category,
           'Group' => $Group,
         );
@@ -39,7 +40,7 @@ class Home extends CI_Controller
 
         $this->load->view('Front/themes/header',$data);
         $this->load->view('Front/themes/slide');
-        $this->load->view('Front/themes/menu');
+        // $this->load->view('Front/themes/menu');
         $this->load->view('Front/Home');
         $this->load->view('Front/themes/footer');
     }
@@ -48,20 +49,22 @@ class Home extends CI_Controller
     {
         $Group = $this->GroupModel->SelectGroup();
         $cateId = $this->uri->segment(3);
-
+        $GroupSelect = $this->GroupModel->SelectGroupById($cateId);
         $Category = $this->CategoryModel->HomeCategory($cateId);
-
+        $Product = $this->HomepageModel->SelectProductByGroup($cateId);
 
         $data = array(
+          'Product' => $Product,
           'Category' => $Category,
           'Group' => $Group,
+          'GroupSelect' => $GroupSelect,
         );
 
 
         $this->load->view('Front/themes/header',$data);
-        $this->load->view('Front/themes/slide');
-        $this->load->view('Front/themes/menu');
-        $this->load->view('Front/Home');
+        $this->load->view('Front/themes/filter');
+        // $this->load->view('Front/themes/menu');
+        $this->load->view('Front/ProductList');
         $this->load->view('Front/themes/footer');
     }
 }

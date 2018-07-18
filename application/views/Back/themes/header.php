@@ -46,7 +46,7 @@
 		opacity: 0;
 	}
 
-	* , span , td , p , a , label {
+	* , span , td , a , label {
 		font-family: 'Prompt', sans-serif;
 		font-size: 14px;
 	}

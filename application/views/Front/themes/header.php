@@ -37,12 +37,12 @@
   }
 </style>
 
-  <style>
-  h1 , h2 , h3 , h4  {
-    font-family: 'Prompt', sans-serif;
-  }
+<style>
+h1 , h2 , h3 , h4  {
+  font-family: 'Prompt', sans-serif;
+}
 
-  </style>
+</style>
 
 </head>
 <body>
@@ -64,24 +64,24 @@
     <form class="pull-right" style="margin-top:10px;">
       <input style="margin-top:10px;" class="form-control" type="text" placeholder="Products Search"/>
       <!-- <select class="form-control select2-single" style="margin-top:10px;">
-        <option>-เลือกประเภท-</option>
-        <option>CLOTHES </option>
-        <option>FOOD AND BEVERAGES </option>
-        <option>HEALTH & BEAUTY </option>
-        <option>SPORTS & LEISURE </option>
-        <option>BOOKS & ENTERTAINMENTS </option>
-      </select>
-      <select class="form-control select2-single" style="margin-top:10px;">
-        <option>-เลือกยี่ห้อ-</option>
-        <option>CLOTHES </option>
-        <option>FOOD AND BEVERAGES </option>
-        <option>HEALTH & BEAUTY </option>
-        <option>SPORTS & LEISURE </option>
-        <option>BOOKS & ENTERTAINMENTS </option>
-      </select> -->
-      <button type="submit" class="btn btn-primary">ค้นหา</button>
-    </form>
-  </div>
+      <option>-เลือกประเภท-</option>
+      <option>CLOTHES </option>
+      <option>FOOD AND BEVERAGES </option>
+      <option>HEALTH & BEAUTY </option>
+      <option>SPORTS & LEISURE </option>
+      <option>BOOKS & ENTERTAINMENTS </option>
+    </select>
+    <select class="form-control select2-single" style="margin-top:10px;">
+    <option>-เลือกยี่ห้อ-</option>
+    <option>CLOTHES </option>
+    <option>FOOD AND BEVERAGES </option>
+    <option>HEALTH & BEAUTY </option>
+    <option>SPORTS & LEISURE </option>
+    <option>BOOKS & ENTERTAINMENTS </option>
+  </select> -->
+  <button type="submit" class="btn btn-primary">ค้นหา</button>
+</form>
+</div>
 
 
 <!-- new nav -->
@@ -101,63 +101,50 @@
       <li class=""><a href="<?php echo SITE_URL('Service'); ?>">บริการ</a></li>
       <li class=""><a href="<?php echo SITE_URL('Home'); ?>">หน้าแรก</a></li>
 
+    </ul>
   </ul>
-</ul>
 </div>
 
 <!-- new nav -->
 
 
 
-  <!-- Navbar ================================================== -->
-  <div>
-    <div style="background-color:#3a3f44;">
-      <div id="logoArea" class="navbar">
-        <a data-target="#topMenu" data-toggle="collapse" class="btn btn-navbar" style="margin-top:8px; padding:5px;">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </a>
-        <div class="navbar-inner" style="">
-
-          <ul id="topMenu" class="nav">
-            <li class=""><a href="#">&nbsp;</a></li>
-
-            <ul class="nav nav-pills">
-
-              <?php foreach ($Group as $ShowGroup): ?>
-
-              <li class="" style="padding-right:20px;"><a href="<?php echo SITE_URL('Home/CategoryHome/'.$ShowGroup['categroupId']); ?>"><?php echo $ShowGroup['categroupName'] ?></a></li>
-
-              <?php endforeach; ?>
-
-        </ul>
-      </div>
-
-
-
-
-      <!-- <div class="container" style="background-color: #d9d9d9; height:60px; display: flex; justify-content: space-around;"> -->
-      <div class="container" style="background-color: #d9d9d9; height:60px;">
+<!-- Navbar ================================================== -->
+<div>
+  <div style="background-color:#3a3f44;">
+    <div id="logoArea" class="navbar">
+      <a data-target="#topMenu" data-toggle="collapse" class="btn btn-navbar" style="margin-top:8px; padding:5px;">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <div class="navbar-inner" style="">
 
         <ul id="topMenu" class="nav">
           <li class=""><a href="#">&nbsp;</a></li>
-          <li class=""><a href="#">&nbsp;</a></li>
-
-
           <ul class="nav nav-pills">
-
-            <?php foreach ($Category as $CategoryShow): ?>
-              <li class="" style="padding-top:10px; padding-right:15px;"><a href="<?php echo SITE_URL('Product/ShowProduct/'.$CategoryShow['categroupId']); ?>"><font color="black" style="font-weight: bold; font-size:16px;"><?php echo $CategoryShow['cateName'] ?></font></a></li>
+            <?php foreach ($Group as $ShowGroup): ?>
+              <li <?php if (!empty($GroupSelect)) {
+                if ($ShowGroup['categroupId'] == $GroupSelect[0]['categroupId']) {
+                  echo "class='btn btn-mini btn-primary'";
+                }
+              }; ?>><a href="<?php echo SITE_URL('Home/CategoryHome/'.$ShowGroup['categroupId']); ?>"><?php echo $ShowGroup['categroupName'] ?></a></li>
             <?php endforeach; ?>
-      </ul>
+          </ul>
+        </div>
+
+        <!-- <div class="container" style="background-color: #d9d9d9; height:60px; display: flex; justify-content: space-around;"> -->
+        <div class="container" style="background-color: #d9d9d9; height:60px;">
+          <ul id="topMenu" class="nav">
+            <li class=""><a href="#">&nbsp;</a></li>
+            <li class=""><a href="#">&nbsp;</a></li>
+            <ul class="nav nav-pills">
+              <?php foreach ($Category as $CategoryShow): ?>
+                <li style="padding-top:10px; padding-right:15px;"><a href="<?php echo SITE_URL('Product/ShowProduct/'.$CategoryShow['categroupId']."/".$CategoryShow['cateId']); ?>"><font color="black" style="font-weight: bold; font-size:16px;"><?php echo $CategoryShow['cateName'] ?></font></a></li>
+              <?php endforeach; ?>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
-
-
-
-
-
-    </div>
-  </div>
-</div>
-<!-- Header End====================================================================== -->
+    <!-- Header End====================================================================== -->

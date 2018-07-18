@@ -17,6 +17,18 @@ class CategoryModel extends CI_Model
 
   }
 
+  public function SelectCategoryById($cateId)
+  {
+
+    $Category = $this->db
+    ->where('cateId',$cateId)
+    ->get('category')
+    ->result_array();
+    
+    return $Category;
+
+  }
+
   public function SelectCategory()
   {
 
