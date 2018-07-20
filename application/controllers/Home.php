@@ -22,12 +22,11 @@ class Home extends CI_Controller
     public function index()
     {
         $Group = $this->GroupModel->SelectGroup();
-
-        $cateId = 1;
-        $Category = $this->CategoryModel->HomeCategory($cateId);
-        $Product = $this->HomepageModel->SelectHomeProduct();
-
+        $Category = $this->CategoryModel->HomeCategory($Group[0]['categroupId']);
+        $Product = $this->HomepageModel->SelectProductRecommend();
+        $NewProduct = $this->HomepageModel->SelectProductNew();
         $data = array(
+          'NewProduct' => $NewProduct,
           'Product' => $Product,
           'Category' => $Category,
           'Group' => $Group,
@@ -39,8 +38,8 @@ class Home extends CI_Controller
 
 
         $this->load->view('Front/themes/header',$data);
-        $this->load->view('Front/themes/slide');
-        // $this->load->view('Front/themes/menu');
+        // $this->load->view('Front/themes/slide');
+        $this->load->view('Front/themes/menu');
         $this->load->view('Front/Home');
         $this->load->view('Front/themes/footer');
     }

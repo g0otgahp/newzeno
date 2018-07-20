@@ -23,8 +23,7 @@ class Service extends CI_Controller
     {
 
       $Group = $this->GroupModel->SelectGroup();
-      $cateId = 1;
-      $Category = $this->CategoryModel->HomeCategory($cateId);
+      $Category = $this->CategoryModel->HomeCategory($Group[0]['categroupId']);
 
       $dataService = $this->ConfigModel->SelectService();
 
@@ -36,7 +35,7 @@ class Service extends CI_Controller
 
         $this->load->view('Front/themes/header',$data);
         // $this->load->view('Front/themes/slide');
-        $this->load->view('Front/themes/menu');
+        // $this->load->view('Front/themes/menu');
         $this->load->view('Front/Service');
         $this->load->view('Front/themes/footer');
     }

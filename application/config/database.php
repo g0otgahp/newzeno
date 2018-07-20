@@ -85,7 +85,6 @@ $db['default'] = array(
     'dbdriver' => 'mysqli',
     'dbprefix' => '',
     'pconnect' => false,
-    'db_debug' => true,
     'cache_on' => false,
     'cachedir' => '',
     'char_set' => 'utf8',

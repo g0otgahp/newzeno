@@ -20,6 +20,41 @@ class HomepageModel extends CI_Model
   * @see https://codeigniter.com/user_guide/general/urls.html
   */
 
+  public function SelectProductNew()
+  {
+    $data = $this->db
+    ->where('productStatus',1)
+    ->where('cateStatus',1)
+    ->where('brandStatus',1)
+    ->where('categroupStatus',1)
+    ->order_by('productId','DESC')
+    ->join('brand','brand.brandId = product.productBrandid')
+    ->join('category','category.CateId = product.productCateid')
+    ->join('categroup','categroup.categroupId = product.productGroupid')
+    ->order_by('productId','DESC')
+    ->get('product')
+    ->result_array();
+
+    return $data;
+  }
+
+  public function SelectProductRecommend()
+  {
+    $data = $this->db
+    ->where('productStatus',1)
+    ->where('cateStatus',1)
+    ->where('brandStatus',1)
+    ->where('categroupStatus',1)
+    ->join('brand','brand.brandId = product.productBrandid')
+    ->join('category','category.CateId = product.productCateid')
+    ->join('categroup','categroup.categroupId = product.productGroupid')
+    ->order_by('productId','DESC')
+    ->get('product')
+    ->result_array();
+
+    return $data;
+  }
+
   public function SelectHomeProduct()
   {
     $data = $this->db->where('categroupStatus',1)->get('categroup')->result_array();

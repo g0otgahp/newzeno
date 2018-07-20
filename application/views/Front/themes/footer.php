@@ -3,12 +3,18 @@
   <div class="container">
     <div class="row">
       <div class="span3">
-        <h5>ACCOUNT</h5>
+        <!-- <h5>ACCOUNT</h5>
         <a href="login.html">YOUR ACCOUNT</a>
         <a href="login.html">PERSONAL INFORMATION</a>
         <a href="login.html">ADDRESSES</a>
         <a href="login.html">DISCOUNT</a>
-        <a href="login.html">ORDER HISTORY</a>
+        <a href="login.html">ORDER HISTORY</a> -->
+        <?php foreach ($Group as $footer): ?>
+          <h4><?php echo $footer['categroupName'] ?></h4>
+          <?php foreach ($footer['category'] as $catefooter): ?>
+          <a href="<?php echo SITE_URL('Product/ShowProduct/'.$footer['categroupId']."/".$catefooter['cateId']); ?>"><?php echo $catefooter['cateName'] ?></a>
+        <?php endforeach; ?>
+        <?php endforeach; ?>
       </div>
       <div class="span3">
         <h5>INFORMATION</h5>
@@ -33,7 +39,7 @@
         <a href="#"><img width="60" height="60" src="<?php echo BASE_URL()?>/assets/Front/themes/images/youtube.png" title="youtube" alt="youtube"/></a>
       </div>
     </div>
-    <p class="pull-right">&copy; Bootshop</p>
+    <p class="pull-right">&copy; Newzeno</p>
   </div><!-- Container End -->
 </div>
 <!-- Placed at the end of the document so the pages load faster ============================================= -->

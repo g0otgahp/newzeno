@@ -23,7 +23,7 @@ class ConfigModel extends CI_Model
   public function SelectConfigById($id)
   {
 
-    $dataConfig = $this->db->where('configId',$id)->get('config')->result_array();
+    $dataConfig = $this->db->where('configId',$id)->get('setting')->result_array();
     return $dataConfig;
 
   }
@@ -31,7 +31,7 @@ class ConfigModel extends CI_Model
   public function SelectConfig()
   {
 
-    $dataConfig = $this->db->get('config')->result_array();
+    $dataConfig = $this->db->get('setting')->result_array();
     return $dataConfig;
 
   }
@@ -41,7 +41,7 @@ class ConfigModel extends CI_Model
 
     $this->db
     ->where('configId',$input['configId'])
-    ->update('config',$input);
+    ->update('setting',$input);
 
   }
 
@@ -50,7 +50,7 @@ class ConfigModel extends CI_Model
 
     $dataContact = $this->db
     ->where('configId',4)
-    ->get('config')
+    ->get('setting')
     ->result_array();
     return $dataContact;
 
@@ -61,7 +61,7 @@ class ConfigModel extends CI_Model
 
     $dataPayment = $this->db
     ->where('configId',3)
-    ->get('config')
+    ->get('setting')
     ->result_array();
     return $dataPayment;
 
@@ -72,7 +72,7 @@ class ConfigModel extends CI_Model
 
     $dataService = $this->db
     ->where('configId',2)
-    ->get('config')
+    ->get('setting')
     ->result_array();
     return $dataService;
 
@@ -83,7 +83,7 @@ class ConfigModel extends CI_Model
 
     $dataGenaral = $this->db
     ->where('configId',1)
-    ->get('config')
+    ->get('setting')
     ->result_array();
     return $dataGenaral;
 

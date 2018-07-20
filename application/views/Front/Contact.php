@@ -1,12 +1,12 @@
-
-
-<div class="span9">
+<div class="container">
+  <div class="row">
+<div class="span12">
   <ul class="breadcrumb">
     <li><a href="<?php echo SITE_URL('Home'); ?>">หน้าแรก</a> <span class="divider">/</span></li>
     <li class="active">ติดต่อเรา</li>
   </ul>
 
-  <div class="span9">
+  <div class="span12">
     <div class="form-group">
       <?php echo $dataContact[0]['configTextarea'] ?>
     </div>

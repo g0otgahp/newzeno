@@ -23,8 +23,7 @@ class Payment extends CI_Controller
     {
 
       $Group = $this->GroupModel->SelectGroup();
-      $cateId = 1;
-      $Category = $this->CategoryModel->HomeCategory($cateId);
+      $Category = $this->CategoryModel->HomeCategory($Group[0]['categroupId']);
       $dataPayment = $this->ConfigModel->SelectPayment();
 
       $data = array(
@@ -35,7 +34,7 @@ class Payment extends CI_Controller
 
         $this->load->view('Front/themes/header',$data);
         // $this->load->view('Front/themes/slide');
-        $this->load->view('Front/themes/menu');
+        // $this->load->view('Front/themes/menu');
         $this->load->view('Front/Payment');
         $this->load->view('Front/themes/footer');
     }

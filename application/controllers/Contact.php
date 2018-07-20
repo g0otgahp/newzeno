@@ -23,8 +23,7 @@ class Contact extends CI_Controller
     {
 
       $Group = $this->GroupModel->SelectGroup();
-      $cateId = 1;
-      $Category = $this->CategoryModel->HomeCategory($cateId);
+      $Category = $this->CategoryModel->HomeCategory($Group[0]['categroupId']);
       $dataContact = $this->ConfigModel->SelectContact();
 
       $data = array(
@@ -35,7 +34,7 @@ class Contact extends CI_Controller
 
         $this->load->view('Front/themes/header',$data);
         // $this->load->view('Front/themes/slide');
-        $this->load->view('Front/themes/menu');
+        // $this->load->view('Front/themes/menu');
         $this->load->view('Front/Contact');
         $this->load->view('Front/themes/footer');
     }

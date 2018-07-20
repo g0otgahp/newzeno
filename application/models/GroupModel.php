@@ -22,7 +22,23 @@ class GroupModel extends CI_Model
 
   public function SelectGroup()
   {
-    $dataSelect = $this->db->where('categroupStatus',1)->get('categroup')->result_array();
+    $dataSelect = $this->db
+    ->where('categroupStatus',1)
+    ->get('categroup')
+    ->result_array();
+
+    $i=0;
+    foreach ($dataSelect as $row) {
+      $dataSelect[$i]['category'] = $this->db
+      ->where('cateStatus',1)
+      ->where('categroupId',$row['categroupId'])
+      ->get('category')
+      ->result_array();
+      $i++;
+    }
+    // echo "<pre>";
+    // print_r($dataSelect);
+    // exit();
     return $dataSelect;
   }
 

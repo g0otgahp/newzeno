@@ -35,13 +35,10 @@
     font-family: 'Prompt', sans-serif;
     font-size: 14px;
   }
-</style>
 
-<style>
 h1 , h2 , h3 , h4  {
   font-family: 'Prompt', sans-serif;
 }
-
 </style>
 
 </head>
@@ -60,10 +57,61 @@ h1 , h2 , h3 , h4  {
   </div>
   <div class="container" style="background-color:white; margin-top:10px; padding:10px;">
     <!-- <a href="<?php echo SITE_URL('Home');?>"><img src="<?php echo BASE_URL()?>/uploads/Logo/azza_logo.png" height="80px" width="150"/></a> -->
-    <a href="<?php echo SITE_URL('Home');?>"><img src="<?php echo BASE_URL()?>/uploads/Logo/logonewzeno.png" height="100px"/></a>
-    <form class="pull-right" style="margin-top:10px;">
+    <div class="row">
+      <div class="span4">
+    <a href="<?php echo SITE_URL('Home');?>"><img src="<?php echo BASE_URL()?>/uploads/Logo/logonewzeno.png" height="100px" style="margin-top:25px;"/></a>
+  </div>
+  <div class="span8">
+    <div id="carouselBlk">
+      <div id="myCarousel" class="carousel slide">
+        <div class="carousel-inner">
+          <div class="item active">
+            <div class="container" style="width:780px; height:100px;">
+              <a href="#"><img style="width:780px; height:100px;" src="<?php echo BASE_URL()?>/uploads/Slide/lg_generic_banner_by_lidikhalid-d4jre7h.jpg"/></a>
+              <div class="carousel-caption">
+                <h4>Second Thumbnail label</h4>
+                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="container" style="width:780px; height:100px;">
+              <a href="#"><img style="width:780px; height:100px;" src="<?php echo BASE_URL()?>/uploads/Slide/banner-lg.jpg" alt=""/></a>
+              <div class="carousel-caption">
+                <h4>Second Thumbnail label</h4>
+                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="container" style="width:780px; height:100px;">
+              <a href="#"><img style="width:780px; height:100px;" src="<?php echo BASE_URL()?>/uploads/Slide/banner-22.png" alt=""/></a>
+              <div class="carousel-caption">
+                <h4>Second Thumbnail label</h4>
+                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="container" style="width:780px; height:100px;">
+              <a href="#"><img style="width:780px; height:100px;" src="<?php echo BASE_URL()?>/uploads/Slide/projectors.jpg" alt=""/></a>
+              <div class="carousel-caption">
+                <h4>Second Thumbnail label</h4>
+                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
+      </div>
+    </div>
+  </div>
+
+    <!-- <form class="pull-right" style="margin-top:10px;">
       <input style="margin-top:10px;" class="form-control" type="text" placeholder="Products Search"/>
-      <!-- <select class="form-control select2-single" style="margin-top:10px;">
+      <button type="submit" class="btn btn-primary">ค้นหา</button>
+      <select class="form-control select2-single" style="margin-top:10px;">
       <option>-เลือกประเภท-</option>
       <option>CLOTHES </option>
       <option>FOOD AND BEVERAGES </option>
@@ -78,31 +126,31 @@ h1 , h2 , h3 , h4  {
     <option>HEALTH & BEAUTY </option>
     <option>SPORTS & LEISURE </option>
     <option>BOOKS & ENTERTAINMENTS </option>
-  </select> -->
-  <button type="submit" class="btn btn-primary">ค้นหา</button>
-</form>
+  </select>
+</form> -->
+</div>
 </div>
 
 
 <!-- new nav -->
 
-<div class="container">
-
-  <ul id="topMenu" class="nav" style="height:15px">
-
+<div class="container" style="height:55px">
+  <ul id="topMenu" class="nav" style="height:14px">
     <ul class="nav nav-pills">
-
-
-      <li class=""><a href="<?php echo SITE_URL('Contact'); ?>">ติดต่อเรา</a></li>
-      <li class=""><a href="<?php echo SITE_URL('Payment'); ?>">วิธีชำระเงิน</a></li>
-      <li class=""><a href="<?php echo SITE_URL('Home'); ?>">ตัวแทนจำหน่าย</a></li>
-      <li class=""><a href="<?php echo SITE_URL('Home'); ?>">ผลงาน</a></li>
-      <li class=""><a href="<?php echo SITE_URL('Home'); ?>">ข่าวสาร</a></li>
-      <li class=""><a href="<?php echo SITE_URL('Service'); ?>">บริการ</a></li>
-      <li class=""><a href="<?php echo SITE_URL('Home'); ?>">หน้าแรก</a></li>
-
+      <form class="pull-right">
+        <input style="margin-top:10px;" class="form-control" type="text" placeholder="ค้นหาสินค้า"/>
+        <button type="submit" class="btn btn-primary">ค้นหา</button>
+      </form>
+      <li class="" style="margin-top:10px;"><a href="<?php echo SITE_URL('Contact'); ?>">ติดต่อเรา</a></li>
+      <li class="" style="margin-top:10px;"><a href="<?php echo SITE_URL('Payment'); ?>">วิธีชำระเงิน</a></li>
+      <li class="" style="margin-top:10px;"><a href="<?php echo SITE_URL('Home'); ?>">ตัวแทนจำหน่าย</a></li>
+      <li class="" style="margin-top:10px;"><a href="<?php echo SITE_URL('Home'); ?>">ผลงาน</a></li>
+      <li class="" style="margin-top:10px;"><a href="<?php echo SITE_URL('Home'); ?>">ข่าวสาร</a></li>
+      <li class="" style="margin-top:10px;"><a href="<?php echo SITE_URL('Service'); ?>">บริการ</a></li>
+      <li class="" style="margin-top:10px;"><a href="<?php echo SITE_URL('Home'); ?>">หน้าแรก</a></li>
     </ul>
   </ul>
+
 </div>
 
 <!-- new nav -->
@@ -126,9 +174,9 @@ h1 , h2 , h3 , h4  {
             <?php foreach ($Group as $ShowGroup): ?>
               <li <?php if (!empty($GroupSelect)) {
                 if ($ShowGroup['categroupId'] == $GroupSelect[0]['categroupId']) {
-                  echo "class='btn btn-mini btn-primary'";
+                  echo "class='active'";
                 }
-              }; ?>><a href="<?php echo SITE_URL('Home/CategoryHome/'.$ShowGroup['categroupId']); ?>"><?php echo $ShowGroup['categroupName'] ?></a></li>
+              }; ?>><a href="<?php echo SITE_URL('Home/CategoryHome/'.$ShowGroup['categroupId']); ?>" ><?php echo $ShowGroup['categroupName'] ?></a></li>
             <?php endforeach; ?>
           </ul>
         </div>

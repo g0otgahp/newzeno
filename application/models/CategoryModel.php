@@ -24,7 +24,7 @@ class CategoryModel extends CI_Model
     ->where('cateId',$cateId)
     ->get('category')
     ->result_array();
-    
+
     return $Category;
 
   }
@@ -35,6 +35,7 @@ class CategoryModel extends CI_Model
     $dataShow = $this->db
     ->order_by('cateId','DESC')
     ->where('cateStatus',1)
+    ->where('categroupStatus',1)
     ->join('categroup','categroup.categroupId = category.categroupId')
     ->get('category')
     ->result_array();

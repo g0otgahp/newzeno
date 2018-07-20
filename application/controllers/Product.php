@@ -23,10 +23,8 @@ class Product extends CI_Controller
   public function index()
   {
 
-    $cateId = 1;
     $Group = $this->GroupModel->SelectGroup();
-    // $cateId = 1;
-    $Category = $this->CategoryModel->HomeCategory($cateId);
+    $Category = $this->CategoryModel->HomeCategory($Group[0]['categroupId']);
 
     $data = array(
       'Category' => $Category,
