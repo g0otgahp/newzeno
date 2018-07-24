@@ -20,7 +20,7 @@
               ?>
 
               <?php foreach ($data as $CategoryShow): ?>
-                <li><a href="<?php echo SITE_URL('Product'); ?>"> &nbsp;&nbsp;-> &nbsp; <?php echo $CategoryShow['cateName'] ?></a></li>
+                <li><a target="_blank" href="<?php echo SITE_URL('Product/ShowProduct/'.$ShowGroup['categroupId']."/".$CategoryShow['cateId']); ?>"><?php echo $CategoryShow['cateName'] ?></a></li>
               <?php endforeach; ?>
 
             </ul>
@@ -79,7 +79,7 @@
 <div class="thumbnail">
   <img src="<?php echo BASE_URL()?>/assets/Front/themes/images/payment_methods.png" title="Bootshop Payment Methods" alt="Payments Methods">
   <div class="caption">
-    <h5>Payment Methods</h5>
+    <h5>ทางเลือกการชำระเงิน</h5>
   </div>
 </div>
 </div>

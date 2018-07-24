@@ -1,24 +1,15 @@
 <span>
   <div class="span9">
-    <h3> รายการสินค้า <small class="pull-right">
+    <h3> รายการที่ค้นหา <small class="pull-right">
       <?php $num = count($Product); if ($num > 0): ?>
         <?php echo "พบ ".$num. " รายการ" ?>
-      <?php else: ?>
-        ไม่พบสินค้า
+        <?php else: ?>
+          ไม่พบสินค้า
       <?php endif; ?>
     </small></h3>
     <ul class="breadcrumb">
       <li><a href="<?php echo SITE_URL('Home'); ?>">หน้าแรก</a> <span class="divider">/</span></li>
-      <?php if (!empty($CateSelect)): ?>
-        <li><a href="<?php echo SITE_URL('Home/CategoryHome/'.$GroupSelect[0]['categroupId']); ?>"><?php echo $GroupSelect[0]['categroupName'] ?> </a><span class="divider">/</span></li>
-        <li class="active"><?php echo $CateSelect[0]['cateName'] ?></li>
-      <?php else: ?>
-        <li class="active"><?php echo $GroupSelect[0]['categroupName'] ?></li>
-      <?php endif; ?>
-
     </ul>
-
-    <!-- <h3> Products Name <small class="pull-right"> 40 Products are available </small></h3> -->
     <!-- <form class="form-horizontal span6">
     <div class="control-group">
     <label class="control-label alignL">Sort By </label>
@@ -31,7 +22,6 @@
 </div>
 </form> -->
 <?php if ($num > 0): ?>
-
 
   <div id="myTab" class="pull-right">
     <a href="#blockView" data-toggle="tab"><span class="btn btn-large"><i class="icon-th-large"></i></span></a>

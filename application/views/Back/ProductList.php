@@ -81,7 +81,9 @@
                 <tr>
                   <td><?php echo $i; ?></td>
                   <td><img src="<?php echo BASE_URL('uploads/products/'.$row['productImg']);?>" class="img-thumbnail" width="100"></td>
-                  <td><?php echo $row['productName'] ?></td>
+                  <td><?php echo $row['productName'] ?> <?php if ($row['productFav'] == 1): ?>
+                     <span class="glyphicon glyphicon-star" style="color:yellow;"></span>
+                  <?php endif; ?></td>
                   <td><?php echo $row['brandName'] ?></td>
                   <td><?php echo $row['cateName'] ?></td>
                   <td>

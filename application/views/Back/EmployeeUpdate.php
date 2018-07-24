@@ -29,12 +29,6 @@
               </div>
               <div class="col-md-4">
                 <div class="form-group">
-                  <label>รหัสผ่าน</label>
-                  <input type="password" class="form-control" name="adminPassword" placeholder="รหัสผ่าน" required>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="form-group">
                   <label for="exampleInputEmail1">อีเมลล์</label>
                   <input type="email" class="form-control" name="profileEmail" value="<?php echo $dataDetail[0]['profileEmail'] ?>" placeholder="อีเมลล์" required>
                 </div>
@@ -140,7 +134,7 @@
             </div>
 
 
-            <a href="<?php echo SITE_URL('Admin/Employee/Delete/'.$dataDetail[0]['profileId']) ?>" class="btn btn-danger btn-fill">ลบพนักงาน </a>
+            <a href="<?php echo SITE_URL('Admin/Employee/Delete/'.$dataDetail[0]['profileId']) ?>" class="btn btn-danger btn-fill" onClick="javascript: return confirm('คุณต้องการลบพนักงานนี้ใช่หรือไม่')">ลบพนักงาน </a>
 
             <button type="submit" class="btn btn-info btn-fill pull-right">แก้ไขพนักงาน</button>
             <div class="clearfix"></div>

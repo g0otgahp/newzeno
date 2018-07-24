@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Newzeno : ตัวแทนจำหน่ายวิดีโอวอล โปรเจคเตอร์ อันดับ 1 ของประเทศไทย</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Newzeno : ตัวแทนจำหน่ายวิดีโอวอล โปรเจคเตอร์ เครื่องใช้ไฟฟ้า อันดับ 1 ของประเทศไทย</title>
+  <meta name="viewport" content="width=device-width, initial-scale=0">
   <meta name="description" content="">
   <meta name="author" content="">
 
@@ -137,15 +137,15 @@ h1 , h2 , h3 , h4  {
 <div class="container" style="height:55px">
   <ul id="topMenu" class="nav" style="height:14px">
     <ul class="nav nav-pills">
-      <form class="pull-right">
-        <input style="margin-top:10px;" class="form-control" type="text" placeholder="ค้นหาสินค้า"/>
+      <?php echo form_open('Search','class="pull-right"'); ?>
+        <input style="margin-top:10px;" class="form-control" type="text" name="keyword" placeholder="ค้นหาสินค้า"/>
         <button type="submit" class="btn btn-primary">ค้นหา</button>
-      </form>
+        <?php echo form_close(); ?>
       <li class="" style="margin-top:10px;"><a href="<?php echo SITE_URL('Contact'); ?>">ติดต่อเรา</a></li>
       <li class="" style="margin-top:10px;"><a href="<?php echo SITE_URL('Payment'); ?>">วิธีชำระเงิน</a></li>
-      <li class="" style="margin-top:10px;"><a href="<?php echo SITE_URL('Home'); ?>">ตัวแทนจำหน่าย</a></li>
-      <li class="" style="margin-top:10px;"><a href="<?php echo SITE_URL('Home'); ?>">ผลงาน</a></li>
-      <li class="" style="margin-top:10px;"><a href="<?php echo SITE_URL('Home'); ?>">ข่าวสาร</a></li>
+      <!-- <li class="" style="margin-top:10px;"><a href="<?php echo SITE_URL('Home'); ?>">ตัวแทนจำหน่าย</a></li> -->
+      <!-- <li class="" style="margin-top:10px;"><a href="<?php echo SITE_URL('Home'); ?>">ผลงาน</a></li> -->
+      <!-- <li class="" style="margin-top:10px;"><a href="<?php echo SITE_URL('Home'); ?>">ข่าวสาร</a></li> -->
       <li class="" style="margin-top:10px;"><a href="<?php echo SITE_URL('Service'); ?>">บริการ</a></li>
       <li class="" style="margin-top:10px;"><a href="<?php echo SITE_URL('Home'); ?>">หน้าแรก</a></li>
     </ul>
@@ -182,13 +182,14 @@ h1 , h2 , h3 , h4  {
         </div>
 
         <!-- <div class="container" style="background-color: #d9d9d9; height:60px; display: flex; justify-content: space-around;"> -->
-        <div class="container" style="background-color: #d9d9d9; height:60px;">
+        <div class="container" style="background-color: #d9d9d9; height:120px;">
           <ul id="topMenu" class="nav">
             <li class=""><a href="#">&nbsp;</a></li>
             <li class=""><a href="#">&nbsp;</a></li>
             <ul class="nav nav-pills">
               <?php foreach ($Category as $CategoryShow): ?>
-                <li style="padding-top:10px; padding-right:15px;"><a href="<?php echo SITE_URL('Product/ShowProduct/'.$CategoryShow['categroupId']."/".$CategoryShow['cateId']); ?>"><font color="black" style="font-weight: bold; font-size:16px;"><?php echo $CategoryShow['cateName'] ?></font></a></li>
+                <li style="padding-top:10px; padding-right:15px;"><a href="<?php echo SITE_URL('Product/ShowProduct/'.$CategoryShow['categroupId']."/".$CategoryShow['cateId']); ?>">
+                  <font color="black" style="font-weight: bold; font-size:16px;"><p align="center"><img src="<?php echo BASE_URL('uploads/Categorys/'.$CategoryShow['cateImg']); ?>" height="50px" width="50px" ></p><?php echo $CategoryShow['cateName'] ?></font></a></li>
               <?php endforeach; ?>
             </ul>
           </div>

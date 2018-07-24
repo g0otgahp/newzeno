@@ -32,9 +32,33 @@ class HomepageModel extends CI_Model
     ->join('category','category.CateId = product.productCateid')
     ->join('categroup','categroup.categroupId = product.productGroupid')
     ->order_by('productId','DESC')
-    ->get('product')
+    ->get('product',8)
     ->result_array();
 
+    return $data;
+  }
+
+  public function SearchProduct($key)
+  {
+    $data = $this->db
+    ->where('productStatus',1)
+    ->where('cateStatus',1)
+    ->where('brandStatus',1)
+    ->where('categroupStatus',1)
+    ->where('productName LIKE',"%".$key."%")
+    ->or_where('productDetail LIKE',"%".$key."%")
+    ->or_where('productSubdetail LIKE',"%".$key."%")
+    ->or_where('categroupName LIKE',"%".$key."%")
+    ->or_where('cateName LIKE',"%".$key."%")
+    ->or_where('brandName LIKE',"%".$key."%")
+    ->or_where('brandName LIKE',"%".$key."%")
+    ->order_by('productId','DESC')
+    ->join('brand','brand.brandId = product.productBrandid')
+    ->join('category','category.CateId = product.productCateid')
+    ->join('categroup','categroup.categroupId = product.productGroupid')
+    ->order_by('productId','DESC')
+    ->get('product')
+    ->result_array();
     return $data;
   }
 
@@ -45,6 +69,7 @@ class HomepageModel extends CI_Model
     ->where('cateStatus',1)
     ->where('brandStatus',1)
     ->where('categroupStatus',1)
+    ->where('productFav',1)
     ->join('brand','brand.brandId = product.productBrandid')
     ->join('category','category.CateId = product.productCateid')
     ->join('categroup','categroup.categroupId = product.productGroupid')
@@ -130,6 +155,13 @@ class HomepageModel extends CI_Model
     ->where('proimageProductid',$data['product'][0]['productId'])
     ->get('productimage')
     ->result_array();
+
+    $data['document'] = $this->db
+    ->where('docStatus',1)
+    ->where('docProductid',$data['product'][0]['productId'])
+    ->get('doc')
+    ->result_array();
+
     return $data;
   }
 

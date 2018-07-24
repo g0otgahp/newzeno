@@ -38,6 +38,15 @@
             </div>
 
             <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label>ราคา</label>
+                  <input type="number" class="form-control" name="productPrice" placeholder="กรอก ราคา" value="<?php echo $data['product'][0]['productPrice'] ?>" required>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
               <div class="col-md-4">
                 <div class="form-group">
                   <label>กลุ่มสินค้า</label>
@@ -86,12 +95,62 @@
                 </div>
               </div>
             </div>
+            <h4 align="center" style="color:green"><b>เป็นสินค้าแนะนำ</b></h4>
+            <p><input type="checkbox" name="checkbox" class="form-control" <?php if ($data['product'][0]['productFav'] == 1) {
+              echo "checked";
+            }?>></p>
             <a href="<?php echo SITE_URL('Admin/Product/DeleteProduct/'.$data['product'][0]['productId']); ?>" class="btn btn-danger btn-fill pull-left" onClick="javascript:return confirm('ต้องการลบสินค้าใช่หรือไม่?')">ลบสินค้า</a>
             <button type="submit" class="btn btn-info btn-fill pull-right">ลงทะเบียนสินค้า</button>
             <div class="clearfix"></div>
           </div>
         </div>
       </div>
+
+        <div class="col-md-12 animate-box">
+        <div class="card">
+          <div class="header">
+            <h4 class="title">เอกสารเพิ่มเติม</h4>
+          </div>
+          <div class="content">
+            <div class="row">
+              <div class="form-group">
+                <div class="col-md-4">
+                <label>เอกสาร <span style="color:red; font-size:11px;">*PDF เท่านั้น</span></label>
+                <input type="file" accept="application/pdf" name="Doc[]" class="form-control" multiple>
+                <br>
+              </div>
+              </div>
+              <div class="col-md-12">
+                <div class="form-group">
+                    <table class="table table-hover dataTable">
+                      <thead>
+                        <tr>
+                          <th width="20px;">ลำดับ</th>
+                          <th>ชื่อ</th>
+                          <th>ตัวเลือก</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <?php $i=1; foreach ($data['document'] as $document): ?>
+                          <tr>
+                            <td><?php echo $i ?></td>
+                            <td><a href="<?php echo BASE_URL('uploads/pdf/'.$document['docFilename']); ?>" target="_blank"><?php echo $document['docName'] ?></a></td>
+                            <td>
+                              <a href="<?php echo SITE_URL('Admin/Product/DeleteDocument/'.$document['docId']."/".$data['product'][0]['productId']);?>" class="btn btn-info btn-danger"
+                              onClick="javascript: return confirm('ต้องการลบเอกสารนี้ใช่หรือไม่')">ลบ
+                            </a>
+                          </td>
+                        </tr>
+                        <?php $i++; endforeach; ?>
+                      </tbody>
+                    </table>
+
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
 
       <div class="col-md-6 animate-box">
         <div class="card">

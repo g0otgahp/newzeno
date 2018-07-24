@@ -11,7 +11,7 @@
             <thead>
               <tr>
                 <th width="10">ลำดับ</th>
-                <th>รูปประเภทสินค้า</th>
+                <th>ไอคอน</th>
                 <th>ประเภทสินค้า</th>
                 <th>ตัวเลือก</th>
               </tr>
@@ -20,7 +20,7 @@
               <?php  $i = 1; foreach ($dataShow as $dataShow): ?>
                 <tr>
                   <td><?php echo $i ?></td>
-                  <td><img src="<?php echo BASE_URL('uploads/Categorys/'.$dataShow['cateImg']); ?>" height="100px" width="150px"></td>
+                  <td><img src="<?php echo BASE_URL('uploads/Categorys/'.$dataShow['cateImg']); ?>" height="50px" width="50px"></td>
                   <td><?php echo $dataShow['cateName'] ?></td>
                   <td>
 

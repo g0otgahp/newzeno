@@ -91,11 +91,11 @@ class Product extends CI_Controller
     }
 
     $id = $this->ProductModel->saveProduct($input);
-    if (!empty($_FILES['SubImg']['name'])) {
+    if ($_FILES['SubImg']['name'][0] != '') {
       $i = 0;
       foreach ($_FILES['SubImg']['name'] as $row) {
         $pathinfo = pathinfo($row, PATHINFO_EXTENSION);
-        $new_file = date('YmdHis'.$i) . "." . $pathinfo;
+        $new_file = "P".date('YmdHis'.$i) . "." . $pathinfo;
         move_uploaded_file($_FILES['SubImg']['tmp_name'][$i], "uploads/Products/" . $new_file);
         $SubImage[$i] = array(
           'proimageName' => $new_file,
@@ -105,6 +105,23 @@ class Product extends CI_Controller
       }
       $this->ProductModel->saveSubImage($SubImage);
     }
+
+    if ($_FILES['Doc']['name'][0] != '') {
+      $d = 0;
+      foreach ($_FILES['Doc']['name'] as $row) {
+        $pathinfo = pathinfo($row, PATHINFO_EXTENSION);
+        $new_file = "D".date('YmdHis'.$d) . "." . $pathinfo;
+        move_uploaded_file($_FILES['Doc']['tmp_name'][$d], "uploads/pdf/" . $new_file);
+        $Document[$d] = array(
+          'docName' => $row,
+          'docFilename' => $new_file,
+          'docProductid' => $id,
+        );
+        $d++;
+      }
+      $this->ProductModel->saveDocument($Document);
+    }
+
     echo "<script>alert('เพิ่มสินค้าใหม่เรียบร้อยแล้ว')</script>";
     echo "<script>document.location='" . SITE_URL('Admin/Product') . "'</script>";
   }
@@ -118,13 +135,18 @@ class Product extends CI_Controller
       move_uploaded_file($_FILES['productImg']['tmp_name'], "uploads/Products/" . $new_file);
       $input['productImg'] = $new_file;
     }
-
+    if (isset($input['checkbox'])) {
+      $input['productFav'] = 1;
+    } else {
+      $input['productFav'] = 2;
+    }
+    unset($input['checkbox']);
     $this->ProductModel->UpdateProduct($input);
-    if (!empty($_FILES['SubImg']['name'])) {
+    if ($_FILES['SubImg']['name'][0] != '') {
       $i = 0;
       foreach ($_FILES['SubImg']['name'] as $row) {
         $pathinfo = pathinfo($row, PATHINFO_EXTENSION);
-        $new_file = date('YmdHis'.$i) . "." . $pathinfo;
+        $new_file = "P".date('YmdHis'.$i) . "." . $pathinfo;
         move_uploaded_file($_FILES['SubImg']['tmp_name'][$i], "uploads/Products/" . $new_file);
         $SubImage[$i] = array(
           'proimageName' => $new_file,
@@ -134,6 +156,23 @@ class Product extends CI_Controller
       }
       $this->ProductModel->saveSubImage($SubImage);
     }
+
+    if ($_FILES['Doc']['name'][0] != '') {
+      $d = 0;
+      foreach ($_FILES['Doc']['name'] as $row) {
+        $pathinfo = pathinfo($row, PATHINFO_EXTENSION);
+        $new_file = "D".date('YmdHis'.$d) . "." . $pathinfo;
+        move_uploaded_file($_FILES['Doc']['tmp_name'][$d], "uploads/pdf/" . $new_file);
+        $Document[$d] = array(
+          'docName' => $row,
+          'docFilename' => $new_file,
+          'docProductid' => $input['productId'],
+        );
+        $d++;
+      }
+      $this->ProductModel->saveDocument($Document);
+    }
+
     echo "<script>alert('แก้ไขสินค้าเรียบร้อยแล้ว')</script>";
     echo "<script>document.location='" . SITE_URL('Admin/Product/ProductDetail/'.$input['productId']) . "'</script>";
   }
@@ -144,6 +183,15 @@ class Product extends CI_Controller
     $Productid = $this->uri->segment(5);
     $this->ProductModel->DeleteSubImage($id);
     echo "<script>alert('ลบรูปภาพเรียบร้อยแล้ว')</script>";
+    echo "<script>document.location='" . SITE_URL('Admin/Product/ProductDetail/'.$Productid) . "'</script>";
+  }
+
+  public function DeleteDocument()
+  {
+    $id = $this->uri->segment(4);
+    $Productid = $this->uri->segment(5);
+    $this->ProductModel->DeleteDocument($id);
+    echo "<script>alert('ลบเอกสารเรียบร้อยแล้ว')</script>";
     echo "<script>document.location='" . SITE_URL('Admin/Product/ProductDetail/'.$Productid) . "'</script>";
   }
 

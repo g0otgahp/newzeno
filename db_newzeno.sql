@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 20, 2018 at 08:16 AM
+-- Generation Time: Jul 24, 2018 at 10:05 AM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -40,7 +40,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`adminId`, `adminUsername`, `adminPassword`, `adminPosition`, `adminStatus`, `profileId`) VALUES
-(1, 'admin', '81dc9bdb52d04dc20036dbd8313ed055', 1, 1, 1),
+(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 1, 1, 1),
 (2, 'kaiixtongz', '6ce5ffdd9b901df6732b6f1494233a63', 1, 1, 2),
 (3, 'test', '098f6bcd4621d373cade4e832627b4f6', 4, 1, 3);
 
@@ -101,7 +101,7 @@ INSERT INTO `brand` (`brandId`, `brandName`, `brandImg`, `brandStatus`) VALUES
 CREATE TABLE `category` (
   `cateId` int(11) NOT NULL,
   `cateName` varchar(50) NOT NULL,
-  `cateImg` varchar(50) NOT NULL DEFAULT 'noImg.png',
+  `cateImg` varchar(50) NOT NULL DEFAULT 'icon_null.png',
   `categroupId` int(11) NOT NULL,
   `cateStatus` int(11) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -111,44 +111,44 @@ CREATE TABLE `category` (
 --
 
 INSERT INTO `category` (`cateId`, `cateName`, `cateImg`, `categroupId`, `cateStatus`) VALUES
-(1, 'Video Wall', '20180703065255.jpg', 1, 1),
+(1, 'Video Wall', 'icon_null.png', 1, 1),
 (2, 'Digital Signage', '20180703052928.jpg', 1, 2),
 (4, 'Projector', '20180703061311.jpg', 1, 2),
 (6, 'Test', 'noImg.png', 1, 2),
 (7, 'Kaiixtongz', 'noImg.png', 1, 2),
 (8, 'แว่นตา่่่่่asdsd', '20180703075134.png', 1, 2),
-(9, 'Standard', 'noImg.png', 1, 1),
-(12, 'Ultra Stretch', 'noImg.png', 1, 1),
-(13, 'High Brightness', 'noImg.png', 1, 1),
-(14, 'Interactive', 'noImg.png', 1, 1),
+(9, 'Standard', 'icon_null.png', 1, 1),
+(12, 'Ultra Stretch', 'icon_null.png', 1, 1),
+(13, 'High Brightness', 'icon_null.png', 1, 1),
+(14, 'Interactive', 'icon_null.png', 1, 1),
 (15, 'Interactive', 'noImg.png', 1, 2),
-(16, 'Mirror', 'noImg.png', 1, 1),
-(17, 'Hotel Tv', 'noImg.png', 2, 1),
-(18, 'Tv Signage', 'noImg.png', 2, 1),
-(19, 'Special', 'noImg.png', 2, 1),
-(20, 'In-Glass Wallpaper', 'noImg.png', 4, 1),
-(21, 'Wallpaper', 'noImg.png', 4, 1),
-(22, 'Open Frame', 'noImg.png', 4, 1),
-(23, 'InDoor', 'noImg.png', 5, 1),
-(24, 'OutDoor', 'noImg.png', 5, 1),
-(25, 'DLP Projector', 'noImg.png', 6, 1),
-(26, 'LCD Projector', 'noImg.png', 6, 1),
-(27, 'LED Projector', 'noImg.png', 6, 1),
-(28, 'Laser Projector', 'noImg.png', 6, 1),
-(29, 'Extender', 'noImg.png', 8, 1),
-(30, 'Spliter', 'noImg.png', 8, 1),
-(31, 'Switcher', 'noImg.png', 8, 1),
+(16, 'Mirror', 'icon_null.png', 1, 1),
+(17, 'Hotel Tv', 'icon_null.png', 2, 1),
+(18, 'Tv Signage', 'icon_null.png', 2, 1),
+(19, 'Special', 'icon_null.png', 2, 1),
+(20, 'In-Glass Wallpaper', 'icon_null.png', 4, 1),
+(21, 'Wallpaper', 'icon_null.png', 4, 1),
+(22, 'Open Frame', 'icon_null.png', 4, 1),
+(23, 'InDoor', 'icon_null.png', 5, 1),
+(24, 'OutDoor', 'icon_null.png', 5, 1),
+(25, 'DLP Projector', 'icon_null.png', 6, 1),
+(26, 'LCD Projector', 'icon_null.png', 6, 1),
+(27, 'LED Projector', 'icon_null.png', 6, 1),
+(28, 'Laser Projector', 'icon_null.png', 6, 1),
+(29, 'Extender', 'icon_null.png', 8, 1),
+(30, 'Spliter', 'icon_null.png', 8, 1),
+(31, 'Switcher', 'icon_null.png', 8, 1),
 (32, 'Switcher', 'noImg.png', 8, 2),
-(33, 'สายสัญญาณภาพ', 'noImg.png', 9, 1),
-(34, 'สายสัญญาณเสียง', 'noImg.png', 9, 1),
-(35, 'สายคอลโทล', 'noImg.png', 9, 1),
+(33, 'สายสัญญาณภาพ', 'icon_null.png', 9, 1),
+(34, 'สายสัญญาณเสียง', 'icon_null.png', 9, 1),
+(35, 'สายคอลโทล', 'icon_null.png', 9, 1),
 (36, 'LAN', 'noImg.png', 9, 2),
 (37, 'Audio', 'noImg.png', 9, 2),
 (38, 'Control', 'noImg.png', 9, 2),
-(39, 'แขวนเพดาน', 'noImg.png', 11, 1),
-(40, 'แขวนผนัง', 'noImg.png', 11, 1),
-(41, 'ตั้งโต๊ะ', 'noImg.png', 11, 1),
-(42, 'ตั้งพื้น', 'noImg.png', 11, 1);
+(39, 'แขวนเพดาน', 'icon_null.png', 11, 1),
+(40, 'แขวนผนัง', 'icon_null.png', 11, 1),
+(41, 'ตั้งโต๊ะ', 'icon_null.png', 11, 1),
+(42, 'ตั้งพื้น', 'icon_null.png', 11, 1);
 
 -- --------------------------------------------------------
 
@@ -204,6 +204,42 @@ INSERT INTO `config` (`configId`, `configName`, `configTextarea`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `doc`
+--
+
+CREATE TABLE `doc` (
+  `docId` int(11) NOT NULL,
+  `docName` varchar(50) NOT NULL,
+  `docFilename` varchar(50) NOT NULL,
+  `docProductid` int(11) NOT NULL,
+  `docStatus` int(11) NOT NULL DEFAULT '1'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `doc`
+--
+
+INSERT INTO `doc` (`docId`, `docName`, `docFilename`, `docProductid`, `docStatus`) VALUES
+(2, 'jPORTFOLIO.pdf', 'D201807240608090.pdf', 7, 1),
+(3, 'บรรณานุกรม.pdf', 'D201807240609070.pdf', 7, 1),
+(4, 'วิธีการติดตั้ง.pdf', 'D201807240609071.pdf', 7, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `document`
+--
+
+CREATE TABLE `document` (
+  `documentId` int(11) NOT NULL,
+  `documentName` varchar(50) NOT NULL,
+  `documentProductid` int(11) NOT NULL,
+  `documentStatus` int(11) NOT NULL DEFAULT '1'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `position`
 --
 
@@ -241,18 +277,19 @@ CREATE TABLE `product` (
   `productGroupid` int(11) NOT NULL,
   `productCateid` int(11) NOT NULL,
   `productBrandid` int(11) NOT NULL,
-  `productStatus` int(11) NOT NULL DEFAULT '1'
+  `productStatus` int(11) NOT NULL DEFAULT '1',
+  `productFav` int(11) NOT NULL DEFAULT '2'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `product`
 --
 
-INSERT INTO `product` (`productId`, `productName`, `productSubdetail`, `productPrice`, `productDetail`, `productImg`, `productGroupid`, `productCateid`, `productBrandid`, `productStatus`) VALUES
-(7, '55SL5PE-H', 'Brightness : 450 cd/m² (Max.) Bezel : 11.9 mm (T/L/R), 18.0 mm (B) Depth : 54 mm Interface : HDMI(2)/ DVI-D/ RGB/ USB/ RJ45/ RS232C/ Audio/ IR Built-in Speaker(10W+10W) Haze 28%, OPS Power Built-in, EMC Class \"B\"', 50000, '<p style=\"font-family: &quot;LG Smart&quot;, Tahoma, Arial, sans-serif; position: relative; display: block; margin: 0px; padding-left: 12px; border: 0px; line-height: 1.36em; float: none; clear: both; word-wrap: break-word; word-break: break-word;\"></p><h4 style=\"font-size: 17.5px; margin-top: 10px; margin-bottom: 10px; font-weight: bold; line-height: 20px; color: rgb(51, 51, 51); text-rendering: optimizeLegibility; text-align: justify;\">Product Information</h4><div><br></div><table class=\"table table-bordered\"><tbody><tr><td><p><b>Panel</b></p></td><td><br></td></tr><tr><td>Screen Size</td><td>55\"<br></td></tr><tr><td>Native Resolution<br></td><td>1,920 x 1,080 (FHD)<br></td></tr><tr><td>Brightness (Typ., cd/m²)<br></td><td>427<br></td></tr><tr><td>Brightness (Max., cd/m²)<br></td><td>450</td></tr><tr><td>Surface Treatment (Typ.)<br></td><td>Haze 28%<br></td></tr><tr><td><b>Connectivity</b></td><td><br></td></tr><tr><td>Input<br></td><td>HDMI (2), DVI-D, RGB, Audio, USB<br></td></tr><tr><td>Output<br></td><td>Audio (Off/Fixed/Variable)<br></td></tr><tr><td>External Control<br></td><td>RS232C in/out, RJ45 in, IR in<br></td></tr></tbody></table><div><br></div><ul style=\"font-family: &quot;LG Smart&quot;, Tahoma, Arial, sans-serif; list-style: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; color: rgb(51, 51, 51); font-size: 16px;\"></ul>', '20180717053133.jpg', 2, 17, 1, 1),
-(8, '55SL5PE-SH', 'Brightness : 450 cd/m² (Max.) Bezel : 11.9 mm (T/L/R), 18.0 mm (B) Depth : 54 mm Interface : HDMI(2)/ DVI-D/ RGB/ USB/ RJ45/ RS232C/ Audio/ IR Built-in Speaker(10W+10W) Haze 28%, OPS Power Built-in, EMC Class \"B\"', 48000, '<p style=\"font-family: &quot;LG Smart&quot;, Tahoma, Arial, sans-serif; position: relative; display: block; margin: 0px; padding-left: 12px; border: 0px; line-height: 1.36em; float: none; clear: both; word-wrap: break-word; word-break: break-word;\"></p><h4 style=\"font-size: 17.5px; margin-top: 10px; margin-bottom: 10px; font-weight: bold; line-height: 20px; color: rgb(51, 51, 51); text-rendering: optimizeLegibility; text-align: justify;\">Product Information</h4><div><br></div><table class=\"table table-bordered\"><tbody><tr><td><p><b>Panel</b></p></td><td><br></td></tr><tr><td>Screen Size</td><td>55\"<br></td></tr><tr><td>Native Resolution<br></td><td>1,920 x 1,080 (FHD)<br></td></tr><tr><td>Brightness (Typ., cd/m²)<br></td><td>427<br></td></tr><tr><td>Brightness (Max., cd/m²)<br></td><td>450</td></tr><tr><td>Surface Treatment (Typ.)<br></td><td>Haze 28%<br></td></tr><tr><td><b>Connectivity</b></td><td><br></td></tr><tr><td>Input<br></td><td>HDMI (2), DVI-D, RGB, Audio, USB<br></td></tr><tr><td>Output<br></td><td>Audio (Off/Fixed/Variable)<br></td></tr><tr><td>External Control<br></td><td>RS232C in/out, RJ45 in, IR in<br></td></tr></tbody></table><div><br></div><ul style=\"font-family: &quot;LG Smart&quot;, Tahoma, Arial, sans-serif; list-style: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; color: rgb(51, 51, 51); font-size: 16px;\"></ul>', '20180717053133.jpg', 2, 17, 1, 1),
-(9, '55SL5PE-SM', 'Brightness : 450 cd/m² (Max.) Bezel : 11.9 mm (T/L/R), 18.0 mm (B) Depth : 54 mm Interface : HDMI(2)/ DVI-D/ RGB/ USB/ RJ45/ RS232C/ Audio/ IR Built-in Speaker(10W+10W) Haze 28%, OPS Power Built-in, EMC Class \"B\"', 35000, '<p style=\"font-family: &quot;LG Smart&quot;, Tahoma, Arial, sans-serif; position: relative; display: block; margin: 0px; padding-left: 12px; border: 0px; line-height: 1.36em; float: none; clear: both; word-wrap: break-word; word-break: break-word;\"></p><h4 style=\"font-size: 17.5px; margin-top: 10px; margin-bottom: 10px; font-weight: bold; line-height: 20px; color: rgb(51, 51, 51); text-rendering: optimizeLegibility; text-align: justify;\">Product Information</h4><div><br></div><table class=\"table table-bordered\"><tbody><tr><td><p><b>Panel</b></p></td><td><br></td></tr><tr><td>Screen Size</td><td>55\"<br></td></tr><tr><td>Native Resolution<br></td><td>1,920 x 1,080 (FHD)<br></td></tr><tr><td>Brightness (Typ., cd/m²)<br></td><td>427<br></td></tr><tr><td>Brightness (Max., cd/m²)<br></td><td>450</td></tr><tr><td>Surface Treatment (Typ.)<br></td><td>Haze 28%<br></td></tr><tr><td><b>Connectivity</b></td><td><br></td></tr><tr><td>Input<br></td><td>HDMI (2), DVI-D, RGB, Audio, USB<br></td></tr><tr><td>Output<br></td><td>Audio (Off/Fixed/Variable)<br></td></tr><tr><td>External Control<br></td><td>RS232C in/out, RJ45 in, IR in<br></td></tr></tbody></table><div><br></div><ul style=\"font-family: &quot;LG Smart&quot;, Tahoma, Arial, sans-serif; list-style: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; color: rgb(51, 51, 51); font-size: 16px;\"></ul>', '20180717053133.jpg', 2, 17, 1, 1),
-(10, '55SL5PE-LG', 'Brightness : 450 cd/m² (Max.) Bezel : 11.9 mm (T/L/R), 18.0 mm (B) Depth : 54 mm Interface : HDMI(2)/ DVI-D/ RGB/ USB/ RJ45/ RS232C/ Audio/ IR Built-in Speaker(10W+10W) Haze 28%, OPS Power Built-in, EMC Class \"B\"', 75000, '<p style=\"font-family: &quot;LG Smart&quot;, Tahoma, Arial, sans-serif; position: relative; display: block; margin: 0px; padding-left: 12px; border: 0px; line-height: 1.36em; float: none; clear: both; word-wrap: break-word; word-break: break-word;\"></p><h4 style=\"font-size: 17.5px; margin-top: 10px; margin-bottom: 10px; font-weight: bold; line-height: 20px; color: rgb(51, 51, 51); text-rendering: optimizeLegibility; text-align: justify;\">Product Information</h4><div><br></div><table class=\"table table-bordered\"><tbody><tr><td><p><b>Panel</b></p></td><td><br></td></tr><tr><td>Screen Size</td><td>55\"<br></td></tr><tr><td>Native Resolution<br></td><td>1,920 x 1,080 (FHD)<br></td></tr><tr><td>Brightness (Typ., cd/m²)<br></td><td>427<br></td></tr><tr><td>Brightness (Max., cd/m²)<br></td><td>450</td></tr><tr><td>Surface Treatment (Typ.)<br></td><td>Haze 28%<br></td></tr><tr><td><b>Connectivity</b></td><td><br></td></tr><tr><td>Input<br></td><td>HDMI (2), DVI-D, RGB, Audio, USB<br></td></tr><tr><td>Output<br></td><td>Audio (Off/Fixed/Variable)<br></td></tr><tr><td>External Control<br></td><td>RS232C in/out, RJ45 in, IR in<br></td></tr></tbody></table><div><br></div><ul style=\"font-family: &quot;LG Smart&quot;, Tahoma, Arial, sans-serif; list-style: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; color: rgb(51, 51, 51); font-size: 16px;\"></ul>', '20180717053133.jpg', 2, 17, 1, 1);
+INSERT INTO `product` (`productId`, `productName`, `productSubdetail`, `productPrice`, `productDetail`, `productImg`, `productGroupid`, `productCateid`, `productBrandid`, `productStatus`, `productFav`) VALUES
+(7, '55SL5PE-H', 'Brightness : 450 cd/m² (Max.) Bezel : 11.9 mm (T/L/R), 18.0 mm (B) Depth : 54 mm Interface : HDMI(2)/ DVI-D/ RGB/ USB/ RJ45/ RS232C/ Audio/ IR Built-in Speaker(10W+10W) Haze 28%, OPS Power Built-in, EMC Class ', 50000, '<p style=\"font-family: \"LG Smart\", Tahoma, Arial, sans-serif; position: relative; display: block; margin: 0px; padding-left: 12px; border: 0px; line-height: 1.36em; float: none; clear: both; word-wrap: break-word; word-break: break-word;\"></p><h4 style=\"font-size: 17.5px; margin-top: 10px; margin-bottom: 10px; font-weight: bold; line-height: 20px; color: rgb(51, 51, 51); text-rendering: optimizeLegibility; text-align: justify;\">Product Information</h4><div><br></div><table class=\"table table-bordered\"><tbody><tr><td><p><b>Panel</b></p></td><td><br></td></tr><tr><td>Screen Size</td><td>55\"<br></td></tr><tr><td>Native Resolution<br></td><td>1,920 x 1,080 (FHD)<br></td></tr><tr><td>Brightness (Typ., cd/m²)<br></td><td>427<br></td></tr><tr><td>Brightness (Max., cd/m²)<br></td><td>450</td></tr><tr><td>Surface Treatment (Typ.)<br></td><td>Haze 28%<br></td></tr><tr><td><b>Connectivity</b></td><td><br></td></tr><tr><td>Input<br></td><td>HDMI (2), DVI-D, RGB, Audio, USB<br></td></tr><tr><td>Output<br></td><td>Audio (Off/Fixed/Variable)<br></td></tr><tr><td>External Control<br></td><td>RS232C in/out, RJ45 in, IR in<br></td></tr></tbody></table><div><br></div><ul style=\"font-family: \"LG Smart\", Tahoma, Arial, sans-serif; list-style: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; color: rgb(51, 51, 51); font-size: 16px;\"></ul>', '20180717053133.jpg', 2, 17, 1, 1, 1),
+(8, '55SL5PE-SH', 'Brightness : 470 cd/m² (Max.) Bezel : 11.9 mm (T/L/R), 18.0 mm (B) Depth : 54 mm Interface : HDMI(2)/ DVI-D/ RGB/ USB/ RJ45/ RS232C/ Audio/ IR Built-in Speaker(10W+10W) Haze 28%, OPS Power Built-in, EMC Class \"B\"', 48000, '<p style=\"font-family: &quot;LG Smart&quot;, Tahoma, Arial, sans-serif; position: relative; display: block; margin: 0px; padding-left: 12px; border: 0px; line-height: 1.36em; float: none; clear: both; word-wrap: break-word; word-break: break-word;\"></p><h4 style=\"font-size: 17.5px; margin-top: 10px; margin-bottom: 10px; font-weight: bold; line-height: 20px; color: rgb(51, 51, 51); text-rendering: optimizeLegibility; text-align: justify;\">Product Information</h4><div><br></div><table class=\"table table-bordered\"><tbody><tr><td><p><b>Panel</b></p></td><td><br></td></tr><tr><td>Screen Size</td><td>55\"<br></td></tr><tr><td>Native Resolution<br></td><td>1,920 x 1,080 (FHD)<br></td></tr><tr><td>Brightness (Typ., cd/m²)<br></td><td>427<br></td></tr><tr><td>Brightness (Max., cd/m²)<br></td><td>450</td></tr><tr><td>Surface Treatment (Typ.)<br></td><td>Haze 28%<br></td></tr><tr><td><b>Connectivity</b></td><td><br></td></tr><tr><td>Input<br></td><td>HDMI (2), DVI-D, RGB, Audio, USB<br></td></tr><tr><td>Output<br></td><td>Audio (Off/Fixed/Variable)<br></td></tr><tr><td>External Control<br></td><td>RS232C in/out, RJ45 in, IR in<br></td></tr></tbody></table><div><br></div><ul style=\"font-family: &quot;LG Smart&quot;, Tahoma, Arial, sans-serif; list-style: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; color: rgb(51, 51, 51); font-size: 16px;\"></ul>', 'asdasdLG.jpg', 2, 17, 1, 1, 1),
+(9, '55SL5PE-SM', 'Brightness : 480 cd/m² (Max.) Bezel : 11.9 mm (T/L/R), 18.0 mm (B) Depth : 54 mm Interface : HDMI(2)/ DVI-D/ RGB/ USB/ RJ45/ RS232C/ Audio/ IR Built-in Speaker(10W+10W) Haze 28%, OPS Power Built-in, EMC Class \"B\"', 35000, '<p style=\"font-family: &quot;LG Smart&quot;, Tahoma, Arial, sans-serif; position: relative; display: block; margin: 0px; padding-left: 12px; border: 0px; line-height: 1.36em; float: none; clear: both; word-wrap: break-word; word-break: break-word;\"></p><h4 style=\"font-size: 17.5px; margin-top: 10px; margin-bottom: 10px; font-weight: bold; line-height: 20px; color: rgb(51, 51, 51); text-rendering: optimizeLegibility; text-align: justify;\">Product Information</h4><div><br></div><table class=\"table table-bordered\"><tbody><tr><td><p><b>Panel</b></p></td><td><br></td></tr><tr><td>Screen Size</td><td>55\"<br></td></tr><tr><td>Native Resolution<br></td><td>1,920 x 1,080 (FHD)<br></td></tr><tr><td>Brightness (Typ., cd/m²)<br></td><td>427<br></td></tr><tr><td>Brightness (Max., cd/m²)<br></td><td>450</td></tr><tr><td>Surface Treatment (Typ.)<br></td><td>Haze 28%<br></td></tr><tr><td><b>Connectivity</b></td><td><br></td></tr><tr><td>Input<br></td><td>HDMI (2), DVI-D, RGB, Audio, USB<br></td></tr><tr><td>Output<br></td><td>Audio (Off/Fixed/Variable)<br></td></tr><tr><td>External Control<br></td><td>RS232C in/out, RJ45 in, IR in<br></td></tr></tbody></table><div><br></div><ul style=\"font-family: &quot;LG Smart&quot;, Tahoma, Arial, sans-serif; list-style: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; color: rgb(51, 51, 51); font-size: 16px;\"></ul>', 'download.jpg', 2, 17, 1, 1, 2),
+(10, '55SL5PE-LG', 'Brightness : 500 cd/m² (Max.) Bezel : 11.9 mm (T/L/R), 18.0 mm (B) Depth : 54 mm Interface : HDMI(2)/ DVI-D/ RGB/ USB/ RJ45/ RS232C/ Audio/ IR Built-in Speaker(10W+10W) Haze 28%, OPS Power Built-in, EMC Class \"B\"', 75000, '<p style=\"font-family: &quot;LG Smart&quot;, Tahoma, Arial, sans-serif; position: relative; display: block; margin: 0px; padding-left: 12px; border: 0px; line-height: 1.36em; float: none; clear: both; word-wrap: break-word; word-break: break-word;\"></p><h4 style=\"font-size: 17.5px; margin-top: 10px; margin-bottom: 10px; font-weight: bold; line-height: 20px; color: rgb(51, 51, 51); text-rendering: optimizeLegibility; text-align: justify;\">Product Information</h4><div><br></div><table class=\"table table-bordered\"><tbody><tr><td><p><b>Panel</b></p></td><td><br></td></tr><tr><td>Screen Size</td><td>55\"<br></td></tr><tr><td>Native Resolution<br></td><td>1,920 x 1,080 (FHD)<br></td></tr><tr><td>Brightness (Typ., cd/m²)<br></td><td>427<br></td></tr><tr><td>Brightness (Max., cd/m²)<br></td><td>450</td></tr><tr><td>Surface Treatment (Typ.)<br></td><td>Haze 28%<br></td></tr><tr><td><b>Connectivity</b></td><td><br></td></tr><tr><td>Input<br></td><td>HDMI (2), DVI-D, RGB, Audio, USB<br></td></tr><tr><td>Output<br></td><td>Audio (Off/Fixed/Variable)<br></td></tr><tr><td>External Control<br></td><td>RS232C in/out, RJ45 in, IR in<br></td></tr></tbody></table><div><br></div><ul style=\"font-family: &quot;LG Smart&quot;, Tahoma, Arial, sans-serif; list-style: none; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; color: rgb(51, 51, 51); font-size: 16px;\"></ul>', '10034286-MÀN-HÌNH-VI-TÍNH-LG-24MP59G-P.jpg', 2, 17, 1, 1, 2);
 
 -- --------------------------------------------------------
 
@@ -305,7 +342,7 @@ CREATE TABLE `profile` (
 --
 
 INSERT INTO `profile` (`profileId`, `profileFname`, `profileLname`, `profileNickname`, `profileCitizenid`, `profileGender`, `profilePhone`, `profileEmail`, `profileImg`, `profileAddress`, `profileStatus`) VALUES
-(1, 'สมชาย', 'แสงสกุล', 'เจ', '1409909909009', 'หญิง', '0899998989', 'jay.bunapa@gmail.com', '20180702092238.jpg', '', 1),
+(1, 'สมชาย', 'แสงสกุล', 'สมชาย', '1409909909009', 'หญิง', '0899998989', 'jay.bunapa@gmail.com', '20180702092238.jpg', '', 1),
 (2, 'อดิพงษ์', 'ธรรมนวกุล', 'โต้ง', '1103701252880', 'ชาย', '0809073005', 'kaiixtongz@gmail.com', '20180702092152.jpg', 'สาย 3', 1);
 
 -- --------------------------------------------------------
@@ -396,6 +433,18 @@ ALTER TABLE `config`
   ADD PRIMARY KEY (`configId`);
 
 --
+-- Indexes for table `doc`
+--
+ALTER TABLE `doc`
+  ADD PRIMARY KEY (`docId`);
+
+--
+-- Indexes for table `document`
+--
+ALTER TABLE `document`
+  ADD PRIMARY KEY (`documentId`);
+
+--
 -- Indexes for table `position`
 --
 ALTER TABLE `position`
@@ -466,6 +515,16 @@ ALTER TABLE `categroup`
 ALTER TABLE `config`
   MODIFY `configId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
+-- AUTO_INCREMENT for table `doc`
+--
+ALTER TABLE `doc`
+  MODIFY `docId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT for table `document`
+--
+ALTER TABLE `document`
+  MODIFY `documentId` int(11) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT for table `position`
 --
 ALTER TABLE `position`
@@ -479,7 +538,7 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT for table `productimage`
 --
 ALTER TABLE `productimage`
-  MODIFY `proimageId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `proimageId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 --
 -- AUTO_INCREMENT for table `profile`
 --

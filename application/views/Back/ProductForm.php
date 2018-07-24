@@ -36,6 +36,15 @@
             </div>
 
             <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>ราคา</label>
+                  <input type="number" class="form-control" name="productPrice" placeholder="กรอก ราคา" required>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
               <div class="col-md-4">
                 <div class="form-group">
                   <label>กลุ่มสินค้า</label>
@@ -73,20 +82,39 @@
               </div>
             </div>
 
-              <div class="row">
-                <div class="col-md-12">
-                  <div class="form-group">
-                    <label>รายละเอียด(แบบเต็ม)</label>
-                    <textarea rows="5" class="form-control summernote" name="productDetail" placeholder="กรอกรายละเอียดแบบเต็ม" required></textarea>
-                  </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label>รายละเอียด(แบบเต็ม)</label>
+                  <textarea rows="5" class="form-control summernote" name="productDetail" placeholder="กรอกรายละเอียดแบบเต็ม" required></textarea>
                 </div>
               </div>
+            </div>
+            <h4 align="center" style="color:green"><b>เป็นสินค้าแนะนำ</b></h4>
+            <p><input type="checkbox" name="checkbox" class="form-control"></p>
+            <button type="submit" class="btn btn-info btn-fill pull-right">ลงทะเบียนสินค้า</button>
+            <div class="clearfix"></div>
+          </div>
+        </div>
+      </div>
 
-              <button type="submit" class="btn btn-info btn-fill pull-right">ลงทะเบียนสินค้า</button>
-              <div class="clearfix"></div>
+      <div class="col-md-12 animate-box">
+        <div class="card">
+          <div class="header">
+            <h4 class="title">เอกสารเพิ่มเติม</h4>
+          </div>
+          <div class="content">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label>เอกสาร <span style="color:red; font-size:11px;">*PDF เท่านั้น</span></label>
+                  <input type="file" accept="application/pdf" name="Doc[]" class="form-control" multiple>
+                </div>
+              </div>
             </div>
           </div>
         </div>
+      </div>
 
       <div class="col-md-6 animate-box">
         <div class="card">
@@ -109,7 +137,7 @@
       <div class="col-md-6 animate-box">
         <div class="card">
           <div class="header">
-            <h4 class="title">รูปภาพสินค้าเพิ่มเติม</h4>
+            <h4 class="title">เอกสารเพิ่มเติม</h4>
           </div>
           <div class="content">
             <div class="row">
@@ -123,6 +151,8 @@
           </div>
         </div>
       </div>
+
+
 
       <?php echo form_close() ?>
     </div>

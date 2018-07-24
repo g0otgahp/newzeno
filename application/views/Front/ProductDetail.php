@@ -20,12 +20,7 @@
               <div class="carousel-inner">
                 <div class="item active" align="center">
                   <?php foreach ($Product['productImage'] as $Image): ?>
-                 <a href="<?php echo BASE_URL('uploads/Products/'.$Image['proimageName']); ?>"> <img style="width:29%" src="<?php echo BASE_URL('uploads/Products/'.$Image['proimageName']); ?>" alt=""/></a>
-               <?php endforeach; ?>
-                </div>
-                <div class="item">
-                  <?php foreach ($Product['productImage'] as $Image): ?>
-                 <a href="<?php echo BASE_URL('uploads/Products/'.$Image['proimageName']); ?>" > <img style="width:29%" src="<?php echo BASE_URL('uploads/Products/'.$Image['proimageName']); ?>" alt=""/></a>
+                 <a href="<?php echo BASE_URL('uploads/Products/'.$Image['proimageName']); ?>"> <img style="width:20%" src="<?php echo BASE_URL('uploads/Products/'.$Image['proimageName']); ?>" alt=""/></a>
                <?php endforeach; ?>
                 </div>
               </div>
@@ -89,13 +84,27 @@
 
     <div class="span12">
           <ul id="productDetail" class="nav nav-tabs">
-            <li class="active"><a href="#home" data-toggle="tab">รายละเอียดสินค้า</a></li>
-            <!-- <li><a href="#profile" data-toggle="tab">Related Products</a></li> -->
+            <li class="active" style="float:left;"><a href="#home" data-toggle="tab">รายละเอียดสินค้า</a></li>
+            <?php if (count($Product['document']) != 0): ?>
+            <li style="float:left;"><a href="#document" data-toggle="tab">เอกสารเพิ่มเติม</a></li>
+          <?php endif; ?>
           </ul>
           <div id="myTabContent" class="tab-content">
             <div class="tab-pane fade active in" id="home">
       <?php echo $Product['product'][0]['productDetail'] ?>
             </div>
+            <?php if (count($Product['document']) != 0): ?>
+            <div class="tab-pane fade active in" id="document">
+              <?php foreach ($Product['document'] as $document): ?>
+                <table>
+                  <td></td>
+                    <td></td>
+                </table>
+              <a href="<?php echo BASE_URL('uploads/pdf/'.$document['docFilename']); ?>" target="_blank" style="color:blue;"><?php echo $document['docName'] ?> </a><br>
+              <?php endforeach; ?>
+            </div>
+          <?php endif; ?>
+
   <!-- <div class="tab-pane fade" id="profile">
   <div id="myTab" class="pull-right">
    <a href="#listView" data-toggle="tab"><span class="btn btn-large"><i class="icon-list"></i></span></a>

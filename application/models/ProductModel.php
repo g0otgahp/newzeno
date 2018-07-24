@@ -74,6 +74,11 @@ class ProductModel extends CI_Model
     ->get('productimage')
     ->result_array();
 
+    $data['document'] = $this->db
+    ->where('docStatus',1)
+    ->where('docProductid',$data['product'][0]['productId'])
+    ->get('doc')
+    ->result_array();
     // echo "<pre>";
     // print_r($data);
     // exit();
@@ -96,6 +101,16 @@ class ProductModel extends CI_Model
   public function saveSubImage($SubImage)
   {
     $this->db->insert_batch('productimage',$SubImage);
+  }
+
+  public function saveDocument($Document)
+  {
+    $this->db->insert_batch('doc',$Document);
+  }
+
+  public function DeleteDocument($id)
+  {
+    $this->db->where('docId',$id)->delete('doc');
   }
 
   public function DeleteSubImage($id)

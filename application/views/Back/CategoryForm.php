@@ -28,7 +28,7 @@
             </td>
           </tr>
           <tr>
-            <td>รูปประเภทสินค้า : &nbsp;</td>
+            <td>ไอคอน : &nbsp;</td>
             <td><input name="cateImg" type="file" class="form-control" accept="image/*" style="margin-top:20px;" placeholder="กรอกชื่อตำแหน่ง"></td>
           </tr>
         </table>
