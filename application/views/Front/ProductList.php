@@ -47,7 +47,7 @@
       <?php foreach ($Product as $list): ?>
         <div class="row">
           <div class="span2">
-            <a target="_blank" href="<?php echo SITE_URL('Product/ProductDetail/'.$list['categroupId']."/".$list['cateId']."/".$list['productId']); ?>">
+            <a  href="<?php echo SITE_URL('Product/ProductDetail/'.$list['categroupId']."/".$list['cateId']."/".$list['productId']); ?>">
             <img src="<?php echo BASE_URL('uploads/Products/'.$list['productImg']); ?>" style="height:150px; width:210px;"/>
           </a>
           </div>
@@ -62,7 +62,7 @@
           <div class="span3 alignR">
             <form class="form-horizontal qtyFrm">
               <h3>฿<?php echo number_format($list['productPrice']) ?></h3>
-              <a target="_blank" class="btn btn-small pull-right btn-primary" href="<?php echo SITE_URL('Product/ProductDetail/'.$list['categroupId']."/".$list['cateId']."/".$list['productId']); ?>">รายละเอียด</a>
+              <a  class="btn btn-small pull-right btn-primary" href="<?php echo SITE_URL('Product/ProductDetail/'.$list['categroupId']."/".$list['cateId']."/".$list['productId']); ?>">รายละเอียด</a>
             </form>
           </div>
         </div>
@@ -79,7 +79,7 @@
           <!-- Start Loop -->
           <li class="span3">
             <div class="thumbnail">
-              <a target="_blank" href="<?php echo SITE_URL('Product/ProductDetail/'.$block['categroupId']."/".$block['cateId']."/".$block['productId']); ?>"><img src="<?php echo BASE_URL('uploads/Products/'.$block['productImg']); ?>" style="height:150px; width:210px;"/></a>
+              <a  href="<?php echo SITE_URL('Product/ProductDetail/'.$block['categroupId']."/".$block['cateId']."/".$block['productId']); ?>"><img src="<?php echo BASE_URL('uploads/Products/'.$block['productImg']); ?>" style="height:150px; width:210px;"/></a>
               <div class="caption">
                 <h5><?php echo $block['cateName']." - ".$block['productName'] ?></h5>
                 <p>
@@ -88,7 +88,7 @@
                 <h4 style="text-align:center">
                   <!-- <i class="icon-zoom-in"></i>
                   <a class="btn" href="#">Add to <i class="icon-shopping-cart"></i></a> -->
-                  <a target="_blank" class="btn btn-primary" href="<?php echo SITE_URL('Product/ProductDetail/'.$block['categroupId']."/".$block['cateId']."/".$block['productId']); ?>">รายละเอียด</a></h4>
+                  <a  class="btn btn-primary" href="<?php echo SITE_URL('Product/ProductDetail/'.$block['categroupId']."/".$block['cateId']."/".$block['productId']); ?>">รายละเอียด</a></h4>
                 </div>
               </div>
             </li>

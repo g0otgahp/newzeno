@@ -4,29 +4,11 @@
     <div id="sidebar" class="span3">
       <!-- <div class="well well-small"><a id="myCart" href="#"><img src="<?php echo BASE_URL()?>/assets/themes/images/ico-cart.png" alt="cart">3 Items in your cart  <span class="badge badge-warning pull-right">$155.00</span></a></div> -->
       <ul id="sideManu" class="nav nav-tabs nav-stacked">
-        <?php echo form_open('Home/CategoryFind/'.$GroupSelect[0]['categroupId']."#sideManu"); ?>
-        <div class="form-check">
-          <h4><b>ประเภทสินค้า</b></h4>
-          <?php foreach ($Category as $catekey): ?>
-            <p>
-              <input class="form-check-input" type="checkbox" name="catebox[]" value="<?php echo $catekey['cateId'] ?>"
-              style="margin-bottom:5px;" id="defaultCheck<?php echo $catekey['cateId'] ?>"
-              <?php if (isset($keyword['catebox'])): ?>
-              <?php foreach ($keyword['catebox'] as $cateselect): ?>
-                <?php if ($cateselect == $catekey['cateId']): ?>
-                  <?php echo "checked"; ?>
-                <?php endif; ?>
-              <?php endforeach; ?>
-            <?php endif; ?>
-              >
-              <label for="defaultCheck<?php echo $catekey['cateId'] ?>"> <?php echo $catekey['cateName'] ?></label>
-            </p>
-          <?php endforeach; ?>
-        </div>
-        <hr>
+        <?php echo form_open('Product/ShowProductFind/'.$GroupSelect[0]['categroupId']."/".$CateSelect[0]['cateId']."#sideManu"); ?>
+        <?php if (count($CateBrand['sortby']) >0): ?>
         <div class="form-check">
           <h4><b>แบรนด์สินค้า</b></h4>
-          <?php foreach ($Brand as $brandkey): ?>
+          <?php foreach ($CateBrand['sortby'] as $brandkey): ?>
             <p>
               <input class="form-check-input" type="checkbox" name="brandbox[]" value="<?php echo $brandkey['brandId'] ?>"
               style="margin-bottom:5px;" id="defaultCheck<?php echo $brandkey['brandId'] ?>"
@@ -43,6 +25,7 @@
           <?php endforeach; ?>
         </div>
         <hr>
+      <?php endif; ?>
         <div class="form-check">
           <h4><b>ราคา</b></h4>
           <input type="number" class="form-control" name="min" placeholder="ราคาต่ำสุด" value="<?php echo @$keyword['min'] ?>">

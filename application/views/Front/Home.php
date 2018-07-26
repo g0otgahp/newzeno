@@ -21,12 +21,12 @@
                       <li class="span3">
                         <div class="thumbnail">
                           <i class="tag"></i>
-                          <a target="_blank" href="<?php echo SITE_URL('Product/ProductDetail/'.$NewProduct[$p]['categroupId']."/".$NewProduct[$p]['cateId']."/".$NewProduct[$p]['productId']); ?>">
+                          <a  href="<?php echo SITE_URL('Product/ProductDetail/'.$NewProduct[$p]['categroupId']."/".$NewProduct[$p]['cateId']."/".$NewProduct[$p]['productId']); ?>">
                             <img src="<?php echo BASE_URL()?>/uploads/Products/<?php echo $NewProduct[$p]['productImg'] ?>" style="height:150px; width:240px;"></a>
                             <div class="caption">
                               <h5><?php echo $NewProduct[$p]['productName'] ?></h5>
                               <h5><?php echo $NewProduct[$p]['cateName']?></h5>
-                              <h4 align="center"><a target="_blank" class="btn btn-primary" href="<?php echo SITE_URL('Product/ProductDetail/'.$NewProduct[$p]['categroupId']."/".$NewProduct[$p]['cateId']."/".$NewProduct[$p]['productId']); ?>">รายละเอียด</a></h4>
+                              <h4 align="center"><a  class="btn btn-primary" href="<?php echo SITE_URL('Product/ProductDetail/'.$NewProduct[$p]['categroupId']."/".$NewProduct[$p]['cateId']."/".$NewProduct[$p]['productId']); ?>">รายละเอียด</a></h4>
                               </div>
                             </div>
                           </li>
@@ -59,7 +59,7 @@
                 <?php foreach ($Product as $list): ?>
                   <div class="row">
                     <div class="span2">
-                      <a target="_blank" href="<?php echo SITE_URL('Product/ProductDetail/'.$list['categroupId']."/".$list['cateId']."/".$list['productId']); ?>">
+                      <a  href="<?php echo SITE_URL('Product/ProductDetail/'.$list['categroupId']."/".$list['cateId']."/".$list['productId']); ?>">
                       <img src="<?php echo BASE_URL('uploads/Products/'.$list['productImg']); ?>" style="height:150px; width:240px;"/>
                       </a>
                     </div>
@@ -74,7 +74,7 @@
                     <div class="span3 alignR">
                       <form class="form-horizontal qtyFrm">
                         <h3>฿<?php echo number_format($list['productPrice']) ?></h3>
-                        <a target="_blank" class="btn btn-small pull-right btn-primary" href="<?php echo SITE_URL('Product/ProductDetail/'.$list['categroupId']."/".$list['cateId']."/".$list['productId']); ?>">รายละเอียด</a>
+                        <a  class="btn btn-small pull-right btn-primary" href="<?php echo SITE_URL('Product/ProductDetail/'.$list['categroupId']."/".$list['cateId']."/".$list['productId']); ?>">รายละเอียด</a>
                       </form>
                     </div>
                   </div>
@@ -91,14 +91,14 @@
                     <!-- Start Loop -->
                     <li class="span3">
                       <div class="thumbnail">
-                        <a target="_blank" href="<?php echo SITE_URL('Product/ProductDetail/'.$block['categroupId']."/".$block['cateId']."/".$block['productId']); ?>"><img src="<?php echo BASE_URL('uploads/Products/'.$block['productImg']); ?>" style="height:150px; width:210px;"/></a>
+                        <a  href="<?php echo SITE_URL('Product/ProductDetail/'.$block['categroupId']."/".$block['cateId']."/".$block['productId']); ?>"><img src="<?php echo BASE_URL('uploads/Products/'.$block['productImg']); ?>" style="height:150px; width:210px;"/></a>
                         <div class="caption">
                           <h5><?php echo $block['cateName']." - ".$block['productName'] ?></h5>
                           <p>
                             ฿<?php echo number_format($block['productPrice']) ?>
                           </p>
                           <h4 style="text-align:center">
-                            <a target="_blank" class="btn btn-primary" href="<?php echo SITE_URL('Product/ProductDetail/'.$block['categroupId']."/".$block['cateId']."/".$block['productId']); ?>">รายละเอียด</a></h4>
+                            <a  class="btn btn-primary" href="<?php echo SITE_URL('Product/ProductDetail/'.$block['categroupId']."/".$block['cateId']."/".$block['productId']); ?>">รายละเอียด</a></h4>
                           </div>
                         </div>
                       </li>

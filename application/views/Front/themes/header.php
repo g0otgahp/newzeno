@@ -39,6 +39,10 @@
 h1 , h2 , h3 , h4  {
   font-family: 'Prompt', sans-serif;
 }
+
+label {
+  display:inline;
+}
 </style>
 
 </head>
@@ -47,7 +51,7 @@ h1 , h2 , h3 , h4  {
     <div class="container" >
       <div class="row" style="padding:5px;">
         <div>
-          <span style="color:white;">ตัวแทนจำหน่ายวิดีโอวอล โปรเจคเตอร์ เครื่องใช้ไฟฟ้า อันดับ 1 ของประเทศไทย</span>
+          <span style="color:white;"><img width="20" height="20" src="<?php echo BASE_URL()?>/assets/Front/themes/images/phone.png"> เบอร์ติดต่อ : 02-497-0500</span>
           <!-- <a href="#" style="color:white;"><span class="">Menu 1</span></a> /
           <a href="#" style="color:white;"><span class="">Menu 2</span></a> /
           <a href="#" style="color:white;"><span class="">Menu 3</span></a> / -->

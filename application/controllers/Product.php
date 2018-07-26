@@ -46,6 +46,7 @@ class Product extends CI_Controller
     $GroupSelect = $this->GroupModel->SelectGroupById($cateId);
     $CateSelect = $this->CategoryModel->SelectCategoryById($Id);
     $Product = $this->HomepageModel->SelectProductByCate($Id);
+    $CateBrand = $this->CategoryModel->SelectBrandByCate($Id);
 
     $data = array(
       'Product' => $Product,
@@ -53,15 +54,56 @@ class Product extends CI_Controller
       'CateSelect' => $CateSelect,
       'Category' => $Category,
       'Group' => $Group,
+      'CateBrand' => $CateBrand,
     );
 
+    // echo "<pre>";
+    // print_r($data);
+    // exit();
     $this->load->view('Front/themes/header',$data);
-    $this->load->view('Front/themes/filter');
+    $this->load->view('Front/themes/filterCate');
     // $this->load->view('Front/themes/menu');
     $this->load->view('Front/ProductList');
     $this->load->view('Front/themes/footer');
   }
 
+  public function ShowProductFind()
+  {
+    $input = $this->input->post();
+    $cateId = $this->uri->segment(3);
+    $Id = $this->uri->segment(4);
+    if (isset($input['catebox']) || isset($input['brandbox']) || $input['min'] != '' || $input['max'] != '') {
+
+    $Group = $this->GroupModel->SelectGroup();
+    $Category = $this->CategoryModel->HomeCategory($cateId);
+    $GroupSelect = $this->GroupModel->SelectGroupById($cateId);
+    $CateSelect = $this->CategoryModel->SelectCategoryById($Id);
+    $Product = $this->HomepageModel->SelectProductByFind($input,$Id);
+    $CateBrand = $this->CategoryModel->SelectBrandByCate($Id);
+    $keyword = $input;
+
+    $data = array(
+      'Product' => $Product,
+      'GroupSelect' => $GroupSelect,
+      'CateSelect' => $CateSelect,
+      'Category' => $Category,
+      'Group' => $Group,
+      'CateBrand' => $CateBrand,
+      'keyword' => $keyword,
+    );
+
+    // echo "<pre>";
+    // print_r($data);
+    // exit();
+    $this->load->view('Front/themes/header',$data);
+    $this->load->view('Front/themes/filterCate');
+    // $this->load->view('Front/themes/menu');
+    $this->load->view('Front/ProductList');
+    $this->load->view('Front/themes/footer');
+  } else {
+    echo "<script>document.location='" . SITE_URL('Product/ShowProduct/'.$cateId."/".$Id) . "'</script>";
+}
+}
   public function ProductDetail()
   {
     $cateId = $this->uri->segment(3);

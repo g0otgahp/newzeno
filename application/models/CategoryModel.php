@@ -55,6 +55,30 @@ class CategoryModel extends CI_Model
     return $dataShow;
   }
 
+  public function SelectBrandByCate($cateId)
+  {
+
+    $dataShow = $this->db
+    ->order_by('cateId','DESC')
+    ->where('cateId',$cateId)
+    ->where('cateStatus',1)
+    ->where('categroupStatus',1)
+    ->join('categroup','categroup.categroupId = category.categroupId')
+    ->get('category')
+    ->result_array();
+
+    $dataShow['sortby'] = $this->db
+    ->where('sortbyCateid',$cateId)
+    ->join('brand','sortby.sortbyBrandid = brand.brandId')
+    ->get('sortby')
+    ->result_array();
+
+    // echo "<pre>";
+    // print_r($dataShow);
+    // exit();
+    return $dataShow;
+  }
+
   public function SaveCategory($dataInsert)
   {
 

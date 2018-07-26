@@ -135,6 +135,51 @@ class HomepageModel extends CI_Model
     return $data;
   }
 
+  public function SelectProductByFind($input)
+  {
+    $this->db->where('productStatus',1);
+    $this->db->where('cateStatus',1);
+    $this->db->where('brandStatus',1);
+    $this->db->where('categroupStatus',1);
+
+    if (isset($input['catebox'])) {
+      $icate = 0;
+      foreach ($input['catebox'] as $catebox) {
+        if ($icate == 0) {
+          $this->db->where('product.productCateid',$catebox);
+        } else {
+          $this->db->or_where('product.productCateid',$catebox);
+        }
+        $icate++;
+      }
+    }
+
+    if (isset($input['brandbox'])) {
+      $ibrand = 0;
+      foreach ($input['brandbox'] as $brandbox) {
+        if ($ibrand == 0) {
+          $this->db->where('product.productBrandid',$brandbox);
+        } else {
+          $this->db->or_where('product.productBrandid',$brandbox);
+        }
+        $ibrand++;
+      }
+    }
+
+    if ($input['min'] != '') {
+      $this->db->where('product.productPrice >=',$input['min']);
+    }
+
+    if ($input['max'] != '') {
+      $this->db->where('product.productPrice <=',$input['max']);
+    }
+    $this->db->join('brand','brand.brandId = product.productBrandid');
+    $this->db->join('category','category.CateId = product.productCateid');
+    $this->db->join('categroup','categroup.categroupId = product.productGroupid');
+    $data = $this->db->get('product')->result_array();
+    return $data;
+  }
+
   public function SelectProductByProduct($ProductId)
   {
     $data['product'] = $this->db
