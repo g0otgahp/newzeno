@@ -1,5 +1,5 @@
 <!-- Footer ================================================================== -->
-<div  id="footerSection">
+<div id="footerSection">
   <div class="container">
     <div class="row">
       <div class="span3">

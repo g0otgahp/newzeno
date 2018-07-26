@@ -172,12 +172,16 @@ h1 , h2 , h3 , h4  {
         <ul id="topMenu" class="nav">
           <li class=""><a href="#">&nbsp;</a></li>
           <ul class="nav nav-pills">
+            <li>
+              <a href="#footerSection"><i class="icon-th-large" style="font-size:30px; margin-top:3px;"></i></a>
+            </li>
             <?php foreach ($Group as $ShowGroup): ?>
               <li <?php if (!empty($GroupSelect)) {
                 if ($ShowGroup['categroupId'] == $GroupSelect[0]['categroupId']) {
                   echo "class='active'";
                 }
-              }; ?>><a href="<?php echo SITE_URL('Home/CategoryHome/'.$ShowGroup['categroupId']); ?>" ><?php echo $ShowGroup['categroupName'] ?></a></li>
+              }; ?>><a href="<?php echo SITE_URL('Home/CategoryHome/'.$ShowGroup['categroupId']); ?>" ><?php echo $ShowGroup['categroupName'] ?></a>
+            </li>
             <?php endforeach; ?>
           </ul>
         </div>
