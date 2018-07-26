@@ -144,4 +144,5 @@ $autoload['model'] = array(
     'ConfigModel',
     'AgentModel',
     'HomepageModel',
+    'NewsModel',
 );

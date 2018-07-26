@@ -88,9 +88,9 @@
 		</li>
 
 		<li <?php if($this->uri->segment(2)=="News"){ echo "class='active'"; } ?>>
-			<a href="#">
+			<a href="<?php echo SITE_URL('Admin/News') ?>">
 				<i class="pe-7s-bell" style="color:black;"></i>
-				<span style="color:red;">ข่าวสารโปรโมชั่น</span>
+				<span style="color:black;">ข่าวสารโปรโมชั่น</span>
 			</a>
 		</li>
 
