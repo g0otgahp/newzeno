@@ -75,14 +75,15 @@ class Home extends CI_Controller
   public function CategoryFind()
   {
     $input = $this->input->post();
-    $cateId = $this->uri->segment(3);
+    $cateId = 0;
+    $groupId = $this->uri->segment(3);
     if (isset($input['catebox']) || isset($input['brandbox']) || $input['min'] != '' || $input['max'] != '') {
 
       $Group = $this->GroupModel->SelectGroup();
-      $GroupSelect = $this->GroupModel->SelectGroupById($cateId);
-      $Category = $this->CategoryModel->HomeCategory($cateId);
-      $Product = $this->HomepageModel->SelectProductByFind($input);
-      $Brand = $this->BrandModel->SelectBrand($cateId);
+      $GroupSelect = $this->GroupModel->SelectGroupById($groupId);
+      $Category = $this->CategoryModel->HomeCategory($groupId);
+      $Product = $this->HomepageModel->SelectProductByFind($input,$groupId,$cateId);
+      $Brand = $this->BrandModel->SelectBrand($groupId);
       $keyword = $input;
 
       $data = array(
@@ -103,7 +104,7 @@ class Home extends CI_Controller
       $this->load->view('Front/ProductList');
       $this->load->view('Front/themes/footer');
     } else {
-      echo "<script>document.location='" . SITE_URL('Home/CategoryHome/'.$cateId) . "'</script>";
+      echo "<script>document.location='" . SITE_URL('Home/CategoryHome/'.$groupId) . "'</script>";
     }
   }
 }

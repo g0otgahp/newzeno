@@ -71,15 +71,15 @@ class Product extends CI_Controller
   {
     $input = $this->input->post();
     $cateId = $this->uri->segment(3);
-    $Id = $this->uri->segment(4);
+    $groupId = $this->uri->segment(4);
     if (isset($input['catebox']) || isset($input['brandbox']) || $input['min'] != '' || $input['max'] != '') {
 
     $Group = $this->GroupModel->SelectGroup();
     $Category = $this->CategoryModel->HomeCategory($cateId);
     $GroupSelect = $this->GroupModel->SelectGroupById($cateId);
-    $CateSelect = $this->CategoryModel->SelectCategoryById($Id);
-    $Product = $this->HomepageModel->SelectProductByFind($input,$Id);
-    $CateBrand = $this->CategoryModel->SelectBrandByCate($Id);
+    $CateSelect = $this->CategoryModel->SelectCategoryById($groupId);
+    $Product = $this->HomepageModel->SelectProductByFind($input,$groupId,$cateId);
+    $CateBrand = $this->CategoryModel->SelectBrandByCate($groupId);
     $keyword = $input;
 
     $data = array(
@@ -101,7 +101,7 @@ class Product extends CI_Controller
     $this->load->view('Front/ProductList');
     $this->load->view('Front/themes/footer');
   } else {
-    echo "<script>document.location='" . SITE_URL('Product/ShowProduct/'.$cateId."/".$Id) . "'</script>";
+    echo "<script>document.location='" . SITE_URL('Product/ShowProduct/'.$cateId."/".$groupId) . "'</script>";
 }
 }
   public function ProductDetail()

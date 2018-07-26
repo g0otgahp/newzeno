@@ -135,12 +135,13 @@ class HomepageModel extends CI_Model
     return $data;
   }
 
-  public function SelectProductByFind($input)
+  public function SelectProductByFind($input,$groupId,$cateId)
   {
     $this->db->where('productStatus',1);
     $this->db->where('cateStatus',1);
     $this->db->where('brandStatus',1);
     $this->db->where('categroupStatus',1);
+    $this->db->where('product.productGroupid',$groupId);
 
     if (isset($input['catebox'])) {
       $icate = 0;
