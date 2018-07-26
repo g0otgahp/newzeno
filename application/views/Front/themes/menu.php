@@ -20,7 +20,7 @@
               ?>
 
               <?php foreach ($data as $CategoryShow): ?>
-                <li><a target="_blank" href="<?php echo SITE_URL('Product/ShowProduct/'.$ShowGroup['categroupId']."/".$CategoryShow['cateId']); ?>"><?php echo $CategoryShow['cateName'] ?></a></li>
+                <li><a href="<?php echo SITE_URL('Product/ShowProduct/'.$ShowGroup['categroupId']."/".$CategoryShow['cateId']); ?>"><?php echo $CategoryShow['cateName'] ?></a></li>
               <?php endforeach; ?>
 
             </ul>

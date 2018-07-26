@@ -13,22 +13,34 @@
   </ul>
 <div class="row">
     <div id="gallery" class="span4">
-          <a href="<?php echo BASE_URL('uploads/Products/'.$Product['product'][0]['productImg']); ?>" >
-      <img src="<?php echo BASE_URL('uploads/Products/'.$Product['product'][0]['productImg']); ?>" style="width:100%"/>
-          </a>
-    <div id="differentview" class="moreOptopm carousel slide">
+      <div>
+        <a class="example-image-link" href="<?php echo BASE_URL('uploads/Products/'.$Product['product'][0]['productImg']); ?>" data-lightbox="example-set">
+          <img style="width:100%" class="example-image" src="<?php echo BASE_URL('uploads/Products/'.$Product['product'][0]['productImg']); ?>" alt=""/></a>
+      </div>
+
+          <div id="differentview" class="moreOptopm carousel slide">
+            <div class="carousel-inner">
+          <div>
+            <?php foreach ($Product['productImage'] as $Image): ?>
+            <a class="example-image-link" href="<?php echo BASE_URL('uploads/Products/'.$Image['proimageName']); ?>" data-lightbox="example-set">
+              <img height="25%" width="25%" class="example-image" src="<?php echo BASE_URL('uploads/Products/'.$Image['proimageName']); ?>" alt=""/></a>
+            <?php endforeach; ?>
+          </div>
+        </div>
+      </div>
+
+    <!-- <div id="differentview" class="moreOptopm carousel slide">
               <div class="carousel-inner">
                 <div class="item active" align="center">
                   <?php foreach ($Product['productImage'] as $Image): ?>
                  <a href="<?php echo BASE_URL('uploads/Products/'.$Image['proimageName']); ?>"> <img style="width:20%" src="<?php echo BASE_URL('uploads/Products/'.$Image['proimageName']); ?>" alt=""/></a>
                <?php endforeach; ?>
                 </div>
-              </div>
+              </div> -->
             <!--
       <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
             <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
       -->
-            </div>
 
      <!-- <div class="btn-toolbar">
       <div class="btn-group">

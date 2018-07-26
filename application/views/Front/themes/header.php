@@ -29,6 +29,8 @@
   <!-- Select2.css -->
   <link rel="stylesheet" href="<?php echo BASE_URL()?>assets/Back/select2-4.0.6-rc.1/dist/css/select2.min.css">
 
+  <!-- Select2.css -->
+  <link rel="stylesheet" href="<?php echo BASE_URL()?>assets/Front/src/css/lightbox.css">
 
   <style>
   * , span , td , p , a , label , button {

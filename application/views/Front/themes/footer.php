@@ -48,7 +48,9 @@
 <script src="<?php echo BASE_URL()?>/assets/Front/themes/js/google-code-prettify/prettify.js"></script>
 
 <script src="<?php echo BASE_URL()?>/assets/Front/themes/js/bootshop.js"></script>
-<script src="<?php echo BASE_URL()?>/assets/Front/themes/js/jquery.lightbox-0.5.js"></script>
+<script src="<?php echo BASE_URL()?>/assets/Front/src/js/lightbox.js"></script>
+
+<!-- <script src="<?php echo BASE_URL()?>/assets/Front/themes/js/jquery.lightbox-0.5.js"></script> -->
 
 <!-- Bootstrap DataTable -->
 <script src="<?php echo BASE_URL()?>/assets/Back/datatable-bootstrap/jquery.dataTables.min.js" type="text/javascript"></script>

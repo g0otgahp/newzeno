@@ -1,13 +1,17 @@
 <span>
   <div class="span9">
-    <h3> รายการที่ค้นหา <small class="pull-right">
-      <?php $num = count($Product); if ($num > 0): ?>
+    <!-- <h3> รายการที่ค้นหา <small class="pull-right">
+      <?php  if ($num > 0): ?>
         <?php echo "พบ ".$num. " รายการ" ?>
         <?php else: ?>
           ไม่พบสินค้า
       <?php endif; ?>
-    </small></h3>
-    <ul class="breadcrumb">
+    </small></h3> -->
+    <div id="myTab" class="pull-right">
+      <a href="#blockView" data-toggle="tab"><span class="btn btn-large"><i class="icon-th-large"></i></span></a>
+      <a href="#listView" data-toggle="tab"><span class="btn btn-large"><i class="icon-list"></i></span></a>
+    </div>
+    <ul class="breadcrumb" style="margin-top:65px;">
       <li><a href="<?php echo SITE_URL('Home'); ?>">หน้าแรก</a> <span class="divider">/</span></li>
     </ul>
     <!-- <form class="form-horizontal span6">
@@ -21,16 +25,8 @@
   </select>
 </div>
 </form> -->
-<?php if ($num > 0): ?>
-
-  <div id="myTab" class="pull-right">
-    <a href="#blockView" data-toggle="tab"><span class="btn btn-large"><i class="icon-th-large"></i></span></a>
-    <a href="#listView" data-toggle="tab"><span class="btn btn-large"><i class="icon-list"></i></span></a>
-  </div>
-  <br class="clr"/>
-  <div class="tab-content" style="margin-top:20px;">
-
-
+<?php $num = count($Product); if ($num > 0): ?>
+  <div class="tab-content">
     <!-- Table Style -->
     <div class="tab-pane" id="listView">
       <!-- Start Loop -->
