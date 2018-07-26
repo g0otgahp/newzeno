@@ -49,6 +49,11 @@ class Home extends CI_Controller
     $Group = $this->GroupModel->SelectGroup();
     $cateId = $this->uri->segment(3);
     $GroupSelect = $this->GroupModel->SelectGroupById($cateId);
+    if (count($GroupSelect) == 0) {
+      echo "<script>alert('เกิดข้อพิดพลาด ไม่พบสิ่งที่คุณต้องการ')</script>";
+      echo "<script>document.location='" . SITE_URL('Home') . "'</script>";
+      exit();
+    }
     $Category = $this->CategoryModel->HomeCategory($cateId);
     $Product = $this->HomepageModel->SelectProductByGroup($cateId);
     $Brand = $this->BrandModel->SelectBrand($cateId);
@@ -81,6 +86,11 @@ class Home extends CI_Controller
 
       $Group = $this->GroupModel->SelectGroup();
       $GroupSelect = $this->GroupModel->SelectGroupById($groupId);
+      if (count($GroupSelect) == 0) {
+        echo "<script>alert('เกิดข้อพิดพลาด ไม่พบสิ่งที่คุณต้องการ')</script>";
+        echo "<script>document.location='" . SITE_URL('Home') . "'</script>";
+        exit();
+      }
       $Category = $this->CategoryModel->HomeCategory($groupId);
       $Product = $this->HomepageModel->SelectProductByFind($input,$groupId,$cateId);
       $Brand = $this->BrandModel->SelectBrand($groupId);

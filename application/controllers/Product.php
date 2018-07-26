@@ -48,6 +48,12 @@ class Product extends CI_Controller
     $Product = $this->HomepageModel->SelectProductByCate($Id);
     $CateBrand = $this->CategoryModel->SelectBrandByCate($Id);
 
+    if (count($GroupSelect) == 0 || count($CateSelect) == 0) {
+      echo "<script>alert('เกิดข้อพิดพลาด ไม่พบสิ่งที่คุณต้องการ')</script>";
+      echo "<script>document.location='" . SITE_URL('Home') . "'</script>";
+      exit();
+    }
+    
     $data = array(
       'Product' => $Product,
       'GroupSelect' => $GroupSelect,
@@ -82,6 +88,12 @@ class Product extends CI_Controller
     $CateBrand = $this->CategoryModel->SelectBrandByCate($groupId);
     $keyword = $input;
 
+    if (count($GroupSelect) == 0 || count($CateSelect) == 0) {
+      echo "<script>alert('เกิดข้อพิดพลาด ไม่พบสิ่งที่คุณต้องการ')</script>";
+      echo "<script>document.location='" . SITE_URL('Home') . "'</script>";
+      exit();
+    }
+
     $data = array(
       'Product' => $Product,
       'GroupSelect' => $GroupSelect,
@@ -114,6 +126,11 @@ class Product extends CI_Controller
     $GroupSelect = $this->GroupModel->SelectGroupById($cateId);
     $CateSelect = $this->CategoryModel->SelectCategoryById($Id);
     $Product = $this->HomepageModel->SelectProductByProduct($ProductId);
+    if (count($GroupSelect) == 0 || count($CateSelect) == 0) {
+      echo "<script>alert('เกิดข้อพิดพลาด ไม่พบสิ่งที่คุณต้องการ')</script>";
+      echo "<script>document.location='" . SITE_URL('Home') . "'</script>";
+      exit();
+    }
 
     $data = array(
       'Product' => $Product,

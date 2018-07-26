@@ -198,6 +198,12 @@ class HomepageModel extends CI_Model
     ->get('product')
     ->result_array();
 
+    if (count($data['product']) == 0) {
+      echo "<script>alert('เกิดข้อพิดพลาด ไม่พบสิ่งที่คุณต้องการ')</script>";
+      echo "<script>document.location='" . SITE_URL('Home') . "'</script>";
+      exit();
+    }
+
     $data['productImage'] = $this->db
     ->where('proimageStatus',1)
     ->where('proimageProductid',$data['product'][0]['productId'])
