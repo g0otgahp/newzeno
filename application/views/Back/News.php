@@ -20,7 +20,7 @@
                 <tr>
                   <td><?php echo $i ?></td>
                   <td><img src="<?php echo BASE_URL('uploads/News/'. $dataShow['newsImage']) ?>" style="height:100px ; width:150px"></td>
-                  <td style="color:Black"><?php echo substr($dataShow['newsTitle'],0,130) ?></td>
+                  <td style="color:Black"><?php echo substr($dataShow['newsTitle'],0,150) ?></td>
                   <td>
                     <a href="<?php echo SITE_URL('Admin/News/OpenFormUpdate/'. $dataShow['newsId']) ?>" class="btn btn-info btn-warning">แก้ไข</a>
                     <a href="<?php echo SITE_URL('Admin/News/NewsDelete/'. $dataShow['newsId']) ?>" class="btn btn-info btn-danger" onClick="javascript: return confirm('ต้องการลบประเภทสินค้านี้ใช่หรือไม่')">ลบ </a>

@@ -68,6 +68,13 @@ class NewsModel extends CI_Model
 
   }
 
+  public function SelectNews()
+  {
+    $dataShow = $this->db->where('newsStatus',1)->get('news')->result_array();
+    return $dataShow;
+
+  }
+
 
 
 }

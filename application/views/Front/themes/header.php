@@ -150,7 +150,7 @@ label {
       <li class="" style="margin-top:10px;"><a href="<?php echo SITE_URL('Payment'); ?>">วิธีชำระเงิน</a></li>
       <!-- <li class="" style="margin-top:10px;"><a href="<?php echo SITE_URL('Home'); ?>">ตัวแทนจำหน่าย</a></li> -->
       <!-- <li class="" style="margin-top:10px;"><a href="<?php echo SITE_URL('Home'); ?>">ผลงาน</a></li> -->
-      <!-- <li class="" style="margin-top:10px;"><a href="<?php echo SITE_URL('Home'); ?>">ข่าวสาร</a></li> -->
+      <li class="" style="margin-top:10px;"><a href="<?php echo SITE_URL('News'); ?>">ข่าวสาร</a></li>
       <li class="" style="margin-top:10px;"><a href="<?php echo SITE_URL('Service'); ?>">บริการ</a></li>
       <li class="" style="margin-top:10px;"><a href="<?php echo SITE_URL('Home'); ?>">หน้าแรก</a></li>
     </ul>

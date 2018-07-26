@@ -30,6 +30,15 @@
               <div class="row">
                 <div class="col-md-12">
                   <div class="form-group">
+                    <label>หัวข้อย่อย</label>
+                    <input type="text" name="newsSubtitle" class="form-control" value="<?php echo $dataShow[0]['newsSubtitle'] ?>" placeholder="Title" required autocomplete="off" required>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
                     <label>รายละเอียดข่าว</label>
                     <textarea rows="5" class="summernote form-control" name="newsDetail" required><?php echo $dataShow[0]['newsDetail'] ?></textarea>
                   </div>
