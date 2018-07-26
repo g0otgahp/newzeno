@@ -3,8 +3,8 @@
     <!-- Sidebar ================================================== -->
     <div id="sidebar" class="span3">
       <!-- <div class="well well-small"><a id="myCart" href="#"><img src="<?php echo BASE_URL()?>/assets/themes/images/ico-cart.png" alt="cart">3 Items in your cart  <span class="badge badge-warning pull-right">$155.00</span></a></div> -->
-      <ul id="sideManu" class="nav nav-tabs nav-stacked">
-        <?php echo form_open('Home/CategoryFind/'.$GroupSelect[0]['categroupId']."#sideManu"); ?>
+      <ul id="productlist" class="nav nav-tabs nav-stacked">
+        <?php echo form_open('Home/CategoryFind/'.$GroupSelect[0]['categroupId']."#productlist"); ?>
         <div class="form-check">
           <h4><b>ประเภทสินค้า</b></h4>
           <?php foreach ($Category as $catekey): ?>
