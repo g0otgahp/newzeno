@@ -106,7 +106,7 @@
       <?php echo $Product['product'][0]['productDetail'] ?>
             </div>
             <?php if (count($Product['document']) != 0): ?>
-            <div class="tab-pane fade active in" id="document">
+            <div class="tab-pane fade in" id="document">
               <?php foreach ($Product['document'] as $document): ?>
                 <table>
                   <td></td>
