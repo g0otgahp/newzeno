@@ -3,12 +3,6 @@
   <div class="container">
     <div class="row">
       <div class="span3">
-        <!-- <h5>ACCOUNT</h5>
-        <a href="login.html">YOUR ACCOUNT</a>
-        <a href="login.html">PERSONAL INFORMATION</a>
-        <a href="login.html">ADDRESSES</a>
-        <a href="login.html">DISCOUNT</a>
-        <a href="login.html">ORDER HISTORY</a> -->
         <?php foreach ($Group as $footer): ?>
           <h4><?php echo $footer['categroupName'] ?></h4>
           <?php foreach ($footer['category'] as $catefooter): ?>
@@ -16,7 +10,13 @@
         <?php endforeach; ?>
         <?php endforeach; ?>
       </div>
-      <div class="span3">
+        <!-- <h5>ACCOUNT</h5>
+        <a href="login.html">YOUR ACCOUNT</a>
+        <a href="login.html">PERSONAL INFORMATION</a>
+        <a href="login.html">ADDRESSES</a>
+        <a href="login.html">DISCOUNT</a>
+        <a href="login.html">ORDER HISTORY</a> -->
+      <!-- <div class="span3">
         <h5>INFORMATION</h5>
         <a href="contact.html">CONTACT</a>
         <a href="register.html">REGISTRATION</a>
@@ -31,12 +31,12 @@
         <a href="special_offer.html">SPECIAL OFFERS</a>
         <a href="#">MANUFACTURERS</a>
         <a href="#">SUPPLIERS</a>
-      </div>
+      </div> -->
       <div id="socialMedia" class="span3 pull-right">
         <h5>SOCIAL MEDIA </h5>
         <a href="#"><img width="60" height="60" src="<?php echo BASE_URL()?>/assets/Front/themes/images/facebook.png" title="facebook" alt="facebook"/></a>
-        <a href="#"><img width="60" height="60" src="<?php echo BASE_URL()?>/assets/Front/themes/images/twitter.png" title="twitter" alt="twitter"/></a>
         <a href="#"><img width="60" height="60" src="<?php echo BASE_URL()?>/assets/Front/themes/images/youtube.png" title="youtube" alt="youtube"/></a>
+        <a href="#"><img width="60" height="60" src="<?php echo BASE_URL()?>/assets/Front/themes/images/line.png" title="line" alt="line"/></a>
       </div>
     </div>
     <p class="pull-right">&copy; Newzeno</p>

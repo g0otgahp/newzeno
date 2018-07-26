@@ -130,7 +130,7 @@
 				<span style="color:black;">การจัดการตำแหน่ง</span>
 			</a>
 		</li>
-		<li <?php if($this->uri->segment(2)==""){ echo "class='active'"; } ?>>
+		<li <?php if($this->uri->segment(2)=="Agent"){ echo "class='active'"; } ?>>
 			<a href="<?php echo SITE_URL('Admin/Agent'); ?>">
 				<i class="pe-7s-network" style="color:black;"></i>
 				<span style="color:black;">ตัวแทนจำหน่าย</span>

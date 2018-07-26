@@ -46,11 +46,12 @@ h1 , h2 , h3 , h4  {
   <div style="background-color:#3a3f44;">
     <div class="container" >
       <div class="row" style="padding:5px;">
-        <div class="pull-right">
+        <div>
+          <span style="color:white;">ตัวแทนจำหน่ายวิดีโอวอล โปรเจคเตอร์ เครื่องใช้ไฟฟ้า อันดับ 1 ของประเทศไทย</span>
           <!-- <a href="#" style="color:white;"><span class="">Menu 1</span></a> /
           <a href="#" style="color:white;"><span class="">Menu 2</span></a> /
           <a href="#" style="color:white;"><span class="">Menu 3</span></a> / -->
-          <a href="<?php echo SITE_URL('Login');?>" style="color:white;"><span class="">Administrator</span></a>
+          <a class="pull-right" href="<?php echo SITE_URL('Login');?>" style="color:white;"><span>Administrator</span></a>
         </div>
       </div>
     </div>
@@ -189,7 +190,9 @@ h1 , h2 , h3 , h4  {
             <ul class="nav nav-pills">
               <?php foreach ($Category as $CategoryShow): ?>
                 <li style="padding-top:10px; padding-right:15px;"><a href="<?php echo SITE_URL('Product/ShowProduct/'.$CategoryShow['categroupId']."/".$CategoryShow['cateId']); ?>">
-                  <font color="black" style="font-weight: bold; font-size:16px;"><p align="center"><img src="<?php echo BASE_URL('uploads/Categorys/'.$CategoryShow['cateImg']); ?>" height="50px" width="50px" ></p><?php echo $CategoryShow['cateName'] ?></font></a></li>
+                  <font color="black" style="font-weight: bold; font-size:16px;">
+                    <p align="center"><img src="<?php echo BASE_URL('uploads/Categorys/'.$CategoryShow['cateImg']); ?>" height="50px" width="50px" ></p>
+                    <?php echo $CategoryShow['cateName'] ?></font></a></li>
               <?php endforeach; ?>
             </ul>
           </div>

@@ -51,7 +51,6 @@ class HomepageModel extends CI_Model
     ->or_where('categroupName LIKE',"%".$key."%")
     ->or_where('cateName LIKE',"%".$key."%")
     ->or_where('brandName LIKE',"%".$key."%")
-    ->or_where('brandName LIKE',"%".$key."%")
     ->order_by('productId','DESC')
     ->join('brand','brand.brandId = product.productBrandid')
     ->join('category','category.CateId = product.productCateid')
