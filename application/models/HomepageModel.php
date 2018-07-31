@@ -141,8 +141,9 @@ class HomepageModel extends CI_Model
     $this->db->where('cateStatus',1);
     $this->db->where('brandStatus',1);
     $this->db->where('categroupStatus',1);
-
+    
     if (isset($input['catebox'])) {
+
       $icate = 0;
       foreach ($input['catebox'] as $catebox) {
         if ($icate == 0) {
@@ -151,6 +152,10 @@ class HomepageModel extends CI_Model
           $this->db->or_where('product.productCateid',$catebox);
         }
         $icate++;
+      }
+    } else {
+      if ($cateId != 0){
+        $this->db->where('product.productCateid',$cateId);
       }
     }
 

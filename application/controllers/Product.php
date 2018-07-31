@@ -81,11 +81,11 @@ class Product extends CI_Controller
     if (isset($input['catebox']) || isset($input['brandbox']) || $input['min'] != '' || $input['max'] != '') {
 
     $Group = $this->GroupModel->SelectGroup();
-    $Category = $this->CategoryModel->HomeCategory($cateId);
-    $GroupSelect = $this->GroupModel->SelectGroupById($cateId);
-    $CateSelect = $this->CategoryModel->SelectCategoryById($groupId);
+    $Category = $this->CategoryModel->HomeCategory($groupId);
+    $GroupSelect = $this->GroupModel->SelectGroupById($groupId);
+    $CateSelect = $this->CategoryModel->SelectCategoryById($cateId);
     $Product = $this->HomepageModel->SelectProductByFind($input,$groupId,$cateId);
-    $CateBrand = $this->CategoryModel->SelectBrandByCate($groupId);
+    $CateBrand = $this->CategoryModel->SelectBrandByCate($cateId);
     $keyword = $input;
 
     if (count($GroupSelect) == 0 || count($CateSelect) == 0) {
