@@ -53,7 +53,7 @@ class Product extends CI_Controller
       echo "<script>document.location='" . SITE_URL('Home') . "'</script>";
       exit();
     }
-    
+
     $data = array(
       'Product' => $Product,
       'GroupSelect' => $GroupSelect,
@@ -76,8 +76,8 @@ class Product extends CI_Controller
   public function ShowProductFind()
   {
     $input = $this->input->post();
-    $cateId = $this->uri->segment(3);
-    $groupId = $this->uri->segment(4);
+    $groupId = $this->uri->segment(3);
+    $cateId = $this->uri->segment(4);
     if (isset($input['catebox']) || isset($input['brandbox']) || $input['min'] != '' || $input['max'] != '') {
 
     $Group = $this->GroupModel->SelectGroup();

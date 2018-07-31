@@ -173,14 +173,12 @@ class HomepageModel extends CI_Model
     if ($input['max'] != '') {
       $this->db->where('product.productPrice <=',$input['max']);
     }
+
     $this->db->where('product.productGroupid',$groupId);
     $this->db->join('brand','brand.brandId = product.productBrandid');
     $this->db->join('category','category.CateId = product.productCateid');
     $this->db->join('categroup','categroup.categroupId = product.productGroupid');
     $data = $this->db->get('product')->result_array();
-    // echo "<pre>";
-    // print_r($data);
-    // exit();
     return $data;
   }
 

@@ -80,8 +80,8 @@ class Home extends CI_Controller
   public function CategoryFind()
   {
     $input = $this->input->post();
-    $cateId = 0;
     $groupId = $this->uri->segment(3);
+    $cateId = 0;
     if (isset($input['catebox']) || isset($input['brandbox']) || $input['min'] != '' || $input['max'] != '') {
 
       $Group = $this->GroupModel->SelectGroup();
