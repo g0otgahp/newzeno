@@ -32,7 +32,7 @@ class HomepageModel extends CI_Model
     ->join('category','category.CateId = product.productCateid')
     ->join('categroup','categroup.categroupId = product.productGroupid')
     ->order_by('productId','DESC')
-    ->get('product',8)
+    ->get('product',3)
     ->result_array();
 
     return $data;
@@ -73,7 +73,7 @@ class HomepageModel extends CI_Model
     ->join('category','category.CateId = product.productCateid')
     ->join('categroup','categroup.categroupId = product.productGroupid')
     ->order_by('productId','DESC')
-    ->get('product')
+    ->get('product',3)
     ->result_array();
 
     return $data;
@@ -141,7 +141,7 @@ class HomepageModel extends CI_Model
     $this->db->where('cateStatus',1);
     $this->db->where('brandStatus',1);
     $this->db->where('categroupStatus',1);
-    
+
     if (isset($input['catebox'])) {
 
       $icate = 0;

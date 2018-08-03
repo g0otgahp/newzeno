@@ -7,11 +7,7 @@
         ไม่พบสินค้า
       <?php endif; ?> -->
     </small></h3>
-    <div id="myTab" class="pull-right">
-      <a href="#blockView" data-toggle="tab"><span class="btn btn-large"><i class="icon-th-large"></i></span></a>
-      <a href="#listView" data-toggle="tab"><span class="btn btn-large"><i class="icon-list"></i></span></a>
-    </div>
-    <ul class="breadcrumb" style="margin-top:65px;">
+    <ul class="breadcrumb" style="padding-bottom:20px;">
       <li><a href="<?php echo SITE_URL('Home'); ?>">หน้าแรก</a> <span class="divider">/</span></li>
       <?php if (!empty($CateSelect)): ?>
         <li><a href="<?php echo SITE_URL('Home/CategoryHome/'.$GroupSelect[0]['categroupId']); ?>"><?php echo $GroupSelect[0]['categroupName'] ?> </a><span class="divider">/</span></li>
@@ -19,9 +15,11 @@
       <?php else: ?>
         <li class="active"><?php echo $GroupSelect[0]['categroupName'] ?></li>
       <?php endif; ?>
-
+      <div id="myTab" class="pull-right">
+        <a href="#blockView" data-toggle="tab"><span class="btn btn"><i class="icon-th-large" style="margin-top:5px;"></i></span></a>
+        <a href="#listView" data-toggle="tab"><span class="btn btn"><i class="icon-list" style="margin-top:5px;"></i></span></a>
+      </div>
     </ul>
-
     <!-- <h3> Products Name <small class="pull-right"> 40 Products are available </small></h3> -->
     <!-- <form class="form-horizontal span6">
     <div class="control-group">
@@ -36,6 +34,7 @@
 </form> -->
 <?php $num = count($Product); if ($num > 0): ?>
   <div class="tab-content">
+
     <!-- Table Style -->
     <div class="tab-pane" id="listView">
       <!-- Start Loop -->
@@ -47,7 +46,7 @@
           </a>
           </div>
           <div class="span4">
-            <h3><?php echo $list['cateName']." - ".$list['productName'] ?></h3>
+            <h3><?php echo $list['productName'] ?></h3>
             <p>
               <?php echo $list['productSubdetail'] ?>
             </p>
@@ -76,7 +75,7 @@
             <div class="thumbnail">
               <a  href="<?php echo SITE_URL('Product/ProductDetail/'.$block['categroupId']."/".$block['cateId']."/".$block['productId']); ?>"><img src="<?php echo BASE_URL('uploads/Products/'.$block['productImg']); ?>" style="height:150px; width:210px;"/></a>
               <div class="caption">
-                <h5><?php echo $block['cateName']." - ".$block['productName'] ?></h5>
+                <h5><?php echo $block['productName'] ?></h5>
                 <p>
                   ฿<?php echo number_format($block['productPrice']) ?>
                 </p>
