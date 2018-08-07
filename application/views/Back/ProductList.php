@@ -68,12 +68,12 @@
           <table class="table table-hover dataTable">
             <thead>
               <tr>
-                <th width="7%">ลำดับ</th>
+                <th width="5%">ลำดับ</th>
                 <th>รูปภาพ</th>
                 <th width="40%">ชื่อสินค้า</th>
                 <th>แบรนด์</th>
                 <th>ประเภทสินค้า</th>
-                <th>ตัวเลือก</th>
+                <th width="40%">แก้ไขสินค้า</th>
               </tr>
             </thead>
             <tbody>
@@ -87,7 +87,9 @@
                   <td><?php echo $row['brandName'] ?></td>
                   <td><?php echo $row['cateName'] ?></td>
                   <td>
-                    <a href="<?php echo SITE_URL('Admin/Product/ProductDetail/'.$row['productId']); ?>" class="btn btn-info"><i class="pe-7s-paper-plane"></i>รายการทั้งหมด</a>
+                    <a href="<?php echo SITE_URL('Admin/Product/ProductDetail/'.$row['productId']); ?>" class="btn btn-primary btn-xs"><i class="pe-7s-note2"></i> รายละเอียด</a>
+                    <a href="<?php echo SITE_URL('Admin/Product/productImage/'.$row['productId']); ?>" class="btn btn-warning btn-xs"><i class="pe-7s-photo"></i> รูปภาพ</a>
+                    <a href="<?php echo SITE_URL('Admin/Product/ProductDocument/'.$row['productId']); ?>" class="btn btn-danger btn-xs"><i class="pe-7s-albums"></i> เอกสารแนบ</a>
                   </td>
                 </tr>
               <?php $i++; endforeach; ?>

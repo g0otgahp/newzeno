@@ -95,6 +95,7 @@ class ProductModel extends CI_Model
 
   public function UpdateProduct($input)
   {
+  
     $this->db->where('productId',$input['productId'])->update('product',$input);
   }
 

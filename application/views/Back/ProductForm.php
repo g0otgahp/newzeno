@@ -27,10 +27,43 @@
             </div>
 
             <div class="row">
-              <div class="col-md-12">
+              <div class="col-md-4">
                 <div class="form-group">
-                  <label>รายละเอียด(แบบย่อ)</label>
-                  <input type="text" class="form-control" name="productSubdetail" placeholder="กรอก รายละเอียกแบบย่อ" required>
+                  <label>รายละเอียด 1 </label><small style="color:red"> (Resolution : XGA)</small>
+                  <input type="text" class="form-control" name="productSubdetail1" placeholder="รายละเอียด 1 แบบย่อ">
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label>รายละเอียด 2</label><small style="color:red"> (Brightness : 3200 Lumens)</small>
+                  <input type="text" class="form-control" name="productSubdetail2" placeholder="รายละเอียด 2 แบบย่อ">
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label>รายละเอียด 3</label><small style="color:red"> (Contrast Ratio : 10,000:1)</small>
+                  <input type="text" class="form-control" name="productSubdetail3" placeholder="รายละเอียด 3 แบบย่อ">
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label>รายละเอียด 4</label><small style="color:red"> (Throw Distance : 0.8 - 10.8m)</small>
+                  <input type="text" class="form-control" name="productSubdetail4" placeholder="รายละเอียด 4 แบบย่อ">
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label>รายละเอียด 5</label><small style="color:red"> (Weight : 15.2kg)</small>
+                  <input type="text" class="form-control" name="productSubdetail5" placeholder="รายละเอียด 5 แบบย่อ">
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label>รายละเอียด 6</label><small style="color:red"> (Other : ----)</small>
+                  <input type="text" class="form-control" name="productSubdetail6" placeholder="รายละเอียด 6 แบบย่อ">
                 </div>
               </div>
             </div>
@@ -92,7 +125,6 @@
             </div>
             <h4 align="center" style="color:green"><b>เป็นสินค้าแนะนำ</b></h4>
             <p><input type="checkbox" name="checkbox" class="form-control"></p>
-            <button type="submit" class="btn btn-info btn-fill pull-right">ลงทะเบียนสินค้า</button>
             <div class="clearfix"></div>
           </div>
         </div>
@@ -137,7 +169,7 @@
       <div class="col-md-6 animate-box">
         <div class="card">
           <div class="header">
-            <h4 class="title">เอกสารเพิ่มเติม</h4>
+            <h4 class="title">รูปภาพ(เพิ่มเติม)</h4>
           </div>
           <div class="content">
             <div class="row">
@@ -150,6 +182,7 @@
             </div>
           </div>
         </div>
+        <button type="submit" class="btn btn-info btn-fill pull-right">ลงทะเบียนสินค้า</button>
       </div>
 
 

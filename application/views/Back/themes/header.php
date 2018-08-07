@@ -80,6 +80,13 @@
 				<p>ภาพรวม</p>
 			</a>
 		</li> -->
+		<!-- <br>
+		<b style="color:Blue"> <center><u>ข้อมูล</u></center> </b> -->
+
+		<div class="" style="background-color:#ddd ; padding:5px">
+			<b style="color:Black ; background-color:#ddd"> <center>สินค้า</u></center> </b>
+		</div>
+
 		<li <?php if($this->uri->segment(2)=="Dashboard"){ echo "class='active'"; } ?>>
 			<a href="<?php echo SITE_URL('Admin/Dashboard');?>">
 				<i class="pe-7s-graph" style="color:black;"></i>
@@ -93,6 +100,14 @@
 				<span style="color:black;">ข่าวสารโปรโมชั่น</span>
 			</a>
 		</li>
+
+		<div class="" style="background-color:#ddd ; padding:5px">
+			<b style="color:Black ; background-color:#ddd"> <center>สินค้า</u></center> </b>
+		</div>
+
+		<!-- <br>
+		<b style="color:Blue"> <center><u>สินค้า</u></center> </b> -->
+
 		<li <?php if($this->uri->segment(2)=="Group"){ echo "class='active'"; } ?>>
 			<a href="<?php echo SITE_URL('Admin/Group')?>">
 				<i class="pe-7s-albums" style="color:black;"></i>
@@ -117,6 +132,14 @@
 				<span style="color:black;">การจัดการสินค้า</span><span style="color:black;"></span>
 			</a>
 		</li>
+
+		<div class="" style="background-color:#ddd ; padding:5px">
+			<b style="color:Black ; background-color:#ddd"> <center>พนักงาน</u></center> </b>
+		</div>
+
+		<!-- <br>
+		<b style="color:Blue"> <center><u>พนักงาน</u></center> </b> -->
+
 		<li <?php if($this->uri->segment(2)=="Employee"){ echo "class='active'"; } ?>>
 			<a href="<?php echo SITE_URL('Admin/Employee')?>">
 				<i class="pe-7s-users" style="color:black;"></i>
@@ -129,16 +152,30 @@
 				<span style="color:black;">การจัดการตำแหน่ง</span>
 			</a>
 		</li>
+
+		<br>
+		<div class="" style="background-color:#ddd ; padding:5px">
+			<b style="color:Black ; background-color:#ddd"> <center>ตัวแทน</u></center> </b>
+		</div>
+
 		<li <?php if($this->uri->segment(2)=="Agent"){ echo "class='active'"; } ?>>
 			<a href="<?php echo SITE_URL('Admin/Agent'); ?>">
 				<i class="pe-7s-network" style="color:black;"></i>
 				<span style="color:black;">ตัวแทนจำหน่าย</span>
 			</a>
 		</li>
+
+		<div class="" style="background-color:#ddd ; padding:5px">
+			<b style="color:Black ; background-color:#ddd"> <center>การตั้งค่า</u></center> </b>
+		</div>
+
+		<!-- <br>
+		<b style="color:Blue"> <center><u>การตั้งค่า</u></center> </b> -->
+
 		<li <?php if($this->uri->segment(2)=="Config"){ echo "class='active'"; } ?>>
 				<a href="<?php echo SITE_URL('Admin/Config')?>">
 					<i class="pe-7s-config" style="color:black;"></i>
-					<span style="color:black;">ตั้งค่า</span>
+					<span style="color:black;">ตั้งค่าทั่วไป</span>
 				</a>
 		</li>
 	</ul>
