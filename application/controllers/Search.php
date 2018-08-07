@@ -37,7 +37,7 @@ class Search extends CI_Controller
 
         $this->load->view('Front/themes/header',$data);
         // $this->load->view('Front/themes/slide');
-        $this->load->view('Front/themes/menu');
+        // $this->load->view('Front/themes/menu');
         $this->load->view('Front/ProductSearch');
         $this->load->view('Front/themes/footer');
     }

@@ -32,14 +32,9 @@ class Home extends CI_Controller
       'Group' => $Group,
     );
 
-    // echo "<pre>";
-    // print_r($data);
-    // exit();
-
-
     $this->load->view('Front/themes/header',$data);
     // $this->load->view('Front/themes/slide');
-    $this->load->view('Front/themes/menu');
+    // $this->load->view('Front/themes/menu');
     $this->load->view('Front/Home');
     $this->load->view('Front/themes/footer');
   }
@@ -82,7 +77,7 @@ class Home extends CI_Controller
     $input = $this->input->post();
     $groupId = $this->uri->segment(3);
     $cateId = 0;
-    if (isset($input['catebox']) || isset($input['brandbox']) || $input['min'] != '' || $input['max'] != '') {
+    if (isset($input['catebox']) || isset($input['brandbox']) || isset($input['sortbyprice']) ||  $input['min'] != '' || $input['max'] != '') {
 
       $Group = $this->GroupModel->SelectGroup();
       $GroupSelect = $this->GroupModel->SelectGroupById($groupId);

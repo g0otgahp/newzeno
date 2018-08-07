@@ -32,7 +32,25 @@ class HomepageModel extends CI_Model
     ->join('category','category.CateId = product.productCateid')
     ->join('categroup','categroup.categroupId = product.productGroupid')
     ->order_by('productId','DESC')
-    ->get('product',3)
+    ->get('product',4)
+    ->result_array();
+
+    return $data;
+  }
+
+  public function SelectProductRecommend()
+  {
+    $data = $this->db
+    ->where('productStatus',1)
+    ->where('cateStatus',1)
+    ->where('brandStatus',1)
+    ->where('categroupStatus',1)
+    ->where('productFav',1)
+    ->join('brand','brand.brandId = product.productBrandid')
+    ->join('category','category.CateId = product.productCateid')
+    ->join('categroup','categroup.categroupId = product.productGroupid')
+    ->order_by('productId','DESC')
+    ->get('product',4)
     ->result_array();
 
     return $data;
@@ -61,23 +79,7 @@ class HomepageModel extends CI_Model
     return $data;
   }
 
-  public function SelectProductRecommend()
-  {
-    $data = $this->db
-    ->where('productStatus',1)
-    ->where('cateStatus',1)
-    ->where('brandStatus',1)
-    ->where('categroupStatus',1)
-    ->where('productFav',1)
-    ->join('brand','brand.brandId = product.productBrandid')
-    ->join('category','category.CateId = product.productCateid')
-    ->join('categroup','categroup.categroupId = product.productGroupid')
-    ->order_by('productId','DESC')
-    ->get('product',3)
-    ->result_array();
 
-    return $data;
-  }
 
   public function SelectHomeProduct()
   {
@@ -171,12 +173,19 @@ class HomepageModel extends CI_Model
       }
     }
 
+
+
+
     if ($input['min'] != '') {
       $this->db->where('product.productPrice >=',$input['min']);
     }
 
     if ($input['max'] != '') {
       $this->db->where('product.productPrice <=',$input['max']);
+    }
+
+    if (isset($input['sortbyprice'])) {
+      $this->db->order_by('product.productPrice',$input['sortbyprice']);
     }
 
     $this->db->where('product.productGroupid',$groupId);

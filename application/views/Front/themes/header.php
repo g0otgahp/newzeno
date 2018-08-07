@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>Newzeno : ตัวแทนจำหน่ายวิดีโอวอล โปรเจคเตอร์ เครื่องใช้ไฟฟ้า อันดับ 1 ของประเทศไทย</title>
-  <meta name="viewport" content="width=device-width, initial-scale=0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
   <meta name="author" content="">
 
@@ -32,181 +32,392 @@
   <!-- Select2.css -->
   <link rel="stylesheet" href="<?php echo BASE_URL()?>assets/Front/src/css/lightbox.css">
 
+  <!-- Multi-colum Menu.css -->
+  <link rel="stylesheet" href="<?php echo BASE_URL()?>assets/Front/css/multi-colum.css">
+
+  <!-- card.css -->
+  <link rel="stylesheet" href="<?php echo BASE_URL()?>assets/Front/css/card.css">
+
   <style>
   * , span , td , p , a , label , button {
     font-family: 'Prompt', sans-serif;
     font-size: 14px;
   }
 
-h1 , h2 , h3 , h4  {
-  font-family: 'Prompt', sans-serif;
-}
+  h1 , h2 , h3 , h4  {
+    font-family: 'Prompt', sans-serif;
+  }
 
-label {
-  display:inline;
-}
+  label {
+    display:inline;
+  }
 </style>
 
 </head>
 <body>
-  <div style="background-color:#3a3f44;">
-    <div class="container" >
-      <div class="row" style="padding:5px;">
-        <div>
-          <span style="color:white;"><img width="20" height="20" src="<?php echo BASE_URL()?>/assets/Front/themes/images/phone.png"> เบอร์ติดต่อ : 02-497-0500</span>
-          <!-- <a href="#" style="color:white;"><span class="">Menu 1</span></a> /
-          <a href="#" style="color:white;"><span class="">Menu 2</span></a> /
-          <a href="#" style="color:white;"><span class="">Menu 3</span></a> / -->
-          <a class="pull-right" href="<?php echo SITE_URL('Login');?>" style="color:white;"><span>Administrator</span></a>
+  <div id="header">
+    <div style="background-color:#3a3f44;">
+      <div class="container" >
+        <div class="row" style="padding:5px;">
+          <div>
+            <span style="color:white;"><img width="20" height="20" src="<?php echo BASE_URL()?>/assets/Front/themes/images/phone.png"> เบอร์ติดต่อ : 02-497-0500</span>
+            <!-- <a href="#" style="color:white;"><span class="">Menu 1</span></a> /
+            <a href="#" style="color:white;"><span class="">Menu 2</span></a> /
+            <a href="#" style="color:white;"><span class="">Menu 3</span></a> / -->
+            <a class="pull-right" href="<?php echo SITE_URL('Login');?>" style="color:white;"><span>Administrator</span></a>
+          </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="container" style="background-color:white; margin-top:10px; padding:10px;">
-    <!-- <a href="<?php echo SITE_URL('Home');?>"><img src="<?php echo BASE_URL()?>/uploads/Logo/azza_logo.png" height="80px" width="150"/></a> -->
+  <!-- Header End====================================================================== -->
+
+
+  <!-- new nav -->
+
+  <div class="container" style="margin-bottom:10px; margin-top:10px;">
     <div class="row">
-      <div class="span4">
-    <a href="<?php echo SITE_URL('Home');?>"><img src="<?php echo BASE_URL()?>/uploads/Logo/logonewzeno.png" height="100px" style="margin-top:25px;"/></a>
-  </div>
-  <div class="span8">
-    <div id="carouselBlk">
-      <div id="myCarousel" class="carousel slide">
-        <div class="carousel-inner">
-          <div class="item active">
-            <div class="container" style="width:780px; height:100px;">
-              <a href="#"><img style="width:780px; height:100px;" src="<?php echo BASE_URL()?>/uploads/Slide/lg_generic_banner_by_lidikhalid-d4jre7h.jpg"/></a>
-              <div class="carousel-caption">
-                <h4>Second Thumbnail label</h4>
-                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="container" style="width:780px; height:100px;">
-              <a href="#"><img style="width:780px; height:100px;" src="<?php echo BASE_URL()?>/uploads/Slide/banner-lg.jpg" alt=""/></a>
-              <div class="carousel-caption">
-                <h4>Second Thumbnail label</h4>
-                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="container" style="width:780px; height:100px;">
-              <a href="#"><img style="width:780px; height:100px;" src="<?php echo BASE_URL()?>/uploads/Slide/banner-22.png" alt=""/></a>
-              <div class="carousel-caption">
-                <h4>Second Thumbnail label</h4>
-                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="container" style="width:780px; height:100px;">
-              <a href="#"><img style="width:780px; height:100px;" src="<?php echo BASE_URL()?>/uploads/Slide/projectors.jpg" alt=""/></a>
-              <div class="carousel-caption">
-                <h4>Second Thumbnail label</h4>
-                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-        <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
+      <div class="col-md-12">
+        <a class="pull-left" href="<?php echo SITE_URL('Home');?>"><img src="<?php echo BASE_URL()?>/uploads/Logo/logonewzeno.png" style="height:75px; padding-right:120px;"/></a>
+        <ul class="nav nav-pills" style="padding-top:15px;">
+          <?php echo form_open('Search','class="pull-right"'); ?>
+          <input style="margin-top:10px; padding:15px;" type="text" name="keyword" placeholder="ค้นหาสินค้า">
+          <button style="" type="submit" class="btn btn-primary">ค้นหา</button>
+          <?php echo form_close(); ?>
+          <li style="margin-top:7px;"><a href="<?php echo SITE_URL('Home'); ?>">หน้าแรก</a></li>
+          <li style="margin-top:7px;"><a href="<?php echo SITE_URL('Service'); ?>">บริการ</a></li>
+          <li style="margin-top:7px;"><a href="<?php echo SITE_URL('News'); ?>">ข่าวสาร</a></li>
+          <li style="margin-top:7px;"><a href="<?php echo SITE_URL('Payment'); ?>">วิธีชำระเงิน</a></li>
+          <li style="margin-top:7px;"><a href="<?php echo SITE_URL('Contact'); ?>">ติดต่อเรา</a></li>
+        </ul>
       </div>
     </div>
   </div>
+  <div class="container">
+  <nav class="navbar navbar-default" role="navigation">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-menu-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <!--/.navbar-header-->
+      <div class="collapse navbar-collapse" id="bs-menu-1" >
+        <ul class="nav navbar-nav">
+          <li class="dropdown" >
+            <a href="#" class="dropdown-toggle dropbtn" data-toggle="dropdown" style="margin-top:3px;"><b>อุปกรณ์แสดงภาพ <b class="caret"></b></a>
+            <ul class="dropdown-menu multi-column columns-3 dropdown-content">
+              <div class="row">
+                <div class="col-sm-4">
+                  <ul class="multi-column-dropdown ">
+                    <?php foreach ($Group as $ShowGroup): ?>
+                    <li><a href="<?php echo SITE_URL('Home/CategoryHome/'.$ShowGroup['categroupId']); ?>" ><b><i><?php echo $ShowGroup['categroupName'] ?></i></b></a></li>
+                  <?php endforeach; ?>
+                  <?php foreach ($Category as $CategoryShow): ?>
+                    <li><a href="<?php echo SITE_URL('Product/ShowProduct/'.$CategoryShow['categroupId']."/".$CategoryShow['cateId']); ?>" style="font-size:12px;">- <?php echo $CategoryShow['cateName'] ?></a></li>
+                  <?php endforeach; ?>
+                  <li><hr></li>
+                  <li><i>Monitor TV TV</i></li>
+                  <li><a href="#">Separated link</a></li>
+                  <li><a href="#">One more separated link</a></li>
+                  </ul>
+                </div>
 
-    <!-- <form class="pull-right" style="margin-top:10px;">
-      <input style="margin-top:10px;" class="form-control" type="text" placeholder="Products Search"/>
-      <button type="submit" class="btn btn-primary">ค้นหา</button>
-      <select class="form-control select2-single" style="margin-top:10px;">
-      <option>-เลือกประเภท-</option>
-      <option>CLOTHES </option>
-      <option>FOOD AND BEVERAGES </option>
-      <option>HEALTH & BEAUTY </option>
-      <option>SPORTS & LEISURE </option>
-      <option>BOOKS & ENTERTAINMENTS </option>
-    </select>
-    <select class="form-control select2-single" style="margin-top:10px;">
-    <option>-เลือกยี่ห้อ-</option>
-    <option>CLOTHES </option>
-    <option>FOOD AND BEVERAGES </option>
-    <option>HEALTH & BEAUTY </option>
-    <option>SPORTS & LEISURE </option>
-    <option>BOOKS & ENTERTAINMENTS </option>
-  </select>
-</form> -->
-</div>
-</div>
-
-
-<!-- new nav -->
-
-<div class="container" style="height:55px">
-  <ul id="topMenu" class="nav" style="height:14px">
-    <ul class="nav nav-pills">
-      <?php echo form_open('Search','class="pull-right"'); ?>
-        <input style="margin-top:10px;" class="form-control" type="text" name="keyword" placeholder="ค้นหาสินค้า"/>
-        <button type="submit" class="btn btn-primary">ค้นหา</button>
-        <?php echo form_close(); ?>
-      <li class="" style="margin-top:10px;"><a href="<?php echo SITE_URL('Contact'); ?>">ติดต่อเรา</a></li>
-      <li class="" style="margin-top:10px;"><a href="<?php echo SITE_URL('Payment'); ?>">วิธีชำระเงิน</a></li>
-      <!-- <li class="" style="margin-top:10px;"><a href="<?php echo SITE_URL('Home'); ?>">ตัวแทนจำหน่าย</a></li> -->
-      <!-- <li class="" style="margin-top:10px;"><a href="<?php echo SITE_URL('Home'); ?>">ผลงาน</a></li> -->
-      <li class="" style="margin-top:10px;"><a href="<?php echo SITE_URL('News'); ?>">ข่าวสาร</a></li>
-      <li class="" style="margin-top:10px;"><a href="<?php echo SITE_URL('Service'); ?>">บริการ</a></li>
-      <li class="" style="margin-top:10px;"><a href="<?php echo SITE_URL('Home'); ?>">หน้าแรก</a></li>
-    </ul>
-  </ul>
-
-</div>
-
-<!-- new nav -->
-
-
-
-<!-- Navbar ================================================== -->
-<div>
-  <div style="background-color:#3a3f44;">
-    <div id="logoArea" class="navbar">
-      <a data-target="#topMenu" data-toggle="collapse" class="btn btn-navbar" style="margin-top:8px; padding:5px;">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </a>
-      <div class="navbar-inner" style="">
-
-        <ul id="topMenu" class="nav">
-          <li class=""><a href="#">&nbsp;</a></li>
-          <ul class="nav nav-pills">
-            <li>
-              <a href="#footerSection"><i class="icon-th-large" style="font-size:30px; margin-top:3px;"></i></a>
-            </li>
-            <?php foreach ($Group as $ShowGroup): ?>
-              <li <?php if (!empty($GroupSelect)) {
-                if ($ShowGroup['categroupId'] == $GroupSelect[0]['categroupId']) {
-                  echo "class='active'";
-                }
-              }; ?>><a href="<?php echo SITE_URL('Home/CategoryHome/'.$ShowGroup['categroupId']); ?>" ><?php echo $ShowGroup['categroupName'] ?></a>
-            </li>
-            <?php endforeach; ?>
-          </ul>
-        </div>
-
-        <!-- <div class="container" style="background-color: #d9d9d9; height:60px; display: flex; justify-content: space-around;"> -->
-        <div class="container" style="background-color: #d9d9d9; height:120px;">
-          <ul id="topMenu" class="nav">
-            <li class=""><a href="#">&nbsp;</a></li>
-            <li class=""><a href="#">&nbsp;</a></li>
-            <ul class="nav nav-pills">
-              <?php foreach ($Category as $CategoryShow): ?>
-                <li style="padding-top:10px; padding-right:15px;"><a href="<?php echo SITE_URL('Product/ShowProduct/'.$CategoryShow['categroupId']."/".$CategoryShow['cateId']); ?>">
-                  <font color="black" style="font-weight: bold; font-size:16px;">
-                    <p align="center"><img src="<?php echo BASE_URL('uploads/Categorys/'.$CategoryShow['cateImg']); ?>" height="50px" width="50px" ></p>
-                    <?php echo $CategoryShow['cateName'] ?></font></a></li>
-              <?php endforeach; ?>
+                <div class="col-sm-4">
+                  <ul class="multi-column-dropdown">
+                    <li><i>Commertrial TV</i></li>
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li><hr></li>
+                    <li><i>Hotel TV</i></li>
+                    <li><a href="#">Separated link</a></li>
+                    <li><a href="#">One more separated link</a></li>
+                  </ul>
+                </div>
+                <div class="col-sm-4">
+                  <ul class="multi-column-dropdown">
+                    <li><i>Digital Signage</i></li>
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li><hr></li>
+                    <li><i>Digital TV</i></li>
+                    <li><a href="#">Separated link</a></li>
+                    <li><a href="#">One more separated link</a></li>
+                  </ul>
+                </div>
+              </div>
             </ul>
-          </div>
-        </div>
+          </li>
+        </ul>
+<!--
+        <ul class="nav navbar-nav">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle dropbtn" data-toggle="dropdown" style="margin-top:3px;"><b>อุปกรณ์แสดงภาพ <b class="caret"></b></a>
+            <ul class="dropdown-menu multi-column columns-3 dropdown-content">
+              <div class="row">
+                <div class="col-sm-4">
+                  <ul class="multi-column-dropdown ">
+                    <li><i>Projector</i></li>
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li><hr></li>
+                    <li><i>Laser Projector</i></li>
+                    <li><a href="#">Separated link</a></li>
+                    <li><a href="#">One more separated link</a></li>
+                  </ul>
+                </div>
+                <div class="col-sm-4">
+                  <ul class="multi-column-dropdown">
+                    <li><i>Commertrial TV</i></li>
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li><hr></li>
+                    <li><i>Hotel TV</i></li>
+                    <li><a href="#">Separated link</a></li>
+                    <li><a href="#">One more separated link</a></li>
+                  </ul>
+                </div>
+                <div class="col-sm-4">
+                  <ul class="multi-column-dropdown">
+                    <li><i>Digital Signage</i></li>
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li><hr></li>
+                    <li><i>Digital TV</i></li>
+                    <li><a href="#">Separated link</a></li>
+                    <li><a href="#">One more separated link</a></li>
+                  </ul>
+                </div>
+              </div>
+            </ul>
+          </li>
+        </ul>
+
+        <ul class="nav navbar-nav">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle dropbtn" data-toggle="dropdown" style="margin-top:3px;"><b>อุปกรณ์แสดงภาพ <b class="caret"></b></a>
+            <ul class="dropdown-menu multi-column columns-3 dropdown-content">
+              <div class="row">
+                <div class="col-sm-4">
+                  <ul class="multi-column-dropdown ">
+                    <li><i>Projector</i></li>
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li><hr></li>
+                    <li><i>Laser Projector</i></li>
+                    <li><a href="#">Separated link</a></li>
+                    <li><a href="#">One more separated link</a></li>
+                  </ul>
+                </div>
+                <div class="col-sm-4">
+                  <ul class="multi-column-dropdown">
+                    <li><i>Commertrial TV</i></li>
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li><hr></li>
+                    <li><i>Hotel TV</i></li>
+                    <li><a href="#">Separated link</a></li>
+                    <li><a href="#">One more separated link</a></li>
+                  </ul>
+                </div>
+                <div class="col-sm-4">
+                  <ul class="multi-column-dropdown">
+                    <li><i>Digital Signage</i></li>
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li><hr></li>
+                    <li><i>Digital TV</i></li>
+                    <li><a href="#">Separated link</a></li>
+                    <li><a href="#">One more separated link</a></li>
+                  </ul>
+                </div>
+              </div>
+            </ul>
+          </li>
+        </ul>
+
+        <ul class="nav navbar-nav">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle dropbtn" data-toggle="dropdown" style="margin-top:3px;"><b>อุปกรณ์แสดงภาพ <b class="caret"></b></a>
+            <ul class="dropdown-menu multi-column columns-3 dropdown-content">
+              <div class="row">
+                <div class="col-sm-4">
+                  <ul class="multi-column-dropdown ">
+                    <li><i>Projector</i></li>
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li><hr></li>
+                    <li><i>Laser Projector</i></li>
+                    <li><a href="#">Separated link</a></li>
+                    <li><a href="#">One more separated link</a></li>
+                  </ul>
+                </div>
+                <div class="col-sm-4">
+                  <ul class="multi-column-dropdown">
+                    <li><i>Commertrial TV</i></li>
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li><hr></li>
+                    <li><i>Hotel TV</i></li>
+                    <li><a href="#">Separated link</a></li>
+                    <li><a href="#">One more separated link</a></li>
+                  </ul>
+                </div>
+                <div class="col-sm-4">
+                  <ul class="multi-column-dropdown">
+                    <li><i>Digital Signage</i></li>
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li><hr></li>
+                    <li><i>Digital TV</i></li>
+                    <li><a href="#">Separated link</a></li>
+                    <li><a href="#">One more separated link</a></li>
+                  </ul>
+                </div>
+              </div>
+            </ul>
+          </li>
+        </ul>
+
+        <ul class="nav navbar-nav">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle dropbtn" data-toggle="dropdown" style="margin-top:3px;"><b>อุปกรณ์แสดงภาพ <b class="caret"></b></a>
+            <ul class="dropdown-menu multi-column columns-3 dropdown-content">
+              <div class="row">
+                <div class="col-sm-4">
+                  <ul class="multi-column-dropdown ">
+                    <li><i>Projector</i></li>
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li><hr></li>
+                    <li><i>Laser Projector</i></li>
+                    <li><a href="#">Separated link</a></li>
+                    <li><a href="#">One more separated link</a></li>
+                  </ul>
+                </div>
+                <div class="col-sm-4">
+                  <ul class="multi-column-dropdown">
+                    <li><i>Commertrial TV</i></li>
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li><hr></li>
+                    <li><i>Hotel TV</i></li>
+                    <li><a href="#">Separated link</a></li>
+                    <li><a href="#">One more separated link</a></li>
+                  </ul>
+                </div>
+                <div class="col-sm-4">
+                  <ul class="multi-column-dropdown">
+                    <li><i>Digital Signage</i></li>
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li><hr></li>
+                    <li><i>Digital TV</i></li>
+                    <li><a href="#">Separated link</a></li>
+                    <li><a href="#">One more separated link</a></li>
+                  </ul>
+                </div>
+              </div>
+            </ul>
+          </li>
+        </ul> -->
+
       </div>
     </div>
-    <!-- Header End====================================================================== -->
+    <!--/.navbar-collapse-->
+  </nav>
+
+  <!-- <div class="container">
+  <div class="row">
+  <div class="span12">
+  <ul class="nav nav-pills">
+  <?php echo form_open('Search','class="pull-right"'); ?>
+  <input class="form-control" type="text" name="keyword" placeholder="ค้นหาสินค้า"/>
+  <button style="margin-bottom:10px;" type="submit" class="btn btn-primary">ค้นหา</button>
+  <?php echo form_close(); ?>
+  <li ><a href="<?php echo SITE_URL('Contact'); ?>">ติดต่อเรา</a></li>
+  <li ><a href="<?php echo SITE_URL('Payment'); ?>">วิธีชำระเงิน</a></li>
+  <li ><a href="<?php echo SITE_URL('Service'); ?>">บริการ</a></li>
+  <li ><a href="<?php echo SITE_URL('Home'); ?>">หน้าแรก</a></li>
+</ul>
+</div>
+</div>
+</div> -->
+
+<!--/.navbar-->
+
+
+<!-- new nav -->
+
+
+<!-- <ul class="nav nav-pills">
+<?php echo form_open('Search','class="pull-right"'); ?>
+<input style="margin-top:10px;" class="form-control" type="text" name="keyword" placeholder="ค้นหาสินค้า"/>
+<button type="submit" class="btn btn-primary">ค้นหา</button>
+<?php echo form_close(); ?>
+<li class="" style="margin-top:10px;"><a href="<?php echo SITE_URL('Contact'); ?>">ติดต่อเรา</a></li>
+<li class="" style="margin-top:10px;"><a href="<?php echo SITE_URL('Payment'); ?>">วิธีชำระเงิน</a></li>
+<li class="" style="margin-top:10px;"><a href="<?php echo SITE_URL('News'); ?>">ข่าวสาร</a></li>
+<li class="" style="margin-top:10px;"><a href="<?php echo SITE_URL('Service'); ?>">บริการ</a></li>
+<li class="" style="margin-top:10px;"><a href="<?php echo SITE_URL('Home'); ?>">หน้าแรก</a></li>
+</ul> -->
+<!-- Navbar ================================================== -->
+
+<!-- <div>
+  <div style="background-color:#3a3f44;">
+    <div id="logoArea" class="navbar"> -->
+
+      <!-- <div class="navbar-inner" style="">
+      <ul id="topMenu" class="nav">
+      <li class=""><a href="#">&nbsp;</a></li>
+      <ul class="nav nav-pills">
+      <li>
+      <a href="#footerSection"><i class="icon-th-large" style="font-size:30px; margin-top:3px;"></i></a>
+    </li>
+    <?php foreach ($Group as $ShowGroup): ?>
+    <li <?php if (!empty($GroupSelect)) {
+    if ($ShowGroup['categroupId'] == $GroupSelect[0]['categroupId']) {
+    echo "class='active'";
+  }
+}; ?>><a href="<?php echo SITE_URL('Home/CategoryHome/'.$ShowGroup['categroupId']); ?>" ><?php echo $ShowGroup['categroupName'] ?></a>
+</li>
+<?php endforeach; ?>
+</ul>
+</div> -->
+
+<!-- <div class="container" style="background-color: #d9d9d9; height:60px; display: flex; justify-content: space-around;"> -->
+
+<!-- <div class="container" style="background-color: #d9d9d9; height:120px;">
+<ul id="topMenu" class="nav">
+<li class=""><a href="#">&nbsp;</a></li>
+<li class=""><a href="#">&nbsp;</a></li>
+<ul class="nav nav-pills">
+<?php foreach ($Category as $CategoryShow): ?>
+<li style="padding-top:10px; padding-right:15px;"><a href="<?php echo SITE_URL('Product/ShowProduct/'.$CategoryShow['categroupId']."/".$CategoryShow['cateId']); ?>">
+<font color="black" style="font-weight: bold; font-size:16px;">
+<p align="center"><img src="<?php echo BASE_URL('uploads/Categorys/'.$CategoryShow['cateImg']); ?>" height="50px" width="50px" ></p>
+<?php echo $CategoryShow['cateName'] ?></font></a></li>
+<?php endforeach; ?>
+</ul>
+</div> -->
+
+<!-- </div>
+</div>
+</div> -->
+<!-- Header End====================================================================== -->
