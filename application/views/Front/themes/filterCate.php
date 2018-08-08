@@ -12,10 +12,10 @@
               <p>
                 <select name="sortbyprice">
                   <option value="">-เลือกเรียงราคา-</option>
-                  <option value="DESC" <?php if ($keyword['sortbyprice'] == "DESC") {
+                  <option value="DESC" <?php if (@$keyword['sortbyprice'] == "DESC") {
                     echo "selected";
                   } ?> >เรียงราคา สูง > ต่ำ</option>
-                  <option value="ASC" <?php if ($keyword['sortbyprice'] == "ASC") {
+                  <option value="ASC" <?php if (@$keyword['sortbyprice'] == "ASC") {
                     echo "selected";
                   } ?>>เรียงราคา ต่ำ > สูง</option>
                 </select>
