@@ -2,7 +2,7 @@
   <div class="row">
 <div class="span12">
   <ul class="breadcrumb">
-    <li><a href="<?php echo SITE_URL('Home'); ?>">หน้าแรก</a></li>
+    <li><a href="<?php echo SITE_URL('Home'); ?>" class="colorTagA">หน้าแรก</a></li>
     <li class="active">การชำระเงิน</li>
   </ul>
 

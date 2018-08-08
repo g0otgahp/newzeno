@@ -51,6 +51,11 @@
   label {
     display:inline;
   }
+
+  .colorTagA {
+    color:black;
+  }
+  
 </style>
 
 </head>
@@ -84,11 +89,11 @@
           <input style="margin-top:10px; padding:15px;" type="text" name="keyword" placeholder="ค้นหาสินค้า">
           <button style="" type="submit" class="btn btn-primary">ค้นหา</button>
           <?php echo form_close(); ?>
-          <li style="margin-top:7px;"><a href="<?php echo SITE_URL('Home'); ?>" style="color:black;">หน้าแรก</a></li>
-          <li style="margin-top:7px; color:#FFFF"><a href="<?php echo SITE_URL('Service'); ?>" style="color:black;">บริการ</a></li>
+          <li style="margin-top:7px;"><a href="<?php echo SITE_URL('Home'); ?>" class="colorTagA">หน้าแรก</a></li>
+          <li style="margin-top:7px; color:#FFFF"><a href="<?php echo SITE_URL('Service'); ?>" class="colorTagA">บริการ</a></li>
           <!-- <li style="margin-top:7px;"><a href="<?php echo SITE_URL('News'); ?>">ข่าวสาร</a></li> -->
-          <li style="margin-top:7px; color:#FFFF"><a href="<?php echo SITE_URL('Payment'); ?>" style="color:black;">วิธีชำระเงิน</a></li>
-          <li style="margin-top:7px; color:#FFFF"><a href="<?php echo SITE_URL('Contact'); ?>" style="color:black;">ติดต่อเรา</a></li>
+          <li style="margin-top:7px; color:#FFFF"><a href="<?php echo SITE_URL('Payment'); ?>" class="colorTagA">วิธีชำระเงิน</a></li>
+          <li style="margin-top:7px; color:#FFFF"><a href="<?php echo SITE_URL('Contact'); ?>" class="colorTagA">ติดต่อเรา</a></li>
         </ul>
       </div>
     </div>

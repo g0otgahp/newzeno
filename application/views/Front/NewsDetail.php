@@ -2,8 +2,8 @@
   <div class="row">
 <div class="span12">
   <ul class="breadcrumb">
-    <li><a href="<?php echo SITE_URL('Home'); ?>">หน้าแรก</a> <span class="divider">/</span></li>
-    <li><a href="<?php echo SITE_URL('News') ?>">ข่าวสาร</a> <span class="divider">/</span></li>
+    <li><a href="<?php echo SITE_URL('Home'); ?>" class="colorTagA">หน้าแรก</a> <span class="divider">/</span></li>
+    <li><a href="<?php echo SITE_URL('News') ?>" class="colorTagA">ข่าวสาร</a> <span class="divider">/</span></li>
     <li class="active">รายละเอียดข่าวสาร</li>
   </ul>
 

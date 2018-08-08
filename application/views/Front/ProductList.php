@@ -1,9 +1,9 @@
 <span>
   <div class="col-md-9">
     <ul class="breadcrumb">
-    <li><a href="<?php echo SITE_URL('Home'); ?>">หน้าแรก</a></li>
+    <li><a href="<?php echo SITE_URL('Home'); ?>" class="colorTagA">หน้าแรก</a></li>
         <?php if (!empty($CateSelect)): ?>
-          <li><a href="<?php echo SITE_URL('Home/CategoryHome/'.$GroupSelect[0]['categroupId']); ?>"><?php echo $GroupSelect[0]['categroupName'] ?> </a></li>
+          <li><a href="<?php echo SITE_URL('Home/CategoryHome/'.$GroupSelect[0]['categroupId']); ?>" class="colorTagA"><?php echo $GroupSelect[0]['categroupName'] ?> </a></li>
           <li><?php echo $CateSelect[0]['cateName'] ?></li>
         <?php else: ?>
           <li><?php echo $GroupSelect[0]['categroupName'] ?></li>
@@ -59,9 +59,8 @@
                     <img src="<?php echo BASE_URL('uploads/Products/'.$block['productImg']); ?>" style=" margin:auto; display:block;"/>
                   </a>
                   <div class="card-content">
-                    <h4 class="card-title">
-                      <a href="<?php echo SITE_URL('Product/ProductDetail/'.$block['categroupId']."/".$block['cateId']."/".$block['productId']); ?>"><?php echo  $block['productName'] ?>
-                      </a>
+                    <h4>
+                      <?php echo  $block['productName'] ?>
                     </h4>
                     <p style="font-size:11px;">
                       <?php echo $block['productSubdetail'] ?>

@@ -66,7 +66,7 @@
         </div>
         <hr>
         <div class="form-check" align="center">
-          <button type="submit" class="btn btn-defualt btn-large">ค้นหาที่เลือก</button>
+          <button type="submit" class="btn btn-warning btn-large">ค้นหาที่เลือก</button>
         </div>
         <?php echo form_close(); ?>
       </ul>

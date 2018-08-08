@@ -2,10 +2,10 @@
   <div class="row">
     <div class="col-md-12">
       <ul class="breadcrumb">
-        <li><a href="<?php echo SITE_URL('Home'); ?>">หน้าแรก</a></li>
+        <li><a href="<?php echo SITE_URL('Home'); ?>" class="colorTagA">หน้าแรก</a></li>
         <?php if (!empty($CateSelect)): ?>
-          <li><a href="<?php echo SITE_URL('Home/CategoryHome/'.$GroupSelect[0]['categroupId']); ?>"><?php echo $GroupSelect[0]['categroupName'] ?> </a></li>
-          <li><a href="<?php echo SITE_URL('Product/ShowProduct/'.$GroupSelect[0]['categroupId']."/".$CateSelect[0]['cateId']); ?>"><?php echo $CateSelect[0]['cateName'] ?> </a></li>
+          <li><a href="<?php echo SITE_URL('Home/CategoryHome/'.$GroupSelect[0]['categroupId']); ?>" class="colorTagA"><?php echo $GroupSelect[0]['categroupName'] ?> </a></li>
+          <li><a href="<?php echo SITE_URL('Product/ShowProduct/'.$GroupSelect[0]['categroupId']."/".$CateSelect[0]['cateId']); ?>" class="colorTagA"><?php echo $CateSelect[0]['cateName'] ?> </a></li>
           <li><?php echo $Product['product'][0]['productName'] ?></li>
         <?php else: ?>
           <li><?php echo $GroupSelect[0]['categroupName'] ?></li>

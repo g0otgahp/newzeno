@@ -56,9 +56,8 @@
                       <img src="<?php echo BASE_URL('uploads/Products/'.$newblock['productImg']); ?>" style=" margin:auto; display:block;"/>
                     </a>
                     <div class="card-content">
-                      <h4 class="card-title">
-                        <a href="<?php echo SITE_URL('Product/ProductDetail/'.$newblock['categroupId']."/".$newblock['cateId']."/".$newblock['productId']); ?>"><?php echo  $newblock['productName'] ?>
-                        </a>
+                      <h4>
+                        <?php echo $newblock['productName'] ?>
                       </h4>
                       <p style="font-size:11px;">
                         <?php echo $newblock['productSubdetail'] ?>
@@ -135,9 +134,8 @@
                       <img src="<?php echo BASE_URL('uploads/Products/'.$block['productImg']); ?>" style=" margin:auto; display:block;"/>
                     </a>
                     <div class="card-content">
-                      <h4 class="card-title">
-                        <a href="<?php echo SITE_URL('Product/ProductDetail/'.$block['categroupId']."/".$block['cateId']."/".$block['productId']); ?>"><?php echo  $block['productName'] ?>
-                        </a>
+                      <h4>
+                        <?php echo  $block['productName'] ?>
                       </h4>
                       <p style="font-size:11px;">
                         <?php echo $block['productSubdetail'] ?>

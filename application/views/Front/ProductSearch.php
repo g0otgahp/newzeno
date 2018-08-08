@@ -9,8 +9,8 @@
           ไม่พบสินค้า
       <?php endif; ?>
     </small></h3> -->
-    <ul class="breadcrumb" style="padding-bottom:20px;">
-        <li><a href="<?php echo SITE_URL('Home'); ?>">หน้าแรก</a></li>
+    <ul class="breadcrumb">
+        <li><a href="<?php echo SITE_URL('Home'); ?>" class="colorTagA">หน้าแรก</a></li>
         <li>รายการค้นหา</li>
       <div id="myTab" class="pull-right" >
         <a href="#blockView" data-toggle="tab" class="btn btn-xs btn-default"><i class="icon-th-large" style="margin-top:5px;"></i></a>
@@ -19,7 +19,6 @@
     </ul>
     <?php $num = count($Product); if ($num > 0): ?>
       <div class="tab-content">
-
         <!-- Table Style -->
         <div class="tab-pane" id="listView">
           <!-- Start Loop -->
