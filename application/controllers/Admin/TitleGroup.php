@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Group extends CI_Controller
+class TitleGroup extends CI_Controller
 {
 
   public function __construct()
@@ -19,16 +19,14 @@ class Group extends CI_Controller
     $this->load->view('Back/themes/header', $data);
     $this->load->view($value['View']);
     $this->load->view('Back/themes/footer');
-    $this->load->view('Back/GroupForm');
-    $this->load->view('Back/GroupUpdate');
+    $this->load->view('Back/TitleGroupForm');
+    $this->load->view('Back/TitleGroupUpdate');
   }
 
   public function index()
   {
 
-    $dataSelect = $this->GroupModel->SelectGroup();
-
-    $dataTitle = $this->GroupModel->SelectTitleGroup();
+    $dataSelect = $this->TitleGroupModel->SelectTitleGroup();
 
     // echo "<pre>";
     // print_r($dataSelect);
@@ -37,42 +35,41 @@ class Group extends CI_Controller
     $value = array(
       'Result' => array(
         'dataSelect' => $dataSelect,
-        'dataTitle' => $dataTitle,
       ),
-      'View' => 'Back/Group',
+      'View' => 'Back/TitleGroup',
     );
     $this->LoadPage($value);
   }
 
-  public function SaveGroup()
+  public function SaveTitleGroup()
   {
 
-    $GroupData = $this->input->post();
+    $TitleGroupData = $this->input->post();
 
     // echo "<pre>";
     // print_r($GroupData);
     // exit();
 
-    if(!empty($GroupData['categroupId'])){
+    if(!empty($TitleGroupData['catetitleId'])){
 
       // echo "UpdatePosition";
 
       // echo "<pre>";
-      // print_r($GroupData);
+      // print_r($TitleGroupData);
       // exit();
 
-      $this->GroupModel->UpdateGroup($GroupData);
-      echo "<script>alert('แก้ไขกลุ่มประเภทสินค้าเรียบร้อย')</script>";
-      echo "<script>document.location=('".SITE_URL('Admin/Group')."')</script>";
+      $this->TitleGroupModel->UpdateTitleGroup($TitleGroupData);
+      echo "<script>alert('แก้ไขหัวข้อสินค้าเรียบร้อย')</script>";
+      echo "<script>document.location=('".SITE_URL('Admin/TitleGroup')."')</script>";
 
 
     }else{
 
       // echo "SavePosition";
 
-      $this->GroupModel->SaveGroup($GroupData);
-      echo "<script>alert('บันทึกกลุ่มประเภทสินค้าเรียบร้อย')</script>";
-      echo "<script>document.location=('".SITE_URL('Admin/Group')."')</script>";
+      $this->TitleGroupModel->SaveTitleGroup($TitleGroupData);
+      echo "<script>alert('บันทึกหัวข้อสินค้าเรียบร้อย')</script>";
+      echo "<script>document.location=('".SITE_URL('Admin/TitleGroup')."')</script>";
 
     }
 
@@ -81,20 +78,20 @@ class Group extends CI_Controller
   }
 
 
-  public function DeleteGroup()
+  public function DeleteTitleGroup()
   {
 
     $GroupId = $this->uri->segment(4);
 
     $GroupData = array(
-      'categroupId' => $GroupId,
-      'categroupStatus' => 2,
+      'catetitleId' => $GroupId,
+      'catetitleStatus' => 2,
     );
 
-    $this->GroupModel->UpdateGroup($GroupData);
+    $this->TitleGroupModel->UpdateTitleGroup($GroupData);
 
     echo "<script>alert('ลบกลุ่มประเภทสินค้าเรียบร้อย')</script>";
-    echo "<script>document.location=('".SITE_URL('Admin/Group')."')</script>";
+    echo "<script>document.location=('".SITE_URL('Admin/TitleGroup')."')</script>";
   }
 
 }

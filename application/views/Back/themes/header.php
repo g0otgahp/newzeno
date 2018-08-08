@@ -108,6 +108,12 @@
 		<!-- <br>
 		<b style="color:Blue"> <center><u>สินค้า</u></center> </b> -->
 
+		<li <?php if($this->uri->segment(2)=="TitleGroup"){ echo "class='active'"; } ?>>
+			<a href="<?php echo SITE_URL('Admin/TitleGroup')?>">
+				<i class="pe-7s-id" style="color:black;"></i>
+				<span style="color:black	;">การจัดการหัวข้อสินค้า</span>
+			</a>
+		</li>
 		<li <?php if($this->uri->segment(2)=="Group"){ echo "class='active'"; } ?>>
 			<a href="<?php echo SITE_URL('Admin/Group')?>">
 				<i class="pe-7s-albums" style="color:black;"></i>

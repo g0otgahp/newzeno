@@ -145,4 +145,5 @@ $autoload['model'] = array(
     'AgentModel',
     'HomepageModel',
     'NewsModel',
+    'TitleGroupModel',
 );

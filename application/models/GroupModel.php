@@ -42,6 +42,19 @@ class GroupModel extends CI_Model
     return $dataSelect;
   }
 
+  public function SelectTitleGroup()
+  {
+    $dataTitle = $this->db
+    ->where('catetitleStatus',1)
+    ->get('catetitle')
+    ->result_array();
+
+    // echo "<pre>";
+    // print_r($dataTitle);
+    // exit();
+    return $dataTitle;
+  }
+
   public function SelectGroupById($cateId)
   {
     $dataSelect = $this->db->where('categroupStatus',1)->where('categroupId',$cateId)->get('categroup')->result_array();
