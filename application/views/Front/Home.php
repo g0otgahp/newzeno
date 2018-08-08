@@ -98,7 +98,7 @@
             <?php foreach ($Product as $list): ?>
               <div class="row">
                 <div class="col-md-offset-1 col-md-2">
-                  <a  href="<?php echo SITE_URL('Product/ProductDetail/'.$list['categroupId']."/".$list['cateId']."/".$list['productId']); ?>">
+                  <a class="img-card" href="<?php echo SITE_URL('Product/ProductDetail/'.$list['categroupId']."/".$list['cateId']."/".$list['productId']); ?>">
                     <img src="<?php echo BASE_URL('uploads/Products/'.$list['productImg']); ?>" style="height:150px; width:240px;"/>
                   </a>
                 </div>
@@ -131,7 +131,7 @@
                 <!-- Start Loop -->
                 <div class="col-xs-12 col-md-3 col-sm-6" style="padding-left:5px;">
                   <div class="card">
-                    <a class="" href="<?php echo SITE_URL('Product/ProductDetail/'.$block['categroupId']."/".$block['cateId']."/".$block['productId']); ?>">
+                    <a class="img-card" href="<?php echo SITE_URL('Product/ProductDetail/'.$block['categroupId']."/".$block['cateId']."/".$block['productId']); ?>">
                       <img src="<?php echo BASE_URL('uploads/Products/'.$block['productImg']); ?>" style=" margin:auto; display:block;"/>
                     </a>
                     <div class="card-content">
