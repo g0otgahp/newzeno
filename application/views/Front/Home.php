@@ -15,21 +15,36 @@
             <!-- Start Loop -->
             <?php foreach ($NewProduct as $newlist): ?>
               <div class="row">
-                <div class="col-md-offset-1 col-md-2">
+                <div class="col-md-offset-1 col-md-3">
                   <a class="img-card" href="<?php echo SITE_URL('Product/ProductDetail/'.$newlist['categroupId']."/".$newlist['cateId']."/".$newlist['productId']); ?>">
                     <img src="<?php echo BASE_URL('uploads/Products/'.$newlist['productImg']); ?>" style="height:150px; width:240px;"/>
                   </a>
                 </div>
 
-                <div class="col-md-3">
+                <div class="col-md-5">
                   <h3><?php echo  $newlist['productName'] ?></h3>
                   <p>
-                    <?php echo $newlist['productSubdetail'] ?>
+                    <?php echo $newlist['productSubdetail1'] ?>
+                  </p>
+                  <p>
+                    <?php echo $newlist['productSubdetail2'] ?>
+                  </p>
+                  <p>
+                    <?php echo $newlist['productSubdetail3'] ?>
+                  </p>
+                  <p>
+                    <?php echo $newlist['productSubdetail4'] ?>
+                  </p>
+                  <p>
+                    <?php echo $newlist['productSubdetail5'] ?>
+                  </p>
+                  <p>
+                    <?php echo $newlist['productSubdetail6'] ?>
                   </p>
                   <br class="clr"/>
                 </div>
                 <hr class="soft"/>
-                <div class="col-md-5 alignR">
+                <div class="col-md-2 alignR">
                   <form class="form-horizontal qtyFrm">
                     <h3>฿<?php echo number_format($newlist['productPrice']) ?></h3>
                     <a  class="btn btn-small pull-right btn-primary" href="<?php echo SITE_URL('Product/ProductDetail/'.$newlist['categroupId']."/".$newlist['cateId']."/".$newlist['productId']); ?>">รายละเอียด</a>
@@ -57,10 +72,28 @@
                     </a>
                     <div class="card-content">
                       <h4>
+                        <?php echo $newblock['brandName']." ".$newblock['cateName'] ?>
+                      </h4>
+                      <h4>
                         <?php echo $newblock['productName'] ?>
                       </h4>
-                      <p style="font-size:11px;">
-                        <?php echo $newblock['productSubdetail'] ?>
+                      <p>
+                        <?php echo $newlist['productSubdetail1'] ?>
+                      </p>
+                      <p>
+                        <?php echo $newlist['productSubdetail2'] ?>
+                      </p>
+                      <p>
+                        <?php echo $newlist['productSubdetail3'] ?>
+                      </p>
+                      <p>
+                        <?php echo $newlist['productSubdetail4'] ?>
+                      </p>
+                      <p>
+                        <?php echo $newlist['productSubdetail5'] ?>
+                      </p>
+                      <p>
+                        <?php echo $newlist['productSubdetail6'] ?>
                       </p>
                     </div>
                     <div class="card-read-more">
@@ -96,20 +129,35 @@
             <!-- Start Loop -->
             <?php foreach ($Product as $list): ?>
               <div class="row">
-                <div class="col-md-offset-1 col-md-2">
+                <div class="col-md-offset-1 col-md-3">
                   <a class="img-card" href="<?php echo SITE_URL('Product/ProductDetail/'.$list['categroupId']."/".$list['cateId']."/".$list['productId']); ?>">
                     <img src="<?php echo BASE_URL('uploads/Products/'.$list['productImg']); ?>" style="height:150px; width:240px;"/>
                   </a>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-5">
                   <h3><?php echo $list['productName'] ?></h3>
                   <p>
-                    <?php echo $list['productSubdetail'] ?>
+                    <?php echo $newlist['productSubdetail1'] ?>
+                  </p>
+                  <p>
+                    <?php echo $newlist['productSubdetail2'] ?>
+                  </p>
+                  <p>
+                    <?php echo $newlist['productSubdetail3'] ?>
+                  </p>
+                  <p>
+                    <?php echo $newlist['productSubdetail4'] ?>
+                  </p>
+                  <p>
+                    <?php echo $newlist['productSubdetail5'] ?>
+                  </p>
+                  <p>
+                    <?php echo $newlist['productSubdetail6'] ?>
                   </p>
                   <br class="clr"/>
                 </div>
                 <hr class="soft"/>
-                <div class="col-md-4 alignR">
+                <div class="col-md-2 alignR">
                   <form class="form-horizontal qtyFrm">
                     <h3>฿<?php echo number_format($list['productPrice']) ?></h3>
                     <a  class="btn btn-small pull-right btn-primary" href="<?php echo SITE_URL('Product/ProductDetail/'.$list['categroupId']."/".$list['cateId']."/".$list['productId']); ?>">รายละเอียด</a>
@@ -137,8 +185,23 @@
                       <h4>
                         <?php echo  $block['productName'] ?>
                       </h4>
-                      <p style="font-size:11px;">
-                        <?php echo $block['productSubdetail'] ?>
+                      <p>
+                        <?php echo $newlist['productSubdetail1'] ?>
+                      </p>
+                      <p>
+                        <?php echo $newlist['productSubdetail2'] ?>
+                      </p>
+                      <p>
+                        <?php echo $newlist['productSubdetail3'] ?>
+                      </p>
+                      <p>
+                        <?php echo $newlist['productSubdetail4'] ?>
+                      </p>
+                      <p>
+                        <?php echo $newlist['productSubdetail5'] ?>
+                      </p>
+                      <p>
+                        <?php echo $newlist['productSubdetail6'] ?>
                       </p>
                     </div>
                     <div class="card-read-more">

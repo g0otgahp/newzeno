@@ -42,6 +42,7 @@ class GroupModel extends CI_Model
     return $dataSelect;
   }
 
+
   public function SelectTitleGroup()
   {
     $dataTitle = $this->db

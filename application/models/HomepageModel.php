@@ -231,5 +231,39 @@ class HomepageModel extends CI_Model
     return $data;
   }
 
+  public function SelectTitleGroup()
+  {
+
+    $dataSelect = $this->db
+    ->where('catetitleStatus',1)
+    ->get('catetitle')
+    ->result_array();
+
+
+
+    $g=0;
+    foreach ($dataSelect as $group) {
+      $dataSelect[$g]['group'] = $this->db
+      ->where('categroupStatus',1)
+      ->where('categroup.catetitleId',$group['catetitleId'])
+      ->get('categroup')
+      ->result_array();
+
+      $i=0;
+      foreach ($dataSelect[$g]['group'] as $cate) {
+        $dataSelect[$g]['group'][$i]['category'] = $this->db
+        ->where('cateStatus',1)
+        ->where('categroupId',$cate['categroupId'])
+        ->get('category')
+        ->result_array();
+        $i++;
+      }
+      $g++;
+    }
+    // echo "<pre>";
+    // print_r($dataSelect);
+    // exit();
+    return $dataSelect;
+  }
 
 }

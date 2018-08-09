@@ -55,7 +55,7 @@
   .colorTagA {
     color:black;
   }
-  
+
 </style>
 
 </head>
@@ -101,233 +101,86 @@
 
 
   <div style="background-color:#3a3f44;">
-  <nav class="container" role="navigation" style="margin-bottom:20px;">
+    <nav class="container" role="navigation" style="margin-bottom:20px;">
       <!-- <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-menu-1">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-      </div> -->
-      <!--/.navbar-header-->
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-menu-1">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+  </div> -->
+  <!--/.navbar-header-->
 
-      <div class="collapse navbar-collapse" style="padding:0px;">
+
+  <div class="collapse navbar-collapse" style="padding:0px;">
+
+    <?php foreach ($TitleGroup as $Title): ?>
+      <?php if (count($Title['group']) != 0): ?>
+
+        <?php
+          $loop = 0;
+          foreach ($Title['group'] as $key) {
+            if (count($key['category']) != 0) {
+              $loop++;
+            }
+          }
+         ?>
         <ul class="nav navbar-nav" >
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle dropbtn" data-toggle="dropdown"><b>อุปกรณ์แสดงภาพ <i class="icon-chevron-down" style="padding-top:3px;"></i></a>
-            <ul class="dropdown-menu multi-column columns-3 dropdown-content">
-              <div class="row">
-                <div class="col-sm-4">
-                  <ul class="multi-column-dropdown">
-                    <?php foreach ($Group as $ShowGroup): ?>
-                    <li><a href="<?php echo SITE_URL('Home/CategoryHome/'.$ShowGroup['categroupId']); ?>" style="color:orange;"><b><u><?php echo $ShowGroup['categroupName'] ?></u></b></a></li>
-                  <?php endforeach; ?>
-                  <?php foreach ($Category as $CategoryShow): ?>
-                    <li><a href="<?php echo SITE_URL('Product/ShowProduct/'.$CategoryShow['categroupId']."/".$CategoryShow['cateId']); ?>" style="font-size:12px;">- <?php echo $CategoryShow['cateName'] ?></a></li>
-                  <?php endforeach; ?>
-                  <li><hr></li>
-                  <li><a href="#" style="color:orange;"><b><u>Monitor TV</u></b></a></li>
-                  <li><a href="#">Separated link</a></li>
-                  <li><a href="#">One more separated link</a></li>
-                  </ul>
-                </div>
+            <a href="#" class="dropdown-toggle dropbtn" data-toggle="dropdown"><?php echo $Title['catetitleName'] ?> <i class="icon-chevron-down" style="padding-top:3px;"></i></a>
 
-                <div class="col-sm-4">
-                  <ul class="multi-column-dropdown">
-                    <li><a href="#" style="color:orange;"><b><u>Commertrial TV</u></b></a></li>
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li><hr></li>
-                    <li><a href="#" style="color:orange;"><b><u>Hotel TV</u></b></a></li>
-                    <li><a href="#">Separated link</a></li>
-                    <li><a href="#">One more separated link</a></li>
+            <?php if ($loop == 1): ?>
+              <ul class="dropdown-menu multi-column columns dropdown-content">
+              <?php elseif($loop == 2): ?>
+                <ul class="dropdown-menu multi-column columns-2 dropdown-content">
+                <?php else: ?>
+                  <ul class="dropdown-menu multi-column columns-3 dropdown-content">
+                  <?php endif; ?>
+                  <div class="row">
+                    <?php foreach ($Title['group'] as $ShowGroup): ?>
+                      <?php if (count($ShowGroup['category']) != 0): ?>
+                        <?php if ($loop == 1): ?>
+                          <div class="col-md-11">
+                          <?php elseif($loop == 2): ?>
+                            <div class="col-md-6">
+                            <?php else: ?>
+                              <div class="col-md-4">
+                              <?php endif; ?>
+                              <ul class="multi-column-dropdown">
+                                <li><a href="<?php echo SITE_URL('Home/CategoryHome/'.$ShowGroup['categroupId']); ?>" style="color:orange;"><u><?php echo $ShowGroup['categroupName'] ?></u></a></li>
+                                <?php foreach ($ShowGroup['category'] as $CategoryShow): ?>
+                                  <li><a href="<?php echo SITE_URL('Product/ShowProduct/'.$CategoryShow['categroupId']."/".$CategoryShow['cateId']); ?>" style="font-size:12px;">- <?php echo $CategoryShow['cateName'] ?></a></li>
+                                <?php endforeach; ?>
+                                <li><hr></li>
+                              </ul>
+                            </div>
+                          <?php endif; ?>
+                        <?php endforeach; ?>
+                        <!-- </div> -->
+                      </ul>
+                    </li>
                   </ul>
-                </div>
-                <div class="col-sm-4">
-                  <ul class="multi-column-dropdown">
-                    <li><a href="#" style="color:orange;"><b><u>Digital Signage</u></b></a></li>
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li><hr></li>
-                    <li><a href="#" style="color:orange;"><b><u>Digital TV</u></b></a></li>
-                    <li><a href="#">Separated link</a></li>
-                    <li><a href="#">One more separated link</a></li>
-                  </ul>
-                </div>
-              <!-- </div> -->
-            </ul>
-
-          </li>
-        </ul>
-
-        <ul class="nav navbar-nav" >
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle dropbtn" data-toggle="dropdown"><b>อุปกรณ์เสียง <i class="icon-chevron-down" style="padding-top:3px;"></i></a>
-            <ul class="dropdown-menu multi-column columns-3 dropdown-content">
-              <div class="row">
-                <div class="col-sm-4">
-                  <ul class="multi-column-dropdown">
-                    <?php foreach ($Group as $ShowGroup): ?>
-                    <li><a href="<?php echo SITE_URL('Home/CategoryHome/'.$ShowGroup['categroupId']); ?>" style="color:orange;"><b><u><?php echo $ShowGroup['categroupName'] ?></u></b></a></li>
-                  <?php endforeach; ?>
-                  <?php foreach ($Category as $CategoryShow): ?>
-                    <li><a href="<?php echo SITE_URL('Product/ShowProduct/'.$CategoryShow['categroupId']."/".$CategoryShow['cateId']); ?>" style="font-size:12px;">- <?php echo $CategoryShow['cateName'] ?></a></li>
-                  <?php endforeach; ?>
-                  <li><hr></li>
-                  <li><a href="#" style="color:orange;"><b><u>Monitor TV</u></b></a></li>
-                  <li><a href="#">Separated link</a></li>
-                  <li><a href="#">One more separated link</a></li>
-                  </ul>
-                </div>
-
-                <div class="col-sm-4">
-                  <ul class="multi-column-dropdown">
-                    <li><a href="#" style="color:orange;"><b><u>Commertrial TV</u></b></a></li>
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li><hr></li>
-                    <li><a href="#" style="color:orange;"><b><u>Hotel TV</u></b></a></li>
-                    <li><a href="#">Separated link</a></li>
-                    <li><a href="#">One more separated link</a></li>
-                  </ul>
-                </div>
-                <div class="col-sm-4">
-                  <ul class="multi-column-dropdown">
-                    <li><a href="#" style="color:orange;"><b><u>Digital Signage</u></b></a></li>
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li><hr></li>
-                    <li><a href="#" style="color:orange;"><b><u>Digital TV</u></b></a></li>
-                    <li><a href="#">Separated link</a></li>
-                    <li><a href="#">One more separated link</a></li>
-                  </ul>
-                </div>
-              <!-- </div> -->
-            </ul>
-
-          </li>
-        </ul>
-
-        <ul class="nav navbar-nav" >
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle dropbtn" data-toggle="dropdown"><b>อุปกรณ์ไอทีคอมพิวเตอร์ <i class="icon-chevron-down" style="padding-top:3px;"></i></a>
-            <ul class="dropdown-menu multi-column columns-3 dropdown-content">
-              <div class="row">
-                <div class="col-sm-4">
-                  <ul class="multi-column-dropdown">
-                    <?php foreach ($Group as $ShowGroup): ?>
-                    <li><a href="<?php echo SITE_URL('Home/CategoryHome/'.$ShowGroup['categroupId']); ?>" style="color:orange;"><b><u><?php echo $ShowGroup['categroupName'] ?></u></b></a></li>
-                  <?php endforeach; ?>
-                  <?php foreach ($Category as $CategoryShow): ?>
-                    <li><a href="<?php echo SITE_URL('Product/ShowProduct/'.$CategoryShow['categroupId']."/".$CategoryShow['cateId']); ?>" style="font-size:12px;">- <?php echo $CategoryShow['cateName'] ?></a></li>
-                  <?php endforeach; ?>
-                  <li><hr></li>
-                  <li><a href="#" style="color:orange;"><b><u>Monitor TV</u></b></a></li>
-                  <li><a href="#">Separated link</a></li>
-                  <li><a href="#">One more separated link</a></li>
-                  </ul>
-                </div>
-
-                <div class="col-sm-4">
-                  <ul class="multi-column-dropdown">
-                    <li><a href="#" style="color:orange;"><b><u>Commertrial TV</u></b></a></li>
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li><hr></li>
-                    <li><a href="#" style="color:orange;"><b><u>Hotel TV</u></b></a></li>
-                    <li><a href="#">Separated link</a></li>
-                    <li><a href="#">One more separated link</a></li>
-                  </ul>
-                </div>
-                <div class="col-sm-4">
-                  <ul class="multi-column-dropdown">
-                    <li><a href="#" style="color:orange;"><b><u>Digital Signage</u></b></a></li>
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li><hr></li>
-                    <li><a href="#" style="color:orange;"><b><u>Digital TV</u></b></a></li>
-                    <li><a href="#">Separated link</a></li>
-                    <li><a href="#">One more separated link</a></li>
-                  </ul>
-                </div>
-              <!-- </div> -->
-            </ul>
-
-          </li>
-        </ul>
-
-        <ul class="nav navbar-nav" >
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle dropbtn" data-toggle="dropdown"><b>อุปกรณ์ต่อพวง <i class="icon-chevron-down" style="padding-top:3px;"></i></a>
-            <ul class="dropdown-menu multi-column columns-3 dropdown-content">
-              <div class="row">
-                <div class="col-sm-4">
-                  <ul class="multi-column-dropdown">
-                    <?php foreach ($Group as $ShowGroup): ?>
-                    <li><a href="<?php echo SITE_URL('Home/CategoryHome/'.$ShowGroup['categroupId']); ?>" style="color:orange;"><b><u><?php echo $ShowGroup['categroupName'] ?></u></b></a></li>
-                  <?php endforeach; ?>
-                  <?php foreach ($Category as $CategoryShow): ?>
-                    <li><a href="<?php echo SITE_URL('Product/ShowProduct/'.$CategoryShow['categroupId']."/".$CategoryShow['cateId']); ?>" style="font-size:12px;">- <?php echo $CategoryShow['cateName'] ?></a></li>
-                  <?php endforeach; ?>
-                  <li><hr></li>
-                  <li><a href="#" style="color:orange;"><b><u>Monitor TV</u></b></a></li>
-                  <li><a href="#">Separated link</a></li>
-                  <li><a href="#">One more separated link</a></li>
-                  </ul>
-                </div>
-
-                <div class="col-sm-4">
-                  <ul class="multi-column-dropdown">
-                    <li><a href="#" style="color:orange;"><b><u>Commertrial TV</u></b></a></li>
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li><hr></li>
-                    <li><a href="#" style="color:orange;"><b><u>Hotel TV</u></b></a></li>
-                    <li><a href="#">Separated link</a></li>
-                    <li><a href="#">One more separated link</a></li>
-                  </ul>
-                </div>
-                <div class="col-sm-4">
-                  <ul class="multi-column-dropdown">
-                    <li><a href="#" style="color:orange;"><b><u>Digital Signage</u></b></a></li>
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li><hr></li>
-                    <li><a href="#" style="color:orange;"><b><u>Digital TV</u></b></a></li>
-                    <li><a href="#">Separated link</a></li>
-                    <li><a href="#">One more separated link</a></li>
-                  </ul>
-                </div>
-            </ul>
-          </li>
-        </ul>
-      </div>
-      </div>
-  </nav>
-  <!-- <div class="container">
-  <div class="row">
-  <div class="span12">
-  <ul class="nav nav-pills">
-  <?php echo form_open('Search','class="pull-right"'); ?>
-  <input class="form-control" type="text" name="keyword" placeholder="ค้นหาสินค้า"/>
-  <button style="margin-bottom:10px;" type="submit" class="btn btn-primary">ค้นหา</button>
-  <?php echo form_close(); ?>
-  <li ><a href="<?php echo SITE_URL('Contact'); ?>">ติดต่อเรา</a></li>
-  <li ><a href="<?php echo SITE_URL('Payment'); ?>">วิธีชำระเงิน</a></li>
-  <li ><a href="<?php echo SITE_URL('Service'); ?>">บริการ</a></li>
-  <li ><a href="<?php echo SITE_URL('Home'); ?>">หน้าแรก</a></li>
-</ul>
-</div>
-</div>
+                <?php endif; ?>
+              <?php endforeach; ?>
+            </div>
+          </div>
+        </nav>
+        <!-- <div class="container">
+        <div class="row">
+        <div class="span12">
+        <ul class="nav nav-pills">
+        <?php echo form_open('Search','class="pull-right"'); ?>
+        <input class="form-control" type="text" name="keyword" placeholder="ค้นหาสินค้า"/>
+        <button style="margin-bottom:10px;" type="submit" class="btn btn-primary">ค้นหา</button>
+        <?php echo form_close(); ?>
+        <li ><a href="<?php echo SITE_URL('Contact'); ?>">ติดต่อเรา</a></li>
+        <li ><a href="<?php echo SITE_URL('Payment'); ?>">วิธีชำระเงิน</a></li>
+        <li ><a href="<?php echo SITE_URL('Service'); ?>">บริการ</a></li>
+        <li ><a href="<?php echo SITE_URL('Home'); ?>">หน้าแรก</a></li>
+      </ul>
+    </div>
+  </div>
 </div> -->
 
 <!--/.navbar-->
@@ -350,21 +203,21 @@
 <!-- Navbar ================================================== -->
 
 <!-- <div>
-  <div style="background-color:#3a3f44;">
-    <div id="logoArea" class="navbar"> -->
+<div style="background-color:#3a3f44;">
+<div id="logoArea" class="navbar"> -->
 
-      <!-- <div class="navbar-inner" style="">
-      <ul id="topMenu" class="nav">
-      <li class=""><a href="#">&nbsp;</a></li>
-      <ul class="nav nav-pills">
-      <li>
-      <a href="#footerSection"><i class="icon-th-large" style="font-size:30px; margin-top:3px;"></i></a>
-    </li>
-    <?php foreach ($Group as $ShowGroup): ?>
-    <li <?php if (!empty($GroupSelect)) {
-    if ($ShowGroup['categroupId'] == $GroupSelect[0]['categroupId']) {
-    echo "class='active'";
-  }
+<!-- <div class="navbar-inner" style="">
+<ul id="topMenu" class="nav">
+<li class=""><a href="#">&nbsp;</a></li>
+<ul class="nav nav-pills">
+<li>
+<a href="#footerSection"><i class="icon-th-large" style="font-size:30px; margin-top:3px;"></i></a>
+</li>
+<?php foreach ($Group as $ShowGroup): ?>
+<li <?php if (!empty($GroupSelect)) {
+if ($ShowGroup['categroupId'] == $GroupSelect[0]['categroupId']) {
+echo "class='active'";
+}
 }; ?>><a href="<?php echo SITE_URL('Home/CategoryHome/'.$ShowGroup['categroupId']); ?>" ><?php echo $ShowGroup['categroupName'] ?></a>
 </li>
 <?php endforeach; ?>

@@ -84,9 +84,22 @@
 </form>
 <hr class="soft clr"/> -->
 <p>
-
-  <?php echo $Product['product'][0]['productSubdetail'] ?>
-
+  <?php echo $Product['product'][0]['productSubdetail1'] ?>
+</p>
+<p>
+  <?php echo $Product['product'][0]['productSubdetail2'] ?>
+</p>
+<p>
+  <?php echo $Product['product'][0]['productSubdetail3'] ?>
+</p>
+<p>
+  <?php echo $Product['product'][0]['productSubdetail4'] ?>
+</p>
+<p>
+  <?php echo $Product['product'][0]['productSubdetail5'] ?>
+</p>
+<p>
+  <?php echo $Product['product'][0]['productSubdetail6'] ?>
 </p>
 <a class="btn btn-small pull-right" href="#detail">เพิ่มเติม</a>
 <br class="clr"/>

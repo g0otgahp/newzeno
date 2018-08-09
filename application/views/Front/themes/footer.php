@@ -4,18 +4,20 @@
     <div class="row" style="margin:auto; display:block;">
       <?php if (count($Group) > 0): ?>
         <?php foreach ($Group as $footer): ?>
-          <div class="span3">
-            <h4><?php echo $footer['categroupName'] ?></h4>
-            <?php foreach ($footer['category'] as $catefooter): ?>
-              <a href="<?php echo SITE_URL('Product/ShowProduct/'.$footer['categroupId']."/".$catefooter['cateId']); ?>"><?php echo $catefooter['cateName'] ?></a>
-            <?php endforeach; ?>
-          </div>
+          <?php if (count($footer['category']) != 0): ?>
+            <div class="span3">
+              <h4><?php echo $footer['categroupName'] ?></h4>
+              <?php foreach ($footer['category'] as $catefooter): ?>
+                <a href="<?php echo SITE_URL('Product/ShowProduct/'.$footer['categroupId']."/".$catefooter['cateId']); ?>"><?php echo $catefooter['cateName'] ?></a>
+              <?php endforeach; ?>
+            </div>
+          <?php endif; ?>
         <?php endforeach; ?>
       <?php endif; ?>
 
-</div>
-<p class="pull-right">&copy; Newzeno</p>
-</div><!-- Container End -->
+    </div>
+    <p class="pull-right">&copy; Newzeno</p>
+  </div><!-- Container End -->
 </div>
 <!-- Placed at the end of the document so the pages load faster ============================================= -->
 <script src="<?php echo BASE_URL()?>/assets/Front/themes/js/jquery.js" type="text/javascript"></script>

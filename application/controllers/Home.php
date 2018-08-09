@@ -21,16 +21,20 @@ class Home extends CI_Controller
   */
   public function index()
   {
+    $TitleGroup = $this->HomepageModel->SelectTitleGroup();
     $Group = $this->GroupModel->SelectGroup();
-    $Category = $this->CategoryModel->HomeCategory($Group[0]['categroupId']);
     $Product = $this->HomepageModel->SelectProductRecommend();
     $NewProduct = $this->HomepageModel->SelectProductNew();
     $data = array(
       'NewProduct' => $NewProduct,
       'Product' => $Product,
-      'Category' => $Category,
+      'TitleGroup' => $TitleGroup,
       'Group' => $Group,
     );
+
+    // echo "<pre>";
+    // print_r($TitleGroup);
+    // exit();
 
     $this->load->view('Front/themes/header',$data);
     // $this->load->view('Front/themes/slide');
@@ -41,6 +45,7 @@ class Home extends CI_Controller
 
   public function CategoryHome()
   {
+    $TitleGroup = $this->HomepageModel->SelectTitleGroup();
     $Group = $this->GroupModel->SelectGroup();
     $cateId = $this->uri->segment(3);
     $GroupSelect = $this->GroupModel->SelectGroupById($cateId);
@@ -60,6 +65,7 @@ class Home extends CI_Controller
       'Group' => $Group,
       'GroupSelect' => $GroupSelect,
       'Brand' => $Brand,
+      'TitleGroup' => $TitleGroup,
     );
 
     // echo "<pre>";
@@ -79,6 +85,7 @@ class Home extends CI_Controller
     $cateId = 0;
     if (isset($input['catebox']) || isset($input['brandbox']) || isset($input['sortbyprice']) ||  $input['min'] != '' || $input['max'] != '') {
 
+      $TitleGroup = $this->HomepageModel->SelectTitleGroup();
       $Group = $this->GroupModel->SelectGroup();
       $GroupSelect = $this->GroupModel->SelectGroupById($groupId);
       if (count($GroupSelect) == 0) {
@@ -98,6 +105,7 @@ class Home extends CI_Controller
         'GroupSelect' => $GroupSelect,
         'Brand' => $Brand,
         'keyword' => $keyword,
+        'TitleGroup' => $TitleGroup,
       );
 
       // echo "<pre>";
