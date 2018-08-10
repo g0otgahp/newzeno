@@ -29,19 +29,19 @@
             <div class="row">
               <div class="col-md-4">
                 <div class="form-group">
-                  <label>รายละเอียด 1 </label><small style="color:red"> (Resolution : XGA)</small>
+                  <label>รายละเอียด 1 </label><small style="color:red"> (เทคโนโลยี่ : LCD , DLP , LASER)</small>
                   <input type="text" class="form-control" name="productSubdetail1" placeholder="รายละเอียด 1 แบบย่อ">
                 </div>
               </div>
               <div class="col-md-4">
                 <div class="form-group">
-                  <label>รายละเอียด 2</label><small style="color:red"> (Brightness : 3200 Lumens)</small>
+                  <label>รายละเอียด 2</label><small style="color:red"> (ความละเอียด : XGA , WXGA)</small>
                   <input type="text" class="form-control" name="productSubdetail2" placeholder="รายละเอียด 2 แบบย่อ">
                 </div>
               </div>
               <div class="col-md-4">
                 <div class="form-group">
-                  <label>รายละเอียด 3</label><small style="color:red"> (Contrast Ratio : 10,000:1)</small>
+                  <label>รายละเอียด 3</label><small style="color:red"> (ความสว่าง : 3,200 Lumens)</small>
                   <input type="text" class="form-control" name="productSubdetail3" placeholder="รายละเอียด 3 แบบย่อ">
                 </div>
               </div>
@@ -50,19 +50,19 @@
             <div class="row">
               <div class="col-md-4">
                 <div class="form-group">
-                  <label>รายละเอียด 4</label><small style="color:red"> (Throw Distance : 0.8 - 10.8m)</small>
+                  <label>รายละเอียด 4</label><small style="color:red"> (ความคมชัด : 10,000:1)</small>
                   <input type="text" class="form-control" name="productSubdetail4" placeholder="รายละเอียด 4 แบบย่อ">
                 </div>
               </div>
               <div class="col-md-4">
                 <div class="form-group">
-                  <label>รายละเอียด 5</label><small style="color:red"> (Weight : 15.2kg)</small>
+                  <label>รายละเอียด 5</label><small style="color:red"> (ช่องต่อ : HDMI , VGA , HDBASET)</small>
                   <input type="text" class="form-control" name="productSubdetail5" placeholder="รายละเอียด 5 แบบย่อ">
                 </div>
               </div>
               <div class="col-md-4">
                 <div class="form-group">
-                  <label>รายละเอียด 6</label><small style="color:red"> (Other : ----)</small>
+                  <label>รายละเอียด 6</label><small style="color:red"> (น้ำหนัก : 15.2kg)</small>
                   <input type="text" class="form-control" name="productSubdetail6" placeholder="รายละเอียด 6 แบบย่อ">
                 </div>
               </div>
