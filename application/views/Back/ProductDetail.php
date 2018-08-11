@@ -31,19 +31,19 @@
             <div class="row">
               <div class="col-md-4">
                 <div class="form-group">
-                  <label>รายละเอียด 1</label>
+                  <label>รายละเอียด 1</label><small style="color:red"> (เทคโนโลยี่ : LCD , DLP , LASER)</small>
                   <input type="text" class="form-control" name="productSubdetail1" placeholder="กรอก รายละเอียกแบบย่อ" value="<?php echo $data['product'][0]['productSubdetail1'] ?>" required>
                 </div>
               </div>
               <div class="col-md-4">
                 <div class="form-group">
-                  <label>รายละเอียด 2</label>
+                  <label>รายละเอียด 2</label><small style="color:red"> (ความละเอียด : XGA , WXGA)</small>
                   <input type="text" class="form-control" name="productSubdetail2" placeholder="กรอก รายละเอียกแบบย่อ" value="<?php echo $data['product'][0]['productSubdetail2'] ?>" required>
                 </div>
               </div>
               <div class="col-md-4">
                 <div class="form-group">
-                  <label>รายละเอียด 3</label>
+                  <label>รายละเอียด 3</label><small style="color:red"> (ความสว่าง : 3,200 Lumens)</small>
                   <input type="text" class="form-control" name="productSubdetail3" placeholder="กรอก รายละเอียกแบบย่อ" value="<?php echo $data['product'][0]['productSubdetail3'] ?>" required>
                 </div>
               </div>
@@ -52,19 +52,19 @@
             <div class="row">
               <div class="col-md-4">
                 <div class="form-group">
-                  <label>รายละเอียด 4</label>
+                  <label>รายละเอียด 4</label><small style="color:red"> (ความคมชัด : 10,000:1)</small>
                   <input type="text" class="form-control" name="productSubdetail4" placeholder="กรอก รายละเอียกแบบย่อ" value="<?php echo $data['product'][0]['productSubdetail4'] ?>" required>
                 </div>
               </div>
               <div class="col-md-4">
                 <div class="form-group">
-                  <label>รายละเอียด 5</label>
+                  <label>รายละเอียด 5</label><small style="color:red"> (ช่องต่อ : HDMI , VGA , HDBASET)</small>
                   <input type="text" class="form-control" name="productSubdetail5" placeholder="กรอก รายละเอียกแบบย่อ" value="<?php echo $data['product'][0]['productSubdetail5'] ?>" required>
                 </div>
               </div>
               <div class="col-md-4">
                 <div class="form-group">
-                  <label>รายละเอียด 6</label>
+                  <label>รายละเอียด 6</label><small style="color:red"> (น้ำหนัก : 15.2kg)</small>
                   <input type="text" class="form-control" name="productSubdetail6" placeholder="กรอก รายละเอียกแบบย่อ" value="<?php echo $data['product'][0]['productSubdetail6'] ?>" required>
                 </div>
               </div>
