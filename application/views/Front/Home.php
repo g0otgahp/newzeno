@@ -72,9 +72,6 @@
                     </a>
                     <div class="card-content">
                       <h4>
-                        <?php echo $newblock['brandName']." ".$newblock['cateName'] ?>
-                      </h4>
-                      <h4>
                         <?php echo $newblock['productName'] ?>
                       </h4>
                       <p>
@@ -137,22 +134,22 @@
                 <div class="col-md-5">
                   <h3><?php echo $list['productName'] ?></h3>
                   <p>
-                    <?php echo $newlist['productSubdetail1'] ?>
+                    <?php echo $list['productSubdetail1'] ?>
                   </p>
                   <p>
-                    <?php echo $newlist['productSubdetail2'] ?>
+                    <?php echo $list['productSubdetail2'] ?>
                   </p>
                   <p>
-                    <?php echo $newlist['productSubdetail3'] ?>
+                    <?php echo $list['productSubdetail3'] ?>
                   </p>
                   <p>
-                    <?php echo $newlist['productSubdetail4'] ?>
+                    <?php echo $list['productSubdetail4'] ?>
                   </p>
                   <p>
-                    <?php echo $newlist['productSubdetail5'] ?>
+                    <?php echo $list['productSubdetail5'] ?>
                   </p>
                   <p>
-                    <?php echo $newlist['productSubdetail6'] ?>
+                    <?php echo $list['productSubdetail6'] ?>
                   </p>
                   <br class="clr"/>
                 </div>
@@ -186,22 +183,22 @@
                         <?php echo  $block['productName'] ?>
                       </h4>
                       <p>
-                        <?php echo $newlist['productSubdetail1'] ?>
+                        <?php echo $block['productSubdetail1'] ?>
                       </p>
                       <p>
-                        <?php echo $newlist['productSubdetail2'] ?>
+                        <?php echo $block['productSubdetail2'] ?>
                       </p>
                       <p>
-                        <?php echo $newlist['productSubdetail3'] ?>
+                        <?php echo $block['productSubdetail3'] ?>
                       </p>
                       <p>
-                        <?php echo $newlist['productSubdetail4'] ?>
+                        <?php echo $block['productSubdetail4'] ?>
                       </p>
                       <p>
-                        <?php echo $newlist['productSubdetail5'] ?>
+                        <?php echo $block['productSubdetail5'] ?>
                       </p>
                       <p>
-                        <?php echo $newlist['productSubdetail6'] ?>
+                        <?php echo $block['productSubdetail6'] ?>
                       </p>
                     </div>
                     <div class="card-read-more">

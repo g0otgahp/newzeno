@@ -4,81 +4,51 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class News extends CI_Controller
 {
 
-    /**
-     * Index Page for this controller.
-     *
-     * Maps to the following URL
-     *         http://example.com/index.php/welcome
-     *    - or -
-     *         http://example.com/index.php/welcome/index
-     *    - or -
-     * Since this controller is set as the default controller in
-     * config/routes.php, it's displayed at http://example.com/
-     *
-     * So any other public methods not prefixed with an underscore will
-     * map to /index.php/welcome/<method_name>
-     * @see https://codeigniter.com/user_guide/general/urls.html
-     */
-    public function LoadPage($Value)
-    {
+  public function __construct()
+  {
+    parent::__construct();
+    $TitleGroup = $this->HomepageModel->SelectTitleGroup();
+    $Group = $this->GroupModel->SelectGroup();
+    $data = array(
+      'TitleGroup' => $TitleGroup,
+      'Group' => $Group,
+    );
+    $this->load->view('Front/themes/header',$data);
+  }
 
-      $Group = $this->GroupModel->SelectGroup();
-      $Category = $this->CategoryModel->HomeCategory($Group[0]['categroupId']);
-      $dataPayment = $this->ConfigModel->SelectPayment();
-      $dataShow = $this->NewsModel->SelectNews();
+  public function index()
+  {
+    $dataPayment = $this->ConfigModel->SelectPayment();
+    $dataShow = $this->NewsModel->SelectNews();
 
-      $data = array(
-        'Category' => $Category,
-        'Group' => $Group,
-        'dataPayment' => $dataPayment,
-        'dataShow' => $dataShow,
-      );
+    $data = array(
+      'dataPayment' => $dataPayment,
+      'dataShow' => $dataShow,
+    );
 
+    // $this->load->view('Front/themes/slide');
+    // $this->load->view('Front/themes/menu');
+    $this->load->view('Front/News',$data);
+    $this->load->view('Front/themes/footer');
+  }
 
-        $this->load->view('Front/themes/header',$data);
-        // $this->load->view('Front/themes/slide');
-        // $this->load->view('Front/themes/menu');
-        $this->load->view($Value['View']);
-        $this->load->view('Front/themes/footer');
-    }
+  public function NewsDetail()
+  {
+    $dataPayment = $this->ConfigModel->SelectPayment();
+    $newsId = $this->uri->segment(3);
+    $dataShow = $this->NewsModel->newsShowUpdate($newsId);
 
-    public function index()
-    {
+    $data = array(
+      'dataPayment' => $dataPayment,
+      'dataShow' => $dataShow,
+    );
 
-
-      $Value = array(
-        'View' => 'Front/News' ,
-        'Result' => array(
-          // 'dataShow' => $dataShow,
-        ) ,
-      );
-      $this->LoadPage($Value);
-    }
-
-    public function NewsDetail()
-    {
-
-      $Group = $this->GroupModel->SelectGroup();
-      $Category = $this->CategoryModel->HomeCategory($Group[0]['categroupId']);
-      $dataPayment = $this->ConfigModel->SelectPayment();
-
-      $newsId = $this->uri->segment(3);
-      $dataShow = $this->NewsModel->newsShowUpdate($newsId);
-
-      $data = array(
-        'Category' => $Category,
-        'Group' => $Group,
-        'dataPayment' => $dataPayment,
-        'dataShow' => $dataShow,
-      );
-
-      $this->load->view('Front/themes/header',$data);
-      // $this->load->view('Front/themes/slide');
-      // $this->load->view('Front/themes/menu');
-      $this->load->view('Front/NewsDetail');
-      $this->load->view('Front/themes/footer');
+    // $this->load->view('Front/themes/slide');
+    // $this->load->view('Front/themes/menu');
+    $this->load->view('Front/NewsDetail',$data);
+    $this->load->view('Front/themes/footer');
 
 
 
-    }
+  }
 }

@@ -26,7 +26,7 @@
           <?php foreach ($Category as $catekey): ?>
             <p>
               <input class="form-check-input" type="checkbox" name="catebox[]" value="<?php echo $catekey['cateId'] ?>"
-              style="margin-bottom:5px;" id="defaultCheck<?php echo $catekey['cateId'] ?>"
+              style="margin-bottom:5px;" id="CateCheck<?php echo $catekey['cateId'] ?>"
               <?php if (isset($keyword['catebox'])): ?>
               <?php foreach ($keyword['catebox'] as $cateselect): ?>
                 <?php if ($cateselect == $catekey['cateId']): ?>
@@ -35,7 +35,7 @@
               <?php endforeach; ?>
             <?php endif; ?>
               >
-              <label for="defaultCheck<?php echo $catekey['cateId'] ?>"> <?php echo $catekey['cateName'] ?></label>
+              <label for="CateCheck<?php echo $catekey['cateId'] ?>"> <?php echo $catekey['cateName'] ?></label>
             </p>
           <?php endforeach; ?>
         </div>
@@ -45,7 +45,7 @@
           <?php foreach ($Brand as $brandkey): ?>
             <p>
               <input class="form-check-input" type="checkbox" name="brandbox[]" value="<?php echo $brandkey['brandId'] ?>"
-              style="margin-bottom:5px;" id="defaultCheck<?php echo $brandkey['brandId'] ?>"
+              style="margin-bottom:5px;" id="BrandCheck<?php echo $brandkey['brandId'] ?>"
               <?php if (isset($keyword['brandbox'])): ?>
               <?php foreach ($keyword['brandbox'] as $brandselect): ?>
                 <?php if ($brandselect == $brandkey['brandId']): ?>
@@ -54,7 +54,7 @@
               <?php endforeach; ?>
             <?php endif; ?>
               >
-              <label for="defaultCheck<?php echo $brandkey['brandId'] ?>"> <?php echo $brandkey['brandName'] ?></label>
+              <label for="BrandCheck<?php echo $brandkey['brandId'] ?>"> <?php echo $brandkey['brandName'] ?></label>
             </p>
           <?php endforeach; ?>
         </div>

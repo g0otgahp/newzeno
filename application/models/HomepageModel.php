@@ -58,17 +58,23 @@ class HomepageModel extends CI_Model
 
   public function SearchProduct($key)
   {
+
     $data = $this->db
     ->where('productStatus',1)
     ->where('cateStatus',1)
     ->where('brandStatus',1)
     ->where('categroupStatus',1)
     ->where('productName LIKE',"%".$key."%")
-    ->or_where('productDetail LIKE',"%".$key."%")
-    ->or_where('productSubdetail LIKE',"%".$key."%")
-    ->or_where('categroupName LIKE',"%".$key."%")
-    ->or_where('cateName LIKE',"%".$key."%")
-    ->or_where('brandName LIKE',"%".$key."%")
+    ->or_where('product.productDetail LIKE',"%".$key."%")
+    ->or_where('product.productSubdetail1 LIKE',"%".$key."%")
+    ->or_where('product.productSubdetail2 LIKE',"%".$key."%")
+    ->or_where('product.productSubdetail3 LIKE',"%".$key."%")
+    ->or_where('product.productSubdetail4 LIKE',"%".$key."%")
+    ->or_where('product.productSubdetail5 LIKE',"%".$key."%")
+    ->or_where('product.productSubdetail6 LIKE',"%".$key."%")
+    ->or_where('categroup.categroupName LIKE',"%".$key."%")
+    ->or_where('category.cateName LIKE',"%".$key."%")
+    ->or_where('brand.brandName LIKE',"%".$key."%")
     ->order_by('productId','DESC')
     ->join('brand','brand.brandId = product.productBrandid')
     ->join('category','category.CateId = product.productCateid')
@@ -84,8 +90,6 @@ class HomepageModel extends CI_Model
   public function SelectHomeProduct()
   {
     $data = $this->db->where('categroupStatus',1)->get('categroup')->result_array();
-
-
     $i = 0;
     foreach ($data as $row) {
       $data[$i]['productlist'] = $this->db
@@ -173,9 +177,6 @@ class HomepageModel extends CI_Model
       }
     }
 
-
-
-
     if ($input['min'] != '') {
       $this->db->where('product.productPrice >=',$input['min']);
     }
@@ -238,8 +239,6 @@ class HomepageModel extends CI_Model
     ->where('catetitleStatus',1)
     ->get('catetitle')
     ->result_array();
-
-
 
     $g=0;
     foreach ($dataSelect as $group) {

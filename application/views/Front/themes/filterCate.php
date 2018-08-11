@@ -27,7 +27,7 @@
           <?php foreach ($CateBrand['sortby'] as $brandkey): ?>
             <p>
               <input class="form-check-input" type="checkbox" name="brandbox[]" value="<?php echo $brandkey['brandId'] ?>"
-              style="margin-bottom:5px;" id="defaultCheck<?php echo $brandkey['brandId'] ?>"
+              style="margin-bottom:5px;" id="brandCheck<?php echo $brandkey['brandId'] ?>"
               <?php if (isset($keyword['brandbox'])): ?>
               <?php foreach ($keyword['brandbox'] as $brandselect): ?>
                 <?php if ($brandselect == $brandkey['brandId']): ?>
@@ -36,7 +36,7 @@
               <?php endforeach; ?>
             <?php endif; ?>
               >
-              <label for="defaultCheck<?php echo $brandkey['brandId'] ?>"> <?php echo $brandkey['brandName'] ?></label>
+              <label for="brandCheck<?php echo $brandkey['brandId'] ?>"> <?php echo $brandkey['brandName'] ?></label>
             </p>
           <?php endforeach; ?>
         </div>

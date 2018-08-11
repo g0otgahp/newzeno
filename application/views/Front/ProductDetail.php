@@ -55,6 +55,7 @@
 </div>
 <div class="col-md-8">
   <h3><?php echo $Product['product'][0]['productName'] ?></h3>
+  <p><?php echo $Product['product'][0]['brandName']." ".$Product['product'][0]['cateName'] ?></p>
   <!-- <small>- Sub Detail</small> -->
   <hr class="soft"/>
   <form class="form-horizontal qtyFrm">
@@ -109,9 +110,9 @@
 
 <div class="col-md-12">
   <ul id="productDetail" class="nav nav-tabs">
-    <li class="active" style="float:left;"><a href="#home" data-toggle="tab">รายละเอียดสินค้า</a></li>
+    <li class="active" style="float:left;"><a href="#home" data-toggle="tab" class="colorTagA">รายละเอียดสินค้า</a></li>
     <?php if (count($Product['document']) != 0): ?>
-      <li style="float:left;"><a href="#document" data-toggle="tab">เอกสารเพิ่มเติม</a></li>
+      <li style="float:left;"><a href="#document" data-toggle="tab" class="colorTagA">เอกสารเพิ่มเติม</a></li>
     <?php endif; ?>
   </ul>
   <div id="myTabContent" class="tab-content">

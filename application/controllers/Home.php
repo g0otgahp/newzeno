@@ -4,49 +4,35 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class Home extends CI_Controller
 {
 
-  /**
-  * Index Page for this controller.
-  *
-  * Maps to the following URL
-  *         http://example.com/index.php/welcome
-  *    - or -
-  *         http://example.com/index.php/welcome/index
-  *    - or -
-  * Since this controller is set as the default controller in
-  * config/routes.php, it's displayed at http://example.com/
-  *
-  * So any other public methods not prefixed with an underscore will
-  * map to /index.php/welcome/<method_name>
-  * @see https://codeigniter.com/user_guide/general/urls.html
-  */
-  public function index()
+  public function __construct()
   {
+    parent::__construct();
     $TitleGroup = $this->HomepageModel->SelectTitleGroup();
     $Group = $this->GroupModel->SelectGroup();
+    $data = array(
+      'TitleGroup' => $TitleGroup,
+      'Group' => $Group,
+    );
+    $this->load->view('Front/themes/header',$data);
+  }
+
+  public function index()
+  {
     $Product = $this->HomepageModel->SelectProductRecommend();
     $NewProduct = $this->HomepageModel->SelectProductNew();
     $data = array(
       'NewProduct' => $NewProduct,
       'Product' => $Product,
-      'TitleGroup' => $TitleGroup,
-      'Group' => $Group,
     );
 
-    // echo "<pre>";
-    // print_r($TitleGroup);
-    // exit();
-
-    $this->load->view('Front/themes/header',$data);
     // $this->load->view('Front/themes/slide');
     // $this->load->view('Front/themes/menu');
-    $this->load->view('Front/Home');
+    $this->load->view('Front/Home',$data);
     $this->load->view('Front/themes/footer');
   }
 
   public function CategoryHome()
   {
-    $TitleGroup = $this->HomepageModel->SelectTitleGroup();
-    $Group = $this->GroupModel->SelectGroup();
     $cateId = $this->uri->segment(3);
     $GroupSelect = $this->GroupModel->SelectGroupById($cateId);
     if (count($GroupSelect) == 0) {
@@ -62,17 +48,11 @@ class Home extends CI_Controller
     $data = array(
       'Product' => $Product,
       'Category' => $Category,
-      'Group' => $Group,
       'GroupSelect' => $GroupSelect,
       'Brand' => $Brand,
-      'TitleGroup' => $TitleGroup,
     );
 
-    // echo "<pre>";
-    // print_r($data);
-    // exit();
-    $this->load->view('Front/themes/header',$data);
-    $this->load->view('Front/themes/filter');
+    $this->load->view('Front/themes/filter',$data);
     // $this->load->view('Front/themes/menu');
     $this->load->view('Front/ProductList');
     $this->load->view('Front/themes/footer');
@@ -84,9 +64,6 @@ class Home extends CI_Controller
     $groupId = $this->uri->segment(3);
     $cateId = 0;
     if (isset($input['catebox']) || isset($input['brandbox']) || isset($input['sortbyprice']) ||  $input['min'] != '' || $input['max'] != '') {
-
-      $TitleGroup = $this->HomepageModel->SelectTitleGroup();
-      $Group = $this->GroupModel->SelectGroup();
       $GroupSelect = $this->GroupModel->SelectGroupById($groupId);
       if (count($GroupSelect) == 0) {
         echo "<script>alert('เกิดข้อพิดพลาด ไม่พบสิ่งที่คุณต้องการ')</script>";
@@ -101,18 +78,12 @@ class Home extends CI_Controller
       $data = array(
         'Product' => $Product,
         'Category' => $Category,
-        'Group' => $Group,
         'GroupSelect' => $GroupSelect,
         'Brand' => $Brand,
         'keyword' => $keyword,
-        'TitleGroup' => $TitleGroup,
       );
 
-      // echo "<pre>";
-      // print_r($keyword);
-      // exit();
-      $this->load->view('Front/themes/header',$data);
-      $this->load->view('Front/themes/filter');
+      $this->load->view('Front/themes/filter',$data);
       // $this->load->view('Front/themes/menu');
       $this->load->view('Front/ProductList');
       $this->load->view('Front/themes/footer');

@@ -29,7 +29,10 @@
   <!-- Select2.css -->
   <link rel="stylesheet" href="<?php echo BASE_URL()?>assets/Back/select2-4.0.6-rc.1/dist/css/select2.min.css">
 
-  <!-- Select2.css -->
+  <!-- lightbox.css -->
+  <link rel="stylesheet" href="<?php echo BASE_URL()?>assets/Front/src/css/lightbox.css">
+
+  <!-- lightbox.css -->
   <link rel="stylesheet" href="<?php echo BASE_URL()?>assets/Front/src/css/lightbox.css">
 
   <!-- Multi-colum Menu.css -->
@@ -79,21 +82,37 @@
 
 
   <!-- new nav -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <ul class="nav nav-pills pull-right">
 
-  <div class="container" style="margin-bottom:10px; margin-top:10px;">
+        </ul>
+      </div>
+    </div>
+
     <div class="row">
       <div class="col-md-12">
         <a class="pull-left" href="<?php echo SITE_URL('Home');?>"><img src="<?php echo BASE_URL()?>/uploads/Logo/logonewzeno.png" style="height:75px; margin-top:5px"/></a>
         <ul class="nav nav-pills pull-right" style="padding-top:15px;">
           <?php echo form_open('Search','class="pull-right"'); ?>
-          <input style="margin-top:10px; padding:15px;" type="text" name="keyword" placeholder="ค้นหาสินค้า">
+          ค้นหาสินค้า : <input style="margin-top:10px; padding:15px;" type="text" name="keyword" placeholder="ชื่อสินค้า/ยี่ห้อ/รุ่น/สเปค ฯลฯ">
           <button style="" type="submit" class="btn btn-primary">ค้นหา</button>
           <?php echo form_close(); ?>
-          <li style="margin-top:7px;"><a href="<?php echo SITE_URL('Home'); ?>" class="colorTagA">หน้าแรก</a></li>
-          <li style="margin-top:7px; color:#FFFF"><a href="<?php echo SITE_URL('Service'); ?>" class="colorTagA">บริการ</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <ul class="nav nav-pills pull-right">
+          <li ><a href="<?php echo SITE_URL('Home'); ?>" class="colorTagA">หน้าแรก</a></li>
+          <li ><a href="<?php echo SITE_URL('Service'); ?>" class="colorTagA">บริการ</a></li>
           <!-- <li style="margin-top:7px;"><a href="<?php echo SITE_URL('News'); ?>">ข่าวสาร</a></li> -->
-          <li style="margin-top:7px; color:#FFFF"><a href="<?php echo SITE_URL('Payment'); ?>" class="colorTagA">วิธีชำระเงิน</a></li>
-          <li style="margin-top:7px; color:#FFFF"><a href="<?php echo SITE_URL('Contact'); ?>" class="colorTagA">ติดต่อเรา</a></li>
+          <li ><a href="<?php echo SITE_URL('Payment'); ?>" class="colorTagA">วิธีชำระเงิน</a></li>
+          <li ><a href="<?php echo SITE_URL('Contact'); ?>" class="colorTagA">ติดต่อเรา</a></li>
         </ul>
       </div>
     </div>
@@ -148,11 +167,13 @@
                               <div class="col-md-4">
                               <?php endif; ?>
                               <ul class="multi-column-dropdown">
-                                <li><a href="<?php echo SITE_URL('Home/CategoryHome/'.$ShowGroup['categroupId']); ?>" style="color:orange;"><u><?php echo $ShowGroup['categroupName'] ?></u></a></li>
+                                <li><a href="<?php echo SITE_URL('Home/CategoryHome/'.$ShowGroup['categroupId']); ?>" style="color:orange;"><b><u><?php echo $ShowGroup['categroupName'] ?></u></b></a></li>
                                 <?php foreach ($ShowGroup['category'] as $CategoryShow): ?>
                                   <li><a href="<?php echo SITE_URL('Product/ShowProduct/'.$CategoryShow['categroupId']."/".$CategoryShow['cateId']); ?>" style="font-size:12px;">- <?php echo $CategoryShow['cateName'] ?></a></li>
                                 <?php endforeach; ?>
-                                <li><hr></li>
+                                <?php if (count($Title['group']) > 2): ?>
+                                  <li><hr></li>
+                                <?php endif; ?>
                               </ul>
                             </div>
                           <?php endif; ?>
