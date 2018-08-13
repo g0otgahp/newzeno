@@ -18,7 +18,7 @@ class Search extends CI_Controller
 
   public function index()
   {
-    $input = $this->input->post();
+    $input = $this->input->get();
     $Product = $this->HomepageModel->SearchProduct($input['keyword']);
     $data = array(
       'Product' => $Product,

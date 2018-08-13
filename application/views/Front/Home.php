@@ -75,22 +75,22 @@
                         <?php echo $newblock['productName'] ?>
                       </h4>
                       <p>
-                        <?php echo $newlist['productSubdetail1'] ?>
+                        <?php echo $newblock['productSubdetail1'] ?>
                       </p>
                       <p>
-                        <?php echo $newlist['productSubdetail2'] ?>
+                        <?php echo $newblock['productSubdetail2'] ?>
                       </p>
                       <p>
-                        <?php echo $newlist['productSubdetail3'] ?>
+                        <?php echo $newblock['productSubdetail3'] ?>
                       </p>
                       <p>
-                        <?php echo $newlist['productSubdetail4'] ?>
+                        <?php echo $newblock['productSubdetail4'] ?>
                       </p>
                       <p>
-                        <?php echo $newlist['productSubdetail5'] ?>
+                        <?php echo $newblock['productSubdetail5'] ?>
                       </p>
                       <p>
-                        <?php echo $newlist['productSubdetail6'] ?>
+                        <?php echo $newblock['productSubdetail6'] ?>
                       </p>
                     </div>
                     <div class="card-read-more">
@@ -133,9 +133,9 @@
                 </div>
                 <div class="col-md-5">
                   <h3><?php echo $list['productName'] ?></h3>
-                  <p>
+                  <span>
                     <?php echo $list['productSubdetail1'] ?>
-                  </p>
+                  </span>
                   <p>
                     <?php echo $list['productSubdetail2'] ?>
                   </p>

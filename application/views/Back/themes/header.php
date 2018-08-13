@@ -2,13 +2,11 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
+	<meta name='viewport' content='width=device-width, initial-scale=0'  />
 	<link rel="icon" type="image/png" href="<?php echo BASE_URL()?>/assets/Back/img/newicon_ZV1_icon.ico">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<!-- <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> -->
 
 	<title>Newzeno : Administration</title>
-	<meta content='width=device-width, initial-scale=0' name='viewport' />
-	<meta name="viewport" content="width=device-width" />
-
 
 	<!-- Bootstrap core CSS     -->
 	<link href="<?php echo BASE_URL()?>/assets/Back/css/bootstrap.min.css" rel="stylesheet" />

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>Newzeno : ตัวแทนจำหน่ายวิดีโอวอล โปรเจคเตอร์ เครื่องใช้ไฟฟ้า อันดับ 1 ของประเทศไทย</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=0"> -->
   <meta name="description" content="">
   <meta name="author" content="">
 
@@ -47,6 +47,10 @@
     font-size: 14px;
   }
 
+  p {
+    margin:auto;
+  }
+
   h1 , h2 , h3 , h4  {
     font-family: 'Prompt', sans-serif;
   }
@@ -65,13 +69,10 @@
 <body>
   <div id="header">
     <div style="background-color:#3a3f44;">
-      <div class="container" >
-        <div class="row" style="padding:5px;">
+      <div class="container">
+        <div class="row" style="padding:11px;">
           <div>
             <span style="color:white;"><img width="20" height="20" src="<?php echo BASE_URL()?>/assets/Front/themes/images/phone.png"> เบอร์ติดต่อ : 02-497-0500</span>
-            <!-- <a href="#" style="color:white;"><span class="">Menu 1</span></a> /
-            <a href="#" style="color:white;"><span class="">Menu 2</span></a> /
-            <a href="#" style="color:white;"><span class="">Menu 3</span></a> / -->
             <a class="pull-right" href="<?php echo SITE_URL('Login');?>" style="color:white;"><span>Administrator</span></a>
           </div>
         </div>
@@ -84,184 +85,217 @@
   <!-- new nav -->
   <div class="container">
     <div class="row">
-      <div class="col-md-12">
-        <ul class="nav nav-pills pull-right">
+      <div class="col-md-1" style="padding-left:0px; padding-right:0px;">
+        <a class="pull-left" href="<?php echo SITE_URL('Home');?>"><img src="<?php echo BASE_URL()?>/uploads/Logo/logo2.png" style="height:90px; margin:25px;"/></a>
+      </div>
 
-        </ul>
+      <div class="col-md-11" style="padding-left:0px; padding-right:0px;">
+        <div class="row">
+          <div class="col-md-12">
+            <ul class="nav nav-pills pull-right">
+              <?php echo form_open('Search','class="pull-right" style="margin:0px; margin-right:15px;"'); ?>
+              <b>ค้นหาสินค้า : </b><input style="margin-top:10px; padding:15px;" type="text" name="keyword" placeholder="ชื่อสินค้า/ยี่ห้อ/รุ่น/สเปค ฯลฯ">
+              <button type="submit" class="btn btn-primary btn-sm">ค้นหา</button>
+              <?php echo form_close(); ?>
+            </ul>
+          </div>
+
+          <div class="col-md-12">
+            <ul class="nav nav-pills pull-left" style="margin-left:25px;">
+              <a href="<?php echo SITE_URL('Home');?>"><img src="<?php echo BASE_URL()?>/uploads/Logo/textlogo.png" style="height:35px;" /></a>
+            </ul>
+          </div>
+
+          <div class="col-md-12" style="margin-top:15px;">
+            <ul class="nav nav-pills pull-right">
+              <li ><a href="<?php echo SITE_URL('Home'); ?>" class="colorTagA">หน้าแรก</a></li>
+              <li ><a href="<?php echo SITE_URL('Service'); ?>" class="colorTagA">บริการ</a></li>
+              <li ><a href="<?php echo SITE_URL('Payment'); ?>" class="colorTagA">วิธีชำระเงิน</a></li>
+              <li ><a href="<?php echo SITE_URL('Contact'); ?>" class="colorTagA">ติดต่อเรา</a></li>
+            </ul>
+          </div>
+
+        </div>
       </div>
     </div>
 
-    <div class="row">
-      <div class="col-md-12">
-        <a class="pull-left" href="<?php echo SITE_URL('Home');?>"><img src="<?php echo BASE_URL()?>/uploads/Logo/logonewzeno.png" style="height:75px; margin-top:5px"/></a>
-        <ul class="nav nav-pills pull-right" style="padding-top:15px;">
-          <?php echo form_open('Search','class="pull-right"'); ?>
-          ค้นหาสินค้า : <input style="margin-top:10px; padding:15px;" type="text" name="keyword" placeholder="ชื่อสินค้า/ยี่ห้อ/รุ่น/สเปค ฯลฯ">
-          <button style="" type="submit" class="btn btn-primary">ค้นหา</button>
-          <?php echo form_close(); ?>
-        </ul>
-      </div>
-    </div>
+    <!-- <div class="row">
+    <div class="col-md-12">
+    <a class="pull-left" href="<?php echo SITE_URL('Home');?>"><img src="<?php echo BASE_URL()?>/uploads/Logo/logonewzenoOld.png" style="height:75px;"/></a>
   </div>
+</div> -->
+</div>
 
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <ul class="nav nav-pills pull-right">
-          <li ><a href="<?php echo SITE_URL('Home'); ?>" class="colorTagA">หน้าแรก</a></li>
-          <li ><a href="<?php echo SITE_URL('Service'); ?>" class="colorTagA">บริการ</a></li>
-          <!-- <li style="margin-top:7px;"><a href="<?php echo SITE_URL('News'); ?>">ข่าวสาร</a></li> -->
-          <li ><a href="<?php echo SITE_URL('Payment'); ?>" class="colorTagA">วิธีชำระเงิน</a></li>
-          <li ><a href="<?php echo SITE_URL('Contact'); ?>" class="colorTagA">ติดต่อเรา</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-
-  <div style="background-color:#3a3f44;">
-    <nav class="container" role="navigation" style="margin-bottom:20px;">
-      <!-- <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-menu-1">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-  </div> -->
-  <!--/.navbar-header-->
+<!-- <div class="container">
+<div class="row">
+<div class="col-md-12">
+<ul class="nav nav-pills pull-right">
+<li style="font-size:12px;"><a href="<?php echo SITE_URL('Home'); ?>" class="colorTagA">หน้าแรก</a></li>
+<li ><a href="<?php echo SITE_URL('Service'); ?>" class="colorTagA">บริการ</a></li>
+<li ><a href="<?php echo SITE_URL('Payment'); ?>" class="colorTagA">วิธีชำระเงิน</a></li>
+<li ><a href="<?php echo SITE_URL('Contact'); ?>" class="colorTagA">ติดต่อเรา</a></li>
+</ul>
+</div>
+</div>
+</div> -->
 
 
-  <div class="collapse navbar-collapse" style="padding:0px;">
+<div style="background-color:#3a3f44;">
+  <nav class="container" role="navigation" style="margin-bottom:20px;">
+    <!-- <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-menu-1">
+    <span class="sr-only">Toggle navigation</span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+</div> -->
+<!--/.navbar-header-->
 
-    <?php foreach ($TitleGroup as $Title): ?>
-      <?php if (count($Title['group']) != 0): ?>
 
-        <?php
+<div class="collapse navbar-collapse" style="padding:0px;">
+
+
+  <ul class="nav navbar-nav" >
+    <li class="dropdown">
+      <a href="#" class="dropdown-toggle dropbtn" data-toggle="dropdown">Infomation Display From 1<i class="icon-chevron-down" style="padding-top:3px;"></i></a>
+      <ul class="dropdown-menu multi-column columns dropdown-content">
+        <div class="row">
+          <div class="col-md-12">
+            <ul class="multi-column-dropdown">
+              <li><a href="#" style="color:orange;"><b><u>Digital Signage</u></b></a></li>
+              <li><a href="#" style="font-size:12px;">- Standard</a></li>
+              <li><a href="#" style="font-size:12px;">- Video Wall</a></li>
+              <li><a href="#" style="font-size:12px;">- Ultra Stretch</a></li>
+              <li><a href="#" style="font-size:12px;">- High Brightness</a></li>
+              <li><a href="#" style="font-size:12px;">- Interactive</a></li>
+              <li><a href="#" style="font-size:12px;">- Mirror</a></li>
+              <li><a href="#" style="font-size:12px;">- Transparent</a></li>
+              <li><a href="#" style="font-size:12px;">- Accessories</a></li>
+              <li><hr></li>
+              <li><a href="#" style="color:orange;"><b><u>Commercial TV</u></b></a></li>
+              <li><a href="#" style="font-size:12px;">- Hotel TV</a></li>
+              <li><a href="#" style="font-size:12px;">- TV Signage</a></li>
+              <li><a href="#" style="font-size:12px;">- Special</a></li>
+              <li><a href="#" style="font-size:12px;">- Accessories</a></li>
+              <li><hr></li>
+              <li><a href="#" style="color:orange;"><b><u>OLED Signage</u></b></a></li>
+              <li><a href="#" style="font-size:12px;">- In-glass Wallpaper</a></li>
+              <li><a href="#" style="font-size:12px;">- Video Wall</a></li>
+              <li><a href="#" style="font-size:12px;">- Wallpaper</a></li>
+              <li><a href="#" style="font-size:12px;">- Open Frame</a></li>
+              <li><a href="#" style="font-size:12px;">- Dual-view Curved Tiling</a></li>
+              <li><a href="#" style="font-size:12px;">- Dual-View Flat</a></li>
+              <li><hr></li>
+              <li><a href="#" style="color:orange;"><b><u>LED Signage</u></b></a></li>
+              <li><a href="#" style="font-size:12px;">- Indoor</a></li>
+              <li><a href="#" style="font-size:12px;">- Outdoor</a></li>
+              <li><hr></li>
+            </ul>
+          </div>
+        </div>
+      </ul>
+    </li>
+  </ul>
+
+  <ul class="nav navbar-nav" >
+    <li class="dropdown">
+      <a href="#" class="dropdown-toggle dropbtn" data-toggle="dropdown">Infomation Display From 2<i class="icon-chevron-down" style="padding-top:3px;"></i></a>
+      <ul class="dropdown-menu multi-column columns-2 dropdown-content">
+
+        <div class="row">
+          <div class="col-md-6">
+            <ul class="multi-column-dropdown">
+              <li><a href="#" style="color:orange;"><b><u>Digital Signage</u></b></a></li>
+              <li><a href="#" style="font-size:12px;">- Standard</a></li>
+              <li><a href="#" style="font-size:12px;">- Video Wall</a></li>
+              <li><a href="#" style="font-size:12px;">- Ultra Stretch</a></li>
+              <li><a href="#" style="font-size:12px;">- High Brightness</a></li>
+              <li><a href="#" style="font-size:12px;">- Interactive</a></li>
+              <li><a href="#" style="font-size:12px;">- Mirror</a></li>
+              <li><a href="#" style="font-size:12px;">- Transparent</a></li>
+              <li><a href="#" style="font-size:12px;">- Accessories</a></li>
+              <li><hr><li>
+                <li><a href="#" style="color:orange;"><b><u>Commercial TV</u></b></a></li>
+                <li><a href="#" style="font-size:12px;">- Hotel TV</a></li>
+                <li><a href="#" style="font-size:12px;">- TV Signage</a></li>
+                <li><a href="#" style="font-size:12px;">- Special</a></li>
+                <li><a href="#" style="font-size:12px;">- Accessories</a></li>
+              </ul>
+            </div>
+
+            <div class="col-md-6">
+              <ul class="multi-column-dropdown">
+                <li><a href="#" style="color:orange;"><b><u>OLED Signage</u></b></a></li>
+                <li><a href="#" style="font-size:12px;">- In-glass Wallpaper</a></li>
+                <li><a href="#" style="font-size:12px;">- Video Wall</a></li>
+                <li><a href="#" style="font-size:12px;">- Wallpaper</a></li>
+                <li><a href="#" style="font-size:12px;">- Open Frame</a></li>
+                <li><a href="#" style="font-size:12px;">- Dual-view Curved Tiling</a></li>
+                <li><a href="#" style="font-size:12px;">- Dual-View Flat</a></li>
+                <li><hr><li>
+                  <li><a href="#" style="color:orange;"><b><u>LED Signage</u></b></a></li>
+                  <li><a href="#" style="font-size:12px;">- Indoor</a></li>
+                  <li><a href="#" style="font-size:12px;">- Outdoor</a></li>
+                </ul>
+              </div>
+            </div>
+          </ul>
+        </li>
+      </ul>
+
+
+      <?php foreach ($TitleGroup as $Title): ?>
+        <?php if (count($Title['group']) != 0): ?>
+
+          <?php
           $loop = 0;
           foreach ($Title['group'] as $key) {
             if (count($key['category']) != 0) {
               $loop++;
             }
           }
-         ?>
-        <ul class="nav navbar-nav" >
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle dropbtn" data-toggle="dropdown"><?php echo $Title['catetitleName'] ?> <i class="icon-chevron-down" style="padding-top:3px;"></i></a>
-
-            <?php if ($loop == 1): ?>
-              <ul class="dropdown-menu multi-column columns dropdown-content">
-              <?php elseif($loop == 2): ?>
-                <ul class="dropdown-menu multi-column columns-2 dropdown-content">
-                <?php else: ?>
-                  <ul class="dropdown-menu multi-column columns-3 dropdown-content">
-                  <?php endif; ?>
-                  <div class="row">
-                    <?php foreach ($Title['group'] as $ShowGroup): ?>
-                      <?php if (count($ShowGroup['category']) != 0): ?>
-                        <?php if ($loop == 1): ?>
-                          <div class="col-md-11">
-                          <?php elseif($loop == 2): ?>
-                            <div class="col-md-6">
-                            <?php else: ?>
-                              <div class="col-md-4">
-                              <?php endif; ?>
-                              <ul class="multi-column-dropdown">
-                                <li><a href="<?php echo SITE_URL('Home/CategoryHome/'.$ShowGroup['categroupId']); ?>" style="color:orange;"><b><u><?php echo $ShowGroup['categroupName'] ?></u></b></a></li>
-                                <?php foreach ($ShowGroup['category'] as $CategoryShow): ?>
-                                  <li><a href="<?php echo SITE_URL('Product/ShowProduct/'.$CategoryShow['categroupId']."/".$CategoryShow['cateId']); ?>" style="font-size:12px;">- <?php echo $CategoryShow['cateName'] ?></a></li>
-                                <?php endforeach; ?>
-                                <?php if (count($Title['group']) > 2): ?>
-                                  <li><hr></li>
+          ?>
+          <ul class="nav navbar-nav" >
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle dropbtn" data-toggle="dropdown"><?php echo $Title['catetitleName'] ?> <i class="icon-chevron-down" style="padding-top:3px;"></i></a>
+              <?php if ($loop == 1): ?>
+                <ul class="dropdown-menu multi-column columns dropdown-content">
+                <?php elseif($loop == 2): ?>
+                  <ul class="dropdown-menu multi-column columns-2 dropdown-content">
+                  <?php else: ?>
+                    <ul class="dropdown-menu multi-column columns-3 dropdown-content">
+                    <?php endif; ?>
+                    <div class="row">
+                      <?php foreach ($Title['group'] as $ShowGroup): ?>
+                        <?php if (count($ShowGroup['category']) != 0): ?>
+                          <?php if ($loop == 1): ?>
+                            <div class="col-md-11">
+                            <?php elseif($loop == 2): ?>
+                              <div class="col-md-6">
+                              <?php else: ?>
+                                <div class="col-md-4">
                                 <?php endif; ?>
-                              </ul>
-                            </div>
-                          <?php endif; ?>
-                        <?php endforeach; ?>
-                        <!-- </div> -->
-                      </ul>
-                    </li>
-                  </ul>
-                <?php endif; ?>
-              <?php endforeach; ?>
+                                <ul class="multi-column-dropdown">
+                                  <li><a href="<?php echo SITE_URL('Home/CategoryHome/'.$ShowGroup['categroupId']); ?>" style="color:orange;"><b><u><?php echo $ShowGroup['categroupName'] ?></u></b></a></li>
+                                  <?php foreach ($ShowGroup['category'] as $CategoryShow): ?>
+                                    <li><a href="<?php echo SITE_URL('Product/ShowProduct/'.$CategoryShow['categroupId']."/".$CategoryShow['cateId']); ?>" style="font-size:12px;">- <?php echo $CategoryShow['cateName'] ?></a></li>
+                                  <?php endforeach; ?>
+                                  <?php if (count($Title['group']) > 2): ?>
+                                    <li><hr></li>
+                                  <?php endif; ?>
+                                </ul>
+                              </div>
+                            <?php endif; ?>
+                          <?php endforeach; ?>
+                          <!-- </div> -->
+                        </ul>
+                      </li>
+                    </ul>
+                  <?php endif; ?>
+                <?php endforeach; ?>
+
+              </div>
             </div>
-          </div>
-        </nav>
-        <!-- <div class="container">
-        <div class="row">
-        <div class="span12">
-        <ul class="nav nav-pills">
-        <?php echo form_open('Search','class="pull-right"'); ?>
-        <input class="form-control" type="text" name="keyword" placeholder="ค้นหาสินค้า"/>
-        <button style="margin-bottom:10px;" type="submit" class="btn btn-primary">ค้นหา</button>
-        <?php echo form_close(); ?>
-        <li ><a href="<?php echo SITE_URL('Contact'); ?>">ติดต่อเรา</a></li>
-        <li ><a href="<?php echo SITE_URL('Payment'); ?>">วิธีชำระเงิน</a></li>
-        <li ><a href="<?php echo SITE_URL('Service'); ?>">บริการ</a></li>
-        <li ><a href="<?php echo SITE_URL('Home'); ?>">หน้าแรก</a></li>
-      </ul>
-    </div>
-  </div>
-</div> -->
-
-<!--/.navbar-->
-
-
-<!-- new nav -->
-
-
-<!-- <ul class="nav nav-pills">
-<?php echo form_open('Search','class="pull-right"'); ?>
-<input style="margin-top:10px;" class="form-control" type="text" name="keyword" placeholder="ค้นหาสินค้า"/>
-<button type="submit" class="btn btn-primary">ค้นหา</button>
-<?php echo form_close(); ?>
-<li class="" style="margin-top:10px;"><a href="<?php echo SITE_URL('Contact'); ?>">ติดต่อเรา</a></li>
-<li class="" style="margin-top:10px;"><a href="<?php echo SITE_URL('Payment'); ?>">วิธีชำระเงิน</a></li>
-<li class="" style="margin-top:10px;"><a href="<?php echo SITE_URL('News'); ?>">ข่าวสาร</a></li>
-<li class="" style="margin-top:10px;"><a href="<?php echo SITE_URL('Service'); ?>">บริการ</a></li>
-<li class="" style="margin-top:10px;"><a href="<?php echo SITE_URL('Home'); ?>">หน้าแรก</a></li>
-</ul> -->
-<!-- Navbar ================================================== -->
-
-<!-- <div>
-<div style="background-color:#3a3f44;">
-<div id="logoArea" class="navbar"> -->
-
-<!-- <div class="navbar-inner" style="">
-<ul id="topMenu" class="nav">
-<li class=""><a href="#">&nbsp;</a></li>
-<ul class="nav nav-pills">
-<li>
-<a href="#footerSection"><i class="icon-th-large" style="font-size:30px; margin-top:3px;"></i></a>
-</li>
-<?php foreach ($Group as $ShowGroup): ?>
-<li <?php if (!empty($GroupSelect)) {
-if ($ShowGroup['categroupId'] == $GroupSelect[0]['categroupId']) {
-echo "class='active'";
-}
-}; ?>><a href="<?php echo SITE_URL('Home/CategoryHome/'.$ShowGroup['categroupId']); ?>" ><?php echo $ShowGroup['categroupName'] ?></a>
-</li>
-<?php endforeach; ?>
-</ul>
-</div> -->
-
-<!-- <div class="container" style="background-color: #d9d9d9; height:60px; display: flex; justify-content: space-around;"> -->
-
-<!-- <div class="container" style="background-color: #d9d9d9; height:120px;">
-<ul id="topMenu" class="nav">
-<li class=""><a href="#">&nbsp;</a></li>
-<li class=""><a href="#">&nbsp;</a></li>
-<ul class="nav nav-pills">
-<?php foreach ($Category as $CategoryShow): ?>
-<li style="padding-top:10px; padding-right:15px;"><a href="<?php echo SITE_URL('Product/ShowProduct/'.$CategoryShow['categroupId']."/".$CategoryShow['cateId']); ?>">
-<font color="black" style="font-weight: bold; font-size:16px;">
-<p align="center"><img src="<?php echo BASE_URL('uploads/Categorys/'.$CategoryShow['cateImg']); ?>" height="50px" width="50px" ></p>
-<?php echo $CategoryShow['cateName'] ?></font></a></li>
-<?php endforeach; ?>
-</ul>
-</div> -->
-
-<!-- </div>
-</div>
-</div> -->
-<!-- Header End====================================================================== -->
+          </nav>
+          <!-- Header End====================================================================== -->
