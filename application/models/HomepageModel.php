@@ -3,7 +3,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class HomepageModel extends CI_Model
 {
-  
+
   public function LoadHead()
   {
     $TitleGroup = $this->HomepageModel->SelectTitleGroup();
@@ -13,6 +13,24 @@ class HomepageModel extends CI_Model
       'Group' => $Group,
     );
     $this->load->view('Front/themes/header',$data);
+  }
+
+  public function PreProduct($Product,$value)
+  {
+    $PreProduct = array();
+    if ($value == "True") {
+      $key = 1;
+      $PreProduct['new'] = 0;
+    } elseif ($value == "New") {
+      $key = 1;
+      $PreProduct['new'] = 1;
+    } else {
+      $key = 0;
+      $PreProduct['new'] = 0;
+    }
+    $PreProduct['PreProduct'] = $Product;
+    $PreProduct['value'] = $key;
+    $this->load->view('Front/ProductPreview',$PreProduct);
   }
 
   public function SelectProductNew()
@@ -55,10 +73,6 @@ class HomepageModel extends CI_Model
   {
 
     $data = $this->db
-    ->where('productStatus',1)
-    ->where('cateStatus',1)
-    ->where('brandStatus',1)
-    ->where('categroupStatus',1)
     ->where('productName LIKE',"%".$key."%")
     // ->or_where('product.productDetail LIKE',"%".$key."%")
     ->or_where('product.productSubdetail1 LIKE',"%".$key."%")
@@ -77,7 +91,15 @@ class HomepageModel extends CI_Model
     ->order_by('productId','DESC')
     ->get('product')
     ->result_array();
-    return $data;
+
+    $array = [];
+    foreach ($data as $row) {
+      if ($row['productStatus'] == 1 && $row['cateStatus'] == 1 && $row['brandStatus'] == 1 && $row['categroupStatus'] == 1) {
+        array_push($array, $row);
+      }
+    }
+
+    return $array;
   }
 
 

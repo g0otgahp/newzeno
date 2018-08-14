@@ -70,10 +70,10 @@
   <div id="header">
     <div style="background-color:#3a3f44;">
       <div class="container">
-        <div class="row" style="padding:10px; margin-top:1px;">
+        <div class="row" style="padding:10px; margin-top:1px; margin-left:3px;">
           <div>
             <span style="color:white;"><img width="20" height="20" src="<?php echo BASE_URL()?>/assets/Front/themes/images/phone.png"> เบอร์ติดต่อ : 02-497-0500</span>
-            <a class="pull-right" href="<?php echo SITE_URL('Login');?>" style="color:white;"><span>Administrator</span></a>
+            <a class="pull-right" href="<?php echo SITE_URL('Login');?>" style="color:white; margin-right:4px;"><span>Administrator</span></a>
           </div>
         </div>
       </div>
@@ -86,7 +86,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-1" style="padding-left:0px; padding-right:0px;">
-        <a class="pull-left" href="<?php echo SITE_URL('Home');?>"><img src="<?php echo BASE_URL()?>/uploads/Logo/logo2.png" style="height:90px; margin:25px;"/></a>
+        <a class="pull-left" href="<?php echo SITE_URL('Home');?>"><img src="<?php echo BASE_URL()?>/uploads/Logo/logo2.png" style="height:73px; margin:25px;"/></a>
       </div>
 
       <div class="col-md-11" style="padding-left:0px; padding-right:0px;">
@@ -101,8 +101,8 @@
           </div>
 
           <div class="col-md-12">
-            <ul class="nav nav-pills pull-left" style="margin-left:25px;">
-              <a href="<?php echo SITE_URL('Home');?>"><img src="<?php echo BASE_URL()?>/uploads/Logo/textlogo.png" style="height:35px;" /></a>
+            <ul class="nav nav-pills pull-left" style="margin-left:10px;">
+              <a href="<?php echo SITE_URL('Home');?>"><img src="<?php echo BASE_URL()?>/uploads/Logo/textlogo.png" style="height:25px;" /></a>
             </ul>
           </div>
 
