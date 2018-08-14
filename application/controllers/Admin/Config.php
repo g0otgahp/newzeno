@@ -60,6 +60,7 @@ class Config extends CI_Controller
   public function UpdateConfig()
   {
     $input = $this->input->post();
+    $input['editId'] = $_SESSION['adminId'];
     $this->ConfigModel->UpdateConfig($input);
 
     echo "<script>alert('บันทึกการตั้งค่าเรียบร้อย')</script>";

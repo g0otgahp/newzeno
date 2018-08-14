@@ -7,7 +7,7 @@ class BrandModel extends CI_Model
   public function SelectBrand()
   {
     $data = $this->db
-    ->order_by('brandId','DESC')
+    ->order_by('brandId','ASC')
     ->where('brandStatus',1)
     ->get('brand')
     ->result_array();

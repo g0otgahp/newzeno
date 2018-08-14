@@ -21,7 +21,10 @@ class AgentModel extends CI_Model
   public function AgentDelete($agentId)
   {
 
-    $agent = array('agentStatus' => 2 );
+    $agent = array(
+      'agentStatus' => 2 ,
+      'editId' => $_SESSION['adminId'] ,
+    );
 
 
     $this->db

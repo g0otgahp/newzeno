@@ -59,7 +59,8 @@ class NewsModel extends CI_Model
 
     $dataDelete = array(
       'newsId' => $newsId ,
-      'newsStatus' => 0 ,
+      'editId' => $_SESSION['adminId'] ,
+      'newsStatus' => 2 ,
     );
 
     $this->db

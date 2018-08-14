@@ -40,7 +40,7 @@ class Position extends CI_Controller
   {
 
     $positionData = $this->input->post();
-
+    $positionData['editId'] = $_SESSION['adminId'];
     // echo "<pre>";
     // print_r($positionName);
     // exit();
@@ -76,6 +76,7 @@ class Position extends CI_Controller
 
     $positionData = array(
       'positionId' => $positionId,
+      'editId' => $_SESSION['adminId'],
       'positionStatus' => 2,
     );
 

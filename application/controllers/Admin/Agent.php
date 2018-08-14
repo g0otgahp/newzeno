@@ -49,6 +49,7 @@ class Agent extends CI_Controller
   {
 
     $input = $this->input->post();
+    $input['editId'] = $_SESSION['adminId'];
     $this->AgentModel->AgentRegister($input);
 
     echo "<script>alert('เพิ่มตัวแทนจำหน่ายเรียบร้อย')</script>";
@@ -74,7 +75,9 @@ class Agent extends CI_Controller
     $agentId = $this->uri->segment(4);
     $dataSelect = $this->AgentModel->SelectUpdate($agentId);
 
-    $data = array('dataSelect' => $dataSelect, );
+    $data = array(
+      'dataSelect' => $dataSelect,
+    );
 
     // echo "<pre>";
     // print_r($dataSelect);
@@ -90,6 +93,8 @@ class Agent extends CI_Controller
   {
 
     $dataUpdate = $this->input->post();
+    $dataUpdate['editId'] = $_SESSION['adminId'];
+
 
     // echo "<pre>";
     // print_r($dataUpdate);

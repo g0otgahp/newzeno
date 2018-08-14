@@ -50,6 +50,7 @@ class News extends CI_Controller
   public function NewsInsert(){
 
     $dataInsert = $this->input->post();
+    $dataInsert['editId'] = $_SESSION['adminId'];
 
     $pathinfo = pathinfo($_FILES['newsImage']['name'], PATHINFO_EXTENSION);
     $new_file = date('YmdHis') . "." . $pathinfo;
@@ -82,6 +83,8 @@ class News extends CI_Controller
   public function NewsUpdate(){
 
     $dataUpdate = $this->input->post();
+    $dataUpdate['editId'] = $_SESSION['adminId'];
+
 
     if(!empty($_FILES['newsImage']['name'])){
 

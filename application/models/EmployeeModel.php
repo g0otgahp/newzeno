@@ -58,6 +58,7 @@ class EmployeeModel extends CI_Model
         'profileEmail' => $dataRegister['profileEmail'],
         'profileImg' => $dataRegister['profileImg'],
         'profileAddress' => $dataRegister['profileAddress'],
+        'editId' => $_SESSION['adminId'],
       );
 
       $this->db->insert('profile',$profile);
@@ -109,20 +110,12 @@ class EmployeeModel extends CI_Model
       'profileEmail' => $dataUpdate['profileEmail'],
       'profileImg' => $dataUpdate['profileImg'],
       'profileAddress' => $dataUpdate['profileAddress'],
+      'editId' => $_SESSION['adminId'],
     );
 
     $this->db
     ->where('profileId',$profile['profileId'])
     ->update('profile',$profile);
-
-    $admin = array(
-      'adminPassword' => md5($dataUpdate['adminPassword']),
-      'adminPosition' => $dataUpdate['adminPosition']
-    );
-
-    $this->db
-    ->where('profileId',$profile['profileId'])
-    ->update('admin',$admin);
 
   }
 

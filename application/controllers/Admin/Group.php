@@ -48,6 +48,7 @@ class Group extends CI_Controller
   {
 
     $GroupData = $this->input->post();
+    $GroupData['editId'] = $_SESSION['adminId'];
 
     // echo "<pre>";
     // print_r($GroupData);
@@ -88,6 +89,7 @@ class Group extends CI_Controller
 
     $GroupData = array(
       'categroupId' => $GroupId,
+      'editId' => $_SESSION['adminId'],
       'categroupStatus' => 2,
     );
 

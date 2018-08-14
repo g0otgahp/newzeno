@@ -58,7 +58,12 @@ class GroupModel extends CI_Model
 
   public function SelectGroupById($cateId)
   {
-    $dataSelect = $this->db->where('categroupStatus',1)->where('categroupId',$cateId)->get('categroup')->result_array();
+    $dataSelect = $this->db
+    ->where('categroupStatus',1)
+    ->where('categroupId',$cateId)
+    ->get('categroup')
+    ->result_array();
+    
     return $dataSelect;
   }
 

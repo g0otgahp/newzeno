@@ -96,7 +96,10 @@ class Product extends CI_Controller
       $input['productFav'] = 2;
     }
 
+    $input['editId'] = $_SESSION['adminId'];
+
     unset($input['checkbox']);
+
     $id = $this->ProductModel->saveProduct($input);
 
     if ($_FILES['SubImg']['name'][0] != '') {
@@ -107,6 +110,7 @@ class Product extends CI_Controller
         move_uploaded_file($_FILES['SubImg']['tmp_name'][$i], "uploads/Products/" . $new_file);
         $SubImage[$i] = array(
           'proimageName' => $new_file,
+          'editId' => $_SESSION['adminId'],
           'proimageProductid' => $id,
         );
         $i++;
@@ -124,6 +128,7 @@ class Product extends CI_Controller
           'docName' => $row,
           'docFilename' => $new_file,
           'docProductid' => $id,
+          'editId' => $_SESSION['adminId'],
         );
         $d++;
       }
@@ -149,8 +154,11 @@ class Product extends CI_Controller
     } else {
       $input['productFav'] = 2;
     }
+
+    $input['editId'] = $_SESSION['adminId'];
+
     unset($input['checkbox']);
-    
+
     $this->ProductModel->UpdateProduct($input);
     if (@$_FILES['SubImg']['name'][0] != '') {
       $i = 0;
@@ -160,6 +168,7 @@ class Product extends CI_Controller
         move_uploaded_file($_FILES['SubImg']['tmp_name'][$i], "uploads/Products/" . $new_file);
         $SubImage[$i] = array(
           'proimageName' => $new_file,
+          'editId' => $_SESSION['adminId'],
           'proimageProductid' => $input['productId'],
         );
         $i++;
@@ -177,6 +186,7 @@ class Product extends CI_Controller
           'docName' => $row,
           'docFilename' => $new_file,
           'docProductid' => $input['productId'],
+          'editId' => $_SESSION['adminId'],
         );
         $d++;
       }
@@ -242,6 +252,7 @@ class Product extends CI_Controller
     $id = $this->uri->segment(4);
     $status = array(
       'productId' => $id,
+      'editId' => $_SESSION['adminId'],
       'productStatus' => 2,
     );
     $this->ProductModel->UpdateProduct($status);

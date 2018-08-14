@@ -33,7 +33,7 @@ class CategoryModel extends CI_Model
   {
 
     $dataShow = $this->db
-    ->order_by('cateId','DESC')
+    ->order_by('cateId','ASC')
     ->where('cateStatus',1)
     ->where('categroupStatus',1)
     ->join('categroup','categroup.categroupId = category.categroupId')

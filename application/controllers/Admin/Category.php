@@ -46,6 +46,8 @@ class Category extends CI_Controller
   public function SaveCategory()
   {
     $dataInsert = $this->input->post();
+    $dataInsert['editId'] = $_SESSION['adminId'];
+
     if(!empty($_FILES['cateImg']['name'])){
 
       $pathinfo = pathinfo($_FILES['cateImg']['name'], PATHINFO_EXTENSION);
@@ -70,7 +72,8 @@ class Category extends CI_Controller
       foreach ($input['checkBrand'] as $row) {
         $ConnectBrand[$i] = array(
           'SortbyCateid' => $input['cateId'],
-          'SortbyBrandid' => $row
+          'SortbyBrandid' => $row,
+          'editId' => $_SESSION['adminId']
         );
         $i++;
       }
@@ -91,6 +94,7 @@ class Category extends CI_Controller
   public function UpdateCategory()
   {
     $dataUpdate = $this->input->post();
+    $dataUpdate['editId'] = $_SESSION['adminId'];
 
     if(!empty($_FILES['cateImg']['name'])){
 
@@ -118,6 +122,7 @@ class Category extends CI_Controller
 
     $dataDelete = array(
       'cateId' => $idDelete,
+      'editId' => $_SESSION['adminId'],
       'cateStatus' => 2,
     );
 

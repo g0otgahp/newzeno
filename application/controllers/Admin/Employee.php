@@ -144,6 +144,7 @@ class Employee extends CI_Controller
 
     $dataDelete = array(
       'profileId' => $profileId,
+      'editId' => $_SESSION['adminId'],
       'profileStatus' => 2
     );
 

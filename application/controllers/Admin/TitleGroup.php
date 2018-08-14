@@ -45,6 +45,7 @@ class TitleGroup extends CI_Controller
   {
 
     $TitleGroupData = $this->input->post();
+    $TitleGroupData['editId'] = $_SESSION['adminId'];
 
     // echo "<pre>";
     // print_r($GroupData);
@@ -85,6 +86,7 @@ class TitleGroup extends CI_Controller
 
     $GroupData = array(
       'catetitleId' => $GroupId,
+      'editId' => $_SESSION['adminId'],
       'catetitleStatus' => 2,
     );
 

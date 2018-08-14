@@ -58,13 +58,13 @@
               </div>
               <div class="col-md-4">
                 <div class="form-group">
-                  <label>รายละเอียด 5</label><small style="color:red"> (ช่องต่อ : HDMI , VGA , HDBASET)</small>
+                  <label>รายละเอียด 5</label><small style="color:red"> (ขนาด : 10 x 5 x 7 ซม.)</small>
                   <input type="text" class="form-control" name="productSubdetail5" placeholder="กรอก รายละเอียกแบบย่อ" value="<?php echo $data['product'][0]['productSubdetail5'] ?>" required>
                 </div>
               </div>
               <div class="col-md-4">
                 <div class="form-group">
-                  <label>รายละเอียด 6</label><small style="color:red"> (น้ำหนัก : 15.2kg)</small>
+                  <label>รายละเอียด 6</label><small style="color:red"> (น้ำหนัก : 15.2 กิโลกรัม)</small>
                   <input type="text" class="form-control" name="productSubdetail6" placeholder="กรอก รายละเอียกแบบย่อ" value="<?php echo $data['product'][0]['productSubdetail6'] ?>" required>
                 </div>
               </div>
@@ -124,7 +124,7 @@
               <div class="col-md-12">
                 <div class="form-group">
                   <label>รายละเอียด(แบบเต็ม)</label>
-                  <textarea rows="5" class="form-control summernote" name="productDetail" placeholder="กรอกรายละเอียดแบบเต็ม" required><?php echo $data['product'][0]['productDetail'] ?></textarea>
+                  <textarea rows="5" class="form-control summernote" name="productDetail" placeholder="กรอกรายละเอียดแบบเต็ม"><?php echo $data['product'][0]['productDetail'] ?></textarea>
                 </div>
               </div>
             </div>

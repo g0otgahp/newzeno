@@ -48,6 +48,8 @@ class Brand extends CI_Controller
   public function SaveBrand()
   {
     $input = $this->input->post();
+    $input['editId'] = $_SESSION['adminId'];
+
     if (!empty($input['brandId'])) {
       if (!empty($_FILES['Img']['name'])) {
         $new_file = $this->UploadsImg($_FILES['Img']);
@@ -71,6 +73,7 @@ class Brand extends CI_Controller
 
     $input = array(
       'brandId' => $id,
+      'editId' => $_SESSION['adminId'],
       'brandStatus' => 2,
      );
 
