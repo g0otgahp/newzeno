@@ -156,7 +156,7 @@
 <div class="collapse navbar-collapse" style="padding:0px;">
 
 
-  <ul class="nav navbar-nav" >
+  <!-- <ul class="nav navbar-nav" >
     <li class="dropdown">
       <a href="#" class="dropdown-toggle dropbtn" data-toggle="dropdown">Infomation Display From 1<i class="icon-chevron-down" style="padding-top:3px;"></i></a>
       <ul class="dropdown-menu multi-column columns dropdown-content">
@@ -196,15 +196,15 @@
         </div>
       </ul>
     </li>
-  </ul>
+  </ul> -->
 
   <ul class="nav navbar-nav" >
     <li class="dropdown">
-      <a href="#" class="dropdown-toggle dropbtn" data-toggle="dropdown">Infomation Display From 2<i class="icon-chevron-down" style="padding-top:3px;"></i></a>
-      <ul class="dropdown-menu multi-column columns-2 dropdown-content">
+      <a href="#" class="dropdown-toggle dropbtn" data-toggle="dropdown">Infomation Display<i class="icon-chevron-down" style="padding-top:3px;"></i></a>
+      <ul class="dropdown-menu multi-column columns-3 dropdown-content">
 
         <div class="row">
-          <div class="col-md-6">
+          <div class="col-md-3" style="padding-left:0px; width:25%;">
             <ul class="multi-column-dropdown">
               <li><a href="#" style="color:orange;"><b><u>Digital Signage</u></b></a></li>
               <li><a href="#" style="font-size:12px;">- Standard</a></li>
@@ -215,34 +215,268 @@
               <li><a href="#" style="font-size:12px;">- Mirror</a></li>
               <li><a href="#" style="font-size:12px;">- Transparent</a></li>
               <li><a href="#" style="font-size:12px;">- Accessories</a></li>
-              <li><hr><li>
+
+              </ul>
+            </div>
+
+            <div class="col-md-3" style="padding-left:0px; width:25%;">
+              <ul class="multi-column-dropdown">
                 <li><a href="#" style="color:orange;"><b><u>Commercial TV</u></b></a></li>
                 <li><a href="#" style="font-size:12px;">- Hotel TV</a></li>
                 <li><a href="#" style="font-size:12px;">- TV Signage</a></li>
                 <li><a href="#" style="font-size:12px;">- Special</a></li>
                 <li><a href="#" style="font-size:12px;">- Accessories</a></li>
-              </ul>
-            </div>
-
-            <div class="col-md-6">
-              <ul class="multi-column-dropdown">
-                <li><a href="#" style="color:orange;"><b><u>OLED Signage</u></b></a></li>
-                <li><a href="#" style="font-size:12px;">- In-glass Wallpaper</a></li>
-                <li><a href="#" style="font-size:12px;">- Video Wall</a></li>
-                <li><a href="#" style="font-size:12px;">- Wallpaper</a></li>
-                <li><a href="#" style="font-size:12px;">- Open Frame</a></li>
-                <li><a href="#" style="font-size:12px;">- Dual-view Curved Tiling</a></li>
-                <li><a href="#" style="font-size:12px;">- Dual-View Flat</a></li>
-                <li><hr><li>
-                  <li><a href="#" style="color:orange;"><b><u>LED Signage</u></b></a></li>
-                  <li><a href="#" style="font-size:12px;">- Indoor</a></li>
-                  <li><a href="#" style="font-size:12px;">- Outdoor</a></li>
                 </ul>
               </div>
+
+              <div class="col-md-3" style="padding-left:0px; width:25%;">
+                <ul class="multi-column-dropdown">
+                  <li><a href="#" style="color:orange;"><b><u>OLED Signage</u></b></a></li>
+                  <li><a href="#" style="font-size:12px;">- In-glass Wallpaper</a></li>
+                  <li><a href="#" style="font-size:12px;">- Video Wall</a></li>
+                  <li><a href="#" style="font-size:12px;">- Wallpaper</a></li>
+                  <li><a href="#" style="font-size:12px;">- Open Frame</a></li>
+                  <li><a href="#" style="font-size:12px;">- Dual-view Curved Tiling</a></li>
+                  <li><a href="#" style="font-size:12px;">- Dual-View Flat</a></li>
+                  </ul>
+                </div>
+
+                <div class="col-md-3" style="padding-left:0px; width:25%;">
+                  <ul class="multi-column-dropdown">
+                    <li><a href="#" style="color:orange;"><b><u>LED Signage</u></b></a></li>
+                    <li><a href="#" style="font-size:12px;">- Indoor</a></li>
+                    <li><a href="#" style="font-size:12px;">- Outdoor</a></li>
+                    </ul>
+                  </div>
+
             </div>
           </ul>
         </li>
       </ul>
+
+      <ul class="nav navbar-nav" >
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle dropbtn" data-toggle="dropdown">Infomation Display<i class="icon-chevron-down" style="padding-top:3px;"></i></a>
+          <ul class="dropdown-menu multi-column columns-3 dropdown-content">
+
+            <div class="row">
+              <div class="col-md-3" style="padding-left:0px; width:25%;">
+                <ul class="multi-column-dropdown">
+                  <li><a href="#" style="color:orange;"><b><u>Digital Signage</u></b></a></li>
+                  <li><a href="#" style="font-size:12px;">- Standard</a></li>
+                  <li><a href="#" style="font-size:12px;">- Video Wall</a></li>
+                  <li><a href="#" style="font-size:12px;">- Ultra Stretch</a></li>
+                  <li><a href="#" style="font-size:12px;">- High Brightness</a></li>
+                  <li><a href="#" style="font-size:12px;">- Interactive</a></li>
+                  <li><a href="#" style="font-size:12px;">- Mirror</a></li>
+                  <li><a href="#" style="font-size:12px;">- Transparent</a></li>
+                  <li><a href="#" style="font-size:12px;">- Accessories</a></li>
+
+                  </ul>
+                </div>
+
+                <div class="col-md-3" style="padding-left:0px; width:25%;">
+                  <ul class="multi-column-dropdown">
+                    <li><a href="#" style="color:orange;"><b><u>Commercial TV</u></b></a></li>
+                    <li><a href="#" style="font-size:12px;">- Hotel TV</a></li>
+                    <li><a href="#" style="font-size:12px;">- TV Signage</a></li>
+                    <li><a href="#" style="font-size:12px;">- Special</a></li>
+                    <li><a href="#" style="font-size:12px;">- Accessories</a></li>
+                    </ul>
+                  </div>
+
+                  <div class="col-md-3" style="padding-left:0px; width:25%;">
+                    <ul class="multi-column-dropdown">
+                      <li><a href="#" style="color:orange;"><b><u>OLED Signage</u></b></a></li>
+                      <li><a href="#" style="font-size:12px;">- In-glass Wallpaper</a></li>
+                      <li><a href="#" style="font-size:12px;">- Video Wall</a></li>
+                      <li><a href="#" style="font-size:12px;">- Wallpaper</a></li>
+                      <li><a href="#" style="font-size:12px;">- Open Frame</a></li>
+                      <li><a href="#" style="font-size:12px;">- Dual-view Curved Tiling</a></li>
+                      <li><a href="#" style="font-size:12px;">- Dual-View Flat</a></li>
+                      </ul>
+                    </div>
+
+                    <div class="col-md-3" style="padding-left:0px; width:25%;">
+                      <ul class="multi-column-dropdown">
+                        <li><a href="#" style="color:orange;"><b><u>LED Signage</u></b></a></li>
+                        <li><a href="#" style="font-size:12px;">- Indoor</a></li>
+                        <li><a href="#" style="font-size:12px;">- Outdoor</a></li>
+                        </ul>
+                      </div>
+
+                </div>
+              </ul>
+            </li>
+          </ul>
+
+          <ul class="nav navbar-nav" >
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle dropbtn" data-toggle="dropdown">Infomation Display<i class="icon-chevron-down" style="padding-top:3px;"></i></a>
+              <ul class="dropdown-menu multi-column columns-3 dropdown-content">
+
+                <div class="row">
+                  <div class="col-md-3" style="padding-left:0px; width:25%;">
+                    <ul class="multi-column-dropdown">
+                      <li><a href="#" style="color:orange;"><b><u>Digital Signage</u></b></a></li>
+                      <li><a href="#" style="font-size:12px;">- Standard</a></li>
+                      <li><a href="#" style="font-size:12px;">- Video Wall</a></li>
+                      <li><a href="#" style="font-size:12px;">- Ultra Stretch</a></li>
+                      <li><a href="#" style="font-size:12px;">- High Brightness</a></li>
+                      <li><a href="#" style="font-size:12px;">- Interactive</a></li>
+                      <li><a href="#" style="font-size:12px;">- Mirror</a></li>
+                      <li><a href="#" style="font-size:12px;">- Transparent</a></li>
+                      <li><a href="#" style="font-size:12px;">- Accessories</a></li>
+
+                      </ul>
+                    </div>
+
+                    <div class="col-md-3" style="padding-left:0px; width:25%;">
+                      <ul class="multi-column-dropdown">
+                        <li><a href="#" style="color:orange;"><b><u>Commercial TV</u></b></a></li>
+                        <li><a href="#" style="font-size:12px;">- Hotel TV</a></li>
+                        <li><a href="#" style="font-size:12px;">- TV Signage</a></li>
+                        <li><a href="#" style="font-size:12px;">- Special</a></li>
+                        <li><a href="#" style="font-size:12px;">- Accessories</a></li>
+                        </ul>
+                      </div>
+
+                      <div class="col-md-3" style="padding-left:0px; width:25%;">
+                        <ul class="multi-column-dropdown">
+                          <li><a href="#" style="color:orange;"><b><u>OLED Signage</u></b></a></li>
+                          <li><a href="#" style="font-size:12px;">- In-glass Wallpaper</a></li>
+                          <li><a href="#" style="font-size:12px;">- Video Wall</a></li>
+                          <li><a href="#" style="font-size:12px;">- Wallpaper</a></li>
+                          <li><a href="#" style="font-size:12px;">- Open Frame</a></li>
+                          <li><a href="#" style="font-size:12px;">- Dual-view Curved Tiling</a></li>
+                          <li><a href="#" style="font-size:12px;">- Dual-View Flat</a></li>
+                          </ul>
+                        </div>
+
+                        <div class="col-md-3" style="padding-left:0px; width:25%;">
+                          <ul class="multi-column-dropdown">
+                            <li><a href="#" style="color:orange;"><b><u>LED Signage</u></b></a></li>
+                            <li><a href="#" style="font-size:12px;">- Indoor</a></li>
+                            <li><a href="#" style="font-size:12px;">- Outdoor</a></li>
+                            </ul>
+                          </div>
+
+                    </div>
+                  </ul>
+                </li>
+              </ul>
+
+              <ul class="nav navbar-nav" >
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle dropbtn" data-toggle="dropdown">Infomation Display<i class="icon-chevron-down" style="padding-top:3px;"></i></a>
+                  <ul class="dropdown-menu multi-column columns-3 dropdown-content">
+
+                    <div class="row">
+                      <div class="col-md-3" style="padding-left:0px; width:25%;">
+                        <ul class="multi-column-dropdown">
+                          <li><a href="#" style="color:orange;"><b><u>Digital Signage</u></b></a></li>
+                          <li><a href="#" style="font-size:12px;">- Standard</a></li>
+                          <li><a href="#" style="font-size:12px;">- Video Wall</a></li>
+                          <li><a href="#" style="font-size:12px;">- Ultra Stretch</a></li>
+                          <li><a href="#" style="font-size:12px;">- High Brightness</a></li>
+                          <li><a href="#" style="font-size:12px;">- Interactive</a></li>
+                          <li><a href="#" style="font-size:12px;">- Mirror</a></li>
+                          <li><a href="#" style="font-size:12px;">- Transparent</a></li>
+                          <li><a href="#" style="font-size:12px;">- Accessories</a></li>
+
+                          </ul>
+                        </div>
+
+                        <div class="col-md-3" style="padding-left:0px; width:25%;">
+                          <ul class="multi-column-dropdown">
+                            <li><a href="#" style="color:orange;"><b><u>Commercial TV</u></b></a></li>
+                            <li><a href="#" style="font-size:12px;">- Hotel TV</a></li>
+                            <li><a href="#" style="font-size:12px;">- TV Signage</a></li>
+                            <li><a href="#" style="font-size:12px;">- Special</a></li>
+                            <li><a href="#" style="font-size:12px;">- Accessories</a></li>
+                            </ul>
+                          </div>
+
+                          <div class="col-md-3" style="padding-left:0px; width:25%;">
+                            <ul class="multi-column-dropdown">
+                              <li><a href="#" style="color:orange;"><b><u>OLED Signage</u></b></a></li>
+                              <li><a href="#" style="font-size:12px;">- In-glass Wallpaper</a></li>
+                              <li><a href="#" style="font-size:12px;">- Video Wall</a></li>
+                              <li><a href="#" style="font-size:12px;">- Wallpaper</a></li>
+                              <li><a href="#" style="font-size:12px;">- Open Frame</a></li>
+                              <li><a href="#" style="font-size:12px;">- Dual-view Curved Tiling</a></li>
+                              <li><a href="#" style="font-size:12px;">- Dual-View Flat</a></li>
+                              </ul>
+                            </div>
+
+                            <div class="col-md-3" style="padding-left:0px; width:25%;">
+                              <ul class="multi-column-dropdown">
+                                <li><a href="#" style="color:orange;"><b><u>LED Signage</u></b></a></li>
+                                <li><a href="#" style="font-size:12px;">- Indoor</a></li>
+                                <li><a href="#" style="font-size:12px;">- Outdoor</a></li>
+                                </ul>
+                              </div>
+
+                        </div>
+                      </ul>
+                    </li>
+                  </ul>
+
+                  <ul class="nav navbar-nav" >
+                    <li class="dropdown">
+                      <a href="#" class="dropdown-toggle dropbtn" data-toggle="dropdown">Infomation Display<i class="icon-chevron-down" style="padding-top:3px;"></i></a>
+                      <ul class="dropdown-menu multi-column columns-3 dropdown-content">
+
+                        <div class="row">
+                          <div class="col-md-3" style="padding-left:0px; width:25%;">
+                            <ul class="multi-column-dropdown">
+                              <li><a href="#" style="color:orange;"><b><u>Digital Signage</u></b></a></li>
+                              <li><a href="#" style="font-size:12px;">- Standard</a></li>
+                              <li><a href="#" style="font-size:12px;">- Video Wall</a></li>
+                              <li><a href="#" style="font-size:12px;">- Ultra Stretch</a></li>
+                              <li><a href="#" style="font-size:12px;">- High Brightness</a></li>
+                              <li><a href="#" style="font-size:12px;">- Interactive</a></li>
+                              <li><a href="#" style="font-size:12px;">- Mirror</a></li>
+                              <li><a href="#" style="font-size:12px;">- Transparent</a></li>
+                              <li><a href="#" style="font-size:12px;">- Accessories</a></li>
+
+                              </ul>
+                            </div>
+
+                            <div class="col-md-3" style="padding-left:0px; width:25%;">
+                              <ul class="multi-column-dropdown">
+                                <li><a href="#" style="color:orange;"><b><u>Commercial TV</u></b></a></li>
+                                <li><a href="#" style="font-size:12px;">- Hotel TV</a></li>
+                                <li><a href="#" style="font-size:12px;">- TV Signage</a></li>
+                                <li><a href="#" style="font-size:12px;">- Special</a></li>
+                                <li><a href="#" style="font-size:12px;">- Accessories</a></li>
+                                </ul>
+                              </div>
+
+                              <div class="col-md-3" style="padding-left:0px; width:25%;">
+                                <ul class="multi-column-dropdown">
+                                  <li><a href="#" style="color:orange;"><b><u>OLED Signage</u></b></a></li>
+                                  <li><a href="#" style="font-size:12px;">- In-glass Wallpaper</a></li>
+                                  <li><a href="#" style="font-size:12px;">- Video Wall</a></li>
+                                  <li><a href="#" style="font-size:12px;">- Wallpaper</a></li>
+                                  <li><a href="#" style="font-size:12px;">- Open Frame</a></li>
+                                  <li><a href="#" style="font-size:12px;">- Dual-view Curved Tiling</a></li>
+                                  <li><a href="#" style="font-size:12px;">- Dual-View Flat</a></li>
+                                  </ul>
+                                </div>
+
+                                <div class="col-md-3" style="padding-left:0px; width:25%;">
+                                  <ul class="multi-column-dropdown">
+                                    <li><a href="#" style="color:orange;"><b><u>LED Signage</u></b></a></li>
+                                    <li><a href="#" style="font-size:12px;">- Indoor</a></li>
+                                    <li><a href="#" style="font-size:12px;">- Outdoor</a></li>
+                                    </ul>
+                                  </div>
+
+                            </div>
+                          </ul>
+                        </li>
+                      </ul>
 
 
       <?php foreach ($TitleGroup as $Title): ?>
