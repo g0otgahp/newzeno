@@ -70,7 +70,7 @@
   <div id="header">
     <div style="background-color:#3a3f44;">
       <div class="container">
-        <div class="row" style="padding:11px;">
+        <div class="row" style="padding:10px; margin-top:1px;">
           <div>
             <span style="color:white;"><img width="20" height="20" src="<?php echo BASE_URL()?>/assets/Front/themes/images/phone.png"> เบอร์ติดต่อ : 02-497-0500</span>
             <a class="pull-right" href="<?php echo SITE_URL('Login');?>" style="color:white;"><span>Administrator</span></a>

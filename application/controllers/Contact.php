@@ -7,13 +7,7 @@ class Contact extends CI_Controller
   public function __construct()
   {
     parent::__construct();
-    $TitleGroup = $this->HomepageModel->SelectTitleGroup();
-    $Group = $this->GroupModel->SelectGroup();
-    $data = array(
-      'TitleGroup' => $TitleGroup,
-      'Group' => $Group,
-    );
-    $this->load->view('Front/themes/header',$data);
+    $this->HomepageModel->LoadHead();
   }
 
   public function index()

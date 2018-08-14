@@ -3,22 +3,17 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class HomepageModel extends CI_Model
 {
-
-  /**
-  * Index Page for this controller.
-  *
-  * Maps to the following URL
-  *         http://example.com/index.php/welcome
-  *    - or -
-  *         http://example.com/index.php/welcome/index
-  *    - or -
-  * Since this controller is set as the default controller in
-  * config/routes.php, it's displayed at http://example.com/
-  *
-  * So any other public methods not prefixed with an underscore will
-  * map to /index.php/welcome/<method_name>
-  * @see https://codeigniter.com/user_guide/general/urls.html
-  */
+  
+  public function LoadHead()
+  {
+    $TitleGroup = $this->HomepageModel->SelectTitleGroup();
+    $Group = $this->GroupModel->SelectGroup();
+    $data = array(
+      'TitleGroup' => $TitleGroup,
+      'Group' => $Group,
+    );
+    $this->load->view('Front/themes/header',$data);
+  }
 
   public function SelectProductNew()
   {
@@ -65,7 +60,7 @@ class HomepageModel extends CI_Model
     ->where('brandStatus',1)
     ->where('categroupStatus',1)
     ->where('productName LIKE',"%".$key."%")
-    ->or_where('product.productDetail LIKE',"%".$key."%")
+    // ->or_where('product.productDetail LIKE',"%".$key."%")
     ->or_where('product.productSubdetail1 LIKE',"%".$key."%")
     ->or_where('product.productSubdetail2 LIKE',"%".$key."%")
     ->or_where('product.productSubdetail3 LIKE',"%".$key."%")
