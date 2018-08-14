@@ -25,4 +25,15 @@ class LoginModel extends CI_Model
     ->result_array();
     return $data;
   }
+
+  public function LoginLog($dataLog)
+  {
+
+    // $this->debug->prevalue($dataLog);
+
+    $this->db->insert('log_login',$dataLog);
+    $id = $this->db->insert_id();
+    return $id;
+  }
+
 }

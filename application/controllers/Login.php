@@ -32,7 +32,17 @@ class Login extends CI_Controller
         $_SESSION['positionId'] = $CheckLogin[0]['positionId'];
         $_SESSION['positionName'] = $CheckLogin[0]['positionName'];
         $_SESSION['Status'] = 'NZN';
+
+        $date = Date('Y-m-d H:i:s');
+        $dataLog = array(
+          'loginProfileId' => $_SESSION['adminId'],
+          'loginTimeIn' => $date,
+        );
+        $idLog = $this->LoginModel->LoginLog($dataLog);
+        $_SESSION['idLog'] = $idLog;
+
         echo "<script>window.location='" . $_SERVER['HTTP_REFERER'] . "'</script>";
+
       } else {
         $msg = "บัญชีหรือรหัสผ่านไม่ถูกต้อง";
         $this->alert($msg);
