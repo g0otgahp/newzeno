@@ -63,7 +63,7 @@ class GroupModel extends CI_Model
     ->where('categroupId',$cateId)
     ->get('categroup')
     ->result_array();
-    
+
     return $dataSelect;
   }
 
@@ -71,6 +71,7 @@ class GroupModel extends CI_Model
   {
 
     $this->db->insert('categroup',$GroupData);
+
     //
     // echo "<pre>";
     // print_r($GroupData);
@@ -85,6 +86,21 @@ class GroupModel extends CI_Model
     ->where('categroupId',$GroupData['categroupId'])
     ->update('categroup',$GroupData);
 
+    // echo "<pre>";
+    // print_r($positionData);
+    // exit();
+
+  }
+
+  public function LogDelete($GroupId)
+  {
+
+    $item = $this->db
+    ->where('categroupId',$GroupId)
+    ->get('categroup')
+    ->result_array();
+
+    return $item;
     // echo "<pre>";
     // print_r($positionData);
     // exit();

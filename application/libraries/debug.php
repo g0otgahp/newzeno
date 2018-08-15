@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
  class debug {
 
-  public function prevalue($value)
+  public function log($value)
   {
     echo "<pre>";
     print_r($value);

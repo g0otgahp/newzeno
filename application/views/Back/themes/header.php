@@ -88,7 +88,7 @@
 		<li <?php if($this->uri->segment(2)=="Dashboard"){ echo "class='active'"; } ?>>
 			<a href="<?php echo SITE_URL('Admin/Dashboard');?>">
 				<i class="pe-7s-graph" style="color:black;"></i>
-				<span style="color:red;">ภาพรวม </span>
+				<span style="color:black;">ภาพรวม </span>
 			</a>
 		</li>
 

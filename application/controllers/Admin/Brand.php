@@ -56,10 +56,31 @@ class Brand extends CI_Controller
         $input['brandImg'] = $new_file;
       }
       $this->BrandModel->UpdateBrand($input);
+
+      $LogUpdate = array(
+        'logProductProfileId' => $_SESSION['adminId'],
+        'logProductStatus' => 'แก้ไข',
+        'logProductType' => 'แบรนด์สินค้า',
+        'logProductItem' => $input['brandName'],
+      );
+
+      $this->LogModel->LogProduct($LogUpdate);
+
     } else {
       $new_file = $this->UploadsImg($_FILES['Img']);
       $input['brandImg'] = $new_file;
-      $this->BrandModel->InsertBrand($input);
+
+      $id = $this->BrandModel->InsertBrand($input);
+
+      $LogInsert = array(
+        'logProductProfileId' => $_SESSION['adminId'],
+        'logProductStatus' => 'เพิ่ม',
+        'logProductType' => 'แบรนด์สินค้า',
+        'logProductItem' => $input['brandName'],
+      );
+
+      $this->LogModel->LogProduct($LogInsert);
+
     }
     //Alert
     echo "<script>alert('บันทึกรายการแบรนด์เสร็จสิ้น')</script>";
@@ -78,6 +99,17 @@ class Brand extends CI_Controller
      );
 
      $this->BrandModel->UpdateBrand($input);
+
+     $item = $this->BrandModel->LogDelete($id);
+
+     $LogDelete = array(
+       'logProductProfileId' => $_SESSION['adminId'],
+       'logProductStatus' => 'ลบ',
+       'logProductType' => $this->uri->segment(2),
+       'logProductItem' => $item[0]['brandName'],
+     );
+
+     $this->LogModel->LogProduct($LogDelete);
 
      //Alert
      echo "<script>alert('ลบรายการแบรนด์เสร็จสิ้น')</script>";

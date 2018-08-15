@@ -20,8 +20,29 @@ class DashboardModel extends CI_Model
   * @see https://codeigniter.com/user_guide/general/urls.html
   */
 
-  public function Select()
+  public function SelectLogProduct()
   {
+    $dataLogProduct = $this->db
+    ->order_by('logProductId','DESC')
+    ->join('profile','profile.profileId = log_product.logProductProfileId')
+    ->get('log_product')->result_array();
+
+    // $this->debug->log($dataLogProduct);
+
+    return $dataLogProduct;
+
+  }
+
+  public function SelectLogLogin()
+  {
+    $dataLogLogin = $this->db
+    ->order_by('loginId','DESC')
+    ->join('profile','profile.profileId = log_login.loginProfileId')
+    ->get('log_login')->result_array();
+
+    // $this->debug->log($dataLogLogin);
+
+    return $dataLogLogin;
 
   }
 }

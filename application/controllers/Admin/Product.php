@@ -102,6 +102,15 @@ class Product extends CI_Controller
 
     $id = $this->ProductModel->saveProduct($input);
 
+    $LogInsert = array(
+      'logProductProfileId' => $_SESSION['adminId'],
+      'logProductStatus' => 'เพิ่ม',
+      'logProductType' => 'จัดการสินค้า',
+      'logProductItem' => $input['productName'],
+    );
+
+    $this->LogModel->LogProduct($LogInsert);
+
     if ($_FILES['SubImg']['name'][0] != '') {
       $i = 0;
       foreach ($_FILES['SubImg']['name'] as $row) {
@@ -142,6 +151,10 @@ class Product extends CI_Controller
   public function UpdateProduct()
   {
     $input = $this->input->post();
+    $idlog = $input['productId'];
+    $product = $this->ProductModel->SelectProductByID($idlog);
+
+    // $this->debug->log($product['product'][0]['productName']);
 
     if (!empty($_FILES['productImg']['name'])) {
       $pathinfo = pathinfo($_FILES['productImg']['name'], PATHINFO_EXTENSION);
@@ -160,6 +173,17 @@ class Product extends CI_Controller
     unset($input['checkbox']);
 
     $this->ProductModel->UpdateProduct($input);
+
+      $LogUpdate = array(
+        'logProductProfileId' => $_SESSION['adminId'],
+        'logProductStatus' => 'แก้ไข',
+        'logProductType' => 'จัดการสินค้า',
+        'logProductItem' => $product['product'][0]['productName'],
+      );
+
+      $this->LogModel->LogProduct($LogUpdate);
+
+
     if (@$_FILES['SubImg']['name'][0] != '') {
       $i = 0;
       foreach ($_FILES['SubImg']['name'] as $row) {
@@ -174,6 +198,16 @@ class Product extends CI_Controller
         $i++;
       }
       $this->ProductModel->saveSubImage($SubImage);
+
+      $LogUpdate = array(
+        'logProductProfileId' => $_SESSION['adminId'],
+        'logProductStatus' => 'แก้ไข',
+        'logProductType' =>'จัดการสินค้า',
+        'logProductItem' => $product['product'][0]['productName'],
+      );
+
+      $this->LogModel->LogProduct($LogUpdate);
+
     }
 
     if (@$_FILES['Doc']['name'][0] != '') {
@@ -191,6 +225,16 @@ class Product extends CI_Controller
         $d++;
       }
       $this->ProductModel->saveDocument($Document);
+
+      $LogUpdate = array(
+        'logProductProfileId' => $_SESSION['adminId'],
+        'logProductStatus' => 'แก้ไข',
+        'logProductType' => 'จัดการสินค้า',
+        'logProductItem' => $product['product'][0]['productName'],
+      );
+
+      $this->LogModel->LogProduct($LogUpdate);
+
     }
 
     echo "<script>alert('แก้ไขสินค้าเรียบร้อยแล้ว')</script>";
@@ -234,6 +278,7 @@ class Product extends CI_Controller
     $id = $this->uri->segment(4);
     $Productid = $this->uri->segment(5);
     $this->ProductModel->DeleteSubImage($id);
+
     echo "<script>alert('ลบรูปภาพเรียบร้อยแล้ว')</script>";
     echo "<script>document.location='" . SITE_URL('Admin/Product/ProductImage/'.$Productid) . "'</script>";
   }
@@ -243,6 +288,7 @@ class Product extends CI_Controller
     $id = $this->uri->segment(4);
     $Productid = $this->uri->segment(5);
     $this->ProductModel->DeleteDocument($id);
+
     echo "<script>alert('ลบเอกสารเรียบร้อยแล้ว')</script>";
     echo "<script>document.location='" . SITE_URL('Admin/Product/ProductDocument/'.$Productid) . "'</script>";
   }
@@ -250,12 +296,23 @@ class Product extends CI_Controller
   public function DeleteProduct()
   {
     $id = $this->uri->segment(4);
+    $product = $this->ProductModel->SelectProductByID($id);
     $status = array(
       'productId' => $id,
       'editId' => $_SESSION['adminId'],
       'productStatus' => 2,
     );
     $this->ProductModel->UpdateProduct($status);
+
+    $LogDelete = array(
+      'logProductProfileId' => $_SESSION['adminId'],
+      'logProductStatus' => 'ลบ',
+      'logProductType' => 'จัดการสินค้า',
+      'logProductItem' => $product['product'][0]['productName'],
+    );
+
+    $this->LogModel->LogProduct($LogDelete);
+
     echo "<script>alert('ลบสินค้าเรียบร้อยแล้ว')</script>";
     echo "<script>document.location='" . SITE_URL('Admin/Product') . "'</script>";
   }

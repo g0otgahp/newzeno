@@ -23,4 +23,10 @@ class BrandModel extends CI_Model
   {
     $this->db->where('brandId',$input['brandId'])->update('brand',$input);
   }
+
+  public function LogDelete($id)
+  {
+    $item = $this->db->where('brandId',$id)->get('brand')->result_array();
+    return $item;
+  }
 }

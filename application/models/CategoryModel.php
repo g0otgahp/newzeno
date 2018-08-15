@@ -119,6 +119,14 @@ class CategoryModel extends CI_Model
 
   }
 
+  public function LogDelete($idDelete)
+  {
+
+    $item = $this->db->where('cateId',$idDelete)->get('category')->result_array();
+    return $item;
+
+  }
+
   public function InsertSortby($ConnectBrand)
   {
 

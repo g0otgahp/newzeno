@@ -19,13 +19,20 @@ public function LoadPage($value)
   $data = $value['Result'];
   $this->load->view('Back/themes/header', $data);
   $this->load->view($value['View']);
+  $this->load->view('Back/themes/footer');
 }
 
 public function index()
 {
+
+  $dataLogProduct = $this->DashboardModel->SelectLogProduct();
+  $dataLogLogin = $this->DashboardModel->SelectLogLogin();
+  // $this->debug->log($dataLogProduct);
+
   $value = array(
     'Result' => array(
-      // 'Config' => $Config,
+      'dataLogProduct' => $dataLogProduct,
+      'dataLogLogin' => $dataLogLogin,
     ),
     'View' => 'Back/Dashboard',
   );

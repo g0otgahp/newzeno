@@ -58,7 +58,16 @@ class Category extends CI_Controller
 
     }
 
-    $this->CategoryModel->SaveCategory($dataInsert);
+    $id = $this->CategoryModel->SaveCategory($dataInsert);
+
+    $LogInsert = array(
+      'logProductProfileId' => $_SESSION['adminId'],
+      'logProductStatus' => 'เพิ่ม',
+      'logProductType' => 'ประเภทสินค้า',
+      'logProductItem' => $dataInsert['cateName'],
+    );
+
+    $this->LogModel->LogProduct($LogInsert);
 
     echo "<script>alert('เพิ่มประเภทสินค้าสำเร็จ')</script>";
     echo "<script>window.location='".SITE_URL('Admin/Category')."'</script>";
@@ -108,6 +117,15 @@ class Category extends CI_Controller
 
     $this->CategoryModel->UpdateCategory($dataUpdate);
 
+    $LogUpdate = array(
+      'logProductProfileId' => $_SESSION['adminId'],
+      'logProductStatus' => 'แก้ไข',
+      'logProductType' => 'ประเภทสินค้า',
+      'logProductItem' => $dataUpdate['cateName'],
+    );
+
+    $this->LogModel->LogProduct($LogUpdate);
+
     echo "<script>alert('แก้ไขประเภทสินค้าสำเร็จ')</script>";
     echo "<script>window.location='".SITE_URL('Admin/Category')."'</script>";
 
@@ -127,6 +145,17 @@ class Category extends CI_Controller
     );
 
     $this->CategoryModel->DeleteCategory($dataDelete);
+
+    $item = $this->CategoryModel->LogDelete($idDelete);
+
+    $LogDelete = array(
+      'logProductProfileId' => $_SESSION['adminId'],
+      'logProductStatus' => 'ลบ',
+      'logProductType' => 'ประเภทสินค้า',
+      'logProductItem' => $item[0]['cateName'],
+    );
+
+    $this->LogModel->LogProduct($LogDelete);
 
     echo "<script>alert('ลบประเภทสินค้าสำเร็จ')</script>";
     echo "<script>history.go(-1)</script>";

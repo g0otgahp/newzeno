@@ -63,6 +63,16 @@ class Group extends CI_Controller
       // exit();
 
       $this->GroupModel->UpdateGroup($GroupData);
+
+      $LogUpdate = array(
+        'logProductProfileId' => $_SESSION['adminId'],
+        'logProductStatus' => 'แก้ไข',
+        'logProductType' => 'กลุ่มสินค้า',
+        'logProductItem' => $GroupData['categroupName'],
+      );
+
+      $this->LogModel->LogProduct($LogUpdate);
+
       echo "<script>alert('แก้ไขกลุ่มประเภทสินค้าเรียบร้อย')</script>";
       echo "<script>document.location=('".SITE_URL('Admin/Group')."')</script>";
 
@@ -71,7 +81,17 @@ class Group extends CI_Controller
 
       // echo "SavePosition";
 
-      $this->GroupModel->SaveGroup($GroupData);
+      $id = $this->GroupModel->SaveGroup($GroupData);
+
+      $LogInsert = array(
+        'logProductProfileId' => $_SESSION['adminId'],
+        'logProductStatus' => 'เพิ่ม',
+        'logProductType' => 'กลุ่มสินค้า',
+        'logProductItem' => $GroupData['categroupName'],
+      );
+
+      $this->LogModel->LogProduct($LogInsert);
+
       echo "<script>alert('บันทึกกลุ่มประเภทสินค้าเรียบร้อย')</script>";
       echo "<script>document.location=('".SITE_URL('Admin/Group')."')</script>";
 
@@ -94,6 +114,17 @@ class Group extends CI_Controller
     );
 
     $this->GroupModel->UpdateGroup($GroupData);
+
+    $item = $this->GroupModel->LogDelete($GroupId);
+
+    $LogDelete = array(
+      'logProductProfileId' => $_SESSION['adminId'],
+      'logProductStatus' => 'ลบ',
+      'logProductType' => 'กลุ่มสินค้า',
+      'logProductItem' => $item[0]['categroupName'],
+    );
+
+    $this->LogModel->LogProduct($LogDelete);
 
     echo "<script>alert('ลบกลุ่มประเภทสินค้าเรียบร้อย')</script>";
     echo "<script>document.location=('".SITE_URL('Admin/Group')."')</script>";

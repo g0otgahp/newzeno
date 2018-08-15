@@ -52,11 +52,7 @@ class TitleGroupModel extends CI_Model
   {
 
     $this->db->insert('catetitle',$TitleGroupData);
-    //
-    // echo "<pre>";
-    // print_r($GroupData);
-    // exit();
-
+    
   }
 
   public function UpdateTitleGroup($GroupData)
@@ -70,8 +66,16 @@ class TitleGroupModel extends CI_Model
     ->where('catetitleId',$GroupData['catetitleId'])
     ->update('catetitle',$GroupData);
 
+  }
 
+  public function LogDelete($GroupId)
+  {
+    $item = $this->db
+    ->where('catetitleId',$GroupId)
+    ->get('catetitle')
+    ->result_array();
 
+    return $item;
   }
 
 

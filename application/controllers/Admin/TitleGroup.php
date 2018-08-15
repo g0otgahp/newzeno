@@ -60,6 +60,16 @@ class TitleGroup extends CI_Controller
       // exit();
 
       $this->TitleGroupModel->UpdateTitleGroup($TitleGroupData);
+
+      $LogUpdate = array(
+        'logProductProfileId' => $_SESSION['adminId'],
+        'logProductStatus' => 'แก้ไข',
+        'logProductType' => 'หัวข้อสินค้า',
+        'logProductItem' => $TitleGroupData['catetitleName'],
+      );
+
+      $this->LogModel->LogProduct($LogUpdate);
+
       echo "<script>alert('แก้ไขหัวข้อสินค้าเรียบร้อย')</script>";
       echo "<script>document.location=('".SITE_URL('Admin/TitleGroup')."')</script>";
 
@@ -68,13 +78,21 @@ class TitleGroup extends CI_Controller
 
       // echo "SavePosition";
 
-      $this->TitleGroupModel->SaveTitleGroup($TitleGroupData);
+      $id = $this->TitleGroupModel->SaveTitleGroup($TitleGroupData);
+
+      $LogInsert = array(
+        'logProductProfileId' => $_SESSION['adminId'],
+        'logProductStatus' => 'เพิ่ม',
+        'logProductType' => 'หัวข้อสินค้า',
+        'logProductItem' => $TitleGroupData['catetitleName'],
+      );
+
+      $this->LogModel->LogProduct($LogInsert);
+
       echo "<script>alert('บันทึกหัวข้อสินค้าเรียบร้อย')</script>";
       echo "<script>document.location=('".SITE_URL('Admin/TitleGroup')."')</script>";
 
     }
-
-
 
   }
 
@@ -91,6 +109,17 @@ class TitleGroup extends CI_Controller
     );
 
     $this->TitleGroupModel->UpdateTitleGroup($GroupData);
+
+    $item = $this->TitleGroupModel->LogDelete($GroupId);
+
+    $LogDelete = array(
+      'logProductProfileId' => $_SESSION['adminId'],
+      'logProductStatus' => 'ลบ',
+      'logProductType' => 'หัวข้อสินค้า',
+      'logProductItem' => $item[0]['catetitleName'],
+    );
+
+    $this->LogModel->LogProduct($LogDelete);
 
     echo "<script>alert('ลบกลุ่มประเภทสินค้าเรียบร้อย')</script>";
     echo "<script>document.location=('".SITE_URL('Admin/TitleGroup')."')</script>";
