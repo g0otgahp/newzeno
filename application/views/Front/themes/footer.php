@@ -167,14 +167,14 @@
 <script src="<?php echo BASE_URL()?>assets/Back/select2-4.0.6-rc.1/dist/js/select2.min.js" type="text/javascript"></script>
 
 <!-- Imagw Zoom -->
-<script src="<?php echo BASE_URL()?>assets/Front/Plugin/ImageZoom/scripts/zoom-image.js" type="text/javascript"></script>
-<script src="<?php echo BASE_URL()?>assets/Front/Plugin/ImageZoom/scripts/main.js" type="text/javascript"></script>
+<script src="<?php echo BASE_URL()?>assets/Front/plugin/ImageZoom/scripts/zoom-image.js" type="text/javascript"></script>
+<script src="<?php echo BASE_URL()?>assets/Front/plugin/ImageZoom/scripts/main.js" type="text/javascript"></script>
 
 
 <!-- Gallery -->
 <!-- <script src="<?php echo BASE_URL()?>assets/Front/Plugin/Gallery/js/vendor/highlight/highlight.pack.js"></script> -->
-<script src="<?php echo BASE_URL()?>assets/Front/Plugin/Gallery/dist/js/jquery.desoslide.min.js"></script>
-<script src="<?php echo BASE_URL()?>assets/Front/Plugin/Gallery/js/app/demo.js"></script>
+<script src="<?php echo BASE_URL()?>assets/Front/plugin/Gallery/dist/js/jquery.desoslide.min.js"></script>
+<script src="<?php echo BASE_URL()?>assets/Front/plugin/Gallery/js/app/demo.js"></script>
 
 <script>
 

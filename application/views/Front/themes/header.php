@@ -44,10 +44,10 @@
 
   <!-- Gallery -->
   <!-- <link rel="stylesheet" href="<?php echo BASE_URL()?>assets/Front/Plugin/Gallery/css/app/main.css" /> -->
-  <link rel="stylesheet" href="<?php echo BASE_URL()?>assets/Front/Plugin/Gallery/css/app/views/demo.css" />
-  <link rel="stylesheet" href="<?php echo BASE_URL()?>assets/Front/Plugin/Gallery/css/vendor/magic/magic.min.css">
-  <link rel="stylesheet" href="<?php echo BASE_URL()?>assets/Front/Plugin/Gallery/css/vendor/animate/animate.min.css">
-  <link rel="stylesheet" href="<?php echo BASE_URL()?>assets/Front/Plugin/Gallery/dist/css/jquery.desoslide.css">
+  <link rel="stylesheet" href="<?php echo BASE_URL()?>assets/Front/plugin/Gallery/css/app/views/demo.css" />
+  <link rel="stylesheet" href="<?php echo BASE_URL()?>assets/Front/plugin/Gallery/css/vendor/magic/magic.min.css">
+  <link rel="stylesheet" href="<?php echo BASE_URL()?>assets/Front/plugin/Gallery/css/vendor/animate/animate.min.css">
+  <link rel="stylesheet" href="<?php echo BASE_URL()?>assets/Front/plugin/Gallery/dist/css/jquery.desoslide.css">
 
   <!-- <link href="<?php echo BASE_URL()?>assets/Front/Plugin/Gallery/custom.css" type="text/css" rel="stylesheet" /> -->
 
