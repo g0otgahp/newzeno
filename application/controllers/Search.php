@@ -13,6 +13,10 @@ class Search extends CI_Controller
   public function index()
   {
     $input = $this->input->post();
+    $this->debug->prevalue($input);
+
+    $this->db->insert();
+
     $Product = $this->HomepageModel->SearchProduct($input['keyword']);
     $data = array(
       'Product' => $Product,

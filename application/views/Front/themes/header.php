@@ -22,6 +22,9 @@
   <link rel="apple-touch-icon-precomposed" href="<?php echo BASE_URL()?>/assets/Front/themes/images/ico/apple-touch-icon-57-precomposed.png">
   <style type="text/css" id="enject"></style>
   <link href="https://fonts.googleapis.com/css?family=Prompt" rel="stylesheet">
+  <!-- Image Zoom -->
+  <link rel="stylesheet" href="<?php echo BASE_URL()?>assets/Front/plugin/ImageZoom/css/main.css">
+  <!-- <link rel="stylesheet" href="<?php echo BASE_URL()?>assets/Front/plugin/ImageZoom/css/jquerysctipttop.css"> -->
 
   <!-- Bootstrap Datatable -->
   <link href="<?php echo BASE_URL()?>/assets/Back/datatable-bootstrap/dataTables.bootstrap.min.css" rel="stylesheet"/>
@@ -32,14 +35,21 @@
   <!-- lightbox.css -->
   <link rel="stylesheet" href="<?php echo BASE_URL()?>assets/Front/src/css/lightbox.css">
 
-  <!-- lightbox.css -->
-  <link rel="stylesheet" href="<?php echo BASE_URL()?>assets/Front/src/css/lightbox.css">
 
   <!-- Multi-colum Menu.css -->
   <link rel="stylesheet" href="<?php echo BASE_URL()?>assets/Front/css/multi-colum.css">
 
   <!-- card.css -->
   <link rel="stylesheet" href="<?php echo BASE_URL()?>assets/Front/css/card.css">
+
+  <!-- Gallery -->
+  <!-- <link rel="stylesheet" href="<?php echo BASE_URL()?>assets/Front/Plugin/Gallery/css/app/main.css" /> -->
+  <link rel="stylesheet" href="<?php echo BASE_URL()?>assets/Front/Plugin/Gallery/css/app/views/demo.css" />
+  <link rel="stylesheet" href="<?php echo BASE_URL()?>assets/Front/Plugin/Gallery/css/vendor/magic/magic.min.css">
+  <link rel="stylesheet" href="<?php echo BASE_URL()?>assets/Front/Plugin/Gallery/css/vendor/animate/animate.min.css">
+  <link rel="stylesheet" href="<?php echo BASE_URL()?>assets/Front/Plugin/Gallery/dist/css/jquery.desoslide.css">
+
+  <!-- <link href="<?php echo BASE_URL()?>assets/Front/Plugin/Gallery/custom.css" type="text/css" rel="stylesheet" /> -->
 
   <style>
   * , span , td , p , a , label , button {

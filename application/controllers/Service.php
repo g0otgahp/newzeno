@@ -21,4 +21,8 @@ class Service extends CI_Controller
         $this->load->view('Front/Service',$data);
         $this->load->view('Front/themes/footer');
     }
+
+    public function LoadCon(){
+      echo "โหลด Controller ตัวอื่น";
+    }
 }
