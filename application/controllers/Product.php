@@ -61,7 +61,7 @@ class Product extends CI_Controller
     $input = $this->input->post();
     $groupId = $this->uri->segment(3);
     $cateId = $this->uri->segment(4);
-    if (isset($input['catebox']) || isset($input['brandbox']) || isset($input['sortbyprice']) ||  $input['min'] != '' || $input['max'] != '') {
+    if (isset($input['catebox']) || isset($input['brandbox']) || isset($input['sortbyprice']) ||  $input['min'] != '' || $input['max'] != '' || $input['wordsearch'] != '') {
 
     $GroupSelect = $this->GroupModel->SelectGroupById($groupId);
     $CateSelect = $this->CategoryModel->SelectCategoryById($cateId);

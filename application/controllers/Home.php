@@ -56,7 +56,7 @@ class Home extends CI_Controller
     $input = $this->input->post();
     $groupId = $this->uri->segment(3);
     $cateId = 0;
-    if (isset($input['catebox']) || isset($input['brandbox']) || isset($input['sortbyprice']) ||  $input['min'] != '' || $input['max'] != '') {
+    if (isset($input['catebox']) || isset($input['brandbox']) || isset($input['sortbyprice']) ||  $input['min'] != '' || $input['max'] != '' || $input['wordsearch'] != '') {
       $GroupSelect = $this->GroupModel->SelectGroupById($groupId);
       if (count($GroupSelect) == 0) {
         echo "<script>alert('เกิดข้อพิดพลาด ไม่พบสิ่งที่คุณต้องการ')</script>";

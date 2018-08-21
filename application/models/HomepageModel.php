@@ -165,6 +165,10 @@ class HomepageModel extends CI_Model
     $this->db->where('brandStatus',1);
     $this->db->where('categroupStatus',1);
 
+    if ($input['wordsearch'] != '') {
+      $this->db->where('product.productName LIKE',"%".$input['wordsearch']."%");
+    }
+
     if (isset($input['catebox'])) {
           $this->db->where_in('product.productCateid',$input['catebox']);
     }

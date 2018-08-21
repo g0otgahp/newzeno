@@ -6,6 +6,12 @@
       <!-- <div class="well well-small"><a id="myCart" href="#"><img src="<?php echo BASE_URL()?>/assets/themes/images/ico-cart.png" alt="cart">3 Items in your cart  <span class="badge badge-warning pull-right">$155.00</span></a></div> -->
       <ul id="productlist" class="nav nav-tabs nav-stacked">
         <?php echo form_open('Product/ShowProductFind/'.$GroupSelect[0]['categroupId']."/".$CateSelect[0]['cateId']."#productlist"); ?>
+        <div class="form-check">
+          <h4><b>ค้นหา</b></h4>
+          <p>
+            <input style="padding:15px;" class="form-control" type="text" name="wordsearch" placeholder="ค้นหาชื่อสินค้า" value="<?php echo @$keyword['wordsearch'] ?>">
+          </p>
+        </div>
         <?php if (count($CateBrand['sortby']) >0): ?>
           <div class="form-check">
             <h4><b>เรียงราคา</b></h4>
