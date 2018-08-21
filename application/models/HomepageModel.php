@@ -166,32 +166,11 @@ class HomepageModel extends CI_Model
     $this->db->where('categroupStatus',1);
 
     if (isset($input['catebox'])) {
-
-      $icate = 0;
-      foreach ($input['catebox'] as $catebox) {
-        if ($icate == 0) {
-          $this->db->where('product.productCateid',$catebox);
-        } else {
-          $this->db->or_where('product.productCateid',$catebox);
-        }
-        $icate++;
-      }
-    } else {
-      if ($cateId != 0){
-        $this->db->where('product.productCateid',$cateId);
-      }
+          $this->db->where_in('product.productCateid',$input['catebox']);
     }
 
     if (isset($input['brandbox'])) {
-      $ibrand = 0;
-      foreach ($input['brandbox'] as $brandbox) {
-        if ($ibrand == 0) {
-          $this->db->where('product.productBrandid',$brandbox);
-        } else {
-          $this->db->or_where('product.productBrandid',$brandbox);
-        }
-        $ibrand++;
-      }
+          $this->db->where_in('product.productBrandid',$input['brandbox']);
     }
 
     if ($input['min'] != '') {
