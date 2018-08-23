@@ -107,7 +107,7 @@ if ($num > 0):
                     <hr class="soft"/>
                   <?php endif; ?>
                 </div>
-              <?php if ($value != 1): ?>
+              <!-- <?php if ($value != 1): ?> -->
                 <!-- <div class="pagination">
                   <ul>
                     <li><a href="#" class="colorTagA">&lsaquo;</a></li>
@@ -120,12 +120,17 @@ if ($num > 0):
                   </ul>
                 </div>
                 <br class="clr"/> -->
-              <?php endif; ?>
+              <!-- <?php endif; ?> -->
+
+
         <?php endif; ?>
+      </div>
         <?php $new = 0; ?>
+
+
         <!-- End Block Style -->
 
-
+        <?php if ($new != 0): ?>
         <!-- DataTable Style -->
             <div class="tab-pane" id="tableView">
             <ul class="thumbnails" style="margin:auto; display:block;">
@@ -163,10 +168,7 @@ if ($num > 0):
                   </div>
                     </ul>
               </div>
-            </div>
+            <?php endif; ?>
           </div>
         </div>
-      </div>
-      </div>
-    </div>
       <!-- End DataTable Style -->
