@@ -144,11 +144,13 @@ if ($num > 0):
                         <?php $i = 1; foreach ($Preview as $table): ?>
                         <tr>
                           <td align="left">
+                            <a class="example-image-link" href="<?php echo BASE_URL('uploads/Products/'.$table['productImg']); ?>" data-lightbox="example-set">
                             <img class="img-thumbnail" src="<?php echo BASE_URL('uploads/Products/'.$table['productImg']); ?>" width="50px;" style="margin:auto; display:block;"/>
+                          </a>
                           </td>
                           <td><?php echo $table['productName'];?></td>
-                          <td><?php echo $table['productSubdetail1']." <b>/</b> ".$table['productSubdetail2']." <b>/</b> ".$table['productSubdetail3']." <b>/</b> ".$table['productSubdetail4']." <b>/</b> ".$table['productSubdetail5']." <b>/</b> ".$table['productSubdetail6'] ?></td>
-                          <td><b><?php echo number_format($table['productPrice']) ?></b></td>
+                          <td style="font-size:11px;"><?php echo $table['productSubdetail1']." <b>/</b> ".$table['productSubdetail2']." <b>/</b> ".$table['productSubdetail3']." <b>/</b> ".$table['productSubdetail4']." <b>/</b> ".$table['productSubdetail5']." <b>/</b> ".$table['productSubdetail6'] ?></td>
+                          <td align="right" style="color:gray;"><b><?php echo number_format($table['productPrice']) ?></b></td>
                           <td>
                             <a href="<?php echo SITE_URL('Product/ProductDetail/'.$table['categroupId']."/".$table['cateId']."/".$table['productId']); ?>" class="btn btn-primary btn-xs">
                               รายละเอียด
