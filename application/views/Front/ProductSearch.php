@@ -15,6 +15,7 @@
     <div id="myTab" class="pull-right" >
       <a href="#blockView" data-toggle="tab" class="btn btn-xs btn-default"><i class="icon-th-large" style="margin-top:5px;"></i></a>
       <a href="#listView" data-toggle="tab" class="btn btn-xs btn-default"><i class="icon-list" style="margin-top:5px;"></i></a>
+      <a href="#tableView" data-toggle="tab" class="btn btn-xs btn-default"><i class="icon-list-alt" style="margin-top:5px;"></i></a>
     </div>
   </ul>
 

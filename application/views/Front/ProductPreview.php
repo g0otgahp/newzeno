@@ -5,7 +5,7 @@ $num = count($Preview);
 if ($num > 0):
   ?>
 
-  <!-- Table Style -->
+  <!-- list Style -->
   <div class="tab-content">
     <?php if ($new == 1): ?>
       <div class="tab-pane" id="newlistView">
@@ -51,7 +51,7 @@ if ($num > 0):
               <hr class="soft"/>
             <?php endif; ?>
           </div>
-          <!-- End Table Style -->
+          <!-- End list Style -->
 
 
           <!-- Block Style -->
@@ -102,15 +102,13 @@ if ($num > 0):
                     <?php endif; ?>
                     <?php $i++; endforeach; $block = array();?>
                   </ul>
-                  <!-- End Block Style -->
                   <?php if ($value == 1): ?>
                     <li class="pull-right"><a href="#" style="color:blue;" >ดูทั้งหมด</a><i class="icon-arrow-right"></i></li>
                     <hr class="soft"/>
                   <?php endif; ?>
                 </div>
-              </div>
               <?php if ($value != 1): ?>
-                <div class="pagination">
+                <!-- <div class="pagination">
                   <ul>
                     <li><a href="#" class="colorTagA">&lsaquo;</a></li>
                     <li><a href="#" class="colorTagA">1</a></li>
@@ -121,9 +119,52 @@ if ($num > 0):
                     <li><a href="#" class="colorTagA">&rsaquo;</a></li>
                   </ul>
                 </div>
-                <br class="clr"/>
+                <br class="clr"/> -->
               <?php endif; ?>
-            </div>
-          </div>
         <?php endif; ?>
         <?php $new = 0; ?>
+        <!-- End Block Style -->
+
+
+        <!-- DataTable Style -->
+            <div class="tab-pane" id="tableView">
+            <ul class="thumbnails" style="margin:auto; display:block;">
+                  <div class="col-xs-12 col-md-12 col-sm-12" style="padding-left:5px;">
+                    <table class="table table-hover dataTable">
+                      <thead>
+                        <tr>
+                          <th width="5%">รูปภาพ</th>
+                          <th width="30%">ชื่อสินค้า</th>
+                          <th width="35%">รายละเอียด</th>
+                          <th width="20%">ราคา</th>
+                          <th width="10%">ตัวเลือก</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <?php $i = 1; foreach ($Preview as $table): ?>
+                        <tr>
+                          <td align="left">
+                            <img class="img-thumbnail" src="<?php echo BASE_URL('uploads/Products/'.$table['productImg']); ?>" width="50px;" style="margin:auto; display:block;"/>
+                          </td>
+                          <td><?php echo $table['productName'];?></td>
+                          <td><?php echo $table['productSubdetail1']." <b>/</b> ".$table['productSubdetail2']." <b>/</b> ".$table['productSubdetail3']." <b>/</b> ".$table['productSubdetail4']." <b>/</b> ".$table['productSubdetail5']." <b>/</b> ".$table['productSubdetail6'] ?></td>
+                          <td><b><?php echo number_format($table['productPrice']) ?></b></td>
+                          <td>
+                            <a href="<?php echo SITE_URL('Product/ProductDetail/'.$table['categroupId']."/".$table['cateId']."/".$table['productId']); ?>" class="btn btn-primary btn-xs">
+                              รายละเอียด
+                            </a>
+                          </td>
+                        </tr>
+                        <?php endforeach; ?>
+                      </tbody>
+                    </table>
+                  </div>
+                    </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+      <!-- End DataTable Style -->

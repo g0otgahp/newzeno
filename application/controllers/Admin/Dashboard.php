@@ -24,7 +24,6 @@ public function LoadPage($value)
 
 public function index()
 {
-
   $dataLogProduct = $this->DashboardModel->SelectLogProduct();
   $dataLogLogin = $this->DashboardModel->SelectLogLogin();
   // $this->debug->log($dataLogProduct);

@@ -176,6 +176,10 @@
 <script src="<?php echo BASE_URL()?>assets/Front/plugin/Gallery/dist/js/jquery.desoslide.min.js"></script>
 <script src="<?php echo BASE_URL()?>assets/Front/plugin/Gallery/js/app/demo.js"></script>
 
+<!-- Bootstrap DataTable -->
+<script src="<?php echo BASE_URL()?>/assets/Back/datatable-bootstrap/jquery.dataTables.min.js" type="text/javascript"></script>
+<script src="<?php echo BASE_URL()?>/assets/Back/datatable-bootstrap/dataTables.bootstrap.min.js" type="text/javascript"></script>
+
 <script>
 
 //Select

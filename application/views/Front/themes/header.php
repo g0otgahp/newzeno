@@ -51,6 +51,9 @@
 
   <!-- <link href="<?php echo BASE_URL()?>assets/Front/Plugin/Gallery/custom.css" type="text/css" rel="stylesheet" /> -->
 
+  <!-- Bootstrap Datatable -->
+	<link href="<?php echo BASE_URL()?>/assets/Back/datatable-bootstrap/dataTables.bootstrap.min.css" rel="stylesheet"/>
+
   <style>
   * , span , td , p , a , label , button {
     font-family: 'Prompt', sans-serif;

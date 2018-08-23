@@ -12,6 +12,23 @@ class Home extends CI_Controller
 
   public function index()
   {
+    // $data1 = array(
+    //   "1",
+    //   "3",
+    //   "3",
+    //   "3",
+    //   "4",
+    //   "4",
+    //   "9",
+    //   "9",
+    // );
+    // $result = array_unique($data1);
+    // $query = $this->db->where_in('cateId',$result)->get('category')->result_array();
+    // echo "<pre>";
+    // print_r($result);
+    // echo "<br>";
+    // print_r($query);
+    // exit();
     $Product = $this->HomepageModel->SelectProductRecommend();
     $NewProduct = $this->HomepageModel->SelectProductNew();
     $data = array(

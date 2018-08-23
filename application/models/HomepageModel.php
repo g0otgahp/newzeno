@@ -138,6 +138,7 @@ class HomepageModel extends CI_Model
     ->join('categroup','categroup.categroupId = product.productGroupid')
     ->get('product')
     ->result_array();
+
     return $data;
   }
 
@@ -154,7 +155,6 @@ class HomepageModel extends CI_Model
     ->join('categroup','categroup.categroupId = product.productGroupid')
     ->get('product')
     ->result_array();
-
     return $data;
   }
 
