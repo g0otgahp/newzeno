@@ -22,7 +22,6 @@ class Category extends CI_Controller
     $this->load->view('Back/themes/footer');
     $this->load->view('Back/CategoryForm');
     $this->load->view('Back/CategoryUpdate');
-    $this->load->view('Back/CategoryConnect');
   }
 
   public function index()
@@ -71,33 +70,6 @@ class Category extends CI_Controller
 
     echo "<script>alert('เพิ่มประเภทสินค้าสำเร็จ')</script>";
     echo "<script>window.location='".SITE_URL('Admin/Category')."'</script>";
-  }
-
-  public function ConnectBrand()
-  {
-    $input = $this->input->post();
-    if (!empty($input['checkBrand'])) {
-      $i = 0;
-      foreach ($input['checkBrand'] as $row) {
-        $ConnectBrand[$i] = array(
-          'SortbyCateid' => $input['cateId'],
-          'SortbyBrandid' => $row,
-          'editId' => $_SESSION['adminId']
-        );
-        $i++;
-      }
-    }
-
-    if(!empty($ConnectBrand)){
-      $this->CategoryModel->DeleteSortby($input['cateId']);
-      $this->CategoryModel->InsertSortby($ConnectBrand);
-      echo "<script>alert('เชื่อมความสัมพันธ์เสร็จสิ้น')</script>";
-      echo "<script>history.go(-1)</script>";
-    } else {
-      $this->CategoryModel->DeleteSortby($input['cateId']);
-      echo "<script>alert('ไม่มีการเชื่อมสัมพันธ์')</script>";
-      echo "<script>history.go(-1)</script>";
-    }
   }
 
   public function UpdateCategory()

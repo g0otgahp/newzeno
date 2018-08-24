@@ -12,23 +12,6 @@ class Home extends CI_Controller
 
   public function index()
   {
-    // $data1 = array(
-    //   "1",
-    //   "3",
-    //   "3",
-    //   "3",
-    //   "4",
-    //   "4",
-    //   "9",
-    //   "9",
-    // );
-    // $result = array_unique($data1);
-    // $query = $this->db->where_in('cateId',$result)->get('category')->result_array();
-    // echo "<pre>";
-    // print_r($result);
-    // echo "<br>";
-    // print_r($query);
-    // exit();
     $Product = $this->HomepageModel->SelectProductRecommend();
     $NewProduct = $this->HomepageModel->SelectProductNew();
     $data = array(
@@ -43,23 +26,20 @@ class Home extends CI_Controller
 
   public function CategoryHome()
   {
-    $cateId = $this->uri->segment(3);
-    $GroupSelect = $this->GroupModel->SelectGroupById($cateId);
+    $GroupId = $this->uri->segment(3);
+    $GroupSelect = $this->GroupModel->SelectGroupById($GroupId);
     if (count($GroupSelect) == 0) {
       echo "<script>alert('เกิดข้อพิดพลาด ไม่พบสิ่งที่คุณต้องการ')</script>";
       echo "<script>document.location='" . SITE_URL('Home') . "'</script>";
       exit();
     }
-    $Category = $this->CategoryModel->HomeCategory($cateId);
-    $Product = $this->HomepageModel->SelectProductByGroup($cateId);
-    $Brand = $this->BrandModel->SelectBrand($cateId);
-
+    $Product = $this->HomepageModel->SelectProductByGroup($GroupId);
+    $Filter = $this->HomepageModel->FilterGroup($GroupId);
 
     $data = array(
       'Product' => $Product,
-      'Category' => $Category,
       'GroupSelect' => $GroupSelect,
-      'Brand' => $Brand,
+      'Filter' => $Filter,
     );
 
     $this->load->view('Front/themes/filter',$data);
@@ -73,24 +53,22 @@ class Home extends CI_Controller
     $input = $this->input->post();
     $groupId = $this->uri->segment(3);
     $cateId = 0;
-    if (isset($input['catebox']) || isset($input['brandbox']) || isset($input['sortbyprice']) ||  $input['min'] != '' || $input['max'] != '' || $input['wordsearch'] != '') {
+    if (isset($input['catebox']) || isset($input['brandbox']) || isset($input['sortbyprice']) || isset($input['resolution']) || isset($input['tech']) || isset($input['Size']) ||  $input['min'] != '' || $input['max'] != '' || $input['wordsearch'] != '') {
       $GroupSelect = $this->GroupModel->SelectGroupById($groupId);
       if (count($GroupSelect) == 0) {
         echo "<script>alert('เกิดข้อพิดพลาด ไม่พบสิ่งที่คุณต้องการ')</script>";
         echo "<script>document.location='" . SITE_URL('Home') . "'</script>";
         exit();
       }
-      $Category = $this->CategoryModel->HomeCategory($groupId);
       $Product = $this->HomepageModel->SelectProductByFind($input,$groupId,$cateId);
-      $Brand = $this->BrandModel->SelectBrand($groupId);
+      $Filter = $this->HomepageModel->FilterGroup($groupId);
       $keyword = $input;
-
       $data = array(
         'Product' => $Product,
-        'Category' => $Category,
         'GroupSelect' => $GroupSelect,
-        'Brand' => $Brand,
         'keyword' => $keyword,
+        'Filter' => $Filter,
+
       );
 
       $this->load->view('Front/themes/filter',$data);

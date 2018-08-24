@@ -125,14 +125,14 @@ class HomepageModel extends CI_Model
     return $data;
   }
 
-  public function SelectProductByGroup($cateId)
+  public function SelectProductByGroup($GroupId)
   {
     $data = $this->db
     ->where('productStatus',1)
     ->where('cateStatus',1)
     ->where('brandStatus',1)
     ->where('categroupStatus',1)
-    ->where('product.productGroupid',$cateId)
+    ->where('product.productGroupid',$GroupId)
     ->join('brand','brand.brandId = product.productBrandid')
     ->join('category','category.CateId = product.productCateid')
     ->join('categroup','categroup.categroupId = product.productGroupid')
@@ -140,6 +140,79 @@ class HomepageModel extends CI_Model
     ->result_array();
 
     return $data;
+  }
+
+  public function FilterGroup($GroupId)
+  {
+    $data = $this->db
+    ->select('product.productBrandid , product.productCateid , product.productResolution , product.productTechId , product.productSizeId')
+    ->where('productStatus',1)
+    ->where('cateStatus',1)
+    ->where('brandStatus',1)
+    ->where('categroupStatus',1)
+    ->where('product.productGroupid',$GroupId)
+    ->join('brand','brand.brandId = product.productBrandid')
+    ->join('category','category.CateId = product.productCateid')
+    ->join('categroup','categroup.categroupId = product.productGroupid')
+    ->get('product')
+    ->result_array();
+    // $this->debug->log($data);
+
+    // Filter Category
+    $filter['Category'] = $this->SelectFilter($data,'productCateid','cateId','category');
+    // Filter Brand
+    $filter['Brand'] = $this->SelectFilter($data,'productBrandid','brandId','brand');
+    // Filter Reolution
+    $filter['Resolution'] = $this->SelectFilter($data,'productResolution','resolutionId','resolution');
+    // Filter Reolution
+    $filter['Tech'] = $this->SelectFilter($data,'productTechId','techId','technology');
+    // Filter Reolution
+    $filter['Size'] = $this->SelectFilter($data,'productSizeId','SizeId','size');
+
+    // $this->debug->log($filter);
+    return $filter;
+  }
+
+  public function FilterCate($CateId)
+  {
+    $data = $this->db
+    ->select('product.productBrandid , product.productResolution , product.productTechId , product.productSizeId')
+    ->where('productStatus',1)
+    ->where('cateStatus',1)
+    ->where('brandStatus',1)
+    ->where('categroupStatus',1)
+    ->where('product.productCateid',$CateId)
+    ->join('brand','brand.brandId = product.productBrandid')
+    ->join('category','category.CateId = product.productCateid')
+    ->join('categroup','categroup.categroupId = product.productGroupid')
+    ->get('product')
+    ->result_array();
+
+    // Filter Brand
+    $filter['Brand'] = $this->SelectFilter($data,'productBrandid','brandId','brand');
+    // Filter Reolution
+    $filter['Resolution'] = $this->SelectFilter($data,'productResolution','resolutionId','resolution');
+    // Filter Reolution
+    $filter['Tech'] = $this->SelectFilter($data,'productTechId','techId','technology');
+    // Filter Reolution
+    $filter['Size'] = $this->SelectFilter($data,'productSizeId','SizeId','size');
+
+    // $this->debug->log($filter);
+    return $filter;
+  }
+
+  public function SelectFilter($data,$array,$field,$table)
+  {
+    $where = [];
+    foreach ($data as $key) {
+      if ($key[$array] != NULL) {
+        array_push($where,$key[$array]);
+      }
+    }
+    if (!empty($where)) {
+      $result = $this->db->where_in($field,$where)->get($table)->result_array();
+      return $result;
+    }
   }
 
   public function SelectProductByCate($cateId)
@@ -170,11 +243,23 @@ class HomepageModel extends CI_Model
     }
 
     if (isset($input['catebox'])) {
-          $this->db->where_in('product.productCateid',$input['catebox']);
+      $this->db->where_in('product.productCateid',$input['catebox']);
     }
 
     if (isset($input['brandbox'])) {
-          $this->db->where_in('product.productBrandid',$input['brandbox']);
+      $this->db->where_in('product.productBrandid',$input['brandbox']);
+    }
+
+    if (isset($input['resulotion'])) {
+      $this->db->where_in('product.productResolution',$input['resulotion']);
+    }
+
+    if (isset($input['tech'])) {
+      $this->db->where_in('product.productTechId',$input['tech']);
+    }
+
+    if (isset($input['size'])) {
+      $this->db->where_in('product.productSizeId',$input['size']);
     }
 
     if ($input['min'] != '') {
@@ -188,8 +273,11 @@ class HomepageModel extends CI_Model
     if (isset($input['sortbyprice'])) {
       $this->db->order_by('product.productPrice',$input['sortbyprice']);
     }
-
-    $this->db->where('product.productGroupid',$groupId);
+    if ($cateId == 0) {
+      $this->db->where('product.productGroupid',$groupId);
+    } else {
+      $this->db->where('product.productCateid',$cateId);
+    }
     $this->db->join('brand','brand.brandId = product.productBrandid');
     $this->db->join('category','category.CateId = product.productCateid');
     $this->db->join('categroup','categroup.categroupId = product.productGroupid');

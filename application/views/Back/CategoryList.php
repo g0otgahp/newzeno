@@ -23,12 +23,7 @@
                   <td><img src="<?php echo BASE_URL('uploads/Categorys/'.$dataShow['cateImg']); ?>" height="50px" width="50px"></td>
                   <td><?php echo $dataShow['cateName'] ?></td>
                   <td>
-
-                    <button class="btn btn-info"
-                    data-toggle="modal"
-                    data-target="#ConnectCategory<?php echo $dataShow['cateId'] ?>">เชื่อมสัมพัมธ์
-                    </button>
-
+                    
                     <button class="btn btn-warning"
                     data-toggle="modal"
                     data-target="#UpdateCategory<?php echo $dataShow['cateId'] ?>">แก้ไข

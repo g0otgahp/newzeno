@@ -30,13 +30,12 @@ class Product extends CI_Controller
 
   public function ShowProduct()
   {
-    $cateId = $this->uri->segment(3);
-    $Id = $this->uri->segment(4);
-    $GroupSelect = $this->GroupModel->SelectGroupById($cateId);
-    $CateSelect = $this->CategoryModel->SelectCategoryById($Id);
-    $Product = $this->HomepageModel->SelectProductByCate($Id);
-    $CateBrand = $this->CategoryModel->SelectBrandByCate($Id);
-
+    $GroupId = $this->uri->segment(3);
+    $CateId = $this->uri->segment(4);
+    $GroupSelect = $this->GroupModel->SelectGroupById($GroupId);
+    $CateSelect = $this->CategoryModel->SelectCategoryById($CateId);
+    $Product = $this->HomepageModel->SelectProductByCate($CateId);
+    $Filter = $this->HomepageModel->FilterCate($CateId);
     if (count($GroupSelect) == 0 || count($CateSelect) == 0) {
       echo "<script>alert('เกิดข้อพิดพลาด ไม่พบสิ่งที่คุณต้องการ')</script>";
       echo "<script>document.location='" . SITE_URL('Home') . "'</script>";
@@ -47,10 +46,10 @@ class Product extends CI_Controller
       'Product' => $Product,
       'GroupSelect' => $GroupSelect,
       'CateSelect' => $CateSelect,
-      'CateBrand' => $CateBrand,
+      'Filter' => $Filter,
     );
 
-    $this->load->view('Front/themes/filterCate',$data);
+    $this->load->view('Front/themes/filter',$data);
     // $this->load->view('Front/themes/menu');
     $this->load->view('Front/ProductList');
     $this->load->view('Front/themes/footer');
@@ -59,14 +58,14 @@ class Product extends CI_Controller
   public function ShowProductFind()
   {
     $input = $this->input->post();
-    $groupId = $this->uri->segment(3);
-    $cateId = $this->uri->segment(4);
-    if (isset($input['catebox']) || isset($input['brandbox']) || isset($input['sortbyprice']) ||  $input['min'] != '' || $input['max'] != '' || $input['wordsearch'] != '') {
+    $GroupId = $this->uri->segment(3);
+    $CateId = $this->uri->segment(4);
+    if (isset($input['catebox']) || isset($input['brandbox']) || isset($input['sortbyprice']) || isset($input['resolution']) || isset($input['tech']) || isset($input['Size']) ||  $input['min'] != '' || $input['max'] != '' || $input['wordsearch'] != '') {
 
-    $GroupSelect = $this->GroupModel->SelectGroupById($groupId);
-    $CateSelect = $this->CategoryModel->SelectCategoryById($cateId);
-    $Product = $this->HomepageModel->SelectProductByFind($input,$groupId,$cateId);
-    $CateBrand = $this->CategoryModel->SelectBrandByCate($cateId);
+    $GroupSelect = $this->GroupModel->SelectGroupById($GroupId);
+    $CateSelect = $this->CategoryModel->SelectCategoryById($CateId);
+    $Product = $this->HomepageModel->SelectProductByFind($input,$GroupId,$CateId);
+    $Filter = $this->HomepageModel->FilterCate($CateId);
     $keyword = $input;
 
     if (count($GroupSelect) == 0 || count($CateSelect) == 0) {
@@ -79,11 +78,11 @@ class Product extends CI_Controller
       'Product' => $Product,
       'GroupSelect' => $GroupSelect,
       'CateSelect' => $CateSelect,
-      'CateBrand' => $CateBrand,
       'keyword' => $keyword,
+      'Filter' => $Filter,
     );
 
-    $this->load->view('Front/themes/filterCate',$data);
+    $this->load->view('Front/themes/filter',$data);
     // $this->load->view('Front/themes/menu');
     $this->load->view('Front/ProductList');
     $this->load->view('Front/themes/footer');

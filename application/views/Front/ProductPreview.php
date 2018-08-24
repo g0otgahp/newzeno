@@ -121,16 +121,13 @@ if ($num > 0):
                 </div>
                 <br class="clr"/> -->
               <!-- <?php endif; ?> -->
-
-
         <?php endif; ?>
-      </div>
-        <?php $new = 0; ?>
 
 
         <!-- End Block Style -->
+        <?php if ($new != 1): ?>
+          <?php if (count($Preview) != 0): ?>
 
-        <?php if ($new != 0): ?>
         <!-- DataTable Style -->
             <div class="tab-pane" id="tableView">
             <ul class="thumbnails" style="margin:auto; display:block;">
@@ -168,7 +165,13 @@ if ($num > 0):
                   </div>
                     </ul>
               </div>
+            <?php else: ?>
+              <center>
+                <img src="<?php echo BASE_URL('uploads/Logo/Icon-Search-1.png'); ?>" width="20%">
+                <h3>ไม่พบรายการ</h3>
+              </center>
             <?php endif; ?>
+            <?php endif; ?>
+            <?php $new = 0; ?>
           </div>
-        </div>
       <!-- End DataTable Style -->
