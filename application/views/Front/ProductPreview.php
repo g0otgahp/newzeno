@@ -135,11 +135,12 @@ if ($num > 0):
                     <table class="table table-hover dataTable">
                       <thead>
                         <tr>
-                          <th width="5%">รูปภาพ</th>
-                          <th width="30%">ชื่อสินค้า</th>
-                          <th width="35%">รายละเอียด</th>
-                          <th width="20%">ราคา</th>
-                          <th width="10%">ตัวเลือก</th>
+                          <th width="3%">รูปภาพ</th>
+                          <th width="16%">ชื่อสินค้า</th>
+                          <th width="16%">แบรนด์</th>
+                          <th width="40%">รายละเอียด</th>
+                          <th width="18%">ราคา</th>
+                          <th width="5%">ตัวเลือก</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -151,6 +152,7 @@ if ($num > 0):
                           </a>
                           </td>
                           <td><?php echo $table['productName'];?></td>
+                          <td><?php echo $table['brandName'];?></td>
                           <td style="font-size:11px;"><?php echo $table['productSubdetail1']." <b>/</b> ".$table['productSubdetail2']." <b>/</b> ".$table['productSubdetail3']." <b>/</b> ".$table['productSubdetail4']." <b>/</b> ".$table['productSubdetail5']." <b>/</b> ".$table['productSubdetail6'] ?></td>
                           <td align="right" style="color:gray;"><b><?php echo number_format($table['productPrice']) ?></b></td>
                           <td>

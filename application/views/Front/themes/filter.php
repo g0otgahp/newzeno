@@ -16,43 +16,6 @@
               <input style="padding:15px;" class="form-control" type="text" name="wordsearch" placeholder="ค้นหาชื่อสินค้า" value="<?php echo @$keyword['wordsearch'] ?>">
             </p>
           </div>
-          <div class="form-check">
-            <h4><b>เรียงราคา</b></h4>
-            <p>
-              <select name="sortbyprice" class="form-control">
-                <option value="">-เลือกเรียงราคา-</option>
-                <option value="DESC" <?php if (@$keyword['sortbyprice'] == "DESC") {
-                  echo "selected";
-                } ?> >เรียงราคา สูง > ต่ำ</option>
-                <option value="ASC" <?php if (@$keyword['sortbyprice'] == "ASC") {
-                  echo "selected";
-                } ?>>เรียงราคา ต่ำ > สูง</option>
-              </select>
-            </p>
-          </div>
-
-          <!-- Category -->
-          <?php if (!empty($Filter['Category'])): ?>
-          <hr>
-          <div class="form-check">
-            <h4><b>ประเภทสินค้า</b></h4>
-              <?php foreach ($Filter['Category'] as $key1): ?>
-              <p>
-                <input class="form-check-input" type="checkbox" name="catebox[]" value="<?php echo $key1['cateId'] ?>"
-                style="margin-bottom:5px;" id="Category<?php echo $key1['cateId'] ?>"
-                <?php if (isset($keyword['catebox'])): ?>
-                  <?php foreach ($keyword['catebox'] as $check): ?>
-                    <?php if ($check == $key1['cateId']): ?>
-                      <?php echo "checked"; ?>
-                    <?php endif; ?>
-                  <?php endforeach; ?>
-                <?php endif; ?>
-                >
-                <label for="Category<?php echo $key1['cateId'] ?>"><?php echo $key1['cateName'] ?></label>
-              </p>
-            <?php endforeach; ?>
-          </div>
-        <?php endif; ?>
 
           <!-- Brand -->
           <?php if (!empty($Filter['Brand'])): ?>
@@ -72,29 +35,6 @@
                 <?php endif; ?>
                 >
                 <label for="brand<?php echo $key2['brandId'] ?>"><?php echo $key2['brandName'] ?></label>
-              </p>
-            <?php endforeach; ?>
-          </div>
-        <?php endif; ?>
-
-          <!-- Resulotion -->
-          <?php if (!empty($Filter['Resolution'])): ?>
-          <hr>
-          <div class="form-check">
-            <h4><b>ความละเอียด</b></h4>
-              <?php foreach ($Filter['Resolution'] as $key3): ?>
-              <p>
-                <input class="form-check-input" type="checkbox" name="resulotion[]" value="<?php echo $key3['resolutionId'] ?>"
-                style="margin-bottom:5px;" id="resulotion<?php echo $key3['resolutionId'] ?>"
-                <?php if (isset($keyword['resulotion'])): ?>
-                  <?php foreach ($keyword['resulotion'] as $check): ?>
-                    <?php if ($check == $key3['resolutionId']): ?>
-                      <?php echo "checked"; ?>
-                    <?php endif; ?>
-                  <?php endforeach; ?>
-                <?php endif; ?>
-                >
-                <label for="resulotion<?php echo $key3['resolutionId'] ?>"><?php echo $key3['resolutionName'] ?></label>
               </p>
             <?php endforeach; ?>
           </div>
@@ -122,6 +62,55 @@
           <?php endforeach; ?>
         </div>
       <?php endif; ?>
+
+          <!-- Category -->
+          <?php if (!empty($Filter['Category'])): ?>
+          <hr>
+          <div class="form-check">
+            <h4><b>ประเภทสินค้า</b></h4>
+              <?php foreach ($Filter['Category'] as $key1): ?>
+              <p>
+                <input class="form-check-input" type="checkbox" name="catebox[]" value="<?php echo $key1['cateId'] ?>"
+                style="margin-bottom:5px;" id="Category<?php echo $key1['cateId'] ?>"
+                <?php if (isset($keyword['catebox'])): ?>
+                  <?php foreach ($keyword['catebox'] as $check): ?>
+                    <?php if ($check == $key1['cateId']): ?>
+                      <?php echo "checked"; ?>
+                    <?php endif; ?>
+                  <?php endforeach; ?>
+                <?php endif; ?>
+                >
+                <label for="Category<?php echo $key1['cateId'] ?>"><?php echo $key1['cateName'] ?></label>
+              </p>
+            <?php endforeach; ?>
+          </div>
+        <?php endif; ?>
+
+
+          <!-- Resulotion -->
+          <?php if (!empty($Filter['Resolution'])): ?>
+          <hr>
+          <div class="form-check">
+            <h4><b>ความละเอียด</b></h4>
+              <?php foreach ($Filter['Resolution'] as $key3): ?>
+              <p>
+                <input class="form-check-input" type="checkbox" name="resulotion[]" value="<?php echo $key3['resolutionId'] ?>"
+                style="margin-bottom:5px;" id="resulotion<?php echo $key3['resolutionId'] ?>"
+                <?php if (isset($keyword['resulotion'])): ?>
+                  <?php foreach ($keyword['resulotion'] as $check): ?>
+                    <?php if ($check == $key3['resolutionId']): ?>
+                      <?php echo "checked"; ?>
+                    <?php endif; ?>
+                  <?php endforeach; ?>
+                <?php endif; ?>
+                >
+                <label for="resulotion<?php echo $key3['resolutionId'] ?>"><?php echo $key3['resolutionName'] ?></label>
+              </p>
+            <?php endforeach; ?>
+          </div>
+        <?php endif; ?>
+
+
 
       <!-- Size -->
       <?php if (!empty($Filter['Size'])): ?>
@@ -151,6 +140,21 @@
             <h4><b>ราคา</b></h4>
             <input style="padding:15px;" type="number" class="form-control" name="min" placeholder="ราคาต่ำสุด" value="<?php echo @$keyword['min'] ?>">
             <input style="padding:15px;" type="number" class="form-control" name="max" placeholder="ราคาสูงสุด" value="<?php echo @$keyword['max'] ?>">
+          </div>
+          <hr>
+          <div class="form-check">
+            <h4><b>เรียงราคา</b></h4>
+            <p>
+              <select name="sortbyprice" class="form-control">
+                <option value="">-เลือกเรียงราคา-</option>
+                <option value="DESC" <?php if (@$keyword['sortbyprice'] == "DESC") {
+                  echo "selected";
+                } ?> >เรียงราคา สูง > ต่ำ</option>
+                <option value="ASC" <?php if (@$keyword['sortbyprice'] == "ASC") {
+                  echo "selected";
+                } ?>>เรียงราคา ต่ำ > สูง</option>
+              </select>
+            </p>
           </div>
           <hr>
           <div class="form-check" align="center">

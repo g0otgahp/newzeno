@@ -57,7 +57,7 @@
 <body>
 
 	<div class="wrapper">
-		<div class="sidebar" data-color="" data-image="<?php echo BASE_URL()?>/assets/Back/img/sidebar-4.jpg">
+		<div class="sidebar" data-color="" data-image="<?php echo BASE_URL()?>/assets/Back/img/sidebar-2.jpg">
 
 			<!--
 			Tip 1: you can change the color of the sidebar using: data-color="blue | azure | green | orange | red | purple"
@@ -65,9 +65,9 @@
 		-->
 
 		<div class="sidebar-wrapper">
-			<div class="logo">
+			<div class="logo" style="background-color:;" >
 				<a href="<?php echo SITE_URL('home');?>" class="simple-text">
-					<img src="<?php echo BASE_URL()?>/uploads/Logo/logonewzeno2.png" height="50px"/>
+					<img  src="<?php echo BASE_URL()?>/uploads/Logo/logonewzeno2.png" height="50px"/>
 				</a>
 			</div>
 
@@ -81,105 +81,101 @@
 		<!-- <br>
 		<b style="color:Blue"> <center><u>ข้อมูล</u></center> </b> -->
 
-		<div class="" style="background-color:#ddd ; padding:5px">
-			<b style="color:Black ; background-color:#ddd"> <center>สินค้า</u></center> </b>
-		</div>
-
-		<li <?php if($this->uri->segment(2)=="Dashboard"){ echo "class='active'"; } ?>>
+		<center >- กิจกรรม -</center>
+		<li  <?php if($this->uri->segment(2)=="Dashboard"){ echo "class='active'"; } ?>>
 			<a href="<?php echo SITE_URL('Admin/Dashboard');?>">
-				<i class="pe-7s-graph" style="color:black;"></i>
-				<span style="color:black;">ภาพรวม </span>
+				<i class="pe-7s-graph"></i>
+				<span>ภาพรวม </span>
 			</a>
 		</li>
 
 		<li <?php if($this->uri->segment(2)=="News"){ echo "class='active'"; } ?>>
 			<a href="<?php echo SITE_URL('Admin/News') ?>">
-				<i class="pe-7s-bell" style="color:black;"></i>
-				<span style="color:black;">ข่าวสารโปรโมชั่น</span>
+				<i class="pe-7s-bell" ></i>
+				<span >ข่าวสารโปรโมชั่น</span>
 			</a>
 		</li>
 
-		<div class="" style="background-color:#ddd ; padding:5px">
-			<b style="color:Black ; background-color:#ddd"> <center>สินค้า</u></center> </b>
-		</div>
+		<div style="padding-left:20px; padding-right:20px;"><hr></div>
+		<center >- สินค้า -</center>
+
 
 		<!-- <br>
 		<b style="color:Blue"> <center><u>สินค้า</u></center> </b> -->
 
 		<li <?php if($this->uri->segment(2)=="TitleGroup"){ echo "class='active'"; } ?>>
 			<a href="<?php echo SITE_URL('Admin/TitleGroup')?>">
-				<i class="pe-7s-id" style="color:black;"></i>
-				<span style="color:black	;">การจัดการหัวข้อสินค้า</span>
+				<i class="pe-7s-id" ></i>
+				<span >การจัดการหัวข้อสินค้า</span>
 			</a>
 		</li>
 		<li <?php if($this->uri->segment(2)=="Group"){ echo "class='active'"; } ?>>
 			<a href="<?php echo SITE_URL('Admin/Group')?>">
-				<i class="pe-7s-albums" style="color:black;"></i>
-				<span style="color:black	;">การจัดการกลุ่มสินค้า</span>
+				<i class="pe-7s-albums" ></i>
+				<span >การจัดการกลุ่มสินค้า</span>
 			</a>
 		</li>
 		<li <?php if($this->uri->segment(2)=="Brand"){ echo "class='active'"; } ?>>
 			<a href="<?php echo SITE_URL('Admin/Brand')?>">
-				<i class="pe-7s-gleam" style="color:black;"></i>
-				<span style="color:black;">การจัดการแบรนด์สินค้า</span>
+				<i class="pe-7s-gleam" ></i>
+				<span >การจัดการแบรนด์สินค้า</span>
 			</a>
 		</li>
 		<li <?php if($this->uri->segment(2)=="Category"){ echo "class='active'"; } ?>>
 			<a href="<?php echo SITE_URL('Admin/Category')?>">
-				<i class="pe-7s-keypad" style="color:black;"></i>
-				<span style="color:black;">การจัดการประเภทสินค้า</span>
+				<i class="pe-7s-keypad" ></i>
+				<span >การจัดการประเภทสินค้า</span>
 			</a>
 		</li>
 		<li <?php if($this->uri->segment(2)=="Product"){ echo "class='active'"; } ?>>
 			<a href="<?php echo SITE_URL('Admin/Product')?>">
-				<i class="pe-7s-box2" style="color:black;"></i>
-				<span style="color:black;">การจัดการสินค้า</span><span style="color:black;"></span>
+				<i class="pe-7s-box2" ></i>
+				<span >การจัดการสินค้า</span><span ></span>
 			</a>
 		</li>
 
-		<div class="" style="background-color:#ddd ; padding:5px">
-			<b style="color:Black ; background-color:#ddd"> <center>พนักงาน</u></center> </b>
-		</div>
+		<div style="padding-left:20px; padding-right:20px;"><hr></div>
+		<center >- พนักงาน -</center>
+
 
 		<!-- <br>
 		<b style="color:Blue"> <center><u>พนักงาน</u></center> </b> -->
 
 		<li <?php if($this->uri->segment(2)=="Employee"){ echo "class='active'"; } ?>>
 			<a href="<?php echo SITE_URL('Admin/Employee')?>">
-				<i class="pe-7s-users" style="color:black;"></i>
-				<span style="color:black;">การจัดการพนักงาน</span>
+				<i class="pe-7s-users" ></i>
+				<span >การจัดการพนักงาน</span>
 			</a>
 		</li>
 		<li <?php if($this->uri->segment(2)=="Position"){ echo "class='active'"; } ?>>
 			<a href="<?php echo SITE_URL('Admin/Position')?>">
-				<i class="pe-7s-id" style="color:black;"></i>
-				<span style="color:black;">การจัดการตำแหน่ง</span>
+				<i class="pe-7s-id" ></i>
+				<span >การจัดการตำแหน่ง</span>
 			</a>
 		</li>
 
-		<br>
-		<div class="" style="background-color:#ddd ; padding:5px">
-			<b style="color:Black ; background-color:#ddd"> <center>ตัวแทน</u></center> </b>
-		</div>
+<div style="padding-left:20px; padding-right:20px;"><hr></div>
+		<center >- ตัวแทน -</center>
+
 
 		<li <?php if($this->uri->segment(2)=="Agent"){ echo "class='active'"; } ?>>
 			<a href="<?php echo SITE_URL('Admin/Agent'); ?>">
-				<i class="pe-7s-network" style="color:black;"></i>
-				<span style="color:black;">ตัวแทนจำหน่าย</span>
+				<i class="pe-7s-network" ></i>
+				<span >ตัวแทนจำหน่าย</span>
 			</a>
 		</li>
 
-		<div class="" style="background-color:#ddd ; padding:5px">
-			<b style="color:Black ; background-color:#ddd"> <center>การตั้งค่า</u></center> </b>
-		</div>
+<div style="padding-left:20px; padding-right:20px;"><hr></div>
+		<center >- การตั้งค่า -</center>
+
 
 		<!-- <br>
 		<b style="color:Blue"> <center><u>การตั้งค่า</u></center> </b> -->
 
 		<li <?php if($this->uri->segment(2)=="Config"){ echo "class='active'"; } ?>>
 				<a href="<?php echo SITE_URL('Admin/Config')?>">
-					<i class="pe-7s-config" style="color:black;"></i>
-					<span style="color:black;">ตั้งค่าทั่วไป</span>
+					<i class="pe-7s-config" ></i>
+					<span >ตั้งค่าทั่วไป</span>
 				</a>
 		</li>
 	</ul>
@@ -225,7 +221,7 @@
 					<li>
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 							<i class="fa fa-user" style="color:red;"></i>
-							เจ้าหน้าที่ : <span style="color:black;"><?php echo $_SESSION['adminFullname']?></span> /
+							เจ้าหน้าที่ : <span ><?php echo $_SESSION['adminFullname']?></span> /
 							ตำแหน่ง : <span style="color:blue;"><?php echo $_SESSION['positionName']?></span>
 						</a>
 					</li>
