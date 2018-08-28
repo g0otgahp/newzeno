@@ -13,7 +13,7 @@
       </ul>
       <div class="row">
 
-        <div class="col-md-5">
+        <div class="col-md-6">
           <a class="example-image-link" href="<?php echo BASE_URL('uploads/Products/'.$Product['product'][0]['productImg']); ?>" data-lightbox="example-set" id="link-img">
           <img src="<?php echo BASE_URL('uploads/Products/'.$Product['product'][0]['productImg']); ?>" id="show-img">
         </a>
@@ -52,7 +52,7 @@
             </div> -->
 
 
-            <div class="col-md-7">
+            <div class="col-md-6">
               <h3><?php echo $Product['product'][0]['productName'] ?></h3>
               <p><?php echo $Product['product'][0]['brandName']." ".$Product['product'][0]['cateName'] ?></p>
               <!-- <small>- Sub Detail</small> -->

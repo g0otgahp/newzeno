@@ -7,7 +7,7 @@
   width: 400px;
   height: 400px;
 }
-#show-img { width: 400px; height: 400px; }
+#show-img { width: 500px; height: auto; }
 .small-img{
   width: 350px;
   height: 70px;
