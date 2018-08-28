@@ -13,7 +13,6 @@ class Search extends CI_Controller
   public function index()
   {
     $input = $this->input->post();
-    $this->debug->prevalue($input);
 
     $this->db->insert();
 

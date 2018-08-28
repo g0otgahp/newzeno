@@ -60,6 +60,9 @@
     <article class="col-lg-12 col-md-12">
         <div class="row">
 
+
+            <div id="slideshow1" class="col-lg-10 col-md-10" style="margin-bottom:20px;"></div>
+
             <div id="slideshow_1_thumbs_1" class="col-lg-2 col-md-2">
                 <ul class="slideshow1_thumbs desoslide-thumbs-vertical list-inline text-center">
                     <li style="margin-bottom:10px;">
@@ -99,8 +102,6 @@
                     </li>
                 </ul>
             </div>
-
-            <div id="slideshow1" class="col-lg-10 col-md-10" style="margin-bottom:20px;"></div>
 
             <!-- <div id="slideshow_1_thumbs_2" class="col-lg-2 col-md-2">
                 <ul class="slideshow1_thumbs desoslide-thumbs-vertical list-inline">

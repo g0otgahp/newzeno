@@ -2,22 +2,24 @@
 <div id="footerSection">
   <div class="container" >
     <div class="row" style="margin:auto; display:block;">
-      <?php  foreach ($TitleGroup as $Title): ?>
-        <div class="col-md-2">
-          <?php if (count($Title['group']) > 0): ?>
-            <?php foreach ($Title['group'] as $footer): ?>
-              <?php if (count($footer['category']) != 0): ?>
-                <h4><?php echo $footer['categroupName'] ?></h4>
-                <?php foreach ($footer['category'] as $catefooter): ?>
-                  <a href="<?php echo SITE_URL('Product/ShowProduct/'.$footer['categroupId']."/".$catefooter['cateId']); ?>"><?php echo $catefooter['cateName'] ?></a>
-                <?php endforeach; ?>
-                <hr>
-              <?php endif; ?>
-            <?php endforeach; ?>
+      <div class="col-md-12">
+
+      <?php if (count($Group) > 0): ?>
+        <?php foreach ($Group as $footer): ?>
+          <?php if (count($footer['category']) != 0): ?>
+            <div class="col-md-2" style="margin-right:3%;">
+              <h4><?php echo $footer['categroupName'] ?></h4>
+              <?php foreach ($footer['category'] as $catefooter): ?>
+                <a href="<?php echo SITE_URL('Product/ShowProduct/'.$footer['categroupId']."/".$catefooter['cateId']); ?>"><?php echo $catefooter['cateName'] ?></a>
+              <?php endforeach; ?>
+              <hr>
+            </div>
           <?php endif; ?>
-        </div>
-      <?php endforeach; ?>
+        <?php endforeach; ?>
+      <?php endif; ?>
+
     </div>
+  </div>
     <p class="pull-right">&copy; Newzeno</p>
   </div><!-- Container End -->
 </div>
@@ -68,14 +70,14 @@ $(document).ready(function() {
 
 //Gallery
 $('#slideshow1').desoSlide({
-  thumbs: $('#slideshow_1_thumbs_1 li > a'),
-  auto: {
-    start: true
-  },
-  effect: 'side',
-  controls: {
-    keys: false
-  }
+    thumbs: $('#slideshow_1_thumbs_1 li > a'),
+    auto: {
+        start: true
+    },
+    effect: 'side',
+    controls: {
+        keys: false
+    }
 });
 
 </script>

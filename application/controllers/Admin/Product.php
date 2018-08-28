@@ -28,6 +28,7 @@ class Product extends CI_Controller
     $brand = $this->BrandModel->SelectBrand();
     $category = $this->CategoryModel->SelectCategory();
     $group = $this->GroupModel->SelectGroup();
+        
     $value = array(
       'Result' => array(
         'brand' => $brand,
