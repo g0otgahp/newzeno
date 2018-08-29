@@ -1,28 +1,18 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <!-- Sidebar ================================================== -->
-      <div id="sidebar" class="col-md-3">
-        <!-- <div class="well well-small"><a id="myCart" href="#"><img src="<?php echo BASE_URL()?>/assets/themes/images/ico-cart.png" alt="cart">3 Items in your cart  <span class="badge badge-warning pull-right">$155.00</span></a></div> -->
-        <ul id="productlist" class="nav nav-tabs nav-stacked">
-          <?php $havecate = $this->uri->segment(4); if (isset($havecate)): ?>
-            <?php echo form_open('Product/ShowProductFind/'.$GroupSelect[0]['categroupId']."/".$CateSelect[0]['cateId']."#productlist"); ?>
-            <?php else: ?>
-              <?php echo form_open('Home/CategoryFind/'.$GroupSelect[0]['categroupId']."#productlist"); ?>
-          <?php endif; ?>
-          <div class="form-check">
-            <h4><b>ค้นหา</b></h4>
-            <p>
-              <input style="padding:15px;" class="form-control" type="text" name="wordsearch" placeholder="ค้นหาชื่อสินค้า" value="<?php echo @$keyword['wordsearch'] ?>">
-            </p>
+<div class="content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="row">
+      <div class="col-md-3 animate-box">
+        <div class="card" style="padding:20px;">
+            <?php echo form_open('Admin/Search/ProductSearch'); ?>
+            <div align="center">
+            <button type="submit" class="btn btn-primary btn-fill btn-lg"><i class="fa fa-search"></i> ค้นหา</button>
           </div>
-
           <!-- Brand -->
-          <?php if (!empty($Filter['Brand'])): ?>
           <hr>
           <div class="form-check">
             <h4><b>แบรนด์</b></h4>
-              <?php foreach ($Filter['Brand'] as $key2): ?>
+              <?php foreach ($brand as $key2): ?>
               <p>
                 <input class="form-check-input" type="checkbox" name="brandbox[]" value="<?php echo $key2['brandId'] ?>"
                 style="margin-bottom:5px;" id="brand<?php echo $key2['brandId'] ?>"
@@ -39,14 +29,12 @@
               </p>
             <?php endforeach; ?>
           </div>
-        <?php endif; ?>
 
         <!-- Tech -->
-        <?php if (!empty($Filter['Tech'])): ?>
         <hr>
         <div class="form-check">
           <h4><b>เทคโนโลยี</b></h4>
-            <?php foreach ($Filter['Tech'] as $key4): ?>
+            <?php foreach ($tech as $key4): ?>
             <p>
               <input class="form-check-input" type="checkbox" name="tech[]" value="<?php echo $key4['techId'] ?>"
               style="margin-bottom:5px;" id="tech<?php echo $key4['techId'] ?>"
@@ -63,14 +51,34 @@
             </p>
           <?php endforeach; ?>
         </div>
-      <?php endif; ?>
+
+        <!-- Group -->
+        <hr>
+        <div class="form-check">
+          <h4><b>กลุ่มสินค้า</b></h4>
+            <?php foreach ($group as $key5): ?>
+            <p>
+              <input class="form-check-input" type="checkbox" name="groupbox[]" value="<?php echo $key5['categroupId'] ?>"
+              style="margin-bottom:5px;" id="group<?php echo $key5['categroupId'] ?>"
+              <?php if (isset($keyword['groupbox'])): ?>
+                <?php foreach ($keyword['groupbox'] as $check): ?>
+                  <?php if ($check == $key5['categroupId']): ?>
+                    <?php echo "checked"; ?>
+                  <?php endif; ?>
+                <?php endforeach; ?>
+              <?php endif; ?>
+              >
+              <?php $count = $this->db->where('productGroupid',$key5['categroupId'])->where('productStatus',1)->get('product')->num_rows(); ?>
+              <label for="group<?php echo $key5['categroupId'] ?>"><?php echo $key5['categroupName'] ?> (<?php echo $count; ?>)</label>
+            </p>
+          <?php endforeach; ?>
+        </div>
 
           <!-- Category -->
-          <?php if (!empty($Filter['Category'])): ?>
           <hr>
           <div class="form-check">
             <h4><b>ประเภทสินค้า</b></h4>
-              <?php foreach ($Filter['Category'] as $key1): ?>
+              <?php foreach ($category as $key1): ?>
               <p>
                 <input class="form-check-input" type="checkbox" name="catebox[]" value="<?php echo $key1['cateId'] ?>"
                 style="margin-bottom:5px;" id="Category<?php echo $key1['cateId'] ?>"
@@ -87,15 +95,13 @@
               </p>
             <?php endforeach; ?>
           </div>
-        <?php endif; ?>
 
 
           <!-- Resulotion -->
-          <?php if (!empty($Filter['Resolution'])): ?>
           <hr>
           <div class="form-check">
             <h4><b>ความละเอียด</b></h4>
-              <?php foreach ($Filter['Resolution'] as $key3): ?>
+              <?php foreach ($resolution as $key3): ?>
               <p>
                 <input class="form-check-input" type="checkbox" name="resulotion[]" value="<?php echo $key3['resolutionId'] ?>"
                 style="margin-bottom:5px;" id="resulotion<?php echo $key3['resolutionId'] ?>"
@@ -112,16 +118,14 @@
               </p>
             <?php endforeach; ?>
           </div>
-        <?php endif; ?>
 
 
 
       <!-- Size -->
-      <?php if (!empty($Filter['Size'])): ?>
       <hr>
       <div class="form-check">
         <h4><b>ขนาด</b></h4>
-          <?php foreach ($Filter['Size'] as $key5): ?>
+          <?php foreach ($size as $key5): ?>
           <p>
             <input class="form-check-input" type="checkbox" name="Size[]" value="<?php echo $key5['SizeId'] ?>"
             style="margin-bottom:5px;" id="Size<?php echo $key5['SizeId'] ?>"
@@ -138,13 +142,12 @@
           </p>
         <?php endforeach; ?>
       </div>
-      <?php endif; ?>
 
           <hr>
           <div class="form-check">
             <h4><b>ราคา</b></h4>
-            <input style="padding:15px;" type="number" class="form-control" name="min" placeholder="ราคาต่ำสุด" value="<?php echo @$keyword['min'] ?>">
-            <input style="padding:15px;" type="number" class="form-control" name="max" placeholder="ราคาสูงสุด" value="<?php echo @$keyword['max'] ?>">
+            <input type="number" class="form-control" name="min" placeholder="ราคาต่ำสุด" value="<?php echo @$keyword['min'] ?>">
+            <input type="number" class="form-control" name="max" placeholder="ราคาสูงสุด" value="<?php echo @$keyword['max'] ?>">
           </div>
           <hr>
           <div class="form-check">
@@ -161,10 +164,60 @@
               </select>
             </p>
           </div>
-          <hr>
-          <div class="form-check" align="center">
-            <button type="submit" class="btn btn-warning btn-large">ค้นหาที่เลือก</button>
-          </div>
           <?php echo form_close(); ?>
-        </ul>
+          </div>
+        </div>
+
+
+
+<!-- ////////////////////////////////////////////////////////////////////////////////////////// -->
+    <?php if (count($product) == 0): ?>
+      <div class="col-md-9 animate-box">
+        <div class="card" style="padding:20px;">
+          <center>
+          <p>ไม่พบสินค้าที่ค้นหา</p>
+        </center>
+        </div>
       </div>
+
+      <?php else: ?>
+    <div class="col-md-9 animate-box">
+      <div class="card" style="padding:20px;" >
+        <table class="table table-hover dataTable">
+          <thead>
+            <tr>
+              <th width="5%">ลำดับ</th>
+              <th>รูปภาพ</th>
+              <th width="30%">ชื่อสินค้า</th>
+              <th width="15%">แบรนด์</th>
+              <th width="20%">ประเภทสินค้า</th>
+              <th width="40%">แก้ไขสินค้า</th>
+            </tr>
+          </thead>
+          <tbody>
+            <?php $i=1; foreach ($product as $row): ?>
+              <tr>
+                <td><?php echo $i; ?></td>
+                <td><img src="<?php echo BASE_URL('uploads/Products/'.$row['productImg']);?>" class="img-thumbnail" width="100"></td>
+                <td><?php echo $row['productName'] ?> <?php if ($row['productFav'] == 1): ?>
+                   <span class="glyphicon glyphicon-star" style="color:yellow;"></span>
+                <?php endif; ?></td>
+                <td><?php echo $row['brandName'] ?></td>
+                <td><?php echo $row['cateName'] ?></td>
+                <td>
+                  <a href="<?php echo SITE_URL('Admin/Product/ProductDetail/'.$row['productId']); ?>" class="btn btn-primary btn-xs"><i class="pe-7s-note2"></i> รายละเอียด</a>
+                  <a href="<?php echo SITE_URL('Admin/Product/productImage/'.$row['productId']); ?>" class="btn btn-warning btn-xs"><i class="pe-7s-photo"></i> รูปภาพ</a>
+                  <a href="<?php echo SITE_URL('Admin/Product/ProductDocument/'.$row['productId']); ?>" class="btn btn-danger btn-xs"><i class="pe-7s-albums"></i> เอกสารแนบ</a>
+                </td>
+              </tr>
+            <?php $i++; endforeach; ?>
+          </tbody>
+        </table>
+      </div>
+  </div>
+</div>
+</div>
+
+  <?php endif; ?>
+</div>
+</div>

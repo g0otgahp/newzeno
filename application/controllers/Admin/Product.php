@@ -22,21 +22,33 @@ class Product extends CI_Controller
     $this->load->view('Back/themes/footer');
   }
 
+  // public function index()
+  // {
+  //   $product = $this->ProductModel->SelectProduct();
+  //   $brand = $this->BrandModel->SelectBrand();
+  //   $category = $this->CategoryModel->SelectCategory();
+  //   $group = $this->GroupModel->SelectGroup();
+  //
+  //   $value = array(
+  //     'Result' => array(
+  //       'brand' => $brand,
+  //       'category' => $category,
+  //       'product' => $product,
+  //       'group' => $group,
+  //     ),
+  //     'View' => 'Back/ProductList',
+  //   );
+  //   $this->LoadPage($value);
+  // }
+
   public function index()
   {
-    $product = $this->ProductModel->SelectProduct();
-    $brand = $this->BrandModel->SelectBrand();
-    $category = $this->CategoryModel->SelectCategory();
-    $group = $this->GroupModel->SelectGroup();
-        
+    $dataSelect = $this->TitleGroupModel->SelectTitleGroup();
     $value = array(
       'Result' => array(
-        'brand' => $brand,
-        'category' => $category,
-        'product' => $product,
-        'group' => $group,
+        'dataSelect' => $dataSelect,
       ),
-      'View' => 'Back/ProductList',
+      'View' => 'Back/Product',
     );
     $this->LoadPage($value);
   }
@@ -316,39 +328,5 @@ class Product extends CI_Controller
 
     echo "<script>alert('ลบสินค้าเรียบร้อยแล้ว')</script>";
     echo "<script>document.location='" . SITE_URL('Admin/Product') . "'</script>";
-  }
-
-  public function ProductSearch()
-  {
-    $input = $this->input->post();
-    $product = $this->ProductModel->SelectSearchProduct($input);
-    $brand = $this->BrandModel->SelectBrand();
-    $category = $this->CategoryModel->SelectCategory();
-    $group = $this->GroupModel->SelectGroup();
-
-    $select = array();
-    if (!empty($input['Category'])) {
-      $select['cate'] = $input['Category'];
-    }
-
-    if (!empty($input['Brand'])) {
-      $select['brand'] = $input['Brand'];
-    }
-
-    if (!empty($input['Group'])) {
-      $select['group'] = $input['Group'];
-    }
-
-    $value = array(
-      'Result' => array(
-        'select' => $select,
-        'brand' => $brand,
-        'category' => $category,
-        'group' => $group,
-        'product' => $product,
-      ),
-      'View' => 'Back/ProductList',
-    );
-    $this->LoadPage($value);
   }
 }

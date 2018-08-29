@@ -97,12 +97,35 @@
 		</li>
 
 		<div style="padding-left:20px; padding-right:20px;"><hr></div>
-		<center >- สินค้า -</center>
+		<center>- ฐานข้อมูลสินค้า -</center>
+
+		<li>
+			<a href="#">
+				<i class="pe-7s-plus" ></i>
+				<span>เพิ่มสินค้า แบบเร่งด่วน</span><span ></span>
+			</a>
+		</li>
+
+		<li <?php if($this->uri->segment(2)=="Search"){ echo "class='active'"; } ?>>
+			<a href="<?php echo SITE_URL('Admin/Search')?>">
+				<i class="pe-7s-search" ></i>
+				<span>ค้นหาสินค้า</span>
+			</a>
+		</li>
+
+		<!-- <li <?php if($this->uri->segment(2)=="Product"){ echo "class='active'"; } ?>>
+			<a href="<?php echo SITE_URL('Admin/Product')?>">
+				<i class="pe-7s-box2" ></i>
+				<span>ข้อมูลสินค้าหลัก</span><span ></span>
+			</a>
+		</li> -->
+
+		<div style="padding-left:20px; padding-right:20px;"><hr></div>
+		<center >- ระเบียบสัมพันธ์สินค้า -</center>
 
 
 		<!-- <br>
 		<b style="color:Blue"> <center><u>สินค้า</u></center> </b> -->
-
 		<li <?php if($this->uri->segment(2)=="TitleGroup"){ echo "class='active'"; } ?>>
 			<a href="<?php echo SITE_URL('Admin/TitleGroup')?>">
 				<i class="pe-7s-id" ></i>
@@ -127,12 +150,7 @@
 				<span >การจัดการประเภทสินค้า</span>
 			</a>
 		</li>
-		<li <?php if($this->uri->segment(2)=="Product"){ echo "class='active'"; } ?>>
-			<a href="<?php echo SITE_URL('Admin/Product')?>">
-				<i class="pe-7s-box2" ></i>
-				<span >การจัดการสินค้า</span><span ></span>
-			</a>
-		</li>
+
 
 		<div style="padding-left:20px; padding-right:20px;"><hr></div>
 		<center >- พนักงาน -</center>

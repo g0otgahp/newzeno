@@ -27,6 +27,7 @@ class ProductModel extends CI_Model
     ->where('cateStatus',1)
     ->where('brandStatus',1)
     ->where('categroupStatus',1)
+    ->order_by('product.productId','DESC')
     ->join('brand','brand.brandId = product.productBrandid')
     ->join('category','category.CateId = product.productCateid')
     ->join('categroup','categroup.categroupId = product.productGroupid')
@@ -42,14 +43,40 @@ class ProductModel extends CI_Model
     $this->db->where('brandStatus',1);
     $this->db->where('categroupStatus',1);
 
-    if (!empty($input['Category'])) {
-      $this->db->where('productCateid',$input['Category']);
+    if (isset($input['groupbox'])) {
+      $this->db->where_in('product.productGroupid',$input['groupbox']);
     }
-    if (!empty($input['Brand'])) {
-      $this->db->where('productBrandid',$input['Brand']);
+
+    if (isset($input['catebox'])) {
+      $this->db->where_in('product.productCateid',$input['catebox']);
     }
-    if (!empty($input['Group'])) {
-      $this->db->where('productGroupid',$input['Group']);
+
+    if (isset($input['brandbox'])) {
+      $this->db->where_in('product.productBrandid',$input['brandbox']);
+    }
+
+    if (isset($input['resulotion'])) {
+      $this->db->where_in('product.productResolution',$input['resulotion']);
+    }
+
+    if (isset($input['tech'])) {
+      $this->db->where_in('product.productTechId',$input['tech']);
+    }
+
+    if (isset($input['size'])) {
+      $this->db->where_in('product.productSizeId',$input['size']);
+    }
+
+    if ($input['min'] != '') {
+      $this->db->where('product.productPrice >=',$input['min']);
+    }
+
+    if ($input['max'] != '') {
+      $this->db->where('product.productPrice <=',$input['max']);
+    }
+
+    if (isset($input['sortbyprice'])) {
+      $this->db->order_by('product.productPrice',$input['sortbyprice']);
     }
 
     $this->db->join('brand','brand.brandId = product.productBrandid');
@@ -57,6 +84,7 @@ class ProductModel extends CI_Model
     $this->db->join('categroup','categroup.categroupId = product.productGroupid');
     $data = $this->db->get('product')->result_array();
     return $data;
+
   }
 
   public function SelectProductByID($id)
@@ -95,7 +123,7 @@ class ProductModel extends CI_Model
 
   public function UpdateProduct($input)
   {
-  
+
     $this->db->where('productId',$input['productId'])->update('product',$input);
   }
 
@@ -118,4 +146,34 @@ class ProductModel extends CI_Model
   {
     $this->db->where('proimageId',$id)->delete('productimage');
   }
+
+  public function SelectTech()
+  {
+    $data = $this->db
+    ->order_by('techId','ASC')
+    ->where('techStatus',1)
+    ->get('technology')
+    ->result_array();
+    return $data;
+    }
+
+  public function SelectResolution()
+  {
+    $data = $this->db
+    ->order_by('resolutionId','ASC')
+    ->where('resolutionStatus',1)
+    ->get('resolution')
+    ->result_array();
+    return $data;
+    }
+
+  public function SelectSize()
+  {
+    $data = $this->db
+    ->order_by('SizeId','ASC')
+    ->where('SizeStatus',1)
+    ->get('size')
+    ->result_array();
+    return $data;
+    }
 }
