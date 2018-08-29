@@ -35,7 +35,6 @@
   <!-- lightbox.css -->
   <link rel="stylesheet" href="<?php echo BASE_URL()?>assets/Front/src/css/lightbox.css">
 
-
   <!-- Multi-colum Menu.css -->
   <link rel="stylesheet" href="<?php echo BASE_URL()?>assets/Front/css/multi-colum.css">
 
@@ -44,15 +43,18 @@
 
   <!-- Gallery -->
   <!-- <link rel="stylesheet" href="<?php echo BASE_URL()?>assets/Front/Plugin/Gallery/css/app/main.css" /> -->
-  <link rel="stylesheet" href="<?php echo BASE_URL()?>assets/Front/plugin/Gallery/css/app/views/demo.css" />
+  <!-- <link rel="stylesheet" href="<?php echo BASE_URL()?>assets/Front/plugin/Gallery/css/app/views/demo.css" />
   <link rel="stylesheet" href="<?php echo BASE_URL()?>assets/Front/plugin/Gallery/css/vendor/magic/magic.min.css">
   <link rel="stylesheet" href="<?php echo BASE_URL()?>assets/Front/plugin/Gallery/css/vendor/animate/animate.min.css">
-  <link rel="stylesheet" href="<?php echo BASE_URL()?>assets/Front/plugin/Gallery/dist/css/jquery.desoslide.css">
+  <link rel="stylesheet" href="<?php echo BASE_URL()?>assets/Front/plugin/Gallery/dist/css/jquery.desoslide.css"> -->
 
   <!-- <link href="<?php echo BASE_URL()?>assets/Front/Plugin/Gallery/custom.css" type="text/css" rel="stylesheet" /> -->
 
   <!-- Bootstrap Datatable -->
 	<link href="<?php echo BASE_URL()?>/assets/Back/datatable-bootstrap/dataTables.bootstrap.min.css" rel="stylesheet"/>
+
+  <!-- TinySlide -->
+  <link href="<?php echo BASE_URL()?>/assets/Front/plugin/Tinyslide/css/tinyslide.css" rel="stylesheet"/>
 
   <style>
   * , span , td , p , a , label , button {
