@@ -187,7 +187,7 @@
               </div>
             </div>
 
-      <div class="col-md-12 animate-box">
+      <div class="col-md-4 animate-box">
         <div class="card">
           <div class="header">
             <h4 class="title">รูปภาพสินค้าหลัก</h4>
@@ -203,11 +203,9 @@
             </div>
           </div>
         </div>
-        <button type="submit" class="btn btn-info btn-fill pull-right">ลงทะเบียนสินค้า</button>
-
       </div>
 
-      <!-- <div class="col-md-6 animate-box">
+      <div class="col-md-4 animate-box">
         <div class="card">
           <div class="header">
             <h4 class="title">รูปภาพ(เพิ่มเติม)</h4>
@@ -225,7 +223,7 @@
         </div>
       </div>
 
-      <div class="col-md-12 animate-box">
+      <div class="col-md-4 animate-box">
         <div class="card">
           <div class="header">
             <h4 class="title">เอกสารเพิ่มเติม</h4>
@@ -241,7 +239,8 @@
             </div>
           </div>
         </div>
-      </div> -->
+        <button type="submit" class="btn btn-info btn-fill pull-right">ลงทะเบียนสินค้า</button>
+      </div>
 
 
 
