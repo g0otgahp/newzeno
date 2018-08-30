@@ -124,7 +124,7 @@ class Product extends CI_Controller
 
     $this->LogModel->LogProduct($LogInsert);
 
-    if ($_FILES['SubImg']['name'][0] != '') {
+    if (isset($_FILES['SubImg']['name'][0])) {
       $i = 0;
       foreach ($_FILES['SubImg']['name'] as $row) {
         $pathinfo = pathinfo($row, PATHINFO_EXTENSION);
@@ -139,8 +139,7 @@ class Product extends CI_Controller
       }
       $this->ProductModel->saveSubImage($SubImage);
     }
-
-    if ($_FILES['Doc']['name'][0] != '') {
+    if (isset($_FILES['Doc']['name'][0])) {
       $d = 0;
       foreach ($_FILES['Doc']['name'] as $row) {
         $pathinfo = pathinfo($row, PATHINFO_EXTENSION);
@@ -158,7 +157,7 @@ class Product extends CI_Controller
     }
 
     echo "<script>alert('เพิ่มสินค้าใหม่เรียบร้อยแล้ว')</script>";
-    echo "<script>document.location='" . SITE_URL('Admin/Product') . "'</script>";
+    echo "<script>document.location='" . SITE_URL('Admin/Search') . "'</script>";
   }
 
   public function UpdateProduct()
@@ -329,4 +328,29 @@ class Product extends CI_Controller
     echo "<script>alert('ลบสินค้าเรียบร้อยแล้ว')</script>";
     echo "<script>document.location='" . SITE_URL('Admin/Product') . "'</script>";
   }
+
+  public function ProductQuick()
+  {
+    $brand = $this->BrandModel->SelectBrand();
+    $category = $this->CategoryModel->SelectCategory();
+    $group = $this->GroupModel->SelectGroup();
+    $SelectTech = $this->ProductModel->SelectTech();
+    $SelectResolution = $this->ProductModel->SelectResolution();
+    $SelectSize = $this->ProductModel->SelectSize();
+
+    $value = array(
+      'Result' => array(
+        'brand' => $brand,
+        'category' => $category,
+        'group' => $group,
+        'SelectTech' => $SelectTech,
+        'SelectResolution' => $SelectResolution,
+        'SelectSize' => $SelectSize,
+
+      ),
+      'View' => 'Back/ProductQuick',
+    );
+    $this->LoadPage($value);
+  }
+
 }

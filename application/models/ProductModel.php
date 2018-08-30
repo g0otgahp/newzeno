@@ -116,6 +116,11 @@ class ProductModel extends CI_Model
 
   public function saveProduct($input)
   {
+
+    // echo "<pre>";
+    // print_r($input);
+    // exit();
+
     $this->db->insert('product',$input);
     $id = $this->db->insert_id();
     return $id;
