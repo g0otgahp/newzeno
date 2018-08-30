@@ -258,8 +258,8 @@ class HomepageModel extends CI_Model
       $this->db->where_in('product.productTechId',$input['tech']);
     }
 
-    if (isset($input['size'])) {
-      $this->db->where_in('product.productSizeId',$input['size']);
+    if (isset($input['Size'])) {
+      $this->db->where_in('product.productSizeId',$input['Size']);
     }
 
     if ($input['min'] != '') {

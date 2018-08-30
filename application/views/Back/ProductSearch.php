@@ -188,10 +188,9 @@
             <tr>
               <th width="5%">ลำดับ</th>
               <th>รูปภาพ</th>
-              <th width="30%">ชื่อสินค้า</th>
-              <th width="15%">แบรนด์</th>
-              <th width="20%">ประเภทสินค้า</th>
-              <th width="40%">แก้ไขสินค้า</th>
+              <th width="25%">ชื่อสินค้า</th>
+              <th width="20%">แบรนด์</th>
+              <th width="50%">แก้ไขสินค้า</th>
             </tr>
           </thead>
           <tbody>
@@ -203,7 +202,7 @@
                    <span class="glyphicon glyphicon-star" style="color:yellow;"></span>
                 <?php endif; ?></td>
                 <td><?php echo $row['brandName'] ?></td>
-                <td><?php echo $row['cateName'] ?></td>
+                <!-- <td><?php //echo $row['cateName'] ?></td> -->
                 <td>
                   <a href="<?php echo SITE_URL('Admin/Product/ProductDetail/'.$row['productId']); ?>" class="btn btn-primary btn-xs"><i class="pe-7s-note2"></i> รายละเอียด</a>
                   <a href="<?php echo SITE_URL('Admin/Product/productImage/'.$row['productId']); ?>" class="btn btn-warning btn-xs"><i class="pe-7s-photo"></i> รูปภาพ</a>

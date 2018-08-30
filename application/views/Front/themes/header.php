@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>Newzeno : ตัวแทนจำหน่ายวิดีโอวอล โปรเจคเตอร์ เครื่องใช้ไฟฟ้า อันดับ 1 ของประเทศไทย</title>
-  <!-- <meta name="viewport" content="width=device-width, initial-scale=0"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=0">
   <meta name="description" content="">
   <meta name="author" content="">
 
@@ -237,11 +237,13 @@
                       <?php foreach ($Title['group'] as $ShowGroup): ?>
                         <?php if (count($ShowGroup['category']) != 0): ?>
                           <?php if ($loop == 1): ?>
-                            <div class="col-md-11">
+                            <div class="col-md-11" style="padding-left:0px; padding-right:0px;">
                             <?php elseif($loop == 2): ?>
-                              <div class="col-md-6">
+                              <div class="col-md-6" style="padding-left:0px; padding-right:0px;">
+                              <?php elseif($loop == 3): ?>
+                                <div class="col-md-4" style="padding-left:0px; padding-right:0px;">
                               <?php else: ?>
-                                <div class="col-md-4">
+                                <div class="col-md-3" style="padding-left:0px; padding-right:0px;">
                                 <?php endif; ?>
                                 <ul class="multi-column-dropdown">
                                   <li><a href="<?php echo SITE_URL('Home/CategoryHome/'.$ShowGroup['categroupId']); ?>" style="color:orange;"><b><u><?php echo $ShowGroup['categroupName'] ?></u></b></a></li>

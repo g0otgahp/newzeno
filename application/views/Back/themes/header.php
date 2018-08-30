@@ -109,7 +109,7 @@
 		<li <?php if($this->uri->segment(3)=="ProductQuick"){ echo "class='active'"; } ?>>
 			<a href="<?php echo SITE_URL('Admin/Product/ProductQuick')?>">
 				<i class="pe-7s-plus" ></i>
-				<span>เพิ่มสินค้า แบบเร่งด่วน</span><span ></span>
+				<span>เพิ่มสินค้า แบบด่วน</span><span ></span>
 			</a>
 		</li>
 
@@ -138,18 +138,19 @@
 				<span >การจัดการกลุ่มสินค้า</span>
 			</a>
 		</li>
-		<li <?php if($this->uri->segment(2)=="Brand"){ echo "class='active'"; } ?>>
-			<a href="<?php echo SITE_URL('Admin/Brand')?>">
-				<i class="pe-7s-gleam" ></i>
-				<span >การจัดการแบรนด์สินค้า</span>
-			</a>
-		</li>
 		<li <?php if($this->uri->segment(2)=="Category"){ echo "class='active'"; } ?>>
 			<a href="<?php echo SITE_URL('Admin/Category')?>">
 				<i class="pe-7s-keypad" ></i>
 				<span >การจัดการประเภทสินค้า</span>
 			</a>
 		</li>
+		<li <?php if($this->uri->segment(2)=="Brand"){ echo "class='active'"; } ?>>
+			<a href="<?php echo SITE_URL('Admin/Brand')?>">
+				<i class="pe-7s-gleam" ></i>
+				<span >การจัดการแบรนด์สินค้า</span>
+			</a>
+		</li>
+
 
 
 		<div style="padding-left:20px; padding-right:20px;"><hr></div>

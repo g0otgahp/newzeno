@@ -24,6 +24,7 @@ class GroupModel extends CI_Model
   {
     $dataSelect = $this->db
     ->where('categroupStatus',1)
+    ->join('catetitle','categroup.catetitleId = catetitle.catetitleId')
     ->get('categroup')
     ->result_array();
 

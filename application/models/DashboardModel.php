@@ -36,7 +36,7 @@ class DashboardModel extends CI_Model
   public function SelectLogLogin()
   {
     $dataLogLogin = $this->db
-    ->order_by('loginId','DESC')
+    ->order_by('log_login.loginId','DESC')
     ->join('profile','profile.profileId = log_login.loginProfileId')
     ->get('log_login')->result_array();
 

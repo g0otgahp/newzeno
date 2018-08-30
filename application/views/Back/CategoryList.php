@@ -13,6 +13,7 @@
                 <th width="10">ลำดับ</th>
                 <th>ไอคอน</th>
                 <th>ประเภทสินค้า</th>
+                <th>กลุ่มสินค้า</th>
                 <th>ตัวเลือก</th>
               </tr>
             </thead>
@@ -22,8 +23,9 @@
                   <td><?php echo $i ?></td>
                   <td><img src="<?php echo BASE_URL('uploads/Categorys/'.$dataShow['cateImg']); ?>" height="50px" width="50px"></td>
                   <td><?php echo $dataShow['cateName'] ?></td>
+                  <td style="color:orange"><?php echo $dataShow['categroupName'] ?></td>
                   <td>
-                    
+
                     <button class="btn btn-warning"
                     data-toggle="modal"
                     data-target="#UpdateCategory<?php echo $dataShow['cateId'] ?>">แก้ไข

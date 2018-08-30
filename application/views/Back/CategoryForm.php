@@ -20,7 +20,8 @@
           <tr>
             <td>กลุ่มประเภทสินค้า : &nbsp;</td>
             <td style="padding-top:10px">
-              <select class="form-control" name="categroupId" >
+              <select class="form-control" name="categroupId" required>
+                <option value="">-เลือกกลุ่มสินค้า-</option>
                 <?php foreach ($group as $group): ?>
                   <option value="<?php echo $group['categroupId'] ?>"><?php echo $group['categroupName'] ?></option>
                 <?php endforeach; ?>

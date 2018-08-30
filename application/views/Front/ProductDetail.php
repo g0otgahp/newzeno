@@ -59,7 +59,15 @@
               <hr class="soft"/>
               <form class="form-horizontal qtyFrm">
                 <div class="control-group">
-                  <label class="control-label"><span>ราคา ฿<?php echo number_format($Product['product'][0]['productPrice']) ?></span></label>
+                  <label class="control-label"><span>ราคา : 
+                    <b>
+                      <?php if ( $Product['product'][0]['productPrice'] == 0): ?>
+                        <a style="color:black;" href="<?php echo SITE_URL('Contact');?>">ติดต่อสอบถาม</a>
+                        <?php else: ?>
+                          <?php echo "฿".number_format( $Product['product'][0]['productPrice']);  ?>
+                      <?php endif; ?>
+                    </b>
+                  </span></label>
                   <!-- <div class="controls">
                   <input type="number" class="span1" placeholder="Qty."/>
                   <button type="submit" class="btn btn-large btn-primary pull-right"> Add to cart <i class=" icon-shopping-cart"></i></button>

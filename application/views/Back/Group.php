@@ -13,16 +13,17 @@
               <tr>
                 <th>ลำดับ</th>
                 <th>กลุ่มประเภทสินค้า</th>
+                <th>หัวข้อสินค้า</th>
                 <th>ตัวเลือก</th>
               </tr>
             </thead>
             <tbody>
 
               <?php $i = 1; foreach ($dataSelect as $dataSelect): ?>
-
                 <tr>
                   <td><?php echo $i ?></td>
-                  <td style="color:Black"><?php echo $dataSelect['categroupName'] ?></td>
+                  <td><?php echo $dataSelect['categroupName'] ?></td>
+                  <td style="color:blue"><?php echo $dataSelect['catetitleName'] ?></td>
                   <td>
 
                     <button class="btn btn-info btn-warning"
