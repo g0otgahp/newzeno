@@ -82,7 +82,12 @@ $(document).ready(function() {
 // });
 
 //TinySlide
-var tiny = $('#tiny').tiny().data('api_tiny');
+var tiny1 = $('#tiny1').tiny().data('api_tiny');
+var tiny2 = $('#tiny2').tiny().data('api_tiny');
+// var tiny3 = $('#tiny3').tiny().data('api_tiny');
+// var tiny4 = $('#tiny4').tiny().data('api_tiny');
+
+
 
 </script>
 

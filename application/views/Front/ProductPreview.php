@@ -28,7 +28,7 @@ if ($num > 0):
                 <?php else: ?>
                   <div class="col-md-5">
                   <?php endif; ?>
-                  <h3><?php echo $list['productName'] ?></h3>
+                    <h4><?php echo  $list['brandName'] ?> -  <?php echo  $list['productName'] ?></h4>
                   <p><?php echo $list['productSubdetail1'] ?></p>
                   <p><?php echo $list['productSubdetail2'] ?></p>
                   <p><?php echo $list['productSubdetail3'] ?></p>
@@ -76,13 +76,26 @@ if ($num > 0):
                       <div class="col-xs-12 col-md-4 col-sm-6" style="padding-left:5px;">
                       <?php endif; ?>
                       <div class="card">
+                        <?php if ($block['productSizeId'] != ''): ?>
+                          <span class="btn btn-danger btn-xs" style="font-weight: bold;"><?php echo $block['productSizeId'] ?>"</span>
+                        <?php endif; ?>
                         <a class="img-card" href="<?php echo SITE_URL('Product/ProductDetail/'.$block['categroupId']."/".$block['cateId']."/".$block['productId']); ?>">
                           <img src="<?php echo BASE_URL('uploads/Products/'.$block['productImg']); ?>" style=" margin:auto; display:block;"/>
                         </a>
-                        <div class="card-content">
-                          <h4>
-                            <?php echo  $block['productName'] ?>
-                          </h4>
+                        <div class="card-read-more">
+                          <a href="<?php echo SITE_URL('Product/ProductDetail/'.$block['categroupId']."/".$block['cateId']."/".$block['productId']); ?>" class="btn btn-block">
+                          <b style="color:black;">
+                            <?php echo  $block['brandName'] ?>
+                          </b>
+                        </a>
+                          <a style="padding-bottom:0px; padding-top:5px;" href="<?php echo SITE_URL('Product/ProductDetail/'.$block['categroupId']."/".$block['cateId']."/".$block['productId']); ?>" class="btn btn-link btn-block">
+                            รุ่น : <?php echo  $block['productName'] ?>
+                            <!-- <?php //if ($block['productSizeId'] != ''): ?>
+                            <span style="color:black; font-weight: bold;">(<?php echo $block['productSizeId'] ?> นิ้ว)</span>
+                          <?php //endif; ?> -->
+                          </a>
+                        </div>
+                        <div class="card-content" style="padding-top:5px;">
                           <p><?php echo $block['productSubdetail1'] ?></p>
                           <p><?php echo $block['productSubdetail2'] ?></p>
                           <p><?php echo $block['productSubdetail3'] ?></p>
@@ -96,13 +109,12 @@ if ($num > 0):
                               <?php if ($block['productPrice'] == 0): ?>
                                 <a style="color:black;" href="<?php echo SITE_URL('Contact');?>">ติดต่อสอบถาม</a>
                                 <?php else: ?>
-                                  <?php echo "฿".number_format($block['productPrice']);  ?>
+                                  <a style="color:black;" href="<?php echo SITE_URL('Product/ProductDetail/'.$block['categroupId']."/".$block['cateId']."/".$block['productId']); ?>">
+                                    <?php echo "฿".number_format($block['productPrice']);  ?>
+                                  </a>
                               <?php endif; ?>
                             </b>
                           </p>
-                          <a href="<?php echo SITE_URL('Product/ProductDetail/'.$block['categroupId']."/".$block['cateId']."/".$block['productId']); ?>" class="btn btn-link btn-block">
-                            รายละเอียด
-                          </a>
                         </div>
                       </div>
                     </div>
@@ -150,8 +162,8 @@ if ($num > 0):
                       <thead>
                         <tr>
                           <th width="3%">รูปภาพ</th>
-                          <th width="16%">ชื่อสินค้า</th>
                           <th width="16%">แบรนด์</th>
+                          <th width="16%">รุ่น</th>
                           <th width="40%">รายละเอียด</th>
                           <th width="18%">ราคา</th>
                           <th width="5%">ตัวเลือก</th>
@@ -165,8 +177,8 @@ if ($num > 0):
                             <img class="img-thumbnail" src="<?php echo BASE_URL('uploads/Products/'.$table['productImg']); ?>" width="50px;" style="margin:auto; display:block;"/>
                           </a>
                           </td>
-                          <td style="font-size:11px;"><?php echo $table['productName'];?></td>
                           <td style="font-size:11px;"><?php echo $table['brandName'];?></td>
+                          <td style="font-size:11px;"><?php echo $table['productName'];?></td>
                           <td style="font-size:11px;"><?php echo $table['productSubdetail1']." <b>/</b> ".$table['productSubdetail2']." <b>/</b> ".$table['productSubdetail3']." <b>/</b> ".$table['productSubdetail4']." <b>/</b> ".$table['productSubdetail5']." <b>/</b> ".$table['productSubdetail6'] ?></td>
                           <td align="right" style="color:gray;">
                             <b>

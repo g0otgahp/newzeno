@@ -1,41 +1,59 @@
 
 
 <!-- Sidebar end=============================================== -->
-<div class="container" style="margin-bottom:20px;">
-  <div class="row">
 
     <!-- Result 1 -->
-    <article class="col-lg-12 col-md-12">
-      <div class="row">
-        <div class="col-lg-12 col-md-12">
 
-          <section id="tiny" class="tinyslide">
-            <aside class="slides">
-              <figure>
-                <img style="width:1280px; height:360px;" src="<?php echo BASE_URL()?>/uploads/Slide/Video-Wall-Page-Banner.jpg" alt="" />
-                <figcaption>
-                  <a href="#" class="btn btn-primary btn-lg">Video Wall</a>
-                </figcaption>
-              </figure>
-              <figure>
-                <img style="width:1280px; height:360px;" src="<?php echo BASE_URL()?>/uploads/Slide/Cover_AC_APR2018_1600x800.jpg" alt="" />
-                <!-- <figcaption>
-                  Neat Stuff
-                </figcaption> -->
-              </figure>
-              <figure>
-                <img style="width:1280px; height:360px;" src="<?php echo BASE_URL()?>/uploads/Slide/cah website banner-6.jpg" alt="" />
-              </figure>
-              <figure>
-                <img style="width:1280px; height:360px;" src="<?php echo BASE_URL()?>/uploads/Slide/b6.jpg" alt="" />
-              </figure>
-            </aside>
-          </section>
-        </div>
-        <!-- <div class="col-lg-5 col-md-5">
-          <iframe width="360" height="243" src="https://www.youtube.com/embed/E2BBKf8e0iw?rel=0&amp;controls=0&amp;showinfo=0&amp;autoplay=1;" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div> -->
-      </div>
+    <article class="col-md-8">
+      <div class="row">
+        <div class="col-md-12">
+
+              <section id="tiny1" class="tinyslide">
+                <aside class="slides">
+                  <figure>
+                    <img style="width:750px; height:440px;" src="<?php echo BASE_URL()?>/uploads/Slide/slide44.png" alt="" />
+                  </figure>
+                  <figure>
+                    <img style="width:750px; height:440px;" src="<?php echo BASE_URL()?>/uploads/Slide/B47X8376-1024x682.jpg" alt="" />
+                  </figure>
+                  <figure>
+                    <img style="width:750px; height:440px;" src="<?php echo BASE_URL()?>/uploads/Slide/maxresdefault.jpg" alt="" />
+                  </figure>
+                  <figure>
+                    <img style="width:750px; height:440px;" src="<?php echo BASE_URL()?>/uploads/Slide/20171124093125069.jpg" alt="" />
+                  </figure>
+                </aside>
+              </section>
+
+            </div>
+          </div>
     </article>
+    <article class="col-md-4">
+      <div class="row">
+        <div class="col-md-12">
+      <ul id="slide-header" class="nav nav-tabs">
+        <li class="active" style="float:left;"><a href="#video1" data-toggle="tab" class="colorTagA">LG TV</a></li>
+        <li style="float:left;"><a href="#video2" data-toggle="tab" class="colorTagA">Future</a></li>
+      </ul>
+      <div id="myTabContent" class="tab-content">
+        <div class="tab-pane fade active in" id="video1">
+          <iframe width="350" height="202" src="https://www.youtube.com/embed/HnDvDntRFn8?rel=0&amp;controls=0&amp;showinfo=0;" frameborder="0" encrypted-media allowfullscreen></iframe>
+        </div>
+        <div class="tab-pane fade in" id="video2">
+          <iframe width="350" height="202" src="https://www.youtube.com/embed/qIRjytgNuhM?rel=0&amp;controls=0&amp;showinfo=0;" frameborder="0" encrypted-media allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <div class="panel-group">
+        <div class="panel panel-default">
+          <div class="panel-heading">Panel with panel-default class</div>
+          <div class="panel-body">Panel Content</div>
+          <div class="panel-body">Panel Content</div>
+          <div class="panel-body">Panel Content</div>
+        </div>
+      </div>
   </div>
-</div>
+
+  </div>
+  </article>

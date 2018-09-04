@@ -18,7 +18,7 @@ class Home extends CI_Controller
       'NewProduct' => $NewProduct,
       'Product' => $Product,
     );
-    $this->load->view('Front/themes/slide');
+    // $this->load->view('Front/themes/slide');
     // $this->load->view('Front/themes/menu');
     $this->load->view('Front/Home',$data);
     $this->load->view('Front/themes/footer');

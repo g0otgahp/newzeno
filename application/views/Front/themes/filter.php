@@ -34,8 +34,7 @@
                   <?php endforeach; ?>
                 <?php endif; ?>
                 >
-                <?php $count = $this->db->where('productBrandid',$key2['brandId'])->where('productStatus',1)->get('product')->num_rows(); ?>
-                <label for="brand<?php echo $key2['brandId'] ?>"><?php echo $key2['brandName'] ?> (<?php echo $count; ?>)</label>
+                <label for="brand<?php echo $key2['brandId'] ?>"><?php echo $key2['brandName'] ?></label>
               </p>
             <?php endforeach; ?>
           </div>
@@ -58,8 +57,7 @@
                 <?php endforeach; ?>
               <?php endif; ?>
               >
-              <?php $count = $this->db->where('productTechId',$key4['techId'])->where('productStatus',1)->get('product')->num_rows(); ?>
-              <label for="tech<?php echo $key4['techId'] ?>"><?php echo $key4['techName'] ?> (<?php echo $count; ?>)</label>
+              <label for="tech<?php echo $key4['techId'] ?>"><?php echo $key4['techName'] ?></label>
             </p>
           <?php endforeach; ?>
         </div>
@@ -82,8 +80,7 @@
                   <?php endforeach; ?>
                 <?php endif; ?>
                 >
-                <?php $count = $this->db->where('productCateid',$key1['cateId'])->where('productStatus',1)->get('product')->num_rows(); ?>
-                <label for="Category<?php echo $key1['cateId'] ?>"><?php echo $key1['cateName'] ?> (<?php echo $count; ?>)</label>
+                <label for="Category<?php echo $key1['cateId'] ?>"><?php echo $key1['cateName'] ?></label>
               </p>
             <?php endforeach; ?>
           </div>
@@ -107,8 +104,7 @@
                   <?php endforeach; ?>
                 <?php endif; ?>
                 >
-                <?php $count = $this->db->where('productResolution',$key3['resolutionId'])->where('productStatus',1)->get('product')->num_rows(); ?>
-                <label for="resulotion<?php echo $key3['resolutionId'] ?>"><?php echo $key3['resolutionName'] ?> (<?php echo $count; ?>)</label>
+                <label for="resulotion<?php echo $key3['resolutionId'] ?>"><?php echo $key3['resolutionName'] ?></label>
               </p>
             <?php endforeach; ?>
           </div>
@@ -133,8 +129,7 @@
               <?php endforeach; ?>
             <?php endif; ?>
             >
-            <?php $count = $this->db->where('productSizeId',$key5['SizeId'])->where('productStatus',1)->get('product')->num_rows(); ?>
-            <label for="Size<?php echo $key5['SizeId'] ?>"><?php echo $key5['SizeName'] ?> (<?php echo $count; ?>)</label>
+            <label for="Size<?php echo $key5['SizeId'] ?>"><?php echo $key5['SizeName'] ?></label>
           </p>
         <?php endforeach; ?>
       </div>
