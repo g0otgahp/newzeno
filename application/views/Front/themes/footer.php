@@ -49,14 +49,57 @@
 <!-- <script src="<?php echo BASE_URL()?>assets/Front/plugin/Gallery/dist/js/jquery.desoslide.min.js"></script>
 <script src="<?php echo BASE_URL()?>assets/Front/plugin/Gallery/js/app/demo.js"></script> -->
 
-<!-- Bootstrap DataTable -->
-<script src="<?php echo BASE_URL()?>/assets/Back/datatable-bootstrap/jquery.dataTables.min.js" type="text/javascript"></script>
-<script src="<?php echo BASE_URL()?>/assets/Back/datatable-bootstrap/dataTables.bootstrap.min.js" type="text/javascript"></script>
 
 <!-- Tiny Slide -->
-<script src="<?php echo BASE_URL()?>/assets/Front/plugin/Tinyslide/js/tinyslide.js" type="text/javascript"></script>
+<!-- <script src="<?php echo BASE_URL()?>/assets/Front/plugin/Tinyslide/js/tinyslide.js" type="text/javascript"></script> -->
+
+<!-- slippry -->
+<script src="<?php echo BASE_URL()?>/assets/Front/plugin/slippry/dist/slippry.min.js" type="text/javascript"></script>
+<script src="//use.edgefonts.net/cabin;source-sans-pro:n2,i2,n3,n4,n6,n7,n9.js"></script>
 
 <script>
+
+//slippry
+$(function() {
+  var demo1 = $("#demo1").slippry({
+    // transition: 'fade',
+    // useCSS: true,
+    // speed: 1000,
+    // pause: 3000,
+    // auto: true,
+    // preload: 'visible',
+    // autoHover: false
+  });
+
+  $('.stop').click(function () {
+    demo1.stopAuto();
+  });
+
+  $('.start').click(function () {
+    demo1.startAuto();
+  });
+
+  $('.prev').click(function () {
+    demo1.goToPrevSlide();
+    return false;
+  });
+  $('.next').click(function () {
+    demo1.goToNextSlide();
+    return false;
+  });
+  $('.reset').click(function () {
+    demo1.destroySlider();
+    return false;
+  });
+  $('.reload').click(function () {
+    demo1.reloadSlider();
+    return false;
+  });
+  $('.init').click(function () {
+    demo1 = $("#demo1").slippry();
+    return false;
+  });
+});
 
 //Select
 $(document).ready(function() {

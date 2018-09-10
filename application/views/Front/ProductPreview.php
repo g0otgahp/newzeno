@@ -8,9 +8,9 @@ if ($num > 0):
   <!-- list Style -->
   <div class="tab-content">
     <?php if ($new == 1): ?>
-      <div class="tab-pane" id="newlistView">
+      <div class="tab-pane fade in" id="newlistView">
       <?php else: ?>
-        <div class="tab-pane" id="listView">
+        <div class="tab-pane fade in" id="listView">
         <?php endif; ?>
         <?php foreach ($Preview as $list): ?>
           <div class="row" style="display:block; margin:auto;">
@@ -64,9 +64,9 @@ if ($num > 0):
 
           <!-- Block Style -->
           <?php if ($new == 1): ?>
-            <div class="tab-pane active" id="newblockView">
+            <div class="tab-pane active fade in" id="newblockView">
             <?php else: ?>
-              <div class="tab-pane active" id="blockView">
+              <div class="tab-pane active fade in" id="blockView">
               <?php endif; ?>
               <ul class="thumbnails" style="margin:auto; display:block;">
                 <?php $i = 1; foreach ($Preview as $block): ?>
@@ -76,8 +76,10 @@ if ($num > 0):
                       <div class="col-xs-12 col-md-4 col-sm-6" style="padding-left:5px;">
                       <?php endif; ?>
                       <div class="card">
-                        <?php if ($block['productSizeId'] != ''): ?>
+                        <?php if ($block['productSizeId'] != 0): ?>
                           <span class="btn btn-danger btn-xs" style="font-weight: bold;"><?php echo $block['productSizeId'] ?>"</span>
+                          <?php else: ?>
+                            <br>
                         <?php endif; ?>
                         <a class="img-card" href="<?php echo SITE_URL('Product/ProductDetail/'.$block['categroupId']."/".$block['cateId']."/".$block['productId']); ?>">
                           <img src="<?php echo BASE_URL('uploads/Products/'.$block['productImg']); ?>" style=" margin:auto; display:block;"/>
@@ -155,7 +157,7 @@ if ($num > 0):
           <?php if (count($Preview) != 0): ?>
 
         <!-- DataTable Style -->
-            <div class="tab-pane" id="tableView">
+            <div class="tab-pane fade in" id="tableView">
             <ul class="thumbnails" style="margin:auto; display:block;">
                   <div class="col-xs-12 col-md-12 col-sm-12" style="padding-left:5px;">
                     <table class="table table-hover dataTable">

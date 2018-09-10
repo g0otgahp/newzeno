@@ -109,7 +109,7 @@
 		<li <?php if($this->uri->segment(3)=="ProductQuick"){ echo "class='active'"; } ?>>
 			<a href="<?php echo SITE_URL('Admin/Product/ProductQuick')?>">
 				<i class="pe-7s-plus" ></i>
-				<span>เพิ่มสินค้า แบบด่วน</span><span ></span>
+				<span>เพิ่มสินค้า</span><span ></span>
 			</a>
 		</li>
 

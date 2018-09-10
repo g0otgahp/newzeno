@@ -17,7 +17,7 @@
         <?php endif; ?>
 
       <?php if (count($NewProduct) > 0): ?>
-        <ul class="breadcrumb btn-primary">
+        <ul class="breadcrumb btn-success">
           <li>สินค้าใหม่</li>
           <div id="myTab" class="pull-right" >
             <a href="#newblockView" data-toggle="tab" class="btn btn-xs btn-default"><i class="icon-th-large" style="margin-top:5px;"></i></a>
@@ -31,7 +31,7 @@
         <?php endif; ?>
 
         <?php if (count($Product) > 0): ?>
-          <ul class="breadcrumb btn-success">
+          <ul class="breadcrumb btn-primary">
             <li>สินค้าแนะนำ</li>
             <div id="myTab" class="pull-right">
               <a href="#blockView" data-toggle="tab" class="btn btn-xs btn-default"><i class="icon-th-large" style="margin-top:5px;"></i></a>

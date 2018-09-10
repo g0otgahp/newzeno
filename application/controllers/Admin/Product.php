@@ -60,6 +60,9 @@ class Product extends CI_Controller
     $brand = $this->BrandModel->SelectBrand();
     $category = $this->CategoryModel->SelectCategory();
     $group = $this->GroupModel->SelectGroup();
+    $SelectTech = $this->ProductModel->SelectTech();
+    $SelectResolution = $this->ProductModel->SelectResolution();
+    $SelectSize = $this->ProductModel->SelectSize();
 
     $value = array(
       'Result' => array(
@@ -67,7 +70,9 @@ class Product extends CI_Controller
         'category' => $category,
         'data' => $product,
         'group' => $group,
-
+        'SelectTech' => $SelectTech,
+        'SelectResolution' => $SelectResolution,
+        'SelectSize' => $SelectSize,
       ),
       'View' => 'Back/ProductDetail',
     );
@@ -158,7 +163,7 @@ class Product extends CI_Controller
     }
 
     echo "<script>alert('เพิ่มสินค้าใหม่เรียบร้อยแล้ว')</script>";
-    echo "<script>document.location='" . SITE_URL('Admin/Search') . "'</script>";
+    echo "<script>document.location='" . SITE_URL('Admin/Product/ProductDetail/') .$id. "'</script>";
   }
 
   public function UpdateProduct()
@@ -251,7 +256,7 @@ class Product extends CI_Controller
     }
 
     echo "<script>alert('แก้ไขสินค้าเรียบร้อยแล้ว')</script>";
-    echo "<script>document.location='" . SITE_URL('Admin/Search') . "'</script>";
+    echo "<script>document.location='" . SITE_URL('Admin/Product/ProductDetail/').$input['productId']. "'</script>";
   }
 
   public function ProductImage()
@@ -293,7 +298,7 @@ class Product extends CI_Controller
     $this->ProductModel->DeleteSubImage($id);
 
     echo "<script>alert('ลบรูปภาพเรียบร้อยแล้ว')</script>";
-    echo "<script>document.location='" . SITE_URL('Admin/Product/ProductImage/'.$Productid) . "'</script>";
+    echo "<script>document.location='" . SITE_URL('Admin/Product/ProductDetail/'.$Productid) . "'</script>";
   }
 
   public function DeleteDocument()
@@ -303,7 +308,7 @@ class Product extends CI_Controller
     $this->ProductModel->DeleteDocument($id);
 
     echo "<script>alert('ลบเอกสารเรียบร้อยแล้ว')</script>";
-    echo "<script>document.location='" . SITE_URL('Admin/Product/ProductDocument/'.$Productid) . "'</script>";
+    echo "<script>document.location='" . SITE_URL('Admin/Product/ProductDetail/'.$Productid) . "'</script>";
   }
 
   public function DeleteProduct()

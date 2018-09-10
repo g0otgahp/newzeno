@@ -1,13 +1,16 @@
-<div class="content">
-  <div class="container-fluid">
+
     <?php echo form_open_multipart('Admin/Product/UpdateProduct') ?>
 
     <div class="row">
       <div class="col-md-12 animate-box">
-        <div class="card">
           <div class="header">
-            <button type="submit" class="btn btn-info btn-fill pull-right">ลงทะเบียนเอกสารแนบ</button>
-            <h4 class="title">แก้ไขรูปภาพสินค้า</h4>
+            <div class="form-group">
+              <div class="col-md-4">
+              <label>เอกสาร <span style="color:red; font-size:11px;">*PDF เท่านั้น</span></label>
+              <input type="file" accept="application/pdf" name="Doc[]" class="form-control" multiple>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-warning btn-fill" style="margin-top:15px;">ลงทะเบียนเอกสารแนบ</button>
           </div>
           <div class="content">
 
@@ -15,25 +18,14 @@
             <input type="hidden" name="productImg" value="<?php echo $data['product'][0]['productImg'] ?>" >
 
           </div>
-        </div>
       </div>
     </div>
 
 
     <div class="col-md-12 animate-box">
-    <div class="card">
-      <div class="header">
-        <h4 class="title">เอกสารเพิ่มเติม</h4>
-      </div>
       <div class="content">
         <div class="row">
-          <div class="form-group">
-            <div class="col-md-4">
-            <label>เอกสาร <span style="color:red; font-size:11px;">*PDF เท่านั้น</span></label>
-            <input type="file" accept="application/pdf" name="Doc[]" class="form-control" multiple>
-            <br>
-          </div>
-          </div>
+
           <div class="col-md-12">
             <div class="form-group">
 
@@ -77,10 +69,6 @@
         </div>
       </div>
     </div>
-  </div>
-
-
-
 
 
 

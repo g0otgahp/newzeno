@@ -1,3 +1,4 @@
+<!-- <div class="content" style="background-image: url(<?php echo BASE_URL('uploads/logo/backend.jpg') ?>")> -->
 <div class="content">
   <div class="container-fluid">
     <div class="row">

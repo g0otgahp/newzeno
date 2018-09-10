@@ -24,7 +24,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 |
  */
 $config['base_url'] = 'http://localhost/newzeno';
-// $config['base_url'] = 'http://www.azza.co.th';
+// $config['base_url'] = 'https://www.newzeno.com/';
 
 /*
 |--------------------------------------------------------------------------
@@ -38,6 +38,7 @@ $config['base_url'] = 'http://localhost/newzeno';
  */
 $config['index_page'] = '';
 
+$config['max_size'] = '500000';
 /*
 |--------------------------------------------------------------------------
 | URI PROTOCOL

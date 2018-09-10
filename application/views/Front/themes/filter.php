@@ -11,11 +11,59 @@
               <?php echo form_open('Home/CategoryFind/'.$GroupSelect[0]['categroupId']."#productlist"); ?>
           <?php endif; ?>
           <div class="form-check">
-            <h4><b>ค้นหา</b></h4>
+            <h4><b>ค้นหาจากที่เลือก</b></h4>
             <p>
-              <input style="padding:15px;" class="form-control" type="text" name="wordsearch" placeholder="ค้นหาชื่อสินค้า" value="<?php echo @$keyword['wordsearch'] ?>">
+              <input style="padding:15px;" class="form-control" type="text" name="wordsearch" placeholder="" value="<?php echo @$keyword['wordsearch'] ?>">
             </p>
           </div>
+
+          <!-- Size -->
+          <?php if (!empty($Filter['Size'])): ?>
+          <hr>
+          <div class="form-check">
+            <h4><b>ขนาด</b></h4>
+            <div class="row">
+              <?php foreach ($Filter['Size'] as $key5): ?>
+                <div class="col-md-6">
+                <input class="form-check-input" type="checkbox" name="Size[]" value="<?php echo $key5['SizeId'] ?>"
+                style="margin-bottom:5px;" id="Size<?php echo $key5['SizeId'] ?>"
+                <?php if (isset($keyword['Size'])): ?>
+                  <?php foreach ($keyword['Size'] as $check): ?>
+                    <?php if ($check == $key5['SizeId']): ?>
+                      <?php echo "checked"; ?>
+                    <?php endif; ?>
+                  <?php endforeach; ?>
+                <?php endif; ?>
+                >
+                <label for="Size<?php echo $key5['SizeId'] ?>"><?php echo $key5['SizeName'] ?></label>
+              </div>
+            <?php endforeach; ?>
+          </div>
+        </div>
+          <?php endif; ?>
+
+          <!-- Category -->
+          <?php if (!empty($Filter['Category'])): ?>
+          <hr>
+          <div class="form-check">
+            <h4><b>ประเภทสินค้า</b></h4>
+              <?php foreach ($Filter['Category'] as $key1): ?>
+              <p>
+                <input class="form-check-input" type="checkbox" name="catebox[]" value="<?php echo $key1['cateId'] ?>"
+                style="margin-bottom:5px;" id="Category<?php echo $key1['cateId'] ?>"
+                <?php if (isset($keyword['catebox'])): ?>
+                  <?php foreach ($keyword['catebox'] as $check): ?>
+                    <?php if ($check == $key1['cateId']): ?>
+                      <?php echo "checked"; ?>
+                    <?php endif; ?>
+                  <?php endforeach; ?>
+                <?php endif; ?>
+                >
+                <label for="Category<?php echo $key1['cateId'] ?>"><?php echo $key1['cateName'] ?></label>
+              </p>
+            <?php endforeach; ?>
+          </div>
+        <?php endif; ?>
 
           <!-- Brand -->
           <?php if (!empty($Filter['Brand'])): ?>
@@ -63,30 +111,6 @@
         </div>
       <?php endif; ?>
 
-          <!-- Category -->
-          <?php if (!empty($Filter['Category'])): ?>
-          <hr>
-          <div class="form-check">
-            <h4><b>ประเภทสินค้า</b></h4>
-              <?php foreach ($Filter['Category'] as $key1): ?>
-              <p>
-                <input class="form-check-input" type="checkbox" name="catebox[]" value="<?php echo $key1['cateId'] ?>"
-                style="margin-bottom:5px;" id="Category<?php echo $key1['cateId'] ?>"
-                <?php if (isset($keyword['catebox'])): ?>
-                  <?php foreach ($keyword['catebox'] as $check): ?>
-                    <?php if ($check == $key1['cateId']): ?>
-                      <?php echo "checked"; ?>
-                    <?php endif; ?>
-                  <?php endforeach; ?>
-                <?php endif; ?>
-                >
-                <label for="Category<?php echo $key1['cateId'] ?>"><?php echo $key1['cateName'] ?></label>
-              </p>
-            <?php endforeach; ?>
-          </div>
-        <?php endif; ?>
-
-
           <!-- Resulotion -->
           <?php if (!empty($Filter['Resolution'])): ?>
           <hr>
@@ -110,30 +134,6 @@
           </div>
         <?php endif; ?>
 
-
-
-      <!-- Size -->
-      <?php if (!empty($Filter['Size'])): ?>
-      <hr>
-      <div class="form-check">
-        <h4><b>ขนาด</b></h4>
-          <?php foreach ($Filter['Size'] as $key5): ?>
-          <p>
-            <input class="form-check-input" type="checkbox" name="Size[]" value="<?php echo $key5['SizeId'] ?>"
-            style="margin-bottom:5px;" id="Size<?php echo $key5['SizeId'] ?>"
-            <?php if (isset($keyword['Size'])): ?>
-              <?php foreach ($keyword['Size'] as $check): ?>
-                <?php if ($check == $key5['SizeId']): ?>
-                  <?php echo "checked"; ?>
-                <?php endif; ?>
-              <?php endforeach; ?>
-            <?php endif; ?>
-            >
-            <label for="Size<?php echo $key5['SizeId'] ?>"><?php echo $key5['SizeName'] ?></label>
-          </p>
-        <?php endforeach; ?>
-      </div>
-      <?php endif; ?>
 
           <hr>
           <div class="form-check">
