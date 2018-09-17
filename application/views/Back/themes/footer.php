@@ -50,8 +50,12 @@
 <!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
 <script src="<?php echo BASE_URL()?>/assets/Back/js/demo.js"></script>
 
+<!-- summernote -->
 <script src="<?php echo BASE_URL()?>/assets/Back/summernote/summernote.js"></script>
 
+<!-- AngularJS -->
+<script src="<?php echo BASE_URL()?>/Service/angular-1.7.2/angular.min.js"></script>
+<script src="<?php echo BASE_URL()?>/Service/AnController.js"></script>
 
 <script>
 

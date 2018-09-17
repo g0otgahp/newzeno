@@ -82,41 +82,73 @@ class Product extends CI_Controller
 
 
 
-  public function ShowProductFind()
+  public function finding()
   {
-    $input = $this->input->post();
-    $GroupId = $this->uri->segment(3);
-    $CateId = $this->uri->segment(4);
-    if (isset($input['catebox']) || isset($input['brandbox']) || isset($input['sortbyprice']) || isset($input['resolution']) || isset($input['tech']) || isset($input['Size']) ||  $input['min'] != '' || $input['max'] != '' || $input['wordsearch'] != '') {
+    if ($this->uri->segment(4) == '') {
+      $input = $this->input->post();
+      $groupId = $this->uri->segment(3);
+      $cateId = 0;
+      if (isset($input['catebox']) || isset($input['brandbox']) || isset($input['sortbyprice']) || isset($input['resolution']) || isset($input['tech']) || isset($input['Size']) ||  $input['min'] != '' || $input['max'] != '' || $input['wordsearch'] != '') {
+        $GroupSelect = $this->GroupModel->SelectGroupById($groupId);
+        if (count($GroupSelect) == 0) {
+          echo "<script>alert('เกิดข้อพิดพลาด ไม่พบสิ่งที่คุณต้องการ')</script>";
+          echo "<script>document.location='" . SITE_URL('Home') . "'</script>";
+          exit();
+        }
+        $Product = $this->HomepageModel->SelectProductByFind($input,$groupId,$cateId);
+        $Filter = $this->HomepageModel->FilterGroup($groupId);
+        $keyword = $input;
+        $data = array(
+          'Product' => $Product,
+          'GroupSelect' => $GroupSelect,
+          'keyword' => $keyword,
+          'Filter' => $Filter,
 
-    $GroupSelect = $this->GroupModel->SelectGroupById($GroupId);
-    $CateSelect = $this->CategoryModel->SelectCategoryById($CateId);
-    $Product = $this->HomepageModel->SelectProductByFind($input,$GroupId,$CateId);
-    $Filter = $this->HomepageModel->FilterCate($CateId);
-    $keyword = $input;
+        );
 
-    if (count($GroupSelect) == 0 || count($CateSelect) == 0) {
-      echo "<script>alert('เกิดข้อพิดพลาด ไม่พบสิ่งที่คุณต้องการ')</script>";
-      echo "<script>document.location='" . SITE_URL('Home') . "'</script>";
-      exit();
+        $this->load->view('Front/themes/filter',$data);
+        // $this->load->view('Front/themes/menu');
+        $this->load->view('Front/ProductList');
+        $this->load->view('Front/themes/footer');
+      } else {
+        echo "<script>document.location='" . SITE_URL('Product/Category/'.$groupId) . "'</script>";
+      }
+    } else {
+      $input = $this->input->post();
+      $GroupId = $this->uri->segment(3);
+      $CateId = $this->uri->segment(4);
+      if (isset($input['catebox']) || isset($input['brandbox']) || isset($input['sortbyprice']) || isset($input['resolution'])
+      || isset($input['tech']) || $input['Size-min'] != '' || $input['Size-max'] != '' ||  $input['min'] != '' || $input['max'] != '' || $input['wordsearch'] != '') {
+
+        $GroupSelect = $this->GroupModel->SelectGroupById($GroupId);
+        $CateSelect = $this->CategoryModel->SelectCategoryById($CateId);
+        $Product = $this->HomepageModel->SelectProductByFind($input,$GroupId,$CateId);
+        $Filter = $this->HomepageModel->FilterCate($CateId);
+        $keyword = $input;
+
+        if (count($GroupSelect) == 0 || count($CateSelect) == 0) {
+          echo "<script>alert('เกิดข้อพิดพลาด ไม่พบสิ่งที่คุณต้องการ')</script>";
+          echo "<script>document.location='" . SITE_URL('Home') . "'</script>";
+          exit();
+        }
+
+        $data = array(
+          'Product' => $Product,
+          'GroupSelect' => $GroupSelect,
+          'CateSelect' => $CateSelect,
+          'keyword' => $keyword,
+          'Filter' => $Filter,
+        );
+
+        $this->load->view('Front/themes/filter',$data);
+        // $this->load->view('Front/themes/menu');
+        $this->load->view('Front/ProductList');
+        $this->load->view('Front/themes/footer');
+      } else {
+        echo "<script>document.location='" . SITE_URL('Product/Group/'.$cateId."/".$groupId) . "'</script>";
+      }
     }
-
-    $data = array(
-      'Product' => $Product,
-      'GroupSelect' => $GroupSelect,
-      'CateSelect' => $CateSelect,
-      'keyword' => $keyword,
-      'Filter' => $Filter,
-    );
-
-    $this->load->view('Front/themes/filter',$data);
-    // $this->load->view('Front/themes/menu');
-    $this->load->view('Front/ProductList');
-    $this->load->view('Front/themes/footer');
-  } else {
-    echo "<script>document.location='" . SITE_URL('Product/ShowProduct/'.$cateId."/".$groupId) . "'</script>";
-}
-}
+  }
   public function ProductDetail()
   {
     $cateId = $this->uri->segment(3);

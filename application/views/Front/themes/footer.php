@@ -1,6 +1,6 @@
 <!-- Footer ================================================================== -->
 <div id="footerSection">
-  <div class="container" >
+  <div class="container">
     <div class="row" style="margin:auto; display:block;">
       <?php  foreach ($TitleGroup as $Title): ?>
         <div class="col-md-2">
@@ -21,6 +21,8 @@
     <p class="pull-right">&copy; Newzeno</p>
   </div><!-- Container End -->
 </div>
+
+
 <!-- Placed at the end of the document so the pages load faster ============================================= -->
 <script src="<?php echo BASE_URL()?>/assets/Front/themes/js/jquery.js" type="text/javascript"></script>
 <script src="<?php echo BASE_URL()?>/assets/Front/themes/js/bootstrap.min.js" type="text/javascript"></script>
@@ -56,7 +58,6 @@
 <!-- slippry -->
 <script src="<?php echo BASE_URL()?>/assets/Front/plugin/slippry/dist/slippry.min.js" type="text/javascript"></script>
 <script src="//use.edgefonts.net/cabin;source-sans-pro:n2,i2,n3,n4,n6,n7,n9.js"></script>
-
 <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?lang=css"></script>
 
 <script>
@@ -134,9 +135,9 @@ $(document).ready(function() {
 //   }
 // });
 
-//TinySlide
-var tiny1 = $('#tiny1').tiny().data('api_tiny');
-var tiny2 = $('#tiny2').tiny().data('api_tiny');
+// //TinySlide
+// var tiny1 = $('#tiny1').tiny().data('api_tiny');
+// var tiny2 = $('#tiny2').tiny().data('api_tiny');
 // var tiny3 = $('#tiny3').tiny().data('api_tiny');
 // var tiny4 = $('#tiny4').tiny().data('api_tiny');
 

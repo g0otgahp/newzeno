@@ -9,7 +9,7 @@
         </ul> -->
 
         <?php if (count($Product) > 0): ?>
-          <ul class="breadcrumb btn-defualt">
+          <ul class="breadcrumb btn-primary">
             <li>สินค้าแนะนำ</li>
             <div id="myTab" class="pull-right">
               <a href="#blockView" data-toggle="tab" class="btn btn-xs btn-default"><i class="icon-th-large" style="margin-top:5px;"></i></a>

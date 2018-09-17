@@ -9,31 +9,20 @@
               <button type="submit" class="btn btn-primary btn-fill btn-lg"><i class="fa fa-search"></i> ค้นหา</button>
             </div>
 
-
-            <!-- Size -->
-            <hr>
             <div class="form-check">
-              <h4><b>ขนาด</b></h4>
+              <h4><b>ขนาดจอ (นิ้ว)</b></h4>
               <div class="row">
-                <?php foreach ($size as $key5): ?>
-                  <div class="col-md-6" style="padding:0px;">
-                    <input class="form-check-input" type="checkbox" name="Size[]" value="<?php echo $key5['SizeId'] ?>"
-                    id="Size<?php echo $key5['SizeId'] ?>"
-                    <?php if (isset($keyword['Size'])): ?>
-                      <?php foreach ($keyword['Size'] as $check): ?>
-                        <?php if ($check == $key5['SizeId']): ?>
-                          <?php echo "checked"; ?>
-                        <?php endif; ?>
-                      <?php endforeach; ?>
-                    <?php endif; ?>
-                    >
-                    <?php $count = $this->db->where('productSizeId',$key5['SizeId'])->where('productStatus',1)->get('product')->num_rows(); ?>
-                    <label for="Size<?php echo $key5['SizeId'] ?>"><?php echo $key5['SizeName'] ?> (<?php echo $count; ?>)</label>
-                  </div>
-                <?php endforeach; ?>
+                <div class="col-md-5">
+                  <input style="padding:15px;" type="number" class="form-control" name="Size-min" placeholder="ต่ำ" value="<?php echo @$keyword['Size-min'] ?>">
+                </div>
+                <div class="col-md-1">
+                  -
+                </div>
+                <div class="col-md-5">
+                  <input style="padding:15px;" type="number" class="form-control" name="Size-max" placeholder="สูง" value="<?php echo @$keyword['Size-max'] ?>">
+                </div>
               </div>
             </div>
-
 
             <!-- Group -->
             <hr>

@@ -63,8 +63,12 @@ class ProductModel extends CI_Model
       $this->db->where_in('product.productTechId',$input['tech']);
     }
 
-    if (isset($input['size'])) {
-      $this->db->where_in('product.productSizeId',$input['size']);
+    if ($input['Size-min'] != '') {
+      $this->db->where('product.productSizeId >=',$input['Size-min']);
+    }
+
+    if ($input['Size-max'] != '') {
+      $this->db->where('product.productSizeId <=',$input['Size-max']);
     }
 
     if ($input['min'] != '') {

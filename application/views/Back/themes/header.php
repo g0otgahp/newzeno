@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" ng-app="App">
 <head>
 	<meta charset="utf-8" />
 	<meta name='viewport' content='width=device-width, initial-scale=0'  />
@@ -36,6 +36,7 @@
 	<!-- <link rel="stylesheet" href="assets/css/style.css"> -->
 	<link href="https://fonts.googleapis.com/css?family=Prompt" rel="stylesheet">
 
+	<!-- Summernote -->
 	<link href="<?php echo BASE_URL()?>/assets/Back/summernote/summernote.css" rel="stylesheet">
 
 	<style>
@@ -54,7 +55,7 @@
 
 </style>
 </head>
-<body>
+<body ng-controller="Ctrl">
 
 	<div class="wrapper">
 		<div class="sidebar" data-color="" data-image="<?php echo BASE_URL()?>/assets/Back/img/sidebar-2.jpg">

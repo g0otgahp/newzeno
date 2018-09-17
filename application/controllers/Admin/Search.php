@@ -28,7 +28,6 @@ class Search extends CI_Controller
     $category = $this->CategoryModel->SelectCategory();
     $brand = $this->BrandModel->SelectBrand();
     $tech = $this->ProductModel->SelectTech();
-    $size = $this->ProductModel->SelectSize();
     $resolution = $this->ProductModel->SelectResolution();
     $product = $this->ProductModel->SelectProduct();
 
@@ -39,7 +38,6 @@ class Search extends CI_Controller
         'brand' => $brand,
         'tech' => $tech,
         'resolution' => $resolution,
-        'size' => $size,
         'product' => $product,
       ),
       'View' => 'Back/ProductSearch',
@@ -57,8 +55,8 @@ class Search extends CI_Controller
     $brand = $this->BrandModel->SelectBrand();
     $tech = $this->ProductModel->SelectTech();
     $resolution = $this->ProductModel->SelectResolution();
-    $size = $this->ProductModel->SelectSize();
-    if (isset($input['catebox']) || isset($input['brandbox']) || isset($input['sortbyprice']) || isset($input['resolution']) || isset($input['tech']) || isset($input['Size']) ||  $input['min'] != '' || $input['max'] != '' || $input['wordsearch'] != '') {
+    if (isset($input['catebox']) || isset($input['brandbox']) || isset($input['sortbyprice']) || isset($input['resolution'])
+    || isset($input['tech']) || $input['Size-min'] != '' ||  $input['Size-max'] != '' || $input['min'] != '' || $input['max'] != '' || $input['wordsearch'] != '') {
       $product = $this->ProductModel->SelectSearchProduct($input);
     } else {
       echo "<script>document.location='" . SITE_URL('Admin/Search') . "'</script>";
@@ -73,7 +71,6 @@ class Search extends CI_Controller
         'brand' => $brand,
         'tech' => $tech,
         'resolution' => $resolution,
-        'size' => $size,
         'product' => $product,
         'keyword' => $keyword,
       ),

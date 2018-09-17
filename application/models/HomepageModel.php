@@ -193,7 +193,7 @@ class HomepageModel extends CI_Model
     // Filter Reolution
     $filter['Resolution'] = $this->SelectFilter($data,'productResolution','resolutionId','resolution');
     // Filter Reolution
-    $filter['Tech'] = $this->SelectFilter($data,'productTechId','techId','technology');
+    $filter['Tech'] = $this->SelectFilter($data,'productTechId','techId','technology');    
     // Filter Reolution
     $filter['Size'] = $this->SelectFilter($data,'productSizeId','SizeId','size');
 
@@ -258,8 +258,12 @@ class HomepageModel extends CI_Model
       $this->db->where_in('product.productTechId',$input['tech']);
     }
 
-    if (isset($input['Size'])) {
-      $this->db->where_in('product.productSizeId',$input['Size']);
+    if ($input['Size-min'] != '') {
+      $this->db->where('product.productSizeId >=',$input['Size-min']);
+    }
+
+    if ($input['Size-max'] != '') {
+      $this->db->where('product.productSizeId <=',$input['Size-max']);
     }
 
     if ($input['min'] != '') {

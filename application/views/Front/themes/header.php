@@ -83,9 +83,8 @@
   }
 
 </style>
-
 </head>
-<body>
+<body style="padding-bottom:0px;">
   <div id="header">
     <div style="background-color:#3a3f44;">
       <div class="container">
@@ -100,7 +99,8 @@
 
 
   <!-- new nav -->
-  <div class="container">
+<div style="background-color:white;">
+  <div class="container" >
     <div class="row">
       <div class="col-md-1" style="padding-left:0px; padding-right:0px; padding-top:0px;">
         <a class="pull-left" href="<?php echo SITE_URL('Home');?>"><img src="<?php echo BASE_URL()?>/uploads/Logo/logo2.png" style="height:70px; margin:25px;"/></a>
@@ -130,8 +130,9 @@
       </div>
     </div>
   </div>
+</div>
 
-  <div style="background-color:#3a3f44; min-height:0px;" class="navbar yamm">
+  <div style="background-color:#3a3f44; min-height:0px; margin-bottom:0px;" class="navbar yamm">
     <nav class="container" role="navigation">
 
       <!-- Grid demo navbar -->
@@ -261,6 +262,12 @@
 </div>
 </nav>
 </div>
+<!-- <body style="
+background-image: url(<?php echo BASE_URL('uploads/Logo/crop-bg.jpg') ?>);
+background-size: cover, auto;
+/* background-repeat:   no-repeat; */
+/* background-position: center center; */
+"> -->
 
 
 <!-- Header End====================================================================== -->

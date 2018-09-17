@@ -1,6 +1,6 @@
-<div class="container" style="margin-bottom:20px;">
-  <div class="row">
-
+    <div style="padding-bottom:0.5px; padding-top:15px; margin-bottom:15px;">
+      <div class="card container">
+      <div class="row" style="margin-top:15px; margin-bottom:5px;">
 
     <!-- Sidebar end=============================================== -->
 
@@ -8,7 +8,7 @@
 
     <article class="col-md-8">
       <div class="row">
-        <div class="col-md-12" style="padding-right:0px;">
+        <div class="col-md-12">
 
           <ul id="demo1">
             <li><a ><img style="width:730px; height:430px;" class="img-thumbnail" src="<?php echo BASE_URL()?>/uploads/Slide/VIDEO-WALL-900x444.png" alt=""></a></li>
@@ -43,7 +43,7 @@
     <div class="col-md-12" style="padding-left:0px;">
       <!-- <div id="myTabContent" class="tab-content"> -->
       <div class="tab-pane fade active in" id="video1">
-        <iframe width="400" height="220" src="https://www.youtube.com/embed/HnDvDntRFn8?rel=0&amp;controls=0&amp;showinfo=0;" frameborder="0" encrypted-media allowfullscreen></iframe>
+        <iframe width="100%" height="205" src="https://www.youtube.com/embed/HnDvDntRFn8?rel=0&amp;controls=0&amp;showinfo=0;" frameborder="0" encrypted-media allowfullscreen></iframe>
       </div>
       <!-- <div class="tab-pane fade in" id="video2">
       <iframe width="310" height="180" src="https://www.youtube.com/embed/qIRjytgNuhM?rel=0&amp;controls=0&amp;showinfo=0;" frameborder="0" encrypted-media allowfullscreen></iframe>
@@ -74,6 +74,7 @@
   </div>
 </div> -->
 </div>
-</div>
-</div>
 </article>
+</div>
+</div>
+</div>
