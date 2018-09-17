@@ -28,7 +28,7 @@ class Product extends CI_Controller
   //   $this->load->view('Front/themes/footer');
   // }
 
-  public function ShowProduct()
+  public function Category()
   {
     $GroupId = $this->uri->segment(3);
     $CateId = $this->uri->segment(4);
@@ -54,6 +54,33 @@ class Product extends CI_Controller
     $this->load->view('Front/ProductList');
     $this->load->view('Front/themes/footer');
   }
+
+  public function Group()
+  {
+
+    $GroupId = $this->uri->segment(3);
+    $GroupSelect = $this->GroupModel->SelectGroupById($GroupId);
+    if (count($GroupSelect) == 0) {
+      echo "<script>alert('เกิดข้อพิดพลาด ไม่พบสิ่งที่คุณต้องการ')</script>";
+      echo "<script>document.location='" . SITE_URL('Home') . "'</script>";
+      exit();
+    }
+    $Product = $this->HomepageModel->SelectProductByGroup($GroupId);
+    $Filter = $this->HomepageModel->FilterGroup($GroupId);
+
+    $data = array(
+      'Product' => $Product,
+      'GroupSelect' => $GroupSelect,
+      'Filter' => $Filter,
+    );
+
+    $this->load->view('Front/themes/filter',$data);
+    // $this->load->view('Front/themes/menu');
+    $this->load->view('Front/ProductList');
+    $this->load->view('Front/themes/footer');
+  }
+
+
 
   public function ShowProductFind()
   {

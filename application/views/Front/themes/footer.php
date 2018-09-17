@@ -9,7 +9,7 @@
               <?php if (count($footer['category']) != 0): ?>
                 <h4><?php echo $footer['categroupName'] ?></h4>
                 <?php foreach ($footer['category'] as $catefooter): ?>
-                  <a href="<?php echo SITE_URL('Product/ShowProduct/'.$footer['categroupId']."/".$catefooter['cateId']); ?>"><?php echo $catefooter['cateName'] ?></a>
+                  <a href="<?php echo SITE_URL('Product/Category/'.$footer['categroupId']."/".$catefooter['cateId']); ?>"><?php echo $catefooter['cateName'] ?></a>
                 <?php endforeach; ?>
                 <hr>
               <?php endif; ?>
@@ -57,7 +57,17 @@
 <script src="<?php echo BASE_URL()?>/assets/Front/plugin/slippry/dist/slippry.min.js" type="text/javascript"></script>
 <script src="//use.edgefonts.net/cabin;source-sans-pro:n2,i2,n3,n4,n6,n7,n9.js"></script>
 
+<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?lang=css"></script>
+
 <script>
+
+// Yamm3
+$(function() {
+  window.prettyPrint && prettyPrint()
+  $(document).on('click', '.yamm .dropdown-menu', function(e) {
+    e.stopPropagation()
+  })
+})
 
 //slippry
 $(function() {

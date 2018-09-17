@@ -4,20 +4,19 @@
       <ul class="breadcrumb">
         <li><a href="<?php echo SITE_URL('Home'); ?>" class="colorTagA">หน้าแรก</a></li>
         <?php if (!empty($CateSelect)): ?>
-          <li><a href="<?php echo SITE_URL('Home/CategoryHome/'.$GroupSelect[0]['categroupId']); ?>" class="colorTagA"><?php echo $GroupSelect[0]['categroupName'] ?> </a></li>
-          <li><a href="<?php echo SITE_URL('Product/ShowProduct/'.$GroupSelect[0]['categroupId']."/".$CateSelect[0]['cateId']); ?>" class="colorTagA"><?php echo $CateSelect[0]['cateName'] ?> </a></li>
+          <li><a href="<?php echo SITE_URL('Product/Group/'.$GroupSelect[0]['categroupId']); ?>" class="colorTagA"><?php echo $GroupSelect[0]['categroupName'] ?> </a></li>
+          <li><a href="<?php echo SITE_URL('Product/Category/'.$GroupSelect[0]['categroupId']."/".$CateSelect[0]['cateId']); ?>" class="colorTagA"><?php echo $CateSelect[0]['cateName'] ?> </a></li>
           <li><?php echo $Product['product'][0]['productName'] ?></li>
         <?php else: ?>
           <li><?php echo $GroupSelect[0]['categroupName'] ?></li>
         <?php endif; ?>
       </ul>
       <div class="row">
-
         <div class="col-md-6">
           <a class="example-image-link" href="<?php echo BASE_URL('uploads/Products/'.$Product['product'][0]['productImg']); ?>" data-lightbox="example-set" id="link-img">
-          <img src="<?php echo BASE_URL('uploads/Products/'.$Product['product'][0]['productImg']); ?>" id="show-img">
+          <img class="img-thumbnail" src="<?php echo BASE_URL('uploads/Products/'.$Product['product'][0]['productImg']); ?>" id="show-img">
         </a>
-        <div class="small-img">
+        <div class="small-img" style="margin-left:10%;">
           <img src="<?php echo BASE_URL()?>assets/Front/plugin/ImageZoom/images/online_icon_right@2x.png" class="icon-left" alt="" id="prev-img">
           <div class="small-container">
             <div id="small-img-roll">
@@ -30,9 +29,6 @@
           <img src="<?php echo BASE_URL()?>assets/Front/plugin/ImageZoom/images/online_icon_right@2x.png" class="icon-right" alt="" id="next-img">
         </div>
     </div>
-
-
-
 
         <!-- <div id="gallery" class="col-md-4">
           <div>
@@ -52,14 +48,13 @@
             </div> -->
 
 
-            <div class="col-md-6">
-              <h3><?php echo $Product['product'][0]['productName'] ?></h3>
-              <p><?php echo $Product['product'][0]['brandName']." ".$Product['product'][0]['cateName'] ?></p>
+            <div class="col-md-5">
+              <h3><?php echo $Product['product'][0]['cateName']."  ".$Product['product'][0]['brandName']."-".$Product['product'][0]['productName'] ?></h3>
               <!-- <small>- Sub Detail</small> -->
-              <hr class="soft"/>
+              <hr class="soft"/ style="margin:5px;">
               <form class="form-horizontal qtyFrm">
-                <div class="control-group">
-                  <label class="control-label"><span>ราคา : 
+                <div class="control-group" style="margin:5px; margin-bottom:0px;">
+                  <label class="control-label"><span>ราคา :
                     <b>
                       <?php if ( $Product['product'][0]['productPrice'] == 0): ?>
                         <a style="color:black;" href="<?php echo SITE_URL('Contact');?>">ติดต่อสอบถาม</a>
@@ -75,7 +70,6 @@
               </div>
             </form>
 
-            <hr class="soft"/>
             <!-- <h4>100 items in stock</h4>
             <form class="form-horizontal qtyFrm pull-right">
             <div class="control-group">
@@ -91,12 +85,50 @@
       </div>
     </form>
     <hr class="soft clr"/> -->
-    <p><?php echo $Product['product'][0]['productSubdetail1'] ?></p>
-    <p><?php echo $Product['product'][0]['productSubdetail2'] ?></p>
-    <p><?php echo $Product['product'][0]['productSubdetail3'] ?></p>
-    <p><?php echo $Product['product'][0]['productSubdetail4'] ?></p>
-    <p><?php echo $Product['product'][0]['productSubdetail5'] ?></p>
-    <p><?php echo $Product['product'][0]['productSubdetail6'] ?></p>
+
+    <p>
+    <?php if ($Product['product'][0]['productSubdetail1'] != ''): ?>
+      <?php echo $Product['product'][0]['productSubdetail1'] ?>
+      <?php else: ?>
+        <br>
+    <?php endif; ?>
+    </p>
+    <p>
+      <?php if ($Product['product'][0]['productSubdetail2'] != ''): ?>
+        <?php echo $Product['product'][0]['productSubdetail2'] ?>
+        <?php else: ?>
+          <br>
+      <?php endif; ?>
+    </p>
+    <p>
+      <?php if ($Product['product'][0]['productSubdetail3'] != ''): ?>
+        <?php echo $Product['product'][0]['productSubdetail3'] ?>
+        <?php else: ?>
+          <br>
+      <?php endif; ?>
+    </p>
+    <p>
+      <?php if ($Product['product'][0]['productSubdetail4'] != ''): ?>
+        <?php echo $Product['product'][0]['productSubdetail4'] ?>
+        <?php else: ?>
+          <br>
+      <?php endif; ?>
+    </p>
+    <p>
+      <?php if ($Product['product'][0]['productSubdetail5'] != ''): ?>
+        <?php echo $Product['product'][0]['productSubdetail5'] ?>
+        <?php else: ?>
+          <br>
+      <?php endif; ?>
+    </p>
+    <p>
+      <?php if ($Product['product'][0]['productSubdetail6'] != ''): ?>
+        <?php echo $Product['product'][0]['productSubdetail6'] ?>
+        <?php else: ?>
+          <br>
+      <?php endif; ?>
+    </p>
+
 
     <a class="btn btn-small pull-right" href="#detail">เพิ่มเติม</a>
     <br class="clr"/>

@@ -47,6 +47,14 @@
   <link href="<?php echo BASE_URL()?>/assets/Front/plugin/slippry/demo/demo.css" rel="stylesheet"/>
   <link href="<?php echo BASE_URL()?>/assets/Front/plugin/slippry/dist/slippry.css" rel="stylesheet"/>
 
+
+  <!--yamm3-->
+  <link href="<?php echo BASE_URL()?>/assets/Front/plugin/Yamm3/demo/components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="<?php echo BASE_URL()?>/assets/Front/plugin/Yamm3/demo/components/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet"/>
+
+  <link href="<?php echo BASE_URL()?>/assets/Front/plugin/Yamm3/demo/css/demo.css" rel="stylesheet"/>
+  <link href="<?php echo BASE_URL()?>/assets/Front/plugin/Yamm3/yamm/yamm.css" rel="stylesheet"/>
+
   <style>
   * , span , td , p , a , label , button {
     font-family: 'Prompt', sans-serif;
@@ -69,6 +77,10 @@
     color:black;
   }
 
+  .menubtn {
+    color: #e65c00;
+    font-size: 20px;
+  }
 
 </style>
 
@@ -78,15 +90,8 @@
     <div style="background-color:#3a3f44;">
       <div class="container">
         <div class="row" style="padding:10px; margin-top:1px; margin-left:3px;">
-          <div>
-            <span style="color:white;"><img width="20" height="20" src="<?php echo BASE_URL()?>/assets/Front/themes/images/phone.png"> เบอร์ติดต่อ : 02-497-0500</span>
-            <ul class="nav nav-pills pull-right" style="color:white;">
-              <a href="<?php echo SITE_URL('Home'); ?>">หน้าแรก</a> /
-              <a href="<?php echo SITE_URL('Service'); ?>" >บริการ</a> /
-              <a href="<?php echo SITE_URL('Payment'); ?>">วิธีชำระเงิน</a> /
-              <a href="<?php echo SITE_URL('Contact'); ?>">ติดต่อเรา</a> /
-            </ul>
-          </div>
+          <span style="color:white;"><img width="20" height="20" src="<?php echo BASE_URL()?>/assets/Front/themes/images/phone.png"> เบอร์ติดต่อ : 099-3254289</span>
+
         </div>
       </div>
     </div>
@@ -103,8 +108,22 @@
       <div class="col-md-11" style="padding-left:0px; padding-right:0px;">
         <div class="row">
           <div class="col-md-12">
-            <ul class="nav nav-pills pull-left" style="margin-left:10px; margin-top:45px;">
+            <?php echo form_open('Search','class="pull-right" style="margin-bottom:0px;"'); ?>
+            <span>ค้นหาสินค้า :</span>
+            <input style="margin-top:10px; padding:15px;" type="text" name="keyword" placeholder="ค้นหาสินค้าทั้งหมด"/>
+            <button type="submit" class="btn btn-primary">ค้นหา</button>
+            <?php echo form_close(); ?>
+          </div>
+          <div class="col-md-12">
+            <ul class="nav nav-pills pull-left" style="margin-left:10px;">
               <a href="<?php echo SITE_URL('Home');?>"><img src="<?php echo BASE_URL()?>/uploads/Logo/textlogo.png" style="height:25px;" /></a>
+            </ul>
+          </div>
+          <div class="col-md-12" style="margin-top:20px;">
+            <ul class="nav nav-pills pull-right">
+              <a class="colorTagA" href="<?php echo SITE_URL('Service'); ?>">บริการ</a> /
+              <a class="colorTagA" href="<?php echo SITE_URL('Payment'); ?>">วิธีชำระเงิน</a> /
+              <a class="colorTagA" href="<?php echo SITE_URL('Contact'); ?>">ติดต่อเรา</a>
             </ul>
           </div>
         </div>
@@ -112,61 +131,136 @@
     </div>
   </div>
 
-  <div style="background-color:#3a3f44;">
+  <div style="background-color:#3a3f44; min-height:0px;" class="navbar yamm">
     <nav class="container" role="navigation">
-      <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-      <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
-      <script src="//cdn.rawgit.com/tonystar/bootstrap-hover-tabs/v3.1.1/bootstrap-hover-tabs.js"></script>
-      <div class="collapse navbar-collapse" style="padding:0px;">
-        <ul class="nav nav-tabs">
-          <?php foreach ($TitleGroup as $dropdown): ?>
-            <li><a data-toggle="tab" href="#menu<?php echo $dropdown['catetitleId'] ?>"><?php echo $dropdown['catetitleName'] ?><i class="icon-chevron-down" style="padding-top:3px;"></i></a></li>
-          <?php endforeach; ?>
-          <li class="active pull-right"><a data-toggle="tab" href="#search"><i class="icon-search" style="padding-top:3px;"></i></a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="container">
-      <div class="card" >
-        <div class="tab-content" style="margin-bottom:0px;">
-          <div id="search" class="tab-pane fade active in" style="margin-top:20px;">
-            <div class="">
-              <?php echo form_open('Search'); ?>
-              <div class="col-md-3" align="right" style="margin-top:5px;">
-              <b>ค้นหาสินค้าทั้งหมด : </b>
-            </div>
-            <div class="col-md-6">
-              <input class="form-control" style="padding:15px;" type="text" name="keyword">
-            </div>
-              <div class="col-md-3" align-left>
-              <button type="submit" class="btn btn-primary btn-sm">ค้นหา</button>
-            </div>
 
-              <?php echo form_close(); ?>
-            </div>
-          </div>
-          <?php $i=1; foreach ($TitleGroup as $title): ?>
-            <div id="menu<?php echo $title['catetitleId'] ?>" class="tab-pane fade in" style=" margin-top:20px;">
-              <?php foreach ($title['group'] as $group): ?>
-                <div class="col-md-3">
-                  <ul class="multi-column-dropdown">
-                    <li class="btn btn-block"><a href="<?php echo SITE_URL('Home/CategoryHome/'.$group['categroupId']); ?>#productlist" style="color:orange;"><b><u><?php echo $group['categroupName'] ?></u></b></a></li>
-                    <?php foreach ($group['category'] as $category): ?>
-                      <li><a href="<?php echo SITE_URL('Product/ShowProduct/'.$category['categroupId']."/".$category['cateId']); ?>#productlist" style="font-size:14px;">- <?php echo $category['cateName'] ?></a></li>
-                    <?php endforeach; ?>
-                    <hr>
-                  </ul>
+      <!-- Grid demo navbar -->
+      <div id="navbar-collapse-grid" class="navbar-collapse collapse container">
+        <ul class="nav navbar-nav" >
+
+          <!--Aside Menu-->
+          <li class="dropdown yamm-fw"><a data-toggle="dropdown" class="dropdown-toggle dropbtn">LG Display</b></a>
+            <ul class="dropdown-menu dropdown-content" style="width:102.5%;">
+              <div class="row">
+                <div class="container" style="margin:20px; margin-top:5px; padding-right:0px;">
+                  <div class="col-sm-3">
+                    <a href="<?php echo SITE_URL('Product/Group/'.'4'); ?>" class="menubtn btn btn-block" style="text-align:left;">Digital Signage</a>
+                    <li>
+                      <a href="<?php echo SITE_URL('Product/Category/'.'4/10'); ?>">- Monitor Signage</a>
+                      <a href="<?php echo SITE_URL('Product/Category/'.'4/11'); ?>">- Video Wall</a>
+                      <a href="<?php echo SITE_URL('Product/Category/'.'4/12'); ?>">- Ultra Streth</a>
+                      <a href="<?php echo SITE_URL('Product/Category/'.'4/13'); ?>">- High Brightness</a>
+                      <a href="<?php echo SITE_URL('Product/Category/'.'4/14'); ?>">- Interactive</a>
+                      <a href="<?php echo SITE_URL('Product/Category/'.'4/15'); ?>">- Mirror</a>
+                      <a href="<?php echo SITE_URL('Product/Category/'.'4/16'); ?>">- Transparent</a>
+                      <a href="<?php echo SITE_URL('Product/Category/'.'4/17'); ?>">- Accessories</a>
+                    </li>
+                  </div>
+                  <div class="col-sm-3">
+                    <a href="<?php echo SITE_URL('Product/Group/'.'5'); ?>" class="menubtn btn btn-block" style="text-align:left;">Commercial TV</a>
+                    <li>
+                      <a href="<?php echo SITE_URL('Product/Category/'.'5/18'); ?>">- Hotel TV</a>
+                      <a href="<?php echo SITE_URL('Product/Category/'.'5/19'); ?>">- TV Signage</a>
+                      <a href="<?php echo SITE_URL('Product/Category/'.'5/20'); ?>">- Accessories</a>
+                    </li>
+                    <a href="<?php echo SITE_URL('Product/Group/'.'5'); ?>" class="menubtn btn btn-block" style="text-align:left;">TV</a>
+                    <li>
+                      <a href="#">- Digital TV</a>
+                      <a href="#">- Smart TV</a>
+                    </li>
+                  </div>
+                  <div class="col-sm-3">
+                    <a href="<?php echo SITE_URL('Product/Group/'.'6'); ?>" class="menubtn btn btn-block" style="text-align:left;">OLED Signage</a>
+                    <li>
+                      <a href="<?php echo SITE_URL('Product/Category/'.'6/21'); ?>">- Dual view curred tiling</a>
+                      <a href="<?php echo SITE_URL('Product/Category/'.'6/22'); ?>">- Dual view flat</a>
+                      <a href="<?php echo SITE_URL('Product/Category/'.'6/23'); ?>">- Inglass wallpaper</a>
+                      <a href="<?php echo SITE_URL('Product/Category/'.'6/24'); ?>">- Open frame</a>
+                      <a href="<?php echo SITE_URL('Product/Category/'.'6/25'); ?>">- Videowall</a>
+                      <a href="<?php echo SITE_URL('Product/Category/'.'6/26'); ?>">- Wallpaper</a>
+                    </li>
+                  </div>
+                  <div class="col-sm-3">
+                    <a href="<?php echo SITE_URL('Product/Group/'.'7'); ?>" class="menubtn btn btn-block" style="text-align:left;">LED Signage</a>
+                    <li>
+                      <a href="<?php echo SITE_URL('Product/Category/'.'7/27'); ?>">- Indoor LED</a>
+                      <a href="<?php echo SITE_URL('Product/Category/'.'7/28'); ?>">- Outdoor LED</a>
+                    </li>
+                  </div>
                 </div>
-              <?php endforeach; ?>
-            </div>
-          <?php $i++; endforeach; ?>
-        </div>
-      </div>
-      <hr>
+              </div>
+            </ul>
+          </li>
 
-    </div>
-  </div>
+          <!--Aside Menu-->
+          <li class="dropdown yamm-fw"><a data-toggle="dropdown" class="dropdown-toggle dropbtn">Logitech</b></a>
+            <ul class="dropdown-menu dropdown-content" style="width:102.5%;">
+              <div class="row">
+                <div class="container" style="margin:20px; margin-top:5px;">
+                  <div class="col-sm-3">
+                    <a href="<?php echo SITE_URL('Product/Group/'.'8'); ?>" class="menubtn btn btn-block" style="text-align:left;">Camera</a>
+                    <li>
+                      <a href="<?php echo SITE_URL('Product/Category/'.'8/29'); ?>">- Webcam</a>
+                      <a href="<?php echo SITE_URL('Product/Category/'.'8/30'); ?>">- Conference Cam</a>
+                    </li>
+                  </div>
+                  <div class="col-sm-3">
+                    <a href="<?php echo SITE_URL('Product/Group/'.'9'); ?>" class="menubtn btn btn-block" style="text-align:left;">Accessory</a>
+                    <li>
+                      <a href="<?php echo SITE_URL('Product/Category/'.'9/31'); ?>">- Adapter</a>
+                      <a href="<?php echo SITE_URL('Product/Category/'.'9/32'); ?>">- Smart Dock</a>
+                      <a href="<?php echo SITE_URL('Product/Category/'.'9/33'); ?>">- Headset Stereo</a>
+                      <a href="<?php echo SITE_URL('Product/Category/'.'9/34'); ?>">- Extended Cable</a>
+                    </li>
+                  </div>
+                </div>
+              </div>
+            </ul>
+          </li>
+
+          <!--Aside Menu-->
+          <li class="dropdown yamm-fw"><a data-toggle="dropdown" class="dropdown-toggle dropbtn">Projector</b></a>
+            <ul class="dropdown-menu dropdown-content" style="width:102.5%;">
+              <div class="row">
+                <div class="container" style="margin:20px; margin-top:5px;">
+                  <div class="col-sm-3">
+                    <a href="<?php echo SITE_URL('Product/Group/'.'1'); ?>" class="menubtn btn btn-block" style="text-align:left;">Hitachi</a>
+                    <li>
+                      <a href="<?php echo SITE_URL('Product/Category/'.'1/1'); ?>">- Entry Model</a>
+                      <a href="<?php echo SITE_URL('Product/Category/'.'1/2'); ?>">- Feature Model</a>
+                      <a href="<?php echo SITE_URL('Product/Category/'.'1/3'); ?>">- Short-Throw</a>
+                      <a href="<?php echo SITE_URL('Product/Category/'.'1/8'); ?>">- Ultra Short-Throw</a>
+                      <a href="<?php echo SITE_URL('Product/Category/'.'1/9'); ?>">- Mid-High Range</a>
+                    </li>
+                  </div>
+                </div>
+              </div>
+            </ul>
+          </li>
+
+          <!--Aside Menu-->
+          <!-- <li class="dropdown yamm-fw"><a data-toggle="dropdown" class="dropdown-toggle dropbtn">Mounts</b></a>
+            <ul class="dropdown-menu dropdown-content">
+              <div class="row">
+                <div class="container" style="margin:20px;">
+                  <div class="col-sm-3">
+                    <a href="<?php echo SITE_URL('Product/Group/'.'1'); ?>" class="menubtn btn btn-block">Hitachi</a>
+                    <li>
+                      <a href="<?php echo SITE_URL('Product/Category/'.'1/1'); ?>">- </a>
+                      <a href="<?php echo SITE_URL('Product/Category/'.'1/2'); ?>">- </a>
+                      <a href="<?php echo SITE_URL('Product/Category/'.'1/3'); ?>">- </a>
+                      <a href="<?php echo SITE_URL('Product/Category/'.'1/8'); ?>">- </a>
+                      <a href="<?php echo SITE_URL('Product/Category/'.'1/9'); ?>">- </a>
+                    </li>
+                  </div>
+                </div>
+              </div>
+            </ul>
+          </li> -->
+</ul>
 </div>
 </nav>
+</div>
+
 
 <!-- Header End====================================================================== -->

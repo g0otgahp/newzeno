@@ -8,7 +8,6 @@
           </div>
           <div class="content">
             <?php echo form_open_multipart('Admin/Product/saveProduct') ?>
-
             <div class="row">
               <div class="col-md-4">
                 <div class="form-group">
@@ -21,7 +20,6 @@
                   </select>
                 </div>
               </div>
-
               <div class="col-md-4">
                 <div class="form-group">
                   <label>ประเภทสินค้า</label>
@@ -33,7 +31,6 @@
                   </select>
                 </div>
               </div>
-
               <div class="col-md-4">
                 <div class="form-group">
                   <label>ยี่ห้อสินค้า</label>
@@ -133,19 +130,19 @@
                   <div class="row">
                     <div class="col-md-4">
                       <div class="form-group">
-                        <label>รายละเอียด 1 </label><small style="color:red"> (เทคโนโลยี่ : LCD , DLP , LASER)</small>
+                        <label>รายละเอียด 1 </label>
                         <input type="text" class="form-control" name="productSubdetail1" placeholder="รายละเอียด 1 แบบย่อ">
                       </div>
                     </div>
                     <div class="col-md-4">
                       <div class="form-group">
-                        <label>รายละเอียด 2</label><small style="color:red"> (ความละเอียด : XGA , WXGA)</small>
+                        <label>รายละเอียด 2</label>
                         <input type="text" class="form-control" name="productSubdetail2" placeholder="รายละเอียด 2 แบบย่อ">
                       </div>
                     </div>
                     <div class="col-md-4">
                       <div class="form-group">
-                        <label>รายละเอียด 3</label><small style="color:red"> (ความสว่าง : 3,200 Lumens)</small>
+                        <label>รายละเอียด 3</label>
                         <input type="text" class="form-control" name="productSubdetail3" placeholder="รายละเอียด 3 แบบย่อ">
                       </div>
                     </div>
@@ -154,19 +151,19 @@
                   <div class="row">
                     <div class="col-md-4">
                       <div class="form-group">
-                        <label>รายละเอียด 4</label><small style="color:red"> (ความคมชัด : 10,000:1)</small>
+                        <label>รายละเอียด 4</label>
                         <input type="text" class="form-control" name="productSubdetail4" placeholder="รายละเอียด 4 แบบย่อ">
                       </div>
                     </div>
                     <div class="col-md-4">
                       <div class="form-group">
-                        <label>รายละเอียด 5</label><small style="color:red"> (ขนาด : 10 x 5 x 7 ซม.)</small>
+                        <label>รายละเอียด 5</label>
                         <input type="text" class="form-control" name="productSubdetail5" placeholder="รายละเอียด 5 แบบย่อ">
                       </div>
                     </div>
                     <div class="col-md-4">
                       <div class="form-group">
-                        <label>รายละเอียด 6</label><small style="color:red"> (น้ำหนัก : 15.2 กิโลกรัม)</small>
+                        <label>รายละเอียด 6</label>
                         <input type="text" class="form-control" name="productSubdetail6" placeholder="รายละเอียด 6 แบบย่อ">
                       </div>
                     </div>
