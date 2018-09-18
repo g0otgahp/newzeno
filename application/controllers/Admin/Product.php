@@ -100,6 +100,8 @@ class Product extends CI_Controller
   public function saveProduct()
   {
     $input = $this->input->post();
+    $Checking = $this->ProductModel->CheckingProduct($input);
+    if (count($Checking) == 0) {
 
     if (!empty($_FILES['productImg']['name'])) {
       $pathinfo = pathinfo($_FILES['productImg']['name'], PATHINFO_EXTENSION);
@@ -164,9 +166,45 @@ class Product extends CI_Controller
 
     echo "<script>alert('เพิ่มสินค้าใหม่เรียบร้อยแล้ว')</script>";
     echo "<script>document.location='" . SITE_URL('Admin/Product/ProductDetail/') .$id. "'</script>";
+  } else {
+    echo "<script>alert('มีสินค้านี้ในฐานข้อมูลแล้ว')</script>";
+    echo "<script>document.location='" . SITE_URL('Admin/Product/ProductDetail/') .$Checking[0]['productId']. "'</script>";
+  }
+
   }
 
   public function UpdateProduct()
+  {
+    $input = $this->input->post();
+    $idlog = $input['productId'];
+    $product = $this->ProductModel->SelectProductByID($idlog);
+
+    if (isset($input['checkbox'])) {
+      $input['productFav'] = 1;
+    } else {
+      $input['productFav'] = 2;
+    }
+
+    $input['editId'] = $_SESSION['adminId'];
+
+    unset($input['checkbox']);
+
+    $this->ProductModel->UpdateProduct($input);
+
+      $LogUpdate = array(
+        'logProductProfileId' => $_SESSION['adminId'],
+        'logProductStatus' => 'แก้ไข',
+        'logProductType' => 'จัดการสินค้า',
+        'logProductItem' => $product['product'][0]['productName'],
+      );
+
+      $this->LogModel->LogProduct($LogUpdate);
+
+    echo "<script>alert('แก้ไขสินค้าเรียบร้อยแล้ว')</script>";
+    echo "<script>document.location='" . SITE_URL('Admin/Product/ProductDetail/').$input['productId']. "'</script>";
+  }
+
+  public function UpdateImageProduct()
   {
     $input = $this->input->post();
     $idlog = $input['productId'];
@@ -180,15 +218,8 @@ class Product extends CI_Controller
       move_uploaded_file($_FILES['productImg']['tmp_name'], "uploads/Products/" . $new_file);
       $input['productImg'] = $new_file;
     }
-    if (isset($input['checkbox'])) {
-      $input['productFav'] = 1;
-    } else {
-      $input['productFav'] = 2;
-    }
 
     $input['editId'] = $_SESSION['adminId'];
-
-    unset($input['checkbox']);
 
     $this->ProductModel->UpdateProduct($input);
 
@@ -228,6 +259,25 @@ class Product extends CI_Controller
 
     }
 
+    echo "<script>alert('แก้ไขรูปภาพเรียบร้อยแล้ว')</script>";
+    echo "<script>document.location='" . SITE_URL('Admin/Product/ProductDetail/').$input['productId']. "'</script>";
+  }
+
+  public function UpdateDocProduct()
+  {
+    $input = $this->input->post();
+    $idlog = $input['productId'];
+    $product = $this->ProductModel->SelectProductByID($idlog);
+    $input['editId'] = $_SESSION['adminId'];
+    $this->ProductModel->UpdateProduct($input);
+      $LogUpdate = array(
+        'logProductProfileId' => $_SESSION['adminId'],
+        'logProductStatus' => 'แก้ไข',
+        'logProductType' => 'จัดการสินค้า',
+        'logProductItem' => $product['product'][0]['productName'],
+      );
+      $this->LogModel->LogProduct($LogUpdate);
+
     if (@$_FILES['Doc']['name'][0] != '') {
       $d = 0;
       foreach ($_FILES['Doc']['name'] as $row) {
@@ -255,7 +305,7 @@ class Product extends CI_Controller
 
     }
 
-    echo "<script>alert('แก้ไขสินค้าเรียบร้อยแล้ว')</script>";
+    echo "<script>alert('แก้ไขเอกสารเรียบร้อยแล้ว')</script>";
     echo "<script>document.location='" . SITE_URL('Admin/Product/ProductDetail/').$input['productId']. "'</script>";
   }
 
@@ -332,23 +382,23 @@ class Product extends CI_Controller
     $this->LogModel->LogProduct($LogDelete);
 
     echo "<script>alert('ลบสินค้าเรียบร้อยแล้ว')</script>";
-    echo "<script>document.location='" . SITE_URL('Admin/Product') . "'</script>";
+    echo "<script>document.location='" . SITE_URL('Admin/Search') . "'</script>";
   }
 
   public function ProductQuick()
   {
-    $brand = $this->BrandModel->SelectBrand();
-    $category = $this->CategoryModel->SelectCategory();
-    $group = $this->GroupModel->SelectGroup();
+    // $brand = $this->BrandModel->SelectBrand();
+    // $category = $this->CategoryModel->SelectCategory();
+    // $group = $this->GroupModel->SelectGroup();
     $SelectTech = $this->ProductModel->SelectTech();
     $SelectResolution = $this->ProductModel->SelectResolution();
     $SelectSize = $this->ProductModel->SelectSize();
 
     $value = array(
       'Result' => array(
-        'brand' => $brand,
-        'category' => $category,
-        'group' => $group,
+        // 'brand' => $brand,
+        // 'category' => $category,
+        // 'group' => $group,
         'SelectTech' => $SelectTech,
         'SelectResolution' => $SelectResolution,
         'SelectSize' => $SelectSize,

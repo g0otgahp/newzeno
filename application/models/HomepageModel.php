@@ -63,7 +63,25 @@ class HomepageModel extends CI_Model
     ->join('category','category.CateId = product.productCateid')
     ->join('categroup','categroup.categroupId = product.productGroupid')
     ->order_by('productId','DESC')
-    ->get('product',4)
+    ->get('product',8)
+    ->result_array();
+
+    return $data;
+  }
+
+  public function RecommendProduct()
+  {
+    $data = $this->db
+    ->where('productStatus',1)
+    ->where('cateStatus',1)
+    ->where('brandStatus',1)
+    ->where('categroupStatus',1)
+    ->where('productFav',1)
+    ->join('brand','brand.brandId = product.productBrandid')
+    ->join('category','category.CateId = product.productCateid')
+    ->join('categroup','categroup.categroupId = product.productGroupid')
+    ->order_by('productId','DESC')
+    ->get('product')
     ->result_array();
 
     return $data;
@@ -193,7 +211,7 @@ class HomepageModel extends CI_Model
     // Filter Reolution
     $filter['Resolution'] = $this->SelectFilter($data,'productResolution','resolutionId','resolution');
     // Filter Reolution
-    $filter['Tech'] = $this->SelectFilter($data,'productTechId','techId','technology');    
+    $filter['Tech'] = $this->SelectFilter($data,'productTechId','techId','technology');
     // Filter Reolution
     $filter['Size'] = $this->SelectFilter($data,'productSizeId','SizeId','size');
 

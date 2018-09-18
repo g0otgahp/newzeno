@@ -1,5 +1,5 @@
 
-    <?php echo form_open_multipart('Admin/Product/UpdateProduct') ?>
+    <?php echo form_open_multipart('Admin/Product/UpdateImageProduct') ?>
     <div class="row">
       <div class="col-md-12 animate-box">
           <div class="header">
@@ -13,9 +13,6 @@
           </div>
       </div>
     </div>
-
-
-
 
       <div class="col-md-6 animate-box">
           <div class="header">

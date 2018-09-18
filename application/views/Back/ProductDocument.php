@@ -1,5 +1,5 @@
 
-    <?php echo form_open_multipart('Admin/Product/UpdateProduct') ?>
+    <?php echo form_open_multipart('Admin/Product/UpdateDocProduct') ?>
 
     <div class="row">
       <div class="col-md-12 animate-box">
@@ -7,7 +7,7 @@
             <div class="form-group">
               <div class="col-md-4">
               <label>เอกสาร <span style="color:red; font-size:11px;">*PDF เท่านั้น</span></label>
-              <input type="file" accept="application/pdf" name="Doc[]" class="form-control" multiple>
+              <input type="file" accept="application/pdf" name="Doc[]" class="form-control" multiple required>
             </div>
           </div>
           <button type="submit" class="btn btn-warning btn-fill" style="margin-top:15px;">ลงทะเบียนเอกสารแนบ</button>

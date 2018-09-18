@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Search extends CI_Controller
+class Recommend extends CI_Controller
 {
 
   public function __construct()
@@ -12,14 +12,13 @@ class Search extends CI_Controller
 
   public function index()
   {
-    $input = $this->input->post();
-    $Product = $this->HomepageModel->SearchProduct($input['keyword']);
+    $Product = $this->HomepageModel->RecommendProduct();
     $data = array(
       'Product' => $Product,
     );
     // $this->load->view('Front/themes/slide');
     // $this->load->view('Front/themes/menu');
-    $this->load->view('Front/ProductSearch',$data);
+    $this->load->view('Front/ProductRecommend',$data);
     $this->load->view('Front/themes/footer');
   }
 }

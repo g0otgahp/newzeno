@@ -132,7 +132,7 @@
   </div>
 </div>
 
-  <div style="background-color:#3a3f44; min-height:0px; margin-bottom:0px;" class="navbar yamm">
+  <div style="background-color:#3a3f44; min-height:0px; margin-bottom:10px;" class="navbar yamm">
     <nav class="container" role="navigation">
 
       <!-- Grid demo navbar -->

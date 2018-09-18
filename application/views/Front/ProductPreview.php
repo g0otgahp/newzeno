@@ -20,7 +20,7 @@ if ($num > 0):
                 <div class="col-md-offset-1 col-md-3">
                 <?php endif; ?>
                 <a  class="img-card" href="<?php echo SITE_URL('Product/ProductDetail/'.$list['categroupId']."/".$list['cateId']."/".$list['productId']); ?>">
-                  <img src="<?php echo BASE_URL('uploads/Products/'.$list['productImg']); ?>" style="height:150px; width:240px;"/>
+                  <img class="img-thumbnail" src="<?php echo BASE_URL('uploads/Products/'.$list['productImg']); ?>" style="height:150px; width:240px;"/>
                 </a>
               </div>
               <?php if ($value == 1): ?>
@@ -91,7 +91,7 @@ if ($num > 0):
               </div>
             <?php endforeach; $list = array();?>
             <?php if ($value == 1): ?>
-              <li class="pull-right"><a href="#" style="color:blue;">ดูทั้งหมด</a><i class="icon-arrow-right"></i></li>
+              <li class="pull-right btn btn-secondary btn-block"><strong><a href="<?php echo SITE_URL('Recommend'); ?>">สินค้าแนะนำทั้งหมด คลิก</a></strong></li>
               <hr class="soft"/>
             <?php endif; ?>
           </div>
@@ -205,7 +205,7 @@ if ($num > 0):
                     <?php $i++; endforeach; $block = array();?>
                   </ul>
                   <?php if ($value == 1): ?>
-                    <li class="pull-right"><a href="#" style="color:blue;" >ดูทั้งหมด</a><i class="icon-arrow-right"></i></li>
+                    <li class="pull-right btn btn-secondary btn-block"><strong><a href="<?php echo SITE_URL('Recommend'); ?>">สินค้าแนะนำทั้งหมด คลิก</a></strong></li>
                     <hr class="soft"/>
                   <?php endif; ?>
                 </div>

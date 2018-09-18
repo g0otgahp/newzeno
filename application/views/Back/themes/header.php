@@ -18,8 +18,8 @@
 	<link href="<?php echo BASE_URL()?>/assets/Back/css/animate.min.css" rel="stylesheet"/>
 
 	<!--     Fonts and icons     -->
-	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-	<link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
 	<link href="<?php echo BASE_URL()?>/assets/Back/css/pe-icon-7-stroke.css" rel="stylesheet" />
 
 	<!-- Bootstrap Datatable -->
@@ -100,7 +100,7 @@
 		<div style="padding-left:20px; padding-right:20px;"><hr></div>
 		<center>- ฐานข้อมูลสินค้า -</center>
 
-		<li <?php if($this->uri->segment(2)=="Search"){ echo "class='active'"; } ?>>
+		<li <?php if($this->uri->segment(2)=="Search" || $this->uri->segment(3)=="ProductDetail"){ echo "class='active'"; } ?>>
 			<a href="<?php echo SITE_URL('Admin/Search')?>">
 				<i class="pe-7s-search" ></i>
 				<span>ค้นหาสินค้า</span>

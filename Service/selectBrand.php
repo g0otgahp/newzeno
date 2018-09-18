@@ -2,7 +2,7 @@
 include "Connection.php";
 
 
-$query = $conn->prepare("SELECT * FROM categroup");
+$query = $conn->prepare("SELECT * FROM brand");
 $query->execute();
 $result = $query->get_result();
 $data = [];

@@ -4,21 +4,21 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class ProductModel extends CI_Model
 {
 
-  /**
-  * Index Page for this controller.
-  *
-  * Maps to the following URL
-  *         http://example.com/index.php/welcome
-  *    - or -
-  *         http://example.com/index.php/welcome/index
-  *    - or -
-  * Since this controller is set as the default controller in
-  * config/routes.php, it's displayed at http://example.com/
-  *
-  * So any other public methods not prefixed with an underscore will
-  * map to /index.php/welcome/<method_name>
-  * @see https://codeigniter.com/user_guide/general/urls.html
-  */
+  public function CheckingProduct($input)
+  {
+    $data = $this->db
+    ->where('productName',$input['productName'])
+    ->where('productPrice',$input['productPrice'])
+    ->where('productBrandid',$input['productBrandid'])
+    ->where('productGroupid',$input['productGroupid'])
+    ->where('productCateid',$input['productCateid'])
+    ->where('productTechId',$input['productTechId'])
+    ->where('productResolution',$input['productResolution'])
+    ->where('productSizeId',$input['productSizeId'])
+    ->get('product')
+    ->result_array();
+    return $data;
+  }
 
   public function SelectProduct()
   {
@@ -111,9 +111,7 @@ class ProductModel extends CI_Model
     ->where('docProductid',$data['product'][0]['productId'])
     ->get('doc')
     ->result_array();
-    // echo "<pre>";
-    // print_r($data);
-    // exit();
+
     return $data;
 
   }
