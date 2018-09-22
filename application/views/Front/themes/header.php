@@ -240,24 +240,35 @@
           </li>
 
           <!--Aside Menu-->
-          <!-- <li class="dropdown yamm-fw"><a data-toggle="dropdown" class="dropdown-toggle dropbtn">Mounts</b></a>
-            <ul class="dropdown-menu dropdown-content">
+          <li class="dropdown yamm-fw"><a data-toggle="dropdown" class="dropdown-toggle dropbtn">ขายึดทีวี</b></a>
+            <ul class="dropdown-menu dropdown-content" style="width:102.5%;">
               <div class="row">
-                <div class="container" style="margin:20px;">
+                <div class="container" style="margin:20px; margin-top:5px;">
                   <div class="col-sm-3">
-                    <a href="<?php echo SITE_URL('Product/Group/'.'1'); ?>" class="menubtn btn btn-block">Hitachi</a>
+                    <a href="<?php echo SITE_URL('Product/Group/'.'14'); ?>" class="menubtn btn btn-block">แขวนเพดาน</a>
                     <li>
-                      <a href="<?php echo SITE_URL('Product/Category/'.'1/1'); ?>">- </a>
-                      <a href="<?php echo SITE_URL('Product/Category/'.'1/2'); ?>">- </a>
-                      <a href="<?php echo SITE_URL('Product/Category/'.'1/3'); ?>">- </a>
-                      <a href="<?php echo SITE_URL('Product/Category/'.'1/8'); ?>">- </a>
-                      <a href="<?php echo SITE_URL('Product/Category/'.'1/9'); ?>">- </a>
+                      <a href="<?php echo SITE_URL('Product/Category/'.'14/35'); ?>">- แบบหน้าเดียว</a>
+                    </li>
+                  </div>
+                  <div class="col-sm-3">
+                    <a href="<?php echo SITE_URL('Product/Group/'.'15'); ?>" class="menubtn btn btn-block">แขวนผนัง</a>
+                    <li>
+                      <a href="<?php echo SITE_URL('Product/Category/'.'15/36'); ?>">- แบบธรรมดา</a>
+                      <a href="<?php echo SITE_URL('Product/Category/'.'15/37'); ?>">- แบบดึงออก</a>
+                      <a href="<?php echo SITE_URL('Product/Category/'.'15/38'); ?>">- แบบวิดิโอวอลล์</a>
+                    </li>
+                  </div>
+                  <div class="col-sm-3">
+                    <a href="<?php echo SITE_URL('Product/Group/'.'16'); ?>" class="menubtn btn btn-block">ตั้งพื้น</a>
+                    <li>
+                      <a href="<?php echo SITE_URL('Product/Category/'.'16/39'); ?>">- แบบขาเดียว</a>
+                      <a href="<?php echo SITE_URL('Product/Category/'.'16/40'); ?>">- แบบขาคู่</a>
                     </li>
                   </div>
                 </div>
               </div>
             </ul>
-          </li> -->
+          </li>
 </ul>
 </div>
 </nav>

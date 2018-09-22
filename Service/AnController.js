@@ -27,5 +27,4 @@ phonecatApp.controller('Ctrl', function PhoneListController($scope, $http) {
             console.log($scope.category);
         })
     }
-
 });
