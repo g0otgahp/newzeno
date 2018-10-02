@@ -18,8 +18,8 @@
               </div>
               <div class="col-md-4">
                 <div class="form-group">
-                  <label>ราคา</label>
-                  <input type="number" class="form-control" name="productPrice" placeholder="กรอก ราคา" required>
+                  <label>ราคา</label> <small style="color:red; font-size:10px;">ถ้าไม่ระบุจะแสดง ติดต่อสอบถาม แทนราคา</small>
+                  <input type="number" class="form-control" name="productPrice" placeholder="กรอก ราคา">
                 </div>
               </div>
               <div class="col-md-4">
@@ -110,7 +110,7 @@
                     <option value="">-เลือกขนาดจอ (ทีวี)-</option>
                     <?php foreach ($SelectSize as $Size): ?>
                       <option
-                      ng-if="productGroupid == 4 || productGroupid == 5 || productGroupid == 6 || productGroupid == 7" 
+                      ng-if="productGroupid == 4 || productGroupid == 5 || productGroupid == 6 || productGroupid == 7"
                       value="<?php echo $Size['SizeId'] ?>"><?php echo $Size['SizeName'] ?></option>
                     <?php endforeach; ?>
                   </select>
