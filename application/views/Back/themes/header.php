@@ -90,10 +90,10 @@
 			</a>
 		</li>
 
-		<li <?php if($this->uri->segment(2)=="News"){ echo "class='active'"; } ?>>
-			<a href="<?php echo SITE_URL('Admin/News') ?>">
-				<i class="pe-7s-bell" ></i>
-				<span >ข่าวสารโปรโมชั่น</span>
+		<li <?php if($this->uri->segment(2)=="Quotation"){ echo "class='active'"; } ?>>
+			<a href="<?php echo SITE_URL('Admin/Quotation') ?>">
+				<i class="pe-7s-note2" ></i>
+				<span >ใบเสนอราคา</span>
 			</a>
 		</li>
 

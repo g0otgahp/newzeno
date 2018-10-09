@@ -35,7 +35,7 @@
                       <label>รายละเอียด(แบบเต็ม)</label>
                       <textarea rows="5" class="form-control summernote" name="productDetail" placeholder="กรอกรายละเอียดแบบเต็ม"><?php echo $data['product'][0]['productDetail'] ?></textarea>
                     </div>
-                    <button type="submit" class="btn btn-warning btn-fill pull-right">ลงทะเบียนแก้ไขรายละเอียด</button>
+                    <button type="submit" class="btn btn-warning btn-fill pull-right loading">ลงทะเบียนแก้ไขรายละเอียด</button>
                   </div>
                 </div>
                 <?php echo form_close() ?>

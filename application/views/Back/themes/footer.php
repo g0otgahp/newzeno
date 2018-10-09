@@ -108,6 +108,12 @@ $('.loading').on('click', function() {
        $this.button('reset');
    }, 10000);
 });
+
+//Button Loading
+$('.loadingDoc').on('click', function() {
+    var $this = $(this);
+  $this.button('loading');
+});
 </script>
 
 <!-- <script type="text/javascript">

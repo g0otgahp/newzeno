@@ -149,12 +149,14 @@
       </div>
       <?php if (count($Product['document']) != 0): ?>
         <div class="tab-pane fade in" id="document">
+          <h3>เอกสารเพิ่มเติมสินค้า</h3>
           <?php foreach ($Product['document'] as $document): ?>
-            <table>
+            <!-- <table>
               <td></td>
               <td></td>
-            </table>
-            <a href="<?php echo BASE_URL('uploads/pdf/'.$document['docFilename']); ?>" target="_blank" style="color:blue;"><?php echo $document['docName'] ?> </a><br>
+            </table> -->
+            <a class="h5" href="<?php echo BASE_URL('uploads/pdf/'.$document['docFilename']); ?>" target="_blank" style="color:blue;"><?php echo $document['docName'] ?> </a>
+            <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span><br>
           <?php endforeach; ?>
         </div>
       <?php endif; ?>

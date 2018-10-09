@@ -1,6 +1,8 @@
 
     <?php echo form_open_multipart('Admin/Product/UpdateDocProduct') ?>
-
+    <div class="content">
+      <input type="hidden" name="productId" value="<?php echo $data['product'][0]['productId'] ?>" >
+    </div>
     <div class="row">
       <div class="col-md-12 animate-box">
           <div class="header">
@@ -10,16 +12,11 @@
               <input type="file" accept="application/pdf" name="Doc[]" class="form-control" multiple required>
             </div>
           </div>
-          <button type="submit" class="btn btn-warning btn-fill" style="margin-top:15px;">ลงทะเบียนเอกสารแนบ</button>
-          </div>
-          <div class="content">
-
-            <input type="hidden" name="productId" value="<?php echo $data['product'][0]['productId'] ?>" >
-            <input type="hidden" name="productImg" value="<?php echo $data['product'][0]['productImg'] ?>" >
-
+          <button type="submit" class="btn btn-warning btn-fill loadingDoc" data-loading-text="<i class='fa fa-spinner fa-spin '></i> กำลังประมวลผล" style="margin-top:15px;">ลงทะเบียนเอกสารแนบ</button>
           </div>
       </div>
     </div>
+    <?php echo form_close() ?>
 
 
     <div class="col-md-12 animate-box">
@@ -69,7 +66,3 @@
         </div>
       </div>
     </div>
-
-
-
-      <?php echo form_close() ?>

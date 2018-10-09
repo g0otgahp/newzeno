@@ -2,7 +2,7 @@
 include "Connection.php";
 
 
-$query = $conn->prepare("SELECT * FROM brand");
+$query = $conn->prepare("SELECT * FROM brand WHERE brandStatus = '1'");
 $query->execute();
 $result = $query->get_result();
 $data = [];

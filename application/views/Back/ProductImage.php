@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-md-12 animate-box">
           <div class="header">
-            <button type="submit" class="btn btn-warning btn-fill">ลงทะเบียนรูปสินค้า</button>
+            <button type="submit" class="btn btn-warning btn-fill loading">ลงทะเบียนรูปสินค้า</button>
           </div>
           <div class="content">
 

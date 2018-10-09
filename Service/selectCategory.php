@@ -6,7 +6,7 @@ $array = json_decode(json_encode($data), True);
 
 if (count($array) > 0) {
 $id = $data->id;
-$query = $conn->prepare("SELECT * FROM category WHERE categroupId = ".$id);
+$query = $conn->prepare("SELECT * FROM category WHERE cateStatus = '1' AND categroupId = ".$id);
 $query->execute();
 $result = $query->get_result();
 $data = [];
