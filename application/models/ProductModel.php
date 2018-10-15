@@ -183,4 +183,28 @@ class ProductModel extends CI_Model
     ->result_array();
     return $data;
     }
+
+    public function SelectProductRestore()
+    {
+      $data = $this->db
+      ->select('productId,productName,brandName,brandImg,categroupName')
+      ->join('brand','brand.brandId = product.productBrandid')
+      ->join('categroup','categroup.categroupId = product.productGroupid')
+      ->where('productStatus',2)
+      ->get('product')
+      ->result_array();
+      return $data;
+    }
+
+    public function UpdateProductRestore($productId)
+    {
+
+      $dataUpdateRestore = array(
+        'productStatus' => 1 ,
+      );
+
+    $this->db->where('productId',$productId)
+    ->update('product',$dataUpdateRestore);
+
+    }
 }

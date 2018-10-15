@@ -38,7 +38,7 @@ class EmployeeModel extends CI_Model
   public function Position()
   {
 
-    $position = $this->db->get('position')->result_array();
+    $position = $this->db->where('positionStatus',1)->get('position')->result_array();
 
     return $position;
 
@@ -116,6 +116,11 @@ class EmployeeModel extends CI_Model
     $this->db
     ->where('profileId',$profile['profileId'])
     ->update('profile',$profile);
+
+    $this->db
+    ->set('adminPosition',$dataUpdate['adminPosition'])
+    ->where('adminId',$profile['profileId'])
+    ->update('admin');
 
   }
 

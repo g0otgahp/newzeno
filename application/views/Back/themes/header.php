@@ -114,6 +114,19 @@
 			</a>
 		</li>
 
+
+
+		<li <?php if($_SESSION["positionId"] != 1){ echo "class='hide'"; }
+							else{ if($this->uri->segment(2)=="ProductRestore"){ echo "class='active'"; }}?>>
+
+			<a href="<?php echo SITE_URL('Admin/ProductRestore') ?>">
+				<i class="pe-7s-box1" ></i>
+				<span>กู้คืนสินค้า</span><span ></span>
+			</a>
+		</li>
+
+
+
 		<!-- <li <?php if($this->uri->segment(2)=="Product"){ echo "class='active'"; } ?>>
 			<a href="<?php echo SITE_URL('Admin/Product')?>">
 				<i class="pe-7s-box2" ></i>
