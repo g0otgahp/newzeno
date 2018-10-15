@@ -36,6 +36,28 @@ class ProductModel extends CI_Model
     return $data;
   }
 
+  public function SelectProductSearch($dataId)
+  {
+
+    // echo "<pre>";
+    // print_r($dataId);
+    // exit();
+
+    $data = $this->db
+    ->where('productStatus',1)
+    ->where('cateStatus',1)
+    ->where('brandStatus',1)
+    ->where('categroupStatus',1)
+    ->where('catetitleId',$dataId)
+    ->order_by('product.productId','DESC')
+    ->join('brand','brand.brandId = product.productBrandid')
+    ->join('category','category.CateId = product.productCateid')
+    ->join('categroup','categroup.categroupId = product.productGroupid')
+    ->get('product')
+    ->result_array();
+    return $data;
+  }
+
   public function SelectSearchProduct($input)
   {
     $this->db->where('productStatus',1);

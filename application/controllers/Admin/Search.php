@@ -24,12 +24,34 @@ class Search extends CI_Controller
 
   public function index()
   {
+
+  $dataSelect = $this->TitleGroupModel->SelectTitleGroup();
+
+    $value = array(
+      'Result' => array(
+        'dataSelect' => $dataSelect,
+      ),
+      'View' => 'Back/ProductSearchForm',
+    );
+    // $this->debug->log($value);
+    $this->LoadPage($value);
+  }
+
+  public function SearchIndex()
+  {
+
+    $dataId = $this->uri->segment(4);
+    //
+    // echo "<pre>";
+    // print_r($dataId);
+    // exit();
+
     $group = $this->GroupModel->SelectGroup();
     $category = $this->CategoryModel->SelectCategory();
     $brand = $this->BrandModel->SelectBrand();
     $tech = $this->ProductModel->SelectTech();
     $resolution = $this->ProductModel->SelectResolution();
-    $product = $this->ProductModel->SelectProduct();
+    $product = $this->ProductModel->SelectProductSearch($dataId);
 
     $value = array(
       'Result' => array(
