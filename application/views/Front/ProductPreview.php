@@ -237,7 +237,7 @@ if ($num > 0):
                     <table class="table table-hover dataTable">
                       <thead>
                         <tr>
-                          <th width="3%">รูปภาพ</th>
+                          <!-- <th width="3%">รูปภาพ</th> -->
                           <th width="16%">แบรนด์</th>
                           <th width="16%">รุ่น</th>
                           <th width="40%">รายละเอียด</th>
@@ -248,11 +248,11 @@ if ($num > 0):
                       <tbody>
                         <?php $i = 1; foreach ($Preview as $table): ?>
                           <tr>
-                            <td align="left">
+                            <!-- <td align="left">
                               <a class="example-image-link" href="<?php echo BASE_URL('uploads/Products/'.$table['productImg']); ?>" data-lightbox="example-set">
                                 <img class="img-thumbnail" src="<?php echo BASE_URL('uploads/Products/'.$table['productImg']); ?>" width="50px;" style="margin:auto; display:block;"/>
                               </a>
-                            </td>
+                            </td> -->
                             <td style="font-size:11px;"><?php echo $table['brandName'];?></td>
                             <td style="font-size:11px;"><?php echo $table['productName'];?></td>
                             <td style="font-size:11px;"><?php echo $table['productSubdetail1']." <b>/</b> ".$table['productSubdetail2']." <b>/</b> ".$table['productSubdetail3']." <b>/</b> ".$table['productSubdetail4']." <b>/</b> ".$table['productSubdetail5']." <b>/</b> ".$table['productSubdetail6'] ?></td>

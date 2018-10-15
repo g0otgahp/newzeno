@@ -41,17 +41,17 @@ class Product extends CI_Controller
   //   $this->LoadPage($value);
   // }
 
-  public function index()
-  {
-    $dataSelect = $this->TitleGroupModel->SelectTitleGroup();
-    $value = array(
-      'Result' => array(
-        'dataSelect' => $dataSelect,
-      ),
-      'View' => 'Back/Product',
-    );
-    $this->LoadPage($value);
-  }
+  // public function index()
+  // {
+  //   $dataSelect = $this->TitleGroupModel->SelectTitleGroup();
+  //   $value = array(
+  //     'Result' => array(
+  //       'dataSelect' => $dataSelect,
+  //     ),
+  //     'View' => 'Back/Product',
+  //   );
+  //   $this->LoadPage($value);
+  // }
 
   public function ProductDetail()
   {
@@ -267,6 +267,7 @@ class Product extends CI_Controller
   {
     $input = $this->input->post();
     $idlog = $input['productId'];
+    // $this->debug->log($input);
     $product = $this->ProductModel->SelectProductByID($idlog);
     $input['editId'] = $_SESSION['adminId'];
     $this->ProductModel->UpdateProduct($input);

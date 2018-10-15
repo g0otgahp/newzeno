@@ -160,7 +160,7 @@
                 </div>
               </div>
           </div>
-            <button type="submit" class="btn btn-warning btn-fill pull-right">ลงทะเบียนแก้ไขสินค้า</button>
+            <button type="submit" class="btn btn-warning btn-fill pull-right loading">ลงทะเบียนแก้ไขสินค้า</button>
             <div class="clearfix"></div>
           </div>
       <?php echo form_close() ?>
