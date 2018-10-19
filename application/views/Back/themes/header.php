@@ -90,12 +90,12 @@
 			</a>
 		</li>
 
-		<li <?php if($this->uri->segment(2)=="Quotation"){ echo "class='active'"; } ?>>
+		<!-- <li <?php if($this->uri->segment(2)=="Quotation"){ echo "class='active'"; } ?>>
 			<a href="<?php echo SITE_URL('Admin/Quotation') ?>">
 				<i class="pe-7s-note2" ></i>
 				<span >ใบเสนอราคา</span>
 			</a>
-		</li>
+		</li> -->
 
 		<div style="padding-left:20px; padding-right:20px;"><hr></div>
 		<center>- ฐานข้อมูลสินค้า -</center>
@@ -166,21 +166,28 @@
 		</li>
 
 
-
-		<div style="padding-left:20px; padding-right:20px;"><hr></div>
-		<center >- พนักงาน -</center>
-
+		<?php if ($_SESSION["positionId"] != 1): ?>
+			<div style="padding-left:20px; padding-right:20px;" <?php echo "hidden" ?>><hr></div>
+			<center <?php echo "hidden" ?>>- พนักงาน -</center>
+			<?php else: ?>
+				<div style="padding-left:20px; padding-right:20px;"><hr></div>
+				<center>- พนักงาน -</center>
+		<?php endif; ?>
 
 		<!-- <br>
 		<b style="color:Blue"> <center><u>พนักงาน</u></center> </b> -->
 
-		<li <?php if($this->uri->segment(2)=="Employee"){ echo "class='active'"; } ?>>
+		<!-- <li <?php if($this->uri->segment(2)=="Employee"){ echo "class='active'"; } ?>> -->
+		<li <?php if($_SESSION["positionId"] != 1){ echo "class='hide'"; }
+							else{ if($this->uri->segment(2)=="Employee"){ echo "class='active'"; }}?>>
 			<a href="<?php echo SITE_URL('Admin/Employee')?>">
 				<i class="pe-7s-users" ></i>
 				<span >การจัดการพนักงาน</span>
 			</a>
 		</li>
-		<li <?php if($this->uri->segment(2)=="Position"){ echo "class='active'"; } ?>>
+		<!-- <li <?php if($this->uri->segment(2)=="Position"){ echo "class='active'"; } ?>> -->
+		<li <?php if($_SESSION["positionId"] != 1){ echo "class='hide'"; }
+							else{ if($this->uri->segment(2)=="Position"){ echo "class='active'"; }}?>>
 			<a href="<?php echo SITE_URL('Admin/Position')?>">
 				<i class="pe-7s-id" ></i>
 				<span >การจัดการตำแหน่ง</span>
