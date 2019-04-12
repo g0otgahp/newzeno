@@ -261,8 +261,9 @@
                   <div class="col-sm-3">
                     <a href="<?php echo SITE_URL('Product/Group/'.'16'); ?>" class="menubtn btn btn-block">ตั้งพื้น</a>
                     <li>
-                      <a href="<?php echo SITE_URL('Product/Category/'.'16/39'); ?>">- แบบขาเดียว</a>
-                      <a href="<?php echo SITE_URL('Product/Category/'.'16/40'); ?>">- แบบขาคู่</a>
+                      <!-- <a href="<?php echo SITE_URL('Product/Category/'.'16/39'); ?>">- แบบขาเดียว</a> -->
+                      <!-- <a href="<?php echo SITE_URL('Product/Category/'.'16/40'); ?>">- แบบขาคู่</a> -->
+                      <a href="<?php echo SITE_URL('Product/Category/'.'16/41'); ?>">- แบบล้อเลื่อน</a>
                     </li>
                   </div>
                 </div>
